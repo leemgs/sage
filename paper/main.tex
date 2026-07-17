@@ -89,11 +89,12 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% Reference URL toggle
 %% -------------------------------------------------------------
 %% 리뷰(열람)용 사본에는 각 참고문헌의 URL을 출력한다 (기본값).
-%% \RefURLstrue  → 참고문헌마다 URL 출력 (사전 열람용).
+%% \RefURLstrue  → 참고문헌마다 URL을 파란색으로 출력 (사전 열람용).
 %% \RefURLsfalse → 저널 제출용: URL 출력 안 함.
+%% URL 색은 전역 hypersetup과 무관하게 항상 파란색으로 고정한다.
 \newif\ifRefURLs
 \RefURLstrue
-\newcommand{\refurl}[1]{\ifRefURLs\ \url{#1}\fi}
+\newcommand{\refurl}[1]{\ifRefURLs\ {\color{blue}\url{#1}}\fi}
 %% =============================================================
 
 %% =============================================================
