@@ -25,6 +25,7 @@ converting uncertainty into a plausible binary judgement.
 
 \begin{figure}[t]
 \centering
+\resizebox{\linewidth}{!}{%
 \begin{tikzpicture}[node distance=6mm and 5mm, every node/.style={font=\small},
 box/.style={draw,rounded corners,align=center,minimum height=9mm,text width=2.45cm}]
 \node[box] (input) {Query, evidence,\\memory and tools};
@@ -37,7 +38,7 @@ box/.style={draw,rounded corners,align=center,minimum height=9mm,text width=2.45
 \draw[-{Latex}] (state)--(gate);
 \draw[-{Latex}] (gate)--(act);
 \draw[-{Latex},bend left=35,dashed] (gate) to node[above]{missing variable}(sense);
-\end{tikzpicture}
+\end{tikzpicture}}
 \caption{Proposed situation-engineering interface. The taxonomy is a conceptual
 systems framework; the present experiments validate only the controlled state
 update and response-policy components.}
