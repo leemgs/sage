@@ -1,0 +1,119 @@
+\section*{Discussion}
+
+The core insight is that relevance is not applicability. Retrieval can return a
+well-supported statement while a system still applies it to the wrong time,
+scope, epistemic state or possible world. Situation engineering turns this
+failure from an informal complaint about ``missing context'' into a set of
+state variables, update rules and behavioural consequences that can be tested
+separately.
+
+\subsection*{A complementary layer, not a replacement vocabulary}
+
+Prompt, context, retrieval, memory, tool, harness, evaluation, security and
+serving engineering retain distinct responsibilities. Prompts specify the task;
+context and retrieval supply evidence; memory preserves observations; tools
+provide capabilities; harnesses govern workflow and permissions; evaluations
+measure behaviour; serving systems manage resource constraints. Situation
+engineering owns the query-relative semantics of the active state and the
+propagation of unresolved applicability into policy. A useful contract is
+\begin{equation}
+(C_t,M_t,O_t,H_t)\rightarrow(\mathcal{S}_t,U_t,P_t),
+\end{equation}
+where context, memory, tool observations and harness traces produce candidate
+situations $\mathcal{S}_t$, unresolved variables $U_t$ and the permitted policy
+$P_t$.
+
+This contract prevents conceptual inflation. Retrieval quality should not be
+renamed situation engineering, and a JSON field named ``situation'' is not
+evidence of situation awareness. A system must show that state representation
+causally changes behaviour in predicted cases, that state uncertainty affects
+answering or action, and that failures can be assigned to sensing, update,
+validation, policy or generation.
+
+\subsection*{Implications for hallucination and agent evaluation}
+
+A generated claim can be textually entailed by a document yet wrong for the
+query. Evaluation should therefore record both support and applicability. In
+free-form generation, claims should be linked to the situation state and
+provenance on which they depend. In agents, tools should expose preconditions,
+state transitions and failure semantics rather than only free-text outputs;
+harnesses should block consequential actions while answer-critical state is
+unresolved. Evaluation engineering becomes the sensor layer that checks each
+transition and not merely the final answer.
+
+The response policy is also part of correctness. Clarification and abstention
+are not failures when the situation is under-specified. Conversely, excessive
+clarification is costly and can make systems unusable. Future evaluations should
+therefore report answer accuracy, clarification utility, unnecessary-question
+rate, abstention precision, selective risk, coverage, latency, token use and
+monetary cost. These measures make explicit the trade-off between semantic
+verification and serving efficiency.
+
+\subsection*{What is established, supported and proposed}
+
+This study establishes a formal error class, an interoperable state schema, a
+reference implementation and matched oracle-state ablations. Independent
+literature supports the premise that time- and place-dependent questions are
+common enough to matter. The study does not establish that current frontier
+models exhibit every proposed category at a particular frequency, nor that SCQA
+improves them under natural language. Those are hypotheses enabled by the
+released protocol, not completed results.
+
+This distinction changes the scientific role of the paper. The contribution is
+not a claim of a production-ready solution. It is a research scaffold that
+allows subsequent work to ask more precise questions: Is the dominant error in
+state sensing or state update? Does explicit state outperform a matched
+structured prompt? Does a temporal graph add value after controlling for token
+budget? When should a system ask rather than retrieve? How robust is a state to
+adversarially stale evidence? Which costs arise from maintaining provenance and
+multiple candidate worlds?
+
+\subsection*{A staged research programme}
+
+We propose six stages for cumulative evidence. Stage 1 uses formal and synthetic
+unit tests to verify semantics. Stage 2 evaluates natural-language situation
+sensing with slot, event, temporal, scope, modality, observer and world-state
+metrics. Stage 3 performs matched interventions on several model families while
+holding evidence and computation budgets constant. Stage 4 tests compositional
+and distributional generalization: unseen templates, longer event chains,
+nested scope, conflicting authoritative sources, multiple observers,
+multilingual data and multimodal observations. Stage 5 adds human annotation and
+interaction to measure clarification and abstention. Stage 6 evaluates
+long-running agents, state drift, security attacks, latency, cost and independent
+auditing.
+
+The corresponding maturity levels are SE0, implicit model-only reasoning; SE1,
+isolated state tags; SE2, provenance-linked state and update rules; SE3,
+competing hypotheses with retrieve/clarify/abstain policies; and SE4, learned
+multimodal sensing, multi-agent belief tracking, shift monitoring and independent
+audit. The current reference implementation is SE3 only for its seven supplied
+oracle variables. It is not SE4 and should not be presented as such.
+
+\subsection*{Limitations and risks}
+
+The diagnostic data are generated from a schema shared with the solver, so
+benchmark-solver circularity is intentional and limits external validity. The
+item count overstates statistical independence because examples share template
+families. The baselines are software controls, not state-of-the-art LLM
+systems. Confidence values are rule-derived and do not constitute neural
+calibration. No human participants, multilingual evaluation, multimodal sensing,
+frontier-model calls or deployed-agent study were completed. These limitations
+are not resolved by additional prose and require new experiments.
+
+Explicit state can also create new attack surfaces. An adversary may manipulate
+timestamps, source authority, identity, scope or world labels. A centralized
+state representation may expose sensitive user information or create false
+confidence in a flawed schema. Situation-engineered systems therefore require
+provenance, access control, privacy-preserving memory, conflict visibility and
+independent evaluation. ``Explicit'' must not be confused with ``correct''.
+
+\subsection*{Conclusion}
+
+Situation engineering provides a bounded and testable way to connect several
+communities working on reliable AI. Its durable contribution will depend not on
+the adoption of a new label, but on whether researchers use the interfaces to
+produce stronger measurements, interoperable state representations and systems
+that know when available evidence does and does not apply. The present artefact
+is intended as the first rung of that evidence ladder: a transparent formal and
+software scaffold on which natural-language, multi-model and deployment studies
+can be built.

@@ -1,0 +1,145 @@
+\section*{Methods}
+
+\subsection*{Problem formulation}
+
+An item consists of a query $q$, evidence claims $E$, a query time and, where
+relevant, an observer or possible-world identifier. A claim may be supported in
+isolation but inapplicable to the query. We define
+\begin{equation}
+\mathrm{Apply}(e,q,S)\in\{\mathrm{valid},\mathrm{invalid},\mathrm{unresolved}\},
+\end{equation}
+where $S$ is the active situation state. The system first constructs or receives
+$S$, then updates competing claims and selects an action from answering,
+retrieval, clarification, abstention or task-specific action.
+
+The end-to-end system is decomposed as
+\begin{equation}
+(q,E)\xrightarrow{f_{sense}}\hat S\xrightarrow{f_{update}}\hat S'
+\xrightarrow{\pi}a\xrightarrow{g}y.
+\end{equation}
+This decomposition supports stage-specific evaluation. The current controlled
+experiment supplies $S$ directly and evaluates $f_{update}$, $\pi$ and the
+deterministic answer renderer. It does not evaluate $f_{sense}$ on unrestricted
+language.
+
+\subsection*{Situation schema}
+
+The schema contains actors and entities; events and state transitions; valid
+and observation time; scope; modality and source status; observer-specific
+knowledge; possible-world identity; provenance; and unresolved answer-critical
+variables. Update rules include temporal supersession, cancellation,
+source-authority preference where specified, scope containment, observer
+visibility and world separation. Unresolved variables are preserved rather than
+converted into a guessed binary state.
+
+\subsection*{SituationCatch-Bench generation}
+
+The deterministic generator creates 600 instances for each of seven categories
+using seeded lexical variation and shuffled claim order. Each item includes the
+question, claims, structured situation fields, gold action, gold answer aliases
+and category. The categories and gold semantics are documented in the bundled
+datasheet. Generation and evaluation are intentionally co-designed: the
+benchmark is a conformance suite for explicit semantics, analogous to unit tests
+for a software protocol, rather than an independent estimate of natural-language
+performance.
+
+Future benchmark versions should use separate authors for data construction and
+system development, clustered scenario families, hidden generators, natural and
+semi-synthetic sources, adjudicated annotations, compositional splits and
+adversarial state manipulations. Recommended natural-data fields and annotation
+instructions are supplied in the Supplementary Information.
+
+\subsection*{Reference implementation}
+
+SCQA is a deterministic Python reference implementation with no trained
+parameters. It parses the supplied structured fields, performs category-specific
+state updates and selects a permitted response. The three software-control
+baselines select claims using lexical overlap, recency or latest mention and do
+not maintain the complete situation state. These controls test whether the
+specified state variables are necessary for the generated invariants; they are
+not intended to represent competitive LLM, RAG or agent baselines.
+
+\subsection*{Metrics and analysis}
+
+The primary diagnostic measure is exact action-and-answer accuracy. For items
+requiring clarification, correctness requires selecting clarification rather
+than providing the latent answer. Category-level accuracy and matched component
+ablations localize failure mechanisms. Because instances share template
+families, item-level confidence intervals and $P$ values are not used as primary
+scientific evidence in the revised manuscript. The released scripts retain
+item-level summaries for regression testing, but future natural-language studies
+should use scenario- or template-clustered bootstrap intervals, paired tests,
+multiple-comparison control and pre-specified primary outcomes.
+
+Rule-derived confidence values from the original implementation are not treated
+as neural calibration. End-to-end work should report Brier score, expected
+calibration error, selective risk, risk--coverage area, clarification utility
+and abstention precision/recall using model- or state-derived probabilities.
+
+\subsection*{Ablation design}
+
+Seven ablations independently remove temporal validity, source status, modality,
+scope, observer knowledge, world identity or missing-variable detection. Each
+ablation is applied to all items, and its expected effect is specified before
+execution. The purpose is to test causal alignment between representation and
+failure category, not to estimate an average treatment effect in natural text.
+
+\subsection*{Protocol for end-to-end multi-model evaluation}
+
+A confirmatory study should compare at least the following matched conditions:
+direct prompting; chain-of-thought or structured prompting; date-aware context;
+standard RAG; temporal or event-aware RAG; reflection or verification agent; and
+Situation Engineering. The generation model, evidence set, retrieval corpus,
+maximum context, output budget and sampling parameters should be held constant
+where the design permits. At least three proprietary and three open-weight model
+families should be evaluated using immutable model identifiers.
+
+For each call, researchers should archive the prompt, evidence, raw response,
+normalized answer, action decision, model identifier, provider, execution date,
+latency, token use, monetary cost, errors and retries. Evaluation must report
+gold-state, predicted-state and deliberately corrupted-state conditions. The
+predicted-state condition should score entity/event extraction, temporal
+relations, validity intervals, scope, modality, source status, observer
+knowledge, possible-world identity and final answer. This enables error
+attribution to sensing, updating, policy or generation.
+
+The bundled \texttt{code/run\_multimodel\_eval.py} provides provider adapters and
+refuses to create placeholder outputs when credentials are absent. No
+frontier-model performance values are reported because such calls were not
+executed in the study environment. The script is an executable protocol, not a
+completed experiment.
+
+\subsection*{Human and deployment evaluation}
+
+Human evaluation should use at least three independent annotators per natural
+item, blinded to method, with a documented adjudication procedure. Recommended
+outcomes include state-slot agreement, answer correctness, appropriateness of
+clarification or abstention, unnecessary clarification and perceived
+justification quality. Studies involving participants should report ethics
+approval or exemption, consent, compensation and privacy handling.
+
+Deployment studies should additionally measure state drift, invalidation
+latency, recovery after contradictory observations, action-precondition
+violations, security attacks on state metadata, throughput, tail latency,
+energy, token use and cost. The state and provenance required to audit a
+consequential decision should be retained subject to privacy and access-control
+requirements.
+
+\subsection*{Reproducibility and reporting protocol}
+
+The package contains the generator, generated benchmark, reference
+implementation, predictions, figures, datasheet and exact commands. To make
+future systems comparable, authors should report: (1) the situation schema;
+(2) which variables are supplied, retrieved or inferred; (3) update and conflict
+semantics; (4) response and action policies; (5) provenance and observability;
+(6) stage-specific errors; (7) prompt, context, retrieval, memory, tool and
+harness configurations; and (8) resource costs. A machine-readable experiment
+manifest is recommended.
+
+\subsection*{Ethics and use of generative AI}
+
+The controlled benchmark contains no personal records or human participants.
+Generative AI assisted drafting and software development. The author inspected
+the code, generated outputs, calculations and references and remains responsible
+for the manuscript. No empirical values were fabricated to represent unexecuted
+model calls or human studies.

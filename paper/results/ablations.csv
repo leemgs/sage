@@ -1,0 +1,9 @@
+ablation,accuracy,errors
+none,1.0,0
+time,0.935,273
+source,1.0,0
+modality,0.8571428571428571,600
+scope,0.8571428571428571,600
+observer,0.8571428571428571,600
+world,1.0,0
+missing,0.8571428571428571,600

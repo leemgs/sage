@@ -1,0 +1,43 @@
+\section*{Related conceptual foundations}
+
+Situation engineering draws on several mature traditions but is not identical
+to any one of them. Situation semantics treats meaning relative to partial
+situations~\cite{barwise1983situations}. Situation and event calculi formalize
+how actions change fluents over time~\cite{mccarthy1969problems,
+kowalski1986event,reiter2001knowledge}. Temporal reasoning provides interval
+relations and validity semantics~\cite{allen1983interval}. Belief revision and
+truth-maintenance research asks how an agent should update inconsistent
+commitments~\cite{alchourron1985logic,doyle1979truth}. POMDPs and dialogue-state
+tracking maintain uncertainty over latent states for sequential decisions
+~\cite{kaelbling1998pomdp,henderson2014second}. Temporal knowledge graphs and
+bitemporal databases record changing facts and distinguish when a fact is valid
+from when it is stored~\cite{snodgrass1992temporal}.
+
+The proposed contribution is a systems-level applicability contract for
+generative and agentic AI. It requires these representations to connect to
+natural-language evidence, provenance, unresolved alternatives and a response
+policy that can answer, retrieve, clarify, abstain or act. Thus the novelty is
+not a new universal logic. It is the explicit decomposition of modern AI
+reliability into (i) sensing a situation from heterogeneous evidence, (ii)
+maintaining a provenance-linked state, (iii) validating applicability and
+(iv) propagating unresolved state into behaviour. This framing allows existing
+logical, probabilistic and neural methods to be compared through a common set of
+interfaces and failure measurements.
+
+\begin{table}[t]
+\caption{Relationship between neighbouring research areas and situation engineering. The entries describe typical emphasis rather than hard exclusions.}
+\label{tab:foundations}
+\centering\small
+\begin{tabularx}{\linewidth}{@{}p{2.5cm}XXXX@{}}
+\toprule
+Area & Primary object & Typical strength & Common omission for generative AI & Situation-engineering interface \\
+\midrule
+Situation/event calculus & Fluents and actions & Formal state transition & Natural-language sensing and provenance-aware response policy & Supplies transition semantics \\
+Belief revision / truth maintenance & Consistent commitments & Conflict and retraction & Query-relative scope, observer and tool action & Supplies update and conflict rules \\
+Dialogue-state tracking / POMDPs & Latent interaction state & Uncertainty and sequential policy & General factual validity and multiple possible worlds & Supplies probabilistic state tracking \\
+Temporal KG / bitemporal data & Time-indexed facts & Validity and transaction history & Clarification, abstention and generated-claim audit & Supplies state storage and temporal retrieval \\
+RAG / agent systems & Evidence and actions & Information access and task completion & Applicability of retrieved evidence & Supplies observations and capabilities \\
+Situation engineering & Query-relative applicable state & Cross-layer applicability control & End-to-end sensing remains open & Integrates state, provenance and behaviour \\
+\bottomrule
+\end{tabularx}
+\end{table}

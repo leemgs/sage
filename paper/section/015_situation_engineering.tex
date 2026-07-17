@@ -1,0 +1,266 @@
+\section*{From prompt engineering to situation engineering}
+
+The reliability stack surrounding foundation models has expanded in response to
+successive failure modes. Prompt engineering shapes the immediate instruction:
+what task to perform, which role to assume and how to express the output.
+Context engineering expands the unit of design to the information payload,
+including retrieval, memory, examples, tool observations and context-window
+management~\cite{mei2025context}. Harness engineering expands it again to the
+runtime substrate that mediates actions, permissions, verification, persistence
+and feedback~\cite{zhong2026harness,lin2026ahe}. These layers are complementary,
+but none necessarily constructs an explicit answer to a different question:
+\emph{which interpretation of the available evidence governs the present
+interaction?}
+
+We use \emph{situation engineering} for the systematic design of representations,
+update rules, sensing processes and decision policies that establish the active
+world state before an AI system commits to an answer or action. The term is not
+intended to replace context, memory, retrieval, tools, evaluation or harness
+engineering. It identifies the semantic control plane between information
+availability and justified behaviour. Context engineering can place an
+appointment notice and a later resignation in the same window. Retrieval
+engineering can find both. Memory engineering can retain both across sessions.
+Tool engineering can expose an authoritative registry. Harness engineering can
+guarantee that the records are fetched, logged and checked. Evaluation
+engineering can detect that the final answer is wrong. Situation engineering is
+the layer that determines, before commitment, that the resignation supersedes
+the appointment for a question about the current office holder.
+
+\subsection*{A layered taxonomy of AI systems engineering}
+
+The emerging vocabulary of ``engineering'' around generative AI mixes design
+objects that operate at different levels. Treating every term as a peer produces
+both overlap and conceptual inflation. We therefore organize the stack into
+three interacting planes (Fig.~\ref{fig:engineering-planes}). The
+\emph{semantic and cognitive plane} determines instructions, evidence, memory
+and the active situation. The \emph{action and runtime plane} determines which
+capabilities can be invoked and how multi-step execution is governed. The
+\emph{measurement and resource plane} determines how behaviour is evaluated and
+how inference is delivered under latency, throughput, cost and energy budgets.
+This grouping is functional rather than organizational: one production team or
+one software framework may implement several planes.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\small, node distance=4mm and 5mm,
+box/.style={draw,rounded corners,align=center,minimum height=8mm,text width=2.75cm,fill=white},
+plane/.style={draw,rounded corners,inner sep=5mm}]
+\node[box] (prompt) {Prompt\\engineering};
+\node[box,right=of prompt] (context) {Context and retrieval\\engineering};
+\node[box,right=of context] (memory) {Memory\\engineering};
+\node[box,right=of memory,draw=black,very thick] (situation) {Situation\\engineering};
+\node[plane,fit=(prompt)(context)(memory)(situation),label=above:{Semantic and cognitive plane}] (p1) {};
+
+\node[box,below=12mm of prompt] (tool) {Tool / function-calling\\engineering};
+\node[box,right=of tool] (protocol) {Protocol and interface\\engineering};
+\node[box,right=of protocol] (harness) {Harness and orchestration\\engineering};
+\node[box,right=of harness] (safety) {Guardrail and security\\engineering};
+\node[plane,fit=(tool)(protocol)(harness)(safety),label=above:{Action and runtime plane}] (p2) {};
+
+\node[box,below=12mm of tool] (eval) {Evaluation\\engineering};
+\node[box,right=of eval] (obs) {Observability and provenance\\engineering};
+\node[box,right=of obs] (serve) {Inference / serving\\engineering};
+\node[box,right=of serve] (ops) {Reliability and cost\\engineering};
+\node[plane,fit=(eval)(obs)(serve)(ops),label=above:{Measurement and resource plane}] (p3) {};
+
+\draw[-{Latex}] (prompt) -- (context);
+\draw[-{Latex}] (context) -- (memory);
+\draw[-{Latex}] (memory) -- (situation);
+\draw[-{Latex}] (tool) -- (harness);
+\draw[-{Latex}] (protocol) -- (harness);
+\draw[-{Latex}] (harness) -- (safety);
+\draw[-{Latex}] (eval) -- (obs);
+\draw[-{Latex}] (serve) -- (ops);
+\draw[-{Latex},dashed] (context) -- (tool);
+\draw[-{Latex},dashed] (memory) -- (harness);
+\draw[-{Latex},very thick] (situation) -- (harness);
+\draw[-{Latex},very thick] (harness) -- (situation);
+\draw[-{Latex},dashed] (situation) -- (eval);
+\draw[-{Latex},dashed] (obs) -- (situation);
+\end{tikzpicture}
+\caption{A functional taxonomy of engineering disciplines surrounding modern AI systems. Solid horizontal arrows indicate common within-plane dependencies; dashed arrows indicate cross-plane feedback. Situation engineering is distinguished by its responsibility for evidence applicability and active-world-state control, not by ownership of a particular software component.}
+\label{fig:engineering-planes}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\caption{Complementary engineering disciplines for reliable AI. Boundaries are
+analytical, and substantial implementation overlap is expected.}
+\label{tab:engineering-stack}
+\begin{tabularx}{\linewidth}{p{2.8cm}p{3.0cm}X p{3.0cm}}
+\toprule
+Discipline & Primary design object & Reliability question & Characteristic failure if absent \\
+\midrule
+Prompt engineering & Instructions, roles and output constraints & Did the model understand what it was asked to do? & Wrong task, format or reasoning procedure \\
+Context engineering & Evidence payload and context-window allocation & Did the model receive the information needed to do it? & Missing, irrelevant or poorly organized evidence \\
+Retrieval engineering & Query formulation, indexes, ranking and freshness & Was the best available evidence found efficiently? & Relevant evidence omitted or stale evidence over-ranked \\
+Memory engineering & Write, consolidation, forgetting and recall policies & What should persist across turns and sessions? & Lost commitments, repeated mistakes or stale memories \\
+Situation engineering & Time-indexed, scoped, observer-relative world state & Which available facts apply here and now, and what remains unresolved? & Confident use of expired, out-of-scope, hypothetical or unknown facts \\
+Tool / function-calling engineering & Capability schemas, descriptions, preconditions and error semantics & Can the model select and invoke the right capability correctly? & Wrong tool, malformed arguments or silent tool failure \\
+Protocol / interface engineering & Interoperability, lifecycle, authorization and capability negotiation & Can components exchange context and actions safely and consistently? & Integration mismatch, privilege confusion or ambiguous contracts \\
+Harness engineering & Orchestration, permissions, retries, checkpoints and recovery & Can the system execute a multi-step workflow safely? & Unchecked actions, brittle loops or unrecoverable execution \\
+Evaluation engineering & Tasks, rubrics, judges, counterfactuals and regression suites & Can reliability claims be measured and falsified? & Hidden regressions, metric gaming or unsupported claims \\
+Observability / provenance engineering & Traces, state snapshots, lineage and audit records & Can an operator reconstruct why the output occurred? & Un-debuggable failures and unverifiable decisions \\
+Inference / serving engineering & Scheduling, batching, caching, placement and numerical execution & Can the system meet latency, throughput, cost and energy constraints? & Timeouts, overload, excessive cost or quality loss under load \\
+Guardrail / security engineering & Policy enforcement, isolation, authorization and abuse resistance & Are actions and data flows constrained to acceptable risk? & Unsafe action, leakage, injection or privilege escalation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Several relationships are especially important. Retrieval engineering is a
+specialized part of context acquisition, but also has its own ranking,
+indexing, freshness and systems questions. Memory engineering stores and
+recovers information, whereas situation engineering decides whether a recovered
+memory is still valid, is superseded, belongs to the current user or world, or
+should remain only a competing hypothesis. Tool engineering specifies
+capabilities and invocation contracts; harness engineering composes those
+capabilities into guarded workflows. Protocols such as the Model Context
+Protocol standardize how prompts, resources and tools are exposed, but a
+protocol does not by itself determine the semantic applicability of the data it
+transports~\cite{mcp2025}. Evaluation engineering is not merely a final score:
+it is the sensing system for the engineering lifecycle, translating desired
+behaviour into tests, traces and regression signals~\cite{anthropic2026evals,openai2026evals}.
+Inference and serving engineering are orthogonal but consequential because
+resource pressure can alter truncation, retrieval depth, model choice and
+verification budgets, thereby indirectly changing situation quality~\cite{li2024serving}.
+
+\subsection*{Situation engineering as an evidence-applicability discipline}
+
+A situation is not a longer prompt and not merely a collection of metadata. It
+is a constrained interpretation of evidence relative to a query. Let $E$ be the
+available evidence and $q$ a query. Context selection produces a subset or
+representation $C(q,E)$. Memory contributes retained observations $M_t$.
+Tools produce new observations $O_t$, and a harness supplies an execution trace
+$H_t$. Situation construction produces an active state
+$S_t(q,C,M_t,O_t,H_t)$ containing the variables that decide whether each claim
+is applicable. Generation should therefore be conditioned not only on evidence
+relevance but on an applicability relation
+\begin{equation}
+\mathrm{Apply}(e,q,S_t)\in\{\mathrm{valid},\mathrm{invalid},\mathrm{unresolved}\}.
+\end{equation}
+A reliable system must preserve the third value. Converting unresolved
+applicability into a plausible binary judgement is one mechanism by which
+fluent systems hallucinate.
+
+We distinguish six operations. \emph{Situation sensing} extracts events,
+actors, times, scopes, source status, perspectives and world identifiers from
+language, databases, tools or sensors. \emph{Situation assembly} links those
+observations into candidate states. \emph{Situation updating} applies event and
+belief transitions as new evidence arrives. \emph{Situation validation} checks
+consistency, provenance, freshness and unresolved alternatives. \emph{Situation
+policy} selects whether to answer, retrieve, clarify, act or abstain. Finally,
+\emph{situation observability} records which state and evidence justified the
+decision. SCQA operationalizes a minimal version of these operations for
+question answering.
+
+\subsection*{Why model scale, tools and longer context are insufficient}
+
+Increasing model capacity may improve event extraction and implicit reasoning,
+but it does not create a contract that the active state must be represented,
+updated and inspected. Longer windows can contain more mutually incompatible
+states: old and new policies, proposals and final decisions, public facts and
+private beliefs, or real and hypothetical scenarios. More tools can expand both
+competence and the consequences of applying an incorrect state. More memory can
+preserve both useful commitments and obsolete assumptions. The reliability
+objective is therefore not to maximize information volume or capability count,
+but to minimize answer-critical unresolved applicability subject to retaining
+the evidence and actions needed for the task.
+
+A compact systems formulation is
+\begin{equation}
+\begin{split}
+\text{trustworthy outcome}={}&\text{task alignment}+\text{evidence coverage}
++\text{state continuity}\\
+&+\text{capability correctness}+\text{runtime control}
++\text{validated situation state}\\
+&+\text{measurement and auditability}+\text{resource feasibility}.
+\end{split}
+\end{equation}
+These terms map respectively to prompt, context/retrieval, memory, tool,
+harness/security, situation, evaluation/observability and serving engineering.
+The expression is a design decomposition rather than an additive statistical
+model: failure in any term can dominate the outcome.
+
+\subsection*{Situation engineering as the coordinator of state-bearing components}
+
+Situation engineering has particularly close interfaces with four neighbouring
+disciplines. First, retrieval should be driven by missing situation variables,
+not only semantic similarity. A system uncertain about whether a policy is
+active should retrieve enactment, effective-date and repeal evidence rather than
+more documents that merely discuss the policy. Second, memory should be event-
+and provenance-aware. It should store when a fact was learned, when it was valid,
+which agent observed it and what later event superseded it~\cite{du2026memory}.
+Third, tools should declare state effects and preconditions, analogous to typed
+transactions: a booking tool should report whether a reservation is held,
+confirmed, expired or cancelled, not merely return free text. Fourth, harnesses
+should enforce situation invariants before consequential action, for example
+blocking payment when identity, amount, authorization scope or transaction world
+remains unresolved.
+
+This coordinator role does not make situation engineering a universal container
+for all other engineering. It owns the semantics of the active state and the
+policy consequences of uncertainty in that state. The retriever still owns
+ranking quality; the memory subsystem still owns retention and forgetting; the
+tool layer still owns safe invocation; the harness still owns workflow integrity;
+the evaluator still owns valid measurement; and the serving layer still owns
+resource efficiency. A useful implementation contract is therefore a typed
+interface rather than organizational consolidation:
+\begin{equation}
+(C_t,M_t,O_t,H_t)\rightarrow (\mathcal{S}_t,U_t,P_t),
+\end{equation}
+where $\mathcal{S}_t$ is a set of candidate situations, $U_t$ their uncertainty
+and unresolved variables, and $P_t$ the permitted response or action policy.
+
+\subsection*{A maturity model for situation-engineered AI}
+
+We propose five levels that turn the concept into a falsifiable systems agenda.
+At SE0, the system has no explicit situation representation and relies on
+language-model inference alone. At SE1, it tags isolated variables such as time
+or location. At SE2, it maintains an explicit state with provenance and update
+rules. At SE3, it detects missing variables, competing hypotheses and
+contradictions, and can clarify or abstain. At SE4, it learns and audits
+situation states across modalities, agents and long-running environments while
+quantifying uncertainty and distribution shift. SituationCatch-Bench primarily
+tests the transition from SE0/SE1 to SE2/SE3 under controlled conditions.
+
+This maturity model prevents a common category error. A system that prints a
+JSON field called ``situation'' is not necessarily situation-aware. Evidence is
+required that the representation causally changes behaviour in the predicted
+cases, that ablations recover matching failure signatures, and that uncertainty
+in the state propagates to uncertainty in the answer. The experiments below
+provide this causal diagnostic for seven variables, while leaving natural-text
+sensing and SE4 operation as open problems.
+
+\subsection*{Research agenda for epistemically regulated AI}
+
+A useful reliability target is not zero error but appropriate epistemic regulation. People ask for
+clarification, track who knows what, revise beliefs, recognize hypotheticals and
+withhold judgement when the situation is underspecified. A useful computational
+target is therefore \emph{human-like epistemic regulation}: the ability to
+identify which state is active, notice when it cannot be determined and choose
+a proportionate response. Progress requires connected research programmes
+across the engineering planes.
+
+Neural situation sensing must extract implicit and distributed state variables
+from natural text, speech, images and operational traces. Dynamic state models
+must represent valid time, transaction time, event supersession, causal
+dependencies and observer-relative beliefs without erasing uncertainty. Active
+information acquisition must select the retrieval, memory recall, tool call or
+clarification that most reduces answer-critical uncertainty. Situation-
+conditioned calibration must estimate risk from state completeness, conflict and
+provenance in addition to model logits. Evaluation engineering must separately
+score sensing, updating, policy and final response under adversarially stale or
+manipulated evidence. Serving research must study how latency and cost budgets
+change the achievable depth of verification and state maintenance.
+
+These programmes suggest that situation engineering can serve as a common
+semantic interface among otherwise separate communities studying RAG, temporal
+reasoning, knowledge graphs, agent memory, tools, protocols, agent harnesses,
+uncertainty, human--AI interaction, serving systems and AI safety. An event-
+memory system can expose a situation-state API; a retriever can optimize for
+missing variables; a tool can publish preconditions and state transitions; a
+harness can prevent action until state invariants pass; an evaluator can probe
+state-specific counterfactuals; and a generator can cite the state and evidence
+on which each claim depends. The practical goal is not a new label for existing
+components, but an auditable contract: no consequential answer or action should
+be produced without an explicit account of the situation in which it is valid.

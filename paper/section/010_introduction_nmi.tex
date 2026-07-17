@@ -1,0 +1,65 @@
+\label{sec:introduction}
+
+Large language models (LLMs) increasingly answer questions by combining
+parametric knowledge with retrieved documents, tools, memory and long
+conversational histories. These mechanisms improve evidence coverage, but they
+do not guarantee that a system identifies the \emph{situation} in which a fact
+is valid. A model may read that a person was appointed and later resigned, yet
+still name that person as the current office holder. It may turn a proposal
+into a decision, extend a local policy to an entire organization, answer from
+information unavailable to the queried observer, or collapse a hypothetical
+scenario into the real world. In each case the decisive evidence can already be
+present. The failure is not simply missing knowledge; it is incorrect evidence
+applicability.
+
+We define \emph{situation blindness} as producing an answer or action that is
+supported by at least one available claim but inconsistent with the time, scope,
+modality, observer knowledge or possible world required by the query. This
+category matters because conventional factuality checks can mark the supporting
+claim as true while missing that it is true in the wrong situation. Natural
+question-answering resources already show that a material subset of ordinary
+questions depends on extra-linguistic time or place, and that updated evidence
+does not eliminate the resulting performance loss~\cite{zhang2021situatedqa,
+vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa}.
+
+Retrieval-augmented generation supplies external evidence~\cite{lewis2020rag};
+self-reflective and tool-using systems add critique and action
+~\cite{asai2024selfrag,yao2023react,schick2023toolformer}; context engineering
+organizes the inference-time information payload~\cite{mei2025context}; and
+agent harnesses mediate tools, memory, permissions, verification and feedback
+~\cite{zhong2026harness,lin2026ahe}. These layers are necessary, but none
+requires an explicit answer to a separate question: \emph{which interpretation
+of the available evidence governs this interaction now?}
+
+We call the corresponding discipline \emph{situation engineering}: the
+systematic design of representations, sensing interfaces, update rules,
+validation procedures and response policies that establish the active
+query-relative world state before an AI system commits to an answer or action.
+For a query $q$ and evidence $E$, a minimal state is
+\begin{equation}
+S(q,E)=\{\mathcal{A},\mathcal{V},\mathcal{T},\mathcal{P},\mathcal{M},
+\mathcal{K},\mathcal{W},\mathcal{U}\},
+\end{equation}
+where the variables denote actors, events, valid time, scope, modality and
+source status, observer-specific knowledge, possible world and unresolved
+answer-critical information. A policy then selects
+\begin{equation}
+\pi(S)\in\{\textsc{Answer},\textsc{Clarify},\textsc{Retrieve},
+\textsc{Abstain},\textsc{Act}\}.
+\end{equation}
+This decomposition separates evidence availability from evidence applicability.
+
+The present paper makes four bounded contributions. First, it defines situation
+blindness as a testable failure class and relates it to established work on
+situations, temporal reasoning, belief state tracking and knowledge revision.
+Second, it specifies situation engineering as a systems contract connecting
+prompt, context, retrieval, memory, tool, harness, evaluation and serving
+engineering without subsuming them. Third, it introduces SCQA and
+SituationCatch-Bench as a transparent oracle-state diagnostic for causal unit
+tests and component ablations. Fourth, it provides a staged evaluation and
+reporting protocol for future end-to-end studies on natural language, multiple
+models, human clarification and deployed agents. We deliberately do not claim
+that the current rule-based implementation solves situation sensing in
+unrestricted text. Instead, the paper separates the solved control invariants
+from the open perception, learning and generalization problems so that future
+work can measure progress without conflating them.
