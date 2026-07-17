@@ -39,6 +39,12 @@ numbers are deterministic consequences of the benchmark and implementation and
 should be interpreted as regression-test coverage, not as estimates of model
 performance in a population of natural questions.
 
+The 85.7\% value is structurally induced: the categories are equally weighted
+and the latest-mention control systematically fails the hidden-premise category,
+so success on six categories yields $6/7=85.7\%$. The 14.3 percentage-point gap
+is therefore not presented as an empirical effect size against a competitive
+baseline.
+
 \begin{figure}[t]
 \centering
 \includegraphics[width=.76\linewidth]{figures/accuracy.pdf}
@@ -83,6 +89,45 @@ predicted category-specific failure, providing a causal software diagnostic.}
 \label{fig:ablation}
 \end{figure}
 
+\subsection*{Predicted states expose a sensing bottleneck}
+
+We removed access to the structured claim fields and reconstructed a restricted
+situation state from claim text using the released deterministic sensor. Across
+all 4,200 diagnostic instances, action-and-answer accuracy fell from 100.0\%
+with gold states to 77.9\% with predicted states. Deliberately overwriting
+source status, modality and scope in the predicted state reduced accuracy
+further to 35.1\%. These are complete executions, not projected values. They
+show that the oracle result is not preserved when situation sensing is
+imperfect. Because the texts are generated from the same seven scenario
+families and the sensor is a transparent rule baseline, these results remain
+controlled diagnostics rather than evidence of natural-language or LLM
+generalization.
+
+Claim-level scoring localizes the sensor's limitations
+(Table~\ref{tab:slot-sensing}). Event type reached 92.3\%, modality 100.0\%,
+scope 61.5\%, actor 30.8\% and joint source/status 30.8\%. Temporal expressions
+and validity intervals scored 0\% because the generated claim strings omit the
+numeric times stored in the hidden schema: a system cannot reconstruct a state
+variable that is neither expressed nor retrieved. Observer and world slots
+reached 92.3\% and 100.0\% under repetitive generated language and are not
+estimates of natural extraction. In this deterministic pipeline, 927 final
+errors are attributable to sensing, zero to update/policy under gold state, and
+generation is a fixed renderer.
+
+\begin{table}[t]
+\caption{Claim-level accuracy of the deterministic text sensor
+($n=7{,}800$ claims per slot).}
+\label{tab:slot-sensing}
+\centering\scriptsize
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Slot & Actor & Event & Time & Validity & Scope & Modality & Source & Observer & World\\
+\midrule
+Accuracy (\%) & 30.8 & 92.3 & 0.0 & 0.0 & 61.5 & 100.0 & 30.8 & 92.3 & 100.0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection*{Natural-language benchmarks establish prevalence, not SCQA efficacy}
 
 Independent resources show that situation dependence is not confined to the
@@ -119,9 +164,9 @@ Evidence level & What is available & Permitted claim \\
 E1: formal definition & Situation schema and applicability relation & The failure class is operationally testable \\
 E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable and causally separable \\
 E3: natural prevalence & Independent temporal/situated QA literature & Situation dependence occurs in natural questions \\
-E4: predicted-state models & Not completed in this study & Needed to measure sensing and update error \\
-E5: multi-model intervention & Execution harness only; no credentials in the study environment & Needed to claim LLM improvement and generality \\
-E6: deployment / human study & Not completed & Needed for operational safety and human-level comparisons \\
+E4: predicted-state control & Deterministic text sensor on 4,200 generated items & Sensing errors reduce controlled end-to-end accuracy; natural-text generalization remains open \\
+E5: multi-model intervention & Execution harness only; no successful model responses & Needed to claim LLM improvement and generality \\
+E6: deployment / human study & Not completed & Needed for operational safety and human comparison \\
 \bottomrule
 \end{tabularx}
 \end{table}

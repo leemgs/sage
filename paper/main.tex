@@ -26,7 +26,12 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, pdftitle={Situation engineering for evidence-applicable artificial intelligence}, pdfsubject={Situation engineering, evidence applicability and reliable AI}, pdfkeywords={situation engineering, evidence applicability, reliable AI, temporal reasoning, hallucination}}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue,
+bookmarks=true, bookmarksopen=true,
+pdftitle={Situation engineering for evidence-applicable artificial intelligence},
+pdfauthor={Geunsik Lim},
+pdfsubject={Situation engineering, evidence applicability and reliable AI},
+pdfkeywords={situation engineering, evidence applicability, reliable AI, temporal reasoning, hallucination}}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{makecell}
@@ -103,35 +108,47 @@
 
 %% ---- Main text (NCS structure: Intro → Results → Discussion) ---
 \ifNMIframing
+  \pdfbookmark[1]{Introduction}{bookmark-introduction}
   \input{section/010_introduction_nmi}         % NMI-reframed introduction
 \else
   \input{section/010_introduction}             % original introduction
 \fi
+\pdfbookmark[1]{Related Work}{bookmark-related}
 \input{section/012_related_work}
+\pdfbookmark[1]{Situation Engineering Framework}{bookmark-framework}
 \input{section/015_situation_engineering}
+\pdfbookmark[1]{Results}{bookmark-results}
 \input{section/025_results_ncs}
+\pdfbookmark[1]{Discussion}{bookmark-discussion}
 \input{section/060_discussion}
 
 %% ---- Methods (Nature: starred section, not counted in word limit) ----
+\pdfbookmark[1]{Methods}{bookmark-methods}
 \input{section/070_methods}
 
 %% ---- Data availability (Nature Portfolio: standalone statement) ----
 \section*{Data availability}
-SituationCatch-Bench v0.1 is included in the submission package as
+SituationCatch-Bench v0.1 is included in the public source repository at
+\url{https://github.com/leemgs/sage} and in the submission package as
 \texttt{data/situationcatch\_bench.jsonl}, together with its deterministic
 generator, datasheet and item-level outputs. This package is sufficient to
-reproduce the controlled results. A public archival repository, immutable
-release, licence and DOI are required before acceptance; no placeholder DOI is
-presented as an existing deposit.
+reproduce the controlled results. The exact reviewed version is identified by
+the Git commit attached to the submission. An immutable archival release, an
+institutionally approved licence and DOI remain required before acceptance; no
+placeholder DOI is represented as an existing deposit.
 
 %% ---- Code availability (Nature Portfolio: standalone statement) ----
 \section*{Code availability}
 The complete executable implementation is included under \texttt{code/}.
-Running \texttt{python code/run\_experiments.py --n-per-category 600}
-regenerates the benchmark, predictions, summaries and ablations without network
-access or proprietary dependencies. The multi-model adapter deliberately exits
-when provider credentials are absent and never creates synthetic API results.
-A public immutable release and archival DOI remain pre-acceptance requirements.
+Running \texttt{PYTHONPATH=code python code/run\_experiments.py}
+regenerates gold-, predicted- and corrupted-state outputs without network
+access or proprietary dependencies. The multi-model adapter records raw
+responses and errors and never creates synthetic API results. The annotation
+program requires three complete independent packets before reporting agreement.
+Source and item-level outputs are also available at
+\url{https://github.com/leemgs/sage}. The repository README records exact
+commands; \texttt{SHA256SUMS.txt} records packaged artefact checksums. A public
+immutable release and archival DOI remain pre-acceptance requirements.
 
 %% ---- Author Contributions ---------------------------------
 \section*{Author Contributions}
@@ -150,11 +167,14 @@ The author declares no competing interests.
 \input{section/095_reference_nature.tex}
 
 \section*{AI-use disclosure}
-Generative AI tools assisted language drafting, code scaffolding and editorial
-revision. The author reviewed all generated text and code, independently checked
-the reported controlled outputs and references, and takes responsibility for the
-manuscript. Generative AI was not treated as an author, annotator or source of
-unexecuted empirical measurements.
+OpenAI Codex, based on GPT-5, assisted English-language drafting, editorial
+restructuring, Python code scaffolding and test generation. An image-generation
+model produced the repository logo, which is not scientific evidence. The
+author reviewed every modified manuscript section and source file, executed the
+tests and controlled measurements, and checked bibliographic titles and
+destination URLs against publisher, proceedings or preprint pages. Generative
+AI was not treated as an author or annotator and did not supply human labels,
+model responses or unexecuted empirical measurements.
 
 %% ---- Supplementary Information --------------------------------
 %% NMI: submitted as a SEPARATE file — see supplementary.tex

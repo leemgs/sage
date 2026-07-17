@@ -10,6 +10,10 @@ Each JSONL item contains id, category, query time, question, claims, required va
 
 \section*{Supplementary Note 2: Complete aggregate results}
 \input{supplementary/results_table.tex}
+SCHR is the complement of exact accuracy in this single-answer controlled
+setting and is not interpreted as an independent outcome. ECE is computed from
+rule-assigned confidence with small seeded perturbations; it is retained only as
+a software regression smoke test and is not evidence of neural calibration.
 
 \section*{Supplementary Note 3: Category results}
 \input{supplementary/category_table.tex}
@@ -18,7 +22,10 @@ Each JSONL item contains id, category, query time, question, claims, required va
 \input{supplementary/ablation_table.tex}
 
 \section*{Supplementary Note 5: Reproduction}
-Run \texttt{python code/run\_experiments.py --n-per-category 600 --data data --out results}. The command regenerates the dataset and all CSV results deterministically.
+From the repository root, run
+\texttt{PYTHONPATH=code python code/run\_experiments.py}. This regenerates
+gold-, predicted- and corrupted-state outputs. Run
+\texttt{PYTHONPATH=code pytest -q code/tests} for implementation tests.
 
 \section*{Supplementary Note 6: Situation-engineering design checklist}
 \begin{table}[h]
@@ -73,7 +80,17 @@ calls. This distinction is essential: an executable protocol is not an
 experimental result.
 
 
-\section*{Supplementary Note 10: Interfaces among engineering disciplines}
+\section*{Supplementary Note 10: Independent annotation protocol}
+The executable workflow creates separately randomized packets for at least three
+annotators. Annotators label action, answer, temporal state, modality, scope,
+source status, observer state and possible world without seeing method identity
+or another annotator's labels. Files are frozen before agreement calculation
+and adjudication. The scorer rejects missing cells and reports slot-level
+Fleiss' $\kappa$ and unanimous agreement. Recruitment, ethics status,
+compensation, qualifications, exclusions and adjudication changes must
+accompany any reported human result. No such result is claimed here.
+
+\section*{Supplementary Note 11: Interfaces among engineering disciplines}
 \begin{table}[h]
 \centering
 \caption{Recommended typed interfaces between situation engineering and neighbouring components.}
@@ -95,7 +112,7 @@ Security engineering & Trust zones, identities, privileges and threat signals & 
 \end{tabularx}
 \end{table}
 
-\section*{Supplementary Note 11: Engineering anti-patterns}
+\section*{Supplementary Note 12: Engineering anti-patterns}
 The taxonomy enables failure analysis that is more precise than attributing every
 problem to ``the prompt'' or ``the model''. Common anti-patterns include:
 (i) context dumping, in which more documents are added without resolving which
@@ -111,7 +128,7 @@ evidence or skip verification. A situation-engineered system should make these
 trade-offs explicit and test whether degraded resource modes preserve calibrated
 abstention rather than confident error.
 
-\section*{Supplementary Note 12: Minimum cross-layer reporting standard}
+\section*{Supplementary Note 13: Minimum cross-layer reporting standard}
 A complete report should identify: the model and prompt; context and retrieval
 policy; memory write/read/forget rules; tool schemas and error semantics;
 protocol and authorization assumptions; harness orchestration and recovery;

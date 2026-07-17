@@ -1,0 +1,55 @@
+{
+  "study_id": "sage-natural-multimodel-confirmatory",
+  "status": "UNEXECUTED_TEMPLATE",
+  "primary_contrast": "same model + same evidence + same budget, situation off versus on",
+  "conditions": [
+    "direct",
+    "chain_of_thought",
+    "structured",
+    "date_context",
+    "self_reflection",
+    "situation"
+  ],
+  "model_families_required": {
+    "proprietary_minimum": 3,
+    "open_weight_minimum": 3,
+    "reasoning_minimum": 1
+  },
+  "models": [],
+  "fixed_controls": {
+    "evidence_set": null,
+    "retrieval_corpus_sha256": null,
+    "input_token_budget": null,
+    "output_token_budget": 512,
+    "temperature": 0,
+    "retries": 2
+  },
+  "splits_required": [
+    "natural",
+    "unseen_scenario_family",
+    "long_event_chain",
+    "nested_scope",
+    "conflicting_official_sources",
+    "multiple_observers",
+    "multilingual",
+    "adversarial_stale_evidence"
+  ],
+  "metrics": [
+    "answer_accuracy",
+    "state_slot_f1",
+    "clarification_utility",
+    "abstention_precision_recall",
+    "selective_risk",
+    "risk_coverage_auc",
+    "latency_ms",
+    "input_tokens",
+    "output_tokens",
+    "retrieval_calls",
+    "cost_usd"
+  ],
+  "annotation": {
+    "independent_annotators_minimum": 3,
+    "blinded": true,
+    "freeze_before_adjudication": true
+  }
+}

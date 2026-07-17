@@ -10,7 +10,7 @@ The manuscript has been revised from a broad claim of a completed solution for r
 
 ## Major comment 2: Generator-solver circularity
 
-**Action.** Reframed SituationCatch-Bench as an intentionally co-designed software conformance suite. Added the end-to-end decomposition `sense -> update -> policy -> generation`; identified sensing as untested; specified hidden-generator, clustered-family, natural and adversarial benchmark extensions.
+**Action.** Reframed SituationCatch-Bench as an intentionally co-designed software conformance suite. Added gold-, predicted- and corrupted-state executions over all 4,200 items, nine slot-level sensing measures and explicit sensing/update/policy/generation attribution. The predicted sensor still operates on generated English, so natural sensing remains untested.
 
 ## Major comment 3: No actual LLM evaluation
 
@@ -34,7 +34,7 @@ The manuscript has been revised from a broad claim of a completed solution for r
 
 ## Major comment 8: Two manuscripts were mixed
 
-**Action.** Shortened and refocused the Results and Discussion. Taxonomy remains as a bounded systems framework; long-term claims are explicitly labelled a staged research programme. The empirical contribution is described as a conformance scaffold.
+**Action.** Reduced the main-text narrative to approximately 3,500 source words, collapsed the taxonomy to one framework figure and one foundations table, and moved the maturity model and extended agenda to Supplementary Information.
 
 ## Minor comments
 
@@ -42,6 +42,9 @@ The manuscript has been revised from a broad claim of a completed solution for r
 - Strengthened limitations and security/privacy risks.
 - Clarified Data and Code Availability without pretending a DOI exists.
 - Expanded the AI-use disclosure.
+- Added PDF title, author, keywords and section bookmarks.
+- Replaced the abbreviated laboratory name and flagged institutional wording for author verification.
+- Stated explicitly that the 85.7% control result is the arithmetic consequence of six successful equally weighted categories.
 - Added a research reporting protocol and machine-readable manifest recommendation.
 
 ## Remaining work before a strong NMI Article submission

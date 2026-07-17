@@ -3,7 +3,7 @@
 ## Entry points
 - Manuscript: `main.tex`
 - Supplement: `supplementary.tex`
-- Experiment: `python code/run_experiments.py --n-per-category 600 --data data --out results`
+- Experiment (repository root): `PYTHONPATH=code python code/run_experiments.py`
 
 ## Central research proposition
 Prompt engineering designs instructions, context engineering designs the information payload, and harness engineering designs the runtime around an AI agent. Situation engineering designs and validates the active world state that determines which available facts apply to the current query or action. The paper formalizes this as an independent, complementary reliability layer rather than a synonym for longer context.
@@ -19,11 +19,16 @@ Prompt engineering designs instructions, context engineering designs the informa
 - SituationCatch-Bench v0.1: 4,200 controlled diagnostic instances, seven categories.
 - Executable SCQA symbolic control layer.
 - Lexical-RAG, Recency-RAG and Latest-mention controls.
-- Item-level predictions, bootstrap intervals, paired sign-flip test, calibration and seven ablations.
+- Item-level predictions and seven mechanistic ablations. Legacy item-level
+  bootstrap, sign-flip and rule-confidence outputs are regression diagnostics,
+  not primary scientific evidence.
+- Gold-, text-predicted- and deliberately corrupted-state evaluation over all 4,200 items.
 - Vector/raster figures, datasheet and reviewer-readiness audit.
 
 ## Main measured result
 SCQA achieved 100.0% exact action-and-answer accuracy in the structured diagnostic setting. The strongest non-situational control achieved 85.7%. This is explicitly reported as a constructive upper bound, not as evidence that a neural model can extract situation states from arbitrary natural language.
+The deterministic text sensor achieved 77.9%, and its deliberately corrupted
+state achieved 35.1%; these are controlled sensing diagnostics.
 
 ## Submission-critical limitation
 A competitive Nature Machine Intelligence submission would be substantially stronger with independent natural-text and frontier/open-model evaluation, human annotation agreement, multilingual and multimodal stress tests and a public archival DOI. Those experiments are proposed but not fabricated in this package.

@@ -15,67 +15,50 @@
 \citation{alchourron1985logic,doyle1979truth}
 \citation{kaelbling1998pomdp,henderson2014second}
 \citation{snodgrass1992temporal}
-\citation{mei2025context}
-\citation{zhong2026harness,lin2026ahe}
-\citation{mcp2025}
-\citation{anthropic2026evals,openai2026evals}
-\citation{li2024serving}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Relationship between neighbouring research areas and situation engineering. The entries describe typical emphasis rather than hard exclusions.}}{4}{table.1}\protected@file@percent }
-\newlabel{tab:foundations}{{1}{4}{Relationship between neighbouring research areas and situation engineering. The entries describe typical emphasis rather than hard exclusions}{table.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A functional taxonomy of engineering disciplines surrounding modern AI systems. Solid horizontal arrows indicate common within-plane dependencies; dashed arrows indicate cross-plane feedback. Situation engineering is distinguished by its responsibility for evidence applicability and active-world-state control, not by ownership of a particular software component.}}{5}{figure.1}\protected@file@percent }
-\newlabel{fig:engineering-planes}{{1}{5}{A functional taxonomy of engineering disciplines surrounding modern AI systems. Solid horizontal arrows indicate common within-plane dependencies; dashed arrows indicate cross-plane feedback. Situation engineering is distinguished by its responsibility for evidence applicability and active-world-state control, not by ownership of a particular software component}{figure.1}{}}
-\citation{du2026memory}
+\citation{vanbenthem1996dynamic,stalnaker2002common}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Typical coverage of neighbouring state-based research traditions. Entries summarize common formulations rather than claiming that every method in an area has the same capabilities.}}{4}{table.1}\protected@file@percent }
+\newlabel{tab:foundations}{{1}{4}{Typical coverage of neighbouring state-based research traditions. Entries summarize common formulations rather than claiming that every method in an area has the same capabilities}{table.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Proposed situation-engineering interface. The taxonomy is a conceptual systems framework; the present experiments validate only the controlled state update and response-policy components.}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:engineering-planes}{{1}{4}{Proposed situation-engineering interface. The taxonomy is a conceptual systems framework; the present experiments validate only the controlled state update and response-policy components}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Evaluation decomposition. The present experiment supplies oracle structured situation variables and evaluates state update and response policy. End-to-end research must additionally measure natural-language situation sensing.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:framework}{{2}{6}{Evaluation decomposition. The present experiment supplies oracle structured situation variables and evaluates state update and response policy. End-to-end research must additionally measure natural-language situation sensing}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:accuracy}{{3}{7}{Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization.}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:category}{{4}{7}{Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization}{figure.4}{}}
 \citation{zhang2021situatedqa}
 \citation{vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa,kim2025tdbench}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Evaluation decomposition. The present experiment supplies oracle structured situation variables and evaluates state update and response policy. End-to-end research must additionally measure natural-language situation sensing.}}{9}{figure.2}\protected@file@percent }
-\newlabel{fig:framework}{{2}{9}{Evaluation decomposition. The present experiment supplies oracle structured situation variables and evaluates state update and response policy. End-to-end research must additionally measure natural-language situation sensing}{figure.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred.}}{9}{figure.3}\protected@file@percent }
-\newlabel{fig:accuracy}{{3}{9}{Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization.}}{10}{figure.4}\protected@file@percent }
-\newlabel{fig:category}{{4}{10}{Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic.}}{10}{figure.5}\protected@file@percent }
-\newlabel{fig:ablation}{{5}{10}{Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic.}}{8}{figure.5}\protected@file@percent }
+\newlabel{fig:ablation}{{5}{8}{Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic}{figure.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot).}}{8}{table.2}\protected@file@percent }
+\newlabel{tab:slot-sensing}{{2}{8}{Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot)}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Evidence ladder and permitted interpretation.}}{9}{table.3}\protected@file@percent }
+\newlabel{tab:evidence-ladder}{{3}{9}{Evidence ladder and permitted interpretation}{table.3}{}}
 \bibcite{lewis2020rag}{{1}{}{{}}{{}}}
 \bibcite{asai2024selfrag}{{2}{}{{}}{{}}}
 \bibcite{yao2023react}{{3}{}{{}}{{}}}
 \bibcite{schick2023toolformer}{{4}{}{{}}{{}}}
-\bibcite{min2020ambigqa}{{5}{}{{}}{{}}}
-\bibcite{zhang2021situatedqa}{{6}{}{{}}{{}}}
-\bibcite{kamath2020selectiveqa}{{7}{}{{}}{{}}}
-\bibcite{lin2022truthfulqa}{{8}{}{{}}{{}}}
-\bibcite{ji2023hallucination}{{9}{}{{}}{{}}}
-\bibcite{guo2017calibration}{{10}{}{{}}{{}}}
-\bibcite{manakul2023selfcheckgpt}{{11}{}{{}}{{}}}
-\bibcite{thorne2018fever}{{12}{}{{}}{{}}}
-\bibcite{allen1983interval}{{13}{}{{}}{{}}}
-\bibcite{pearl1988probabilistic}{{14}{}{{}}{{}}}
-\bibcite{wei2022cot}{{15}{}{{}}{{}}}
-\bibcite{mei2025context}{{16}{}{{}}{{}}}
-\bibcite{zhong2026harness}{{17}{}{{}}{{}}}
-\bibcite{lin2026ahe}{{18}{}{{}}{{}}}
-\bibcite{barwise1983situations}{{19}{}{{}}{{}}}
-\bibcite{madaan2023selfrefine}{{20}{}{{}}{{}}}
-\bibcite{vu2023freshqa}{{21}{}{{}}{{}}}
-\bibcite{meem2024pat}{{22}{}{{}}{{}}}
-\bibcite{chen2021timeqa}{{23}{}{{}}{{}}}
-\bibcite{chen2025chronoqa}{{24}{}{{}}{{}}}
-\bibcite{kim2025tdbench}{{25}{}{{}}{{}}}
-\bibcite{mcp2025}{{26}{}{{}}{{}}}
-\bibcite{anthropic2026evals}{{27}{}{{}}{{}}}
-\bibcite{openai2026evals}{{28}{}{{}}{{}}}
-\bibcite{li2024serving}{{29}{}{{}}{{}}}
-\bibcite{du2026memory}{{30}{}{{}}{{}}}
-\bibcite{mccarthy1969problems}{{31}{}{{}}{{}}}
-\bibcite{kowalski1986event}{{32}{}{{}}{{}}}
-\bibcite{reiter2001knowledge}{{33}{}{{}}{{}}}
-\bibcite{alchourron1985logic}{{34}{}{{}}{{}}}
-\bibcite{doyle1979truth}{{35}{}{{}}{{}}}
-\bibcite{kaelbling1998pomdp}{{36}{}{{}}{{}}}
-\bibcite{henderson2014second}{{37}{}{{}}{{}}}
-\bibcite{snodgrass1992temporal}{{38}{}{{}}{{}}}
+\bibcite{zhang2021situatedqa}{{5}{}{{}}{{}}}
+\bibcite{allen1983interval}{{6}{}{{}}{{}}}
+\bibcite{mei2025context}{{7}{}{{}}{{}}}
+\bibcite{zhong2026harness}{{8}{}{{}}{{}}}
+\bibcite{lin2026ahe}{{9}{}{{}}{{}}}
+\bibcite{barwise1983situations}{{10}{}{{}}{{}}}
+\bibcite{vu2023freshqa}{{11}{}{{}}{{}}}
+\bibcite{meem2024pat}{{12}{}{{}}{{}}}
+\bibcite{chen2021timeqa}{{13}{}{{}}{{}}}
+\bibcite{chen2025chronoqa}{{14}{}{{}}{{}}}
+\bibcite{kim2025tdbench}{{15}{}{{}}{{}}}
+\bibcite{vanbenthem1996dynamic}{{16}{}{{}}{{}}}
+\bibcite{stalnaker2002common}{{17}{}{{}}{{}}}
+\bibcite{alchourron1985logic}{{18}{}{{}}{{}}}
+\bibcite{doyle1979truth}{{19}{}{{}}{{}}}
+\bibcite{kaelbling1998pomdp}{{20}{}{{}}{{}}}
+\bibcite{henderson2014second}{{21}{}{{}}{{}}}
+\bibcite{snodgrass1992temporal}{{22}{}{{}}{{}}}
+\bibcite{kwon2023pagedattention}{{23}{}{{}}{{}}}
+\bibcite{mccarthy1969problems}{{24}{}{{}}{{}}}
+\bibcite{kowalski1986event}{{25}{}{{}}{{}}}
+\bibcite{reiter2001knowledge}{{26}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Complementary engineering disciplines for reliable AI. Boundaries are analytical, and substantial implementation overlap is expected.}}{20}{table.2}\protected@file@percent }
-\newlabel{tab:engineering-stack}{{2}{20}{Complementary engineering disciplines for reliable AI. Boundaries are analytical, and substantial implementation overlap is expected}{table.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Evidence ladder and permitted interpretation.}}{21}{table.3}\protected@file@percent }
-\newlabel{tab:evidence-ladder}{{3}{21}{Evidence ladder and permitted interpretation}{table.3}{}}
-\gdef \@abspage@last{21}
+\gdef \@abspage@last{18}

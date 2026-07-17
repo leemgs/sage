@@ -17,10 +17,11 @@ The end-to-end system is decomposed as
 (q,E)\xrightarrow{f_{sense}}\hat S\xrightarrow{f_{update}}\hat S'
 \xrightarrow{\pi}a\xrightarrow{g}y.
 \end{equation}
-This decomposition supports stage-specific evaluation. The current controlled
-experiment supplies $S$ directly and evaluates $f_{update}$, $\pi$ and the
-deterministic answer renderer. It does not evaluate $f_{sense}$ on unrestricted
-language.
+This decomposition supports stage-specific evaluation. The gold-state condition
+supplies $S$ directly and evaluates $f_{update}$, $\pi$ and the deterministic
+answer renderer. A predicted-state condition applies a text-only deterministic
+sensor before the same update and policy stages. It evaluates composition on
+generated claim language, but not $f_{sense}$ on unrestricted natural language.
 
 \subsection*{Situation schema}
 
@@ -59,6 +60,24 @@ not maintain the complete situation state. These controls test whether the
 specified state variables are necessary for the generated invariants; they are
 not intended to represent competitive LLM, RAG or agent baselines.
 
+\subsection*{Predicted- and corrupted-state evaluation}
+
+The predicted-state sensor receives only claim text and infers event type,
+actor, temporal expression, modality, source status and world or scope using
+documented deterministic patterns; it cannot copy hidden gold slots. The
+downstream engine is unchanged. In a pre-specified corruption condition,
+predicted source status is replaced by a generic reported source, modality is
+forced to confirmed and scope is forced to global. All three conditions contain
+the same 4,200 identifiers and are scored by exact action and answer. Item-level
+and aggregate outputs are released in
+\texttt{results/state\_conditions.csv} and
+\texttt{results/state\_conditions\_summary.csv}.
+The sensor is additionally scored claim by claim for actor, event, temporal
+expression, validity interval, scope, modality, joint source/status,
+observer-knowledge and world slots. Because claim order is preserved, this
+comparison does not require learned alignment. The resulting files are
+\texttt{results/predicted\_state\_slots.csv} and its aggregate summary.
+
 \subsection*{Metrics and analysis}
 
 The primary diagnostic measure is exact action-and-answer accuracy. For items
@@ -94,6 +113,14 @@ maximum context, output budget and sampling parameters should be held constant
 where the design permits. At least three proprietary and three open-weight model
 families should be evaluated using immutable model identifiers.
 
+The primary intervention contrast must be
+\emph{same model + same evidence + same computation budget} with versus without
+the explicit situation layer. A factorial analysis should independently vary
+prompt, context/retrieval, harness and situation state. Competitive conditions
+should include long-context prompting, few-shot structured reasoning,
+self-consistency, self-refinement, Self-RAG, graph or temporal retrieval,
+dialogue/belief-state tracking, clarification and calibrated abstention.
+
 For each call, researchers should archive the prompt, evidence, raw response,
 normalized answer, action decision, model identifier, provider, execution date,
 latency, token use, monetary cost, errors and retries. Evaluation must report
@@ -109,6 +136,18 @@ frontier-model performance values are reported because such calls were not
 executed in the study environment. The script is an executable protocol, not a
 completed experiment.
 
+\subsection*{Generalization and efficiency protocol}
+
+External evaluation should pre-register held-out scenario families and test
+unseen templates, longer event chains, nested scopes, conflicting authoritative
+sources, multiple observers, multilingual questions and adversarial stale
+evidence. Splits must occur at scenario or generator-grammar level rather than
+over lexical variants. Uncertainty intervals should use scenario-clustered
+resampling. Each condition must report latency, input and output tokens,
+retrieval and tool calls, retries, monetary cost and clarification overhead.
+Accuracy gains without matched resource reporting cannot identify the effect of
+the situation layer.
+
 \subsection*{Human and deployment evaluation}
 
 Human evaluation should use at least three independent annotators per natural
@@ -117,6 +156,13 @@ outcomes include state-slot agreement, answer correctness, appropriateness of
 clarification or abstention, unnecessary clarification and perceived
 justification quality. Studies involving participants should report ethics
 approval or exemption, consent, compensation and privacy handling.
+
+The released annotation program generates separately shuffled, blinded packets
+for three or more annotators. It requires complete independent labels before
+computing Fleiss' $\kappa$ and unanimous agreement for action, answer and state
+slots; incomplete packets terminate with an error. Disagreements are adjudicated
+only after independent files are frozen. No human agreement value is reported
+because independent human annotations were not collected.
 
 Deployment studies should additionally measure state drift, invalidation
 latency, recovery after contradictory observations, action-precondition

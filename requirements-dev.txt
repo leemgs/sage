@@ -1,0 +1,2 @@
+# Runtime code uses only the Python 3.12 standard library.
+pytest==7.4.4
