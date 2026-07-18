@@ -1,0 +1,7 @@
+provider,model,condition,n_success,n_error,accuracy
+mock,mock/latest-mention-text-control,chain_of_thought,210,0,0.2857142857142857
+mock,mock/latest-mention-text-control,date_context,210,0,0.2857142857142857
+mock,mock/latest-mention-text-control,direct,210,0,0.2857142857142857
+mock,mock/latest-mention-text-control,self_reflection,210,0,0.2857142857142857
+mock,mock/latest-mention-text-control,situation,210,0,0.2857142857142857
+mock,mock/latest-mention-text-control,structured,210,0,0.2857142857142857

@@ -50,5 +50,17 @@
     "date": "2026-07-18",
     "result": "openrouter adapter verified end-to-end (llama-3.3-70b, gemini-2.5-flash: 8/8 calls scored); openai/gpt-5.1 blocked by HTTP 402 insufficient credits",
     "blockers": "OpenRouter credits exhausted (total_credits=0); native GEMINI_API_KEY invalid; xAI team has no credits"
+  },
+  "pipeline_validation": {
+    "date": "2026-07-18",
+    "provider": "mock (offline latest-mention text heuristic; reads evidence only, never gold)",
+    "coverage": "210 items x 6 conditions = 1,260 records, 0 errors; plain/FINAL/JSON extraction paths and aggregation all exercised",
+    "artifact": "paper/results/raw/mock/ (see its README: simulated controls, never model evidence)"
+  },
+  "free_tier_attempt": {
+    "date": "2026-07-18",
+    "target": "21-item stratified pilot (paper/data/situationcatch_free_pilot.jsonl), direct vs situation, qwen3-next-80b:free",
+    "result": "0/42 calls succeeded; every :free model returned HTTP 429 (upstream congestion plus zero-credit account daily cap). Error records retained in paper/results/raw/e5_free_pilot_qwen3_next_80b.jsonl per the no-synthetic-results protocol",
+    "note": "free daily quota resets; a $10 lifetime top-up raises the free-model cap to 1,000 requests/day and unlocks the paid model set"
   }
 }

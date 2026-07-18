@@ -90,6 +90,36 @@ def call_chat_completions(base_url, extra_headers=None):
     return call
 
 
+def call_mock(model, system, user, key):
+    """Offline pipeline-validation control. NOT a language model.
+
+    A deterministic latest-mention text heuristic: it reads only the rendered
+    evidence block (never gold labels) and answers with the actor of the most
+    recent claim, "yes" for polar questions, or CLARIFY when no claim parses.
+    Records produced with this adapter are synthetic controls for exercising
+    the harness end-to-end and must never be reported as model evidence.
+    """
+    claims = re.findall(r"^- \((?:time (\d+))[^)]*\) (.+)$", user, re.M)
+    question = (re.search(r"^Question: (.+)$", user, re.M) or [None, ""])[1]
+    answer = "CLARIFY"
+    if claims:
+        latest = max(claims, key=lambda c: int(c[0]))
+        if re.match(r"(?i)\b(has|is|are|was|does|do|can|did|will)\b", question):
+            answer = "yes"
+        else:
+            token = re.match(r"(?:In reality, |In the hypothetical scenario, )?"
+                             r"(?:The |An? )?([A-Za-z]+)", latest[1])
+            answer = token.group(1) if token else "CLARIFY"
+    if "JSON" in system:
+        raw = json.dumps({"state": {}, "action": "ANSWER" if answer != "CLARIFY"
+                          else "CLARIFY", "answer": answer, "confidence": 0.5})
+    elif "FINAL" in system:
+        raw = f"Considering the latest claim only. FINAL: {answer}"
+    else:
+        raw = answer
+    return raw, {"mock": True}, None
+
+
 ADAPTERS = {
     "openai": ("OPENAI_API_KEY", call_openai),
     "anthropic": ("ANTHROPIC_API_KEY", call_anthropic),
@@ -98,6 +128,7 @@ ADAPTERS = {
                    call_chat_completions("https://openrouter.ai/api/v1")),
     "xai": ("XAI_API_KEY",
             call_chat_completions("https://api.x.ai/v1")),
+    "mock": (None, call_mock),
 }
 
 
@@ -142,7 +173,7 @@ def main():
     p.add_argument("--limit", type=int)
     args = p.parse_args()
     env, adapter = ADAPTERS[args.provider]
-    key = os.environ.get(env)
+    key = os.environ.get(env) if env else "unused"
     if not key:
         raise SystemExit(f"Missing {env}; no calls were made.")
     items = [json.loads(x) for x in Path(args.data).read_text().splitlines() if x.strip()]
