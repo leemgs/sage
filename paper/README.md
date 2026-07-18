@@ -1,5 +1,19 @@
 # Situation Engineering / SCQA - NMI research package
 
+## Target venue
+- **Primary submission target: Nature Machine Intelligence (NMI)**, Springer
+  Nature (`sn-jnl.cls`, Numbered/Nature reference style). The NMI framing is
+  controlled by the `\ifNMIframing` toggle in `main.tex` (default: on).
+- Fallback candidates under consideration: Artificial Intelligence (AIJ),
+  JAIR, TACL, TMLR.
+
+## Repository layout contract
+- `../code/` - the only home of the executable implementation (engine,
+  experiments, evaluation harness, figure generation). Do not keep code
+  copies under `paper/`.
+- `paper/` - LaTeX sources, data, results and reviewer documents.
+- `../ppt/` - presentation and poster materials.
+
 ## Entry points
 - Manuscript: `main.tex`
 - Supplement: `supplementary.tex`

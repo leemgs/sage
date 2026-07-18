@@ -5,7 +5,7 @@ Monochrome (print-safe) styling: grayscale fills plus hatch patterns so the
 figures remain readable on black-and-white printers. Writes both PDF (used by
 the LaTeX sources) and PNG previews into paper/figures/.
 
-Usage: python3 code/make_figures.py   (run from the paper/ directory)
+Usage: python3 code/make_figures.py   (run from the repository root)
 """
 
 import csv
@@ -16,7 +16,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-PAPER_DIR = Path(__file__).resolve().parent.parent
+PAPER_DIR = Path(__file__).resolve().parent.parent / "paper"
 RESULTS = PAPER_DIR / "results"
 FIGURES = PAPER_DIR / "figures"
 
