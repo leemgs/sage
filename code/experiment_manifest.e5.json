@@ -1,0 +1,54 @@
+{
+  "study_id": "sage-e5-multimodel-intervention",
+  "status": "READY_PENDING_CREDITS",
+  "primary_contrast": "same model + same evidence + same budget, situation off versus on",
+  "data": {
+    "source": "paper/data/situationcatch_bench.jsonl",
+    "rendered_sample": "paper/data/situationcatch_llm_sample.jsonl",
+    "sampling": "30 items per category x 7 categories = 210 items, seed 20260718",
+    "rendering": "evidence-complete: claim text plus bracketed structured metadata (time, validity, status, source, scope, observers); identical evidence block for all conditions"
+  },
+  "conditions": [
+    "direct",
+    "chain_of_thought",
+    "structured",
+    "date_context",
+    "self_reflection",
+    "situation"
+  ],
+  "provider": "openrouter (single gateway for uniform usage and cost accounting)",
+  "models": {
+    "proprietary": [
+      "openai/gpt-5.1",
+      "anthropic/claude-sonnet-5",
+      "google/gemini-2.5-flash",
+      "x-ai/grok-4.3"
+    ],
+    "open_weight": [
+      "meta-llama/llama-3.3-70b-instruct",
+      "deepseek/deepseek-chat-v3.1",
+      "qwen/qwen3-next-80b-a3b-instruct"
+    ]
+  },
+  "fixed_controls": {
+    "temperature": 0,
+    "output_token_budget": 512,
+    "retries": "resumable harness; rerun same command to retry errored calls"
+  },
+  "scale_and_cost": {
+    "calls": "210 items x 6 conditions x 7 models = 8,820",
+    "estimated_tokens_per_model": "~0.4M input / ~0.15M output",
+    "estimated_total_cost_usd": "6-10",
+    "estimated_wallclock": "~1-2 h with the 7 models run as parallel processes"
+  },
+  "commands": [
+    "PYTHONPATH=code python3 code/prepare_llm_eval.py",
+    "python3 code/run_multimodel_eval.py --provider openrouter --model <MODEL> --data paper/data/situationcatch_llm_sample.jsonl --out paper/results/raw/e5_<MODEL_SLUG>.jsonl",
+    "python3 code/summarize_multimodel.py paper/results/raw/e5_*.jsonl --out paper/results/multimodel_summary.csv"
+  ],
+  "smoke_test": {
+    "date": "2026-07-18",
+    "result": "openrouter adapter verified end-to-end (llama-3.3-70b, gemini-2.5-flash: 8/8 calls scored); openai/gpt-5.1 blocked by HTTP 402 insufficient credits",
+    "blockers": "OpenRouter credits exhausted (total_credits=0); native GEMINI_API_KEY invalid; xAI team has no credits"
+  }
+}

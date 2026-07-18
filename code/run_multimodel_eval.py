@@ -76,15 +76,39 @@ def call_gemini(model, system, user, key):
     return text.strip(), data.get("usageMetadata", {}), data.get("responseId")
 
 
+def call_chat_completions(base_url, extra_headers=None):
+    def call(model, system, user, key):
+        body = {"model": model, "temperature": 0, "max_tokens": 512,
+                "messages": [{"role": "system", "content": system},
+                             {"role": "user", "content": user}]}
+        data = post(f"{base_url}/chat/completions",
+                    {"Authorization": f"Bearer {key}", **(extra_headers or {})},
+                    body)
+        text = " ".join((c.get("message") or {}).get("content") or ""
+                        for c in data.get("choices", []))
+        return text.strip(), data.get("usage", {}), data.get("id")
+    return call
+
+
 ADAPTERS = {
     "openai": ("OPENAI_API_KEY", call_openai),
     "anthropic": ("ANTHROPIC_API_KEY", call_anthropic),
     "gemini": ("GEMINI_API_KEY", call_gemini),
+    "openrouter": ("OPENROUTER_API_KEY",
+                   call_chat_completions("https://openrouter.ai/api/v1")),
+    "xai": ("XAI_API_KEY",
+            call_chat_completions("https://api.x.ai/v1")),
 }
 
 
 def normalize(text):
     return re.sub(r"[^a-z0-9]+", " ", str(text).casefold()).strip()
+
+
+def matches(gold, answer):
+    """Word-boundary containment: gold 'no' must not match 'now closed'."""
+    g, a = normalize(gold), normalize(answer)
+    return bool(g) and (g == a or f" {g} " in f" {a} ")
 
 
 def extract_answer(raw, condition):
@@ -157,9 +181,8 @@ def main():
                     gold = item["answers"]
                     record.update(raw_response=raw, normalized_answer=answer,
                                   gold=gold, correct=int(any(
-                                      normalize(x) == normalize(answer) or
-                                      normalize(x) in normalize(answer)
-                                      for x in gold)), usage=usage,
+                                      matches(x, answer) for x in gold)),
+                                  usage=usage,
                                   request_id=request_id, error=None)
                 except Exception as exc:
                     record.update(raw_response=None, normalized_answer=None,
