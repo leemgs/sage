@@ -104,14 +104,23 @@ def call_gemini(model, system, user, key, max_tokens):
     url = ("https://generativelanguage.googleapis.com/v1beta/models/"
            f"{urllib.parse.quote(model, safe='-_.')}:generateContent?key="
            f"{urllib.parse.quote(key, safe='')}")
-    # Gemini 2.x "thinking" tokens are drawn from maxOutputTokens; pin the
-    # thinking budget to 0 so the whole budget is available for the answer and
-    # the JSON conditions are not truncated (a fair, uniform decoding control).
-    body = {"systemInstruction": {"parts": [{"text": system}]},
-            "contents": [{"role": "user", "parts": [{"text": user}]}],
-            "generationConfig": {"temperature": 0, "maxOutputTokens": max_tokens,
-                                 "thinkingConfig": {"thinkingBudget": 0}}}
-    data = post(url, {}, body)
+    base = {"systemInstruction": {"parts": [{"text": system}]},
+            "contents": [{"role": "user", "parts": [{"text": user}]}]}
+    gen = {"temperature": 0, "maxOutputTokens": max_tokens}
+    # Prefer thinking off: Gemini 2.x/3.5 "thinking" tokens are drawn from
+    # maxOutputTokens, so pinning the budget to 0 keeps the whole budget for the
+    # answer and stops the JSON conditions from truncating (uniform decoding
+    # control). Some newer models reject an explicit zero budget (HTTP 400); for
+    # those fall back to the default thinking mode with a larger budget so the
+    # answer still fits after the reasoning tokens.
+    try:
+        data = post(url, {}, {**base, "generationConfig":
+                              {**gen, "thinkingConfig": {"thinkingBudget": 0}}})
+    except RuntimeError as exc:
+        if "HTTP 400" not in str(exc):
+            raise
+        data = post(url, {}, {**base, "generationConfig":
+                              {**gen, "maxOutputTokens": max(max_tokens, 4096)}})
     text = " ".join(p.get("text", "") for c in data.get("candidates", [])
                     for p in c.get("content", {}).get("parts", []))
     return text.strip(), data.get("usageMetadata", {}), data.get("responseId")
