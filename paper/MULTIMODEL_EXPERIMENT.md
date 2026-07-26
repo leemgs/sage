@@ -1,7 +1,31 @@
 # End-to-end multi-model experiment
 
 This package does not contain invented frontier-model results. Run the frozen
-SituatedQA sample with exact model identifiers and archive raw CSV outputs.
+sample with exact model identifiers and archive raw CSV outputs.
+
+## E5 (situation-intervention) study — turnkey path
+
+The E5 study design is frozen in `code/experiment_manifest.e5.json` (models,
+gateway, conditions, sample, cost estimate). One driver runs it end to end:
+
+```bash
+# Credit-free harness validation (mock provider; never reported as model evidence)
+python code/run_e5.py --provider mock --smoke 5
+
+# Cheap preflight against the paid gateway, then the full run (~6-10 USD)
+export OPENROUTER_API_KEY=...
+python code/run_e5.py --smoke 3
+python code/run_e5.py
+```
+
+`run_e5.py` renders the stratified 210-item sample if absent, skips any provider
+whose key is missing (reporting it, never fabricating), evaluates every model
+with the resumable runner, and writes `paper/results/multimodel_summary.csv`.
+The only remaining blocker to a real run is OpenRouter credits, not code. The
+per-provider commands below remain available for single-model or native-endpoint
+runs.
+
+## Native single-provider endpoints
 
 ```bash
 export OPENAI_API_KEY=...

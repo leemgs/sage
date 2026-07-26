@@ -6,9 +6,19 @@ This directory is the executable source of the paper.
 python code/run_experiments.py
 python code/annotation_cli.py init \
   --input paper/data/situatedqa_temporal_sample.jsonl --out annotations
+python code/run_e5.py --provider mock --smoke 5   # credit-free E5 harness check
+python code/run_e5.py                             # full E5 run (needs OPENROUTER_API_KEY)
 python code/run_multimodel_eval.py --help
 python -m pytest code/tests
 ```
+
+`run_e5.py` is the turnkey driver for the E5 multi-model intervention study. It
+reads `code/experiment_manifest.e5.json`, renders the stratified sample if it is
+missing, preflight-checks the provider key (no key -> no calls), evaluates every
+configured model with the resumable runner, and writes
+`paper/results/multimodel_summary.csv`. Use `--provider mock` to validate the
+harness without spending credits, `--smoke N` for a cheap preflight, and
+`--dry-run` to print the exact per-model commands. It never fabricates results.
 
 `run_experiments.py` evaluates the complete situation engine in three settings:
 gold structured state, state predicted from claim text, and deliberately

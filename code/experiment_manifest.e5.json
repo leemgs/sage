@@ -42,6 +42,12 @@
     "estimated_wallclock": "~1-2 h with the 7 models run as parallel processes"
   },
   "commands": [
+    "python3 code/run_e5.py                     # turnkey: render sample, preflight OPENROUTER_API_KEY, run every model, summarize",
+    "python3 code/run_e5.py --smoke 3           # cheap paid-gateway preflight before the full run",
+    "python3 code/run_e5.py --provider mock --smoke 5   # credit-free harness validation (never model evidence)",
+    "python3 code/run_e5.py --dry-run           # print the exact per-model commands without calling"
+  ],
+  "manual_commands": [
     "PYTHONPATH=code python3 code/prepare_llm_eval.py",
     "python3 code/run_multimodel_eval.py --provider openrouter --model <MODEL> --data paper/data/situationcatch_llm_sample.jsonl --out paper/results/raw/e5_<MODEL_SLUG>.jsonl",
     "python3 code/summarize_multimodel.py paper/results/raw/e5_*.jsonl --out paper/results/multimodel_summary.csv"
@@ -56,6 +62,11 @@
     "provider": "mock (offline latest-mention text heuristic; reads evidence only, never gold)",
     "coverage": "210 items x 6 conditions = 1,260 records, 0 errors; plain/FINAL/JSON extraction paths and aggregation all exercised",
     "artifact": "paper/results/raw/mock/ (see its README: simulated controls, never model evidence)"
+  },
+  "driver_validation": {
+    "date": "2026-07-26",
+    "driver": "code/run_e5.py",
+    "checks": "dry-run plans all 7 models from this manifest; missing-key preflight exits 1 with no calls; mock provider runs render->evaluate->summarize end-to-end and writes multimodel_summary.csv (0 errors). Only blocker to the paid run is OPENROUTER_API_KEY credits."
   },
   "free_tier_attempt": {
     "date": "2026-07-18",
