@@ -28,21 +28,58 @@ identity before answering. Return strict JSON with keys state (an object),
 action (ANSWER, CLARIFY, or ABSTAIN), answer, and confidence."""
 
 
-def post(url, headers, body):
-    request = urllib.request.Request(
-        url, data=json.dumps(body).encode(), method="POST",
-        headers={"Content-Type": "application/json", **headers})
-    try:
-        with urllib.request.urlopen(request, timeout=180) as response:
-            return json.loads(response.read())
-    except urllib.error.HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"HTTP {exc.code}: {detail[:1000]}") from exc
+def _retry_delay_seconds(detail):
+    """Best-effort parse of a provider-supplied retry delay (e.g. '37s')."""
+    m = re.search(r'"retryDelay"\s*:\s*"(\d+(?:\.\d+)?)s"', detail)
+    if m:
+        return float(m.group(1))
+    m = re.search(r"retry-after[\"']?\s*[:=]\s*[\"']?(\d+)", detail, re.I)
+    return float(m.group(1)) if m else None
 
 
-def call_openai(model, system, user, key):
+def post(url, headers, body, max_retries=6):
+    """POST JSON; transparently back off on rate-limit / transient errors.
+
+    Free-tier gateways return 429 (quota) and occasional 503; these are not
+    real failures, so retry with the server-suggested delay (capped) before
+    surfacing an error. Persistent failures still raise so the caller records
+    an error record rather than a synthetic result.
+    """
+    data = json.dumps(body).encode()
+    for attempt in range(max_retries + 1):
+        request = urllib.request.Request(
+            url, data=data, method="POST",
+            headers={"Content-Type": "application/json", **headers})
+        try:
+            with urllib.request.urlopen(request, timeout=180) as response:
+                return json.loads(response.read())
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")
+            transient = exc.code in (429, 500, 502, 503, 504)
+            if transient and attempt < max_retries:
+                wait = _retry_delay_seconds(detail)
+                if wait is None:
+                    wait = min(2 ** attempt, 60)
+                wait = min(wait + 1, 90)
+                print(f"    [{exc.code}] backing off {wait:.0f}s "
+                      f"(attempt {attempt + 1}/{max_retries})", flush=True)
+                time.sleep(wait)
+                continue
+            raise RuntimeError(f"HTTP {exc.code}: {detail[:1000]}") from exc
+        except urllib.error.URLError as exc:
+            if attempt < max_retries:
+                wait = min(2 ** attempt, 30)
+                print(f"    [network] backing off {wait:.0f}s "
+                      f"(attempt {attempt + 1}/{max_retries}): {exc.reason}",
+                      flush=True)
+                time.sleep(wait)
+                continue
+            raise
+
+
+def call_openai(model, system, user, key, max_tokens):
     body = {"model": model, "instructions": system, "input": user,
-            "temperature": 0, "max_output_tokens": 512}
+            "temperature": 0, "max_output_tokens": max_tokens}
     data = post("https://api.openai.com/v1/responses",
                 {"Authorization": f"Bearer {key}"}, body)
     text = data.get("output_text", "")
@@ -52,8 +89,8 @@ def call_openai(model, system, user, key):
     return text.strip(), data.get("usage", {}), data.get("id")
 
 
-def call_anthropic(model, system, user, key):
-    body = {"model": model, "max_tokens": 512, "temperature": 0,
+def call_anthropic(model, system, user, key, max_tokens):
+    body = {"model": model, "max_tokens": max_tokens, "temperature": 0,
             "system": system, "messages": [{"role": "user", "content": user}]}
     data = post("https://api.anthropic.com/v1/messages",
                 {"x-api-key": key, "anthropic-version": "2023-06-01"}, body)
@@ -62,14 +99,18 @@ def call_anthropic(model, system, user, key):
     return text.strip(), data.get("usage", {}), data.get("id")
 
 
-def call_gemini(model, system, user, key):
+def call_gemini(model, system, user, key, max_tokens):
     model = model.removeprefix("models/")
     url = ("https://generativelanguage.googleapis.com/v1beta/models/"
            f"{urllib.parse.quote(model, safe='-_.')}:generateContent?key="
            f"{urllib.parse.quote(key, safe='')}")
+    # Gemini 2.x "thinking" tokens are drawn from maxOutputTokens; pin the
+    # thinking budget to 0 so the whole budget is available for the answer and
+    # the JSON conditions are not truncated (a fair, uniform decoding control).
     body = {"systemInstruction": {"parts": [{"text": system}]},
             "contents": [{"role": "user", "parts": [{"text": user}]}],
-            "generationConfig": {"temperature": 0, "maxOutputTokens": 512}}
+            "generationConfig": {"temperature": 0, "maxOutputTokens": max_tokens,
+                                 "thinkingConfig": {"thinkingBudget": 0}}}
     data = post(url, {}, body)
     text = " ".join(p.get("text", "") for c in data.get("candidates", [])
                     for p in c.get("content", {}).get("parts", []))
@@ -77,8 +118,8 @@ def call_gemini(model, system, user, key):
 
 
 def call_chat_completions(base_url, extra_headers=None):
-    def call(model, system, user, key):
-        body = {"model": model, "temperature": 0, "max_tokens": 512,
+    def call(model, system, user, key, max_tokens):
+        body = {"model": model, "temperature": 0, "max_tokens": max_tokens,
                 "messages": [{"role": "system", "content": system},
                              {"role": "user", "content": user}]}
         data = post(f"{base_url}/chat/completions",
@@ -90,7 +131,7 @@ def call_chat_completions(base_url, extra_headers=None):
     return call
 
 
-def call_mock(model, system, user, key):
+def call_mock(model, system, user, key, max_tokens=None):
     """Offline pipeline-validation control. NOT a language model.
 
     A deterministic latest-mention text heuristic: it reads only the rendered
@@ -170,6 +211,10 @@ def main():
                    default=["direct", "chain_of_thought", "structured",
                             "date_context", "self_reflection", "situation"])
     p.add_argument("--sleep", type=float, default=.2)
+    p.add_argument("--max-tokens", type=int, default=1024,
+                   help="Output-token budget, applied uniformly to every "
+                        "condition. Must be large enough that the verbose JSON "
+                        "conditions are not truncated.")
     p.add_argument("--limit", type=int)
     args = p.parse_args()
     env, adapter = ADAPTERS[args.provider]
@@ -205,9 +250,11 @@ def main():
                 record = {"id": item["id"], "provider": args.provider,
                           "model": args.model, "condition": condition,
                           "system_prompt": system, "user_prompt": user,
+                          "max_tokens": args.max_tokens,
                           "started_at": started.isoformat()}
                 try:
-                    raw, usage, request_id = adapter(args.model, system, user, key)
+                    raw, usage, request_id = adapter(
+                        args.model, system, user, key, args.max_tokens)
                     answer = extract_answer(raw, condition)
                     gold = item["answers"]
                     record.update(raw_response=raw, normalized_answer=answer,
