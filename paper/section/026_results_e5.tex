@@ -1,0 +1,28 @@
+\subsection*{Matched multi-model intervention (E5)}
+
+The controlled results above establish that the seven applicability invariants
+are executable and causally separable under oracle and predicted structured
+states (E1--E4). They do not by themselves establish that supplying an explicit
+situation state improves a frontier language model on natural prompts. That is
+the E5 claim in the evidence ladder, and it requires model responses rather than
+symbolic controls. We therefore evaluate several proprietary and open-weight
+models on a stratified, evidence-complete rendering of SituationCatch-Bench
+(30 items per category), holding the evidence block, decoding temperature and
+output-token budget fixed and varying only the prompt condition. The primary
+quantity is the situation-on-versus-off contrast within each model: the
+situation-state condition minus the strongest non-situational prompt for the
+same model, so any difference is attributable to explicit state rather than to
+model identity, evidence or budget. Raw responses, usage, latencies and failed
+calls are archived per model; the reported accuracies read directly from those
+records and exclude failed calls, which are reported as $n$.
+
+\input{section/tables/e5_multimodel_table}
+
+We interpret a positive within-model $\Delta$ as support for the hypothesis that
+explicit situation state reduces applicability errors under matched conditions,
+not as evidence of deployment readiness: the rendered prompts still derive from
+the seven generated scenario families, so natural-text and distributional
+generalization (E5 splits and E6) remain open. The frozen study manifest,
+provider gateway, model snapshots and cost accounting are recorded in
+\texttt{code/experiment\_manifest.e5.json}, and the run is reproduced by a single
+command (\texttt{python code/run\_e5.py}).

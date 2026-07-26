@@ -179,7 +179,12 @@ def main() -> int:
     print(f"Completed {ran} model run(s), {skipped} with errors. Summarizing.")
     rc = run([sys.executable, "code/summarize_multimodel.py", *existing,
               "--out", args.summary])
-    return rc
+    if rc != 0:
+        return rc
+    # Regenerate the manuscript E5 table from the fresh summary. The generator
+    # drops mock/empty rows and writes a PENDING placeholder when no real model
+    # rows exist, so this is safe to run after any provider (including mock).
+    return run([sys.executable, "code/make_e5_table.py", "--summary", args.summary])
 
 
 if __name__ == "__main__":
