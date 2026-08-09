@@ -49,42 +49,24 @@ rate, abstention precision, selective risk, coverage, latency, token use and
 monetary cost. These measures make explicit the trade-off between semantic
 verification and serving efficiency.
 
-\subsection*{What is established, supported and proposed}
+\subsection*{What is established and what remains to be tested}
 
-This study establishes a formal error class, an interoperable state schema, a
-reference implementation and matched oracle-state ablations. Independent
-literature supports the premise that time- and place-dependent questions are
-common enough to matter. The study does not establish that current frontier
-models exhibit every proposed category at a particular frequency, nor that SCQA
-improves them under natural language. Those are hypotheses enabled by the
-released protocol, not completed results.
+This study demonstrates a formal error class, an interoperable state schema and
+category-specific causal effects of matched state ablations. It also shows that
+performance degrades sharply when state must be recovered from partially
+observable text. Together, these results identify situation sensing as a
+separate engineering and evaluation target rather than treating every failure
+as retrieval or generation error.
 
-This distinction changes the scientific role of the paper. The contribution is
-not a claim of a production-ready solution. It is a research scaffold that
-allows subsequent work to ask more precise questions: Is the dominant error in
-state sensing or state update? Does explicit state outperform a matched
-structured prompt? Does a temporal graph add value after controlling for token
-budget? When should a system ask rather than retrieve? How robust is a state to
-adversarially stale evidence? Which costs arise from maintaining provenance and
-multiple candidate worlds?
-
-\subsection*{A staged research programme}
-
-We propose six stages for cumulative evidence. Stage 1 uses formal and synthetic
-unit tests to verify semantics. Stage 2 evaluates natural-language situation
-sensing with slot, event, temporal, scope, modality, observer and world-state
-metrics. Stage 3 performs matched interventions on several model families while
-holding evidence and computation budgets constant. Stage 4 tests compositional
-and distributional generalization: unseen templates, longer event chains,
-nested scope, conflicting authoritative sources, multiple observers,
-multilingual data and multimodal observations. Stage 5 adds human annotation and
-interaction to measure clarification and abstention. Stage 6 evaluates
-long-running agents, state drift, security attacks, latency, cost and independent
-auditing.
-
-The SE0--SE4 maturity model and longer research agenda are moved to the
-Supplementary Information. The present implementation reaches explicit
-state-and-policy control only for seven supplied variables.
+The controlled design cannot decide whether the full interface improves a
+contemporary language model beyond a matched structured prompt or temporal RAG.
+That comparison is the confirmatory submission gate for the general LLM claim:
+same model, evidence and computation budget; independently authored natural
+questions; direct, structured, temporal-retrieval, verification-agent and
+situation conditions; and paired, scenario-clustered inference. The released
+protocol makes this contrast executable, while the present results make no
+claim from incomplete pilot calls. The SE0--SE4 maturity model and longer
+research programme are provided in Supplementary Information.
 
 \subsection*{Limitations and risks}
 
@@ -93,8 +75,10 @@ benchmark-solver circularity is intentional and limits external validity. The
 item count overstates statistical independence because examples share template
 families. The baselines are software controls, not state-of-the-art LLM
 systems. Confidence values are rule-derived and do not constitute neural
-calibration. No human participants, multilingual evaluation, multimodal sensing,
-frontier-model calls or deployed-agent study were completed. These limitations
+calibration. No human participants, multilingual evaluation, multimodal sensing or
+deployed-agent study was completed. A small Gemini API pilot verified the
+execution path but ended at unequal category coverage when free-tier quota was
+exhausted; it is excluded from scientific results. These limitations
 are not resolved by additional prose and require new experiments.
 
 Explicit state can also create new attack surfaces. An adversary may manipulate
@@ -106,11 +90,10 @@ independent evaluation. ``Explicit'' must not be confused with ``correct''.
 
 \subsection*{Conclusion}
 
-Situation engineering provides a bounded and testable way to connect several
-communities working on reliable AI. Its durable contribution will depend not on
-the adoption of a new label, but on whether researchers use the interfaces to
-produce stronger measurements, interoperable state representations and systems
-that know when available evidence does and does not apply. The present artefact
-is intended as the first rung of that evidence ladder: a transparent formal and
-software scaffold on which natural-language, multi-model and deployment studies
-can be built.
+Situation engineering provides a bounded and testable interface between
+retrieval, state estimation and response policy. The controlled experiments
+demonstrate that applicability variables have distinct behavioural consequences
+and that imperfect sensing can erase the advantage of correct update rules.
+Establishing broad utility now requires the pre-specified natural-text,
+multi-model comparison against equally resourced structured prompting,
+temporal retrieval and agent verification.

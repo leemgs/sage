@@ -77,6 +77,12 @@ expression, validity interval, scope, modality, joint source/status,
 observer-knowledge and world slots. Because claim order is preserved, this
 comparison does not require learned alignment. The resulting files are
 \texttt{results/predicted\_state\_slots.csv} and its aggregate summary.
+We distinguish an \emph{evidence-complete} condition, in which every required
+slot is supplied, from a \emph{partially observable} condition, in which absent
+slots must remain unresolved. A text-observable condition must instead render
+every answer-critical variable in independently authored prose and must not use
+hidden metadata during sensing. Results should be stratified by these regimes
+rather than averaging unextractable and extractable slots.
 
 \subsection*{Metrics and analysis}
 
@@ -105,13 +111,14 @@ failure category, not to estimate an average treatment effect in natural text.
 
 \subsection*{Protocol for end-to-end multi-model evaluation}
 
-A confirmatory study should compare at least the following matched conditions:
+A confirmatory study is pre-specified to compare the following matched conditions:
 direct prompting; chain-of-thought or structured prompting; date-aware context;
 standard RAG; temporal or event-aware RAG; reflection or verification agent; and
 Situation Engineering. The generation model, evidence set, retrieval corpus,
 maximum context, output budget and sampling parameters should be held constant
-where the design permits. At least three proprietary and three open-weight model
-families should be evaluated using immutable model identifiers.
+where the design permits. The minimum study uses two proprietary and two strong
+open-weight model families with immutable model identifiers; additional model
+families test robustness rather than substitute for balanced completion.
 
 The primary intervention contrast must be
 \emph{same model + same evidence + same computation budget} with versus without
@@ -130,11 +137,17 @@ relations, validity intervals, scope, modality, source status, observer
 knowledge, possible-world identity and final answer. This enables error
 attribution to sensing, updating, policy or generation.
 
+The natural bridge must include at least one independently constructed temporal
+or situated benchmark (for example SituatedQA, FreshQA or ChronoQA), with frozen
+item inclusion and scoring rules. Synthetic diagnostic, natural benchmark and
+model intervention are reported as separate evidence levels.
+
 The bundled \texttt{code/run\_multimodel\_eval.py} provides provider adapters and
-refuses to create placeholder outputs when credentials are absent. No
-frontier-model performance values are reported because such calls were not
-executed in the study environment. The script is an executable protocol, not a
-completed experiment.
+refuses to create placeholder outputs when credentials are absent. Incomplete
+Gemini pilot calls are archived to validate the execution path but excluded
+because quota exhaustion produced unequal category coverage and no balanced
+model-family comparison. The script is an executable protocol, not a completed
+confirmatory experiment.
 
 \subsection*{Generalization and efficiency protocol}
 

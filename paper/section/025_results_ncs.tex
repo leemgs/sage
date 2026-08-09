@@ -12,22 +12,6 @@ gold answer. The benchmark is intentionally transparent: each category is a
 software-level test of one applicability invariant rather than a claim to
 natural linguistic diversity.
 
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}[node distance=7mm and 7mm, every node/.style={font=\small}]
-\node[draw,rounded corners,align=center,minimum width=23mm] (e) {Evidence and\\query};
-\node[draw,rounded corners,align=center,right=of e,minimum width=25mm] (s) {Situation\\sensing};
-\node[draw,rounded corners,align=center,right=of s,minimum width=25mm] (u) {State update\\and validation};
-\node[draw,rounded corners,align=center,right=of u,minimum width=25mm] (p) {Response\\policy};
-\node[draw,rounded corners,align=center,below=of p,minimum width=26mm] (o) {Answer / retrieve /\\clarify / abstain};
-\draw[-{Latex}] (e)--(s); \draw[-{Latex}] (s)--(u); \draw[-{Latex}] (u)--(p); \draw[-{Latex}] (p)--(o);
-\end{tikzpicture}
-\caption{Evaluation decomposition. The present experiment supplies oracle
-structured situation variables and evaluates state update and response policy.
-End-to-end research must additionally measure natural-language situation sensing.}
-\label{fig:framework}
-\end{figure}
-
 \subsection*{Oracle-state control satisfies the generated invariants}
 
 SCQA was compared with lexical retrieval, recency-ranked retrieval and a
@@ -89,10 +73,13 @@ predicted category-specific failure, providing a causal software diagnostic.}
 \label{fig:ablation}
 \end{figure}
 
-\subsection*{Predicted states expose a sensing bottleneck}
+\subsection*{Partial observability exposes a sensing bottleneck}
 
-We removed access to the structured claim fields and reconstructed a restricted
-situation state from claim text using the released deterministic sensor. Across
+We evaluated two observability regimes. In the evidence-complete control, all
+required variables are supplied in the structured state. In the text-only
+regime, the sensor must reconstruct a state from the rendered claims; variables
+not expressed in those claims remain unobservable rather than being silently
+copied from gold metadata. Across
 all 4,200 diagnostic instances, action-and-answer accuracy fell from 100.0\%
 with gold states to 77.9\% with predicted states. Deliberately overwriting
 source status, modality and scope in the predicted state reduced accuracy
@@ -102,6 +89,13 @@ imperfect. Because the texts are generated from the same seven scenario
 families and the sensor is a transparent rule baseline, these results remain
 controlled diagnostics rather than evidence of natural-language or LLM
 generalization.
+
+This comparison is therefore a partial-observability stress test, not a fair
+estimate of extraction from evidence-complete prose. In particular, a missing
+time should induce retrieval, clarification or abstention when it is
+answer-critical; it should not be scored as though a sensor could infer an
+unwritten value. A confirmatory natural-text study must consequently report
+separate text-observable and answer-critical-missing strata.
 
 Claim-level scoring localizes the sensor's limitations
 (Table~\ref{tab:slot-sensing}). Event type reached 92.3\%, modality 100.0\%,
@@ -166,7 +160,7 @@ E1: formal definition & Situation schema and applicability relation & The failur
 E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable and causally separable \\
 E3: natural prevalence & Independent temporal/situated QA literature & Situation dependence occurs in natural questions \\
 E4: predicted-state control & Deterministic text sensor on 4,200 generated items & Sensing errors reduce controlled end-to-end accuracy; natural-text generalization remains open \\
-E5: multi-model intervention & Execution harness only; no successful model responses & Needed to claim LLM improvement and generality \\
+E5: multi-model intervention & Incomplete Gemini pilot; confirmatory matrix not completed & Needed to claim improvement beyond matched structured prompts and temporal RAG \\
 E6: deployment / human study & Not completed & Needed for operational safety and human comparison \\
 \bottomrule
 \end{tabularx}

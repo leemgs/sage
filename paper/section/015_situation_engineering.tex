@@ -25,23 +25,37 @@ converting uncertainty into a plausible binary judgement.
 
 \begin{figure}[t]
 \centering
-\resizebox{\linewidth}{!}{%
-\begin{tikzpicture}[node distance=6mm and 5mm, every node/.style={font=\small},
-box/.style={draw,rounded corners,align=center,minimum height=9mm,text width=2.45cm}]
-\node[box] (input) {Query, evidence,\\memory and tools};
-\node[box,right=of input] (sense) {Situation\\sensing};
-\node[box,right=of sense] (state) {Provenance-linked\\candidate states};
-\node[box,right=of state] (gate) {Applicability\\validation};
-\node[box,right=of gate] (act) {Answer, retrieve,\\clarify or abstain};
-\draw[-{Latex}] (input)--(sense);
-\draw[-{Latex}] (sense)--(state);
-\draw[-{Latex}] (state)--(gate);
-\draw[-{Latex}] (gate)--(act);
-\draw[-{Latex},bend left=35,dashed] (gate) to node[above]{missing variable}(sense);
+\resizebox{\linewidth}{!}{\begin{tikzpicture}[
+every node/.style={font=\small}, box/.style={draw,rounded corners,align=center,
+minimum height=8mm}, arr/.style={-{Latex},thick}]
+\node[anchor=west,font=\bfseries] at (0,4.5) {(a) Failure};
+\node[box,text width=2.8cm] (appointed) at (3.0,4.5) {appointed at $t_1$};
+\node[box,text width=2.8cm] (resigned) at (7.0,4.5) {resigned at $t_2$};
+\node[box,text width=3.4cm,fill=red!8] (question) at (11.5,4.5) {Who is current at $t_3$?};
+\draw[arr] (appointed)--(resigned); \draw[arr] (resigned)--(question);
+
+\node[anchor=west,font=\bfseries] at (0,3.0) {(b) Retrieval only};
+\node[box,text width=3.0cm] (claims) at (3.0,3.0) {relevant claims};
+\node[box,text width=3.0cm] (rank) at (7.0,3.0) {rank / concatenate};
+\node[box,text width=3.4cm,fill=red!8] (answer) at (11.5,3.0) {supported answer};
+\draw[arr] (claims)--(rank); \draw[arr] (rank)--(answer);
+
+\node[anchor=west,font=\bfseries] at (0,1.5) {(c) Situation engineering};
+\node[box,text width=3.0cm] (input) at (3.0,1.5) {query, evidence,\\memory, tools};
+\node[box,text width=3.0cm] (state) at (7.0,1.5) {sense + update\\provenance-linked state};
+\node[box,text width=3.4cm,fill=green!10] (policy) at (11.5,1.5) {validate applicability\\answer / retrieve / clarify / abstain};
+\draw[arr] (input)--(state); \draw[arr] (state)--(policy);
+
+\node[anchor=west,font=\bfseries] at (0,0) {(d) Diagnostic axes};
+\node[box,text width=11.0cm] at (7.2,0) {time \quad scope \quad modality \quad source conflict \quad observer \quad world \quad unresolved premise};
 \end{tikzpicture}}
-\caption{Proposed situation-engineering interface. The taxonomy is a conceptual
-systems framework; the present experiments validate only the controlled state
-update and response-policy components.}
+\caption{From situation blindness to an applicability-aware response.
+\textbf{a}, A supported appointment becomes stale after resignation.
+\textbf{b}, retrieval and relevance alone do not require resolution of that
+transition. \textbf{c}, situation engineering constructs a provenance-linked
+state, validates claim applicability and propagates unresolved variables into
+response policy. \textbf{d}, SituationCatch-Bench isolates seven corresponding
+diagnostic axes.}
 \label{fig:engineering-planes}
 \end{figure}
 
