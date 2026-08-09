@@ -24,26 +24,11 @@ maintaining a provenance-linked state, (iii) validating applicability and
 logical, probabilistic and neural methods to be compared through a common set of
 interfaces and failure measurements.
 
-\begin{table}[t]
-\caption{Typical coverage of neighbouring state-based research traditions.
-Entries summarize common formulations rather than claiming that every method in
-an area has the same capabilities.}
-\label{tab:foundations}
-\centering\scriptsize
-\setlength{\tabcolsep}{3pt}%
-\begin{tabularx}{\linewidth}{@{}p{2.1cm}*{7}{>{\hspace{0pt}\centering\arraybackslash}X}@{}}
-\toprule
-Area & Explicit state & Time & Observer & Worlds & Uncertainty & Answer/\allowbreak action gate & Provenance \\
-\midrule
-Situation/\allowbreak event calculus & $\checkmark$ & $\checkmark$ & limited & partial & usually no & action-centred & limited \\
-Belief revision / truth maintenance & $\checkmark$ & partial & partial & partial & partial & no & limited \\
-Dialogue-state tracking / POMDPs & $\checkmark$ & sequential & $\checkmark$ & partial & $\checkmark$ & $\checkmark$ & uncommon \\
-Temporal KG / bitemporal data & $\checkmark$ & $\checkmark$ & limited & uncommon & limited & no & $\checkmark$ \\
-RAG / tool agents & often implicit & limited & uncommon & uncommon & model-derived & partial & partial \\
-Proposed situation interface & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & required & $\checkmark$ & $\checkmark$ \\
-\bottomrule
-\end{tabularx}
-\end{table}
+A key distinction is that these traditions vary in whether they jointly expose
+time, observer, possible world, uncertainty, provenance and an answer-or-action
+gate; the proposed interface requires all of them to be reportable without
+claiming that their underlying formalisms are new.
+
 
 Dynamic epistemic logic and common-ground modelling formalize belief-changing
 information and mutually recognized conversational commitments

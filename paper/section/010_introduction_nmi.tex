@@ -49,17 +49,16 @@ answer-critical information. A policy then selects
 \end{equation}
 This decomposition separates evidence availability from evidence applicability.
 
-The present paper makes four bounded contributions. First, it defines situation
+The present paper makes three contributions. First, it defines situation
 blindness as a testable failure class and relates it to established work on
 situations, temporal reasoning, belief state tracking and knowledge revision.
 Second, it specifies situation engineering as a systems contract connecting
 prompt, context, retrieval, memory, tool, harness, evaluation and serving
 engineering without subsuming them. Third, it introduces SCQA and
-SituationCatch-Bench as a transparent oracle-state diagnostic for causal unit
-tests and component ablations. Fourth, it provides a staged evaluation and
-reporting protocol for future end-to-end studies on natural language, multiple
-models, human clarification and deployed agents. We deliberately do not claim
-that the current rule-based implementation solves situation sensing in
-unrestricted text. Instead, the paper separates the solved control invariants
-from the open perception, learning and generalization problems so that future
-work can measure progress without conflating them.
+SituationCatch-Bench, and uses matched state conditions and component ablations
+to demonstrate that the specified applicability mechanisms are executable and
+causally separable. The decisive next test is pre-specified rather than blurred
+with this control study: the same model, evidence and computation budget, with
+and without an explicit situation layer, on independently authored natural
+text. This claim boundary distinguishes what we demonstrate from the
+language-model generalization hypothesis that remains to be tested.
