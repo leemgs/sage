@@ -112,6 +112,68 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% =============================================================
 
 %% =============================================================
+%% NMI REVIEWER ANTICIPATION MAP  (non-printing; address before submission)
+%% -------------------------------------------------------------
+%% These are LaTeX comments only and never appear in the compiled PDF.
+%% They record the concerns a Nature Machine Intelligence referee is most
+%% likely to raise, each with a severity, the current status, the concrete
+%% revision action, and the section that must carry it. Work top-down: the
+%% two CRITICAL items decide accept/reject; the rest strengthen the case.
+%%
+%% [R1] CRITICAL — Headline oracle result is analytic, not empirical.
+%%   Concern: SCQA 100.0% vs the 85.7% control is a deterministic
+%%     consequence of the construction (equal category weights => 6/7 =
+%%     85.7%). A tautology cannot support a claim of advance.
+%%   Status: acknowledged in Results, but referees still weight it heavily.
+%%   Action: present oracle numbers strictly as regression-test coverage,
+%%     never as an effect size; lead Results with the causal ablations and
+%%     the predicted-state sensing bottleneck, not the 100/85.7 gap.
+%%   Section: 025_results_ncs.
+%%
+%% [R2] CRITICAL — No evidence situation engineering helps a real model.
+%%   Concern: by the evidence ladder, E5 (matched multi-model intervention)
+%%     and E6 (deployment/human) are not done; the paper shows a symbolic
+%%     solver passing a symbolic test, not that explicit state helps an LLM.
+%%   Status: honestly scoped, but reads as a Perspective, not a Research
+%%     Article, at NMI's bar.
+%%   Action: complete E5 on real models via code/run_e5.py (gated by
+%%     code/audit_e5.py); flip \E5readytrue and report the within-model
+%%     situation-vs-baseline contrast. Until then, state E5 as preliminary.
+%%   Section: 026_results_e5 (+ abstract, evidence-ladder row).
+%%
+%% [R3] MAJOR — Benchmark-solver circularity / no natural language.
+%%   Concern: diagnostic data are generated from the same schema the solver
+%%     consumes; even the 77.9% predicted-state number is a rule sensor on
+%%     templated text (time/validity slots score 0% by construction).
+%%   Action: add a natural-language evaluation (SituatedQA/FreshQA/TDBench-
+%%     derived); state external validity limits explicitly.
+%%   Section: 025_results_ncs, Discussion limitations; data/ expansion.
+%%
+%% [R4] MAJOR — Novelty is largely organisational.
+%%   Concern: heavy overlap with cited traditions (situation/event calculus,
+%%     belief revision/TMS, POMDP/DST, bitemporal DBs); the new element is a
+%%     "systems contract", not a demonstrated new capability.
+%%   Action: sharpen the one concrete, testable capability the contract adds
+%%     beyond a structured prompt, and show it empirically (ties to R2).
+%%   Section: 012_related_work, 015_situation_engineering.
+%%
+%% [R5] MINOR/MAJOR — Statistical framing.
+%%   Concern: 4,200 items overstate independence (shared template families);
+%%     confidence values are rule-derived, not calibrated.
+%%   Action: cluster/bootstrap CIs over template families for key contrasts;
+%%     add selective-risk / risk-coverage curves; avoid over-precise 100.0%.
+%%   Section: 025_results_ncs, Methods.
+%%
+%% REVISION CHECKLIST to reach NMI-accept grade (see paper/E5_COMPLETION_CHECKLIST.md):
+%%   (a) >=3 model FAMILIES, matched evidence/token/cost budgets;
+%%   (b) natural-language set; (c) strong RAG/structured-prompt baselines;
+%%   (d) human inter-annotator agreement (code/annotation_cli.py);
+%%   (e) clustered uncertainty + selective risk; (f) cost/latency accounting;
+%%   (g) archival DOI + licence before acceptance.
+%% Referee's current call: reject-and-resubmit; the above converts it.
+%% =============================================================
+
+%% =============================================================
 \begin{document}
 %% =============================================================
 
