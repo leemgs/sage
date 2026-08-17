@@ -174,6 +174,63 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% =============================================================
 
 %% =============================================================
+%% PER-SECTION REVISION NOTES  (non-printing; consolidated here on purpose)
+%% -------------------------------------------------------------
+%% Every actionable edit is kept in this file rather than scattered as inline
+%% comments across section/*.tex, so main.tex is the single control surface for
+%% the reviewer response. Tags [R1]-[R5] refer to the map above. Do the edits
+%% inside the named \input files; this list is the checklist.
+%%
+%% 001_title.tex
+%%   [R4] Keep the title's claim within what is demonstrated ("reliable
+%%        evidence use", not "solved situation understanding").
+%%
+%% 006_abstract_nmi.tex
+%%   [R1] Do not lead with 100.0%; call oracle numbers regression coverage.
+%%   [R2] The abstract pre-announces "matched natural-text and multi-model
+%%        tests" -- until \E5readytrue, phrase E5 as a pre-specified/pending
+%%        test, not an achieved result.
+%%
+%% 010_introduction_nmi.tex
+%%   [R4] State plainly the one concrete capability the situation contract
+%%        adds beyond a structured prompt, and promise its empirical test (R2).
+%%   [R2] Keep contribution claims bounded to E1-E4 as established.
+%%
+%% 012_related_work.tex
+%%   [R4] Add an explicit head-to-head contrast with the closest prior work
+%%        (situation/event calculus, dialogue-state tracking); operationalise
+%%        the vague Table cells ("limited"/"partial") with a concrete criterion.
+%%
+%% 015_situation_engineering.tex
+%%   [R4] Turn the contract (C_t,M_t,O_t,H_t)->(S_t,U_t,P_t) into at least one
+%%        falsifiable prediction that a non-situational baseline should fail.
+%%
+%% 025_results_ncs.tex
+%%   [R1] Frame 100.0% vs 85.7% as regression-test coverage; lead with the
+%%        causal ablations and the predicted-state sensing bottleneck.
+%%   [R3] State benchmark-solver circularity up front; explain the 0% time/
+%%        validity slots as a construction artifact, not a language finding.
+%%   [R5] Report clustered/bootstrap CIs over template families for the key
+%%        contrasts; add a selective-risk / risk-coverage view.
+%%
+%% 026_results_e5.tex  (enabled by \E5readytrue)
+%%   [R2] Populate from code/run_e5.py once code/audit_e5.py prints
+%%        "E5 INTEGRITY GATE: PASS"; report the within-model
+%%        situation-vs-baseline delta and label the scope honestly
+%%        (provider family, models, N, conditions, decoding).
+%%
+%% 060_discussion.tex
+%%   [R3] Make external-validity limits explicit (synthetic templates; single
+%%        family in any preliminary E5).
+%%   [R2] Say precisely what E5 does and does not license.
+%%
+%% 070_methods.tex
+%%   [R5] Describe the clustered/bootstrap CI procedure and the template-family
+%%        unit of analysis; either report the multi-model adapter results or
+%%        move its description to Discussion so Methods matches the claims.
+%% =============================================================
+
+%% =============================================================
 \begin{document}
 %% =============================================================
 
