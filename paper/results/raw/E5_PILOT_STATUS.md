@@ -23,12 +23,13 @@ out.
   policy allows only `generativelanguage.googleapis.com` (Gemini); OpenRouter,
   OpenAI, xAI, Groq and DeepInfra hosts are blocked, so no non-Gemini family
   could be run.
-- **Free-tier quota exhausted mid-run.** No model completed all 35 items:
-  `gemini-2.5-flash-lite` covered 4/7 categories, `gemini-2.5-flash` 2/7. The
-  succeeding items are a biased subset (whichever calls landed inside a quota
-  window), not the intended stratified sample.
-- **Directions disagree and N is tiny** (6–13 scored per condition), so no
-  situation-on-versus-off contrast can be claimed.
+- **Free-tier quota exhausted mid-run.** No model completed all 35 items. After
+  two resumable attempts, `gemini-2.5-flash-lite` reached 26--27 successful
+  calls per condition, `gemini-2.5-flash` 22--24 and `gemini-3.5-flash` 6--9.
+  Coverage remains unequal across categories, so the succeeding items form a
+  quota-selected rather than balanced sample.
+- **Directions disagree and N is incomplete**, so no situation-on-versus-off
+  contrast is claimed.
 
 ## What the run *did* establish (kept in the code, not as data)
 
@@ -52,3 +53,6 @@ python code/run_e5.py            # renders sample, runs models, summarizes, buil
 
 Until then the manuscript keeps `\E5readyfalse` and the evidence ladder's E5 row
 (“needed to claim LLM improvement”) remains the honest status.
+
+`python code/audit_e5.py ...` is the authoritative completion check. The audit
+must print `E5 INTEGRITY GATE: PASS` before E5 is enabled in the manuscript.

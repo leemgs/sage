@@ -1,0 +1,371 @@
+{
+  "data": "paper/data/situationcatch_llm_pilot35.jsonl",
+  "n_items": 35,
+  "expected_category_coverage": {
+    "counterfactual": 5,
+    "hidden_premise": 5,
+    "modality": 5,
+    "observer": 5,
+    "scope": 5,
+    "source_conflict": 5,
+    "temporal": 5
+  },
+  "conditions": [
+    "direct",
+    "structured",
+    "situation"
+  ],
+  "models": [
+    {
+      "file": "paper/results/raw/e5_gemini_2_5_flash.jsonl",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "raw_records": 105,
+      "duplicate_attempts": 0,
+      "conditions": [
+        {
+          "condition": "direct",
+          "n_success": 22,
+          "n_expected": 35,
+          "accuracy": 0.7272727272727273,
+          "missing_ids": [
+            "scope-0243",
+            "scope-0295",
+            "scope-0402",
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "source_conflict-0510",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 2
+          },
+          "balanced": false,
+          "median_latency_ms": 653.67,
+          "total_tokens": 2130,
+          "complete": false
+        },
+        {
+          "condition": "structured",
+          "n_success": 23,
+          "n_expected": 35,
+          "accuracy": 0.7391304347826086,
+          "missing_ids": [
+            "scope-0243",
+            "scope-0295",
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "source_conflict-0510",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 3
+          },
+          "balanced": false,
+          "median_latency_ms": 1651.83,
+          "total_tokens": 7804,
+          "complete": false
+        },
+        {
+          "condition": "situation",
+          "n_success": 24,
+          "n_expected": 35,
+          "accuracy": 0.75,
+          "missing_ids": [
+            "scope-0243",
+            "scope-0295",
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0510",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 3,
+            "source_conflict": 1
+          },
+          "balanced": false,
+          "median_latency_ms": 1321.3899999999999,
+          "total_tokens": 7373,
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "file": "paper/results/raw/e5_gemini_2_5_flash_lite.jsonl",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-lite",
+      "raw_records": 105,
+      "duplicate_attempts": 0,
+      "conditions": [
+        {
+          "condition": "direct",
+          "n_success": 27,
+          "n_expected": 35,
+          "accuracy": 0.5555555555555556,
+          "missing_ids": [
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 5,
+            "source_conflict": 2
+          },
+          "balanced": false,
+          "median_latency_ms": 580.12,
+          "total_tokens": 2594,
+          "complete": false
+        },
+        {
+          "condition": "structured",
+          "n_success": 26,
+          "n_expected": 35,
+          "accuracy": 0.7692307692307693,
+          "missing_ids": [
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 5,
+            "source_conflict": 1
+          },
+          "balanced": false,
+          "median_latency_ms": 1170.02,
+          "total_tokens": 7083,
+          "complete": false
+        },
+        {
+          "condition": "situation",
+          "n_success": 26,
+          "n_expected": 35,
+          "accuracy": 0.6923076923076923,
+          "missing_ids": [
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 5,
+            "source_conflict": 1
+          },
+          "balanced": false,
+          "median_latency_ms": 1037.495,
+          "total_tokens": 6889,
+          "complete": false
+        }
+      ],
+      "complete": false
+    },
+    {
+      "file": "paper/results/raw/e5_gemini_3_5_flash.jsonl",
+      "provider": "gemini",
+      "model": "gemini-3.5-flash",
+      "raw_records": 34,
+      "duplicate_attempts": 0,
+      "conditions": [
+        {
+          "condition": "direct",
+          "n_success": 9,
+          "n_expected": 35,
+          "accuracy": 0.6666666666666666,
+          "missing_ids": [
+            "hidden_premise-0219",
+            "hidden_premise-0420",
+            "modality-0173",
+            "modality-0221",
+            "modality-0348",
+            "modality-0357",
+            "observer-0011",
+            "observer-0361",
+            "observer-0461",
+            "observer-0553",
+            "observer-0579",
+            "scope-0087",
+            "scope-0243",
+            "scope-0295",
+            "scope-0393",
+            "scope-0402",
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "source_conflict-0510",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 3,
+            "modality": 1
+          },
+          "balanced": false,
+          "median_latency_ms": 3920.4,
+          "total_tokens": 903,
+          "complete": false
+        },
+        {
+          "condition": "structured",
+          "n_success": 8,
+          "n_expected": 35,
+          "accuracy": 0.625,
+          "missing_ids": [
+            "hidden_premise-0116",
+            "hidden_premise-0420",
+            "modality-0076",
+            "modality-0173",
+            "modality-0221",
+            "modality-0348",
+            "modality-0357",
+            "observer-0011",
+            "observer-0361",
+            "observer-0461",
+            "observer-0553",
+            "observer-0579",
+            "scope-0087",
+            "scope-0243",
+            "scope-0295",
+            "scope-0393",
+            "scope-0402",
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "source_conflict-0510",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 3
+          },
+          "balanced": false,
+          "median_latency_ms": 1345.33,
+          "total_tokens": 1824,
+          "complete": false
+        },
+        {
+          "condition": "situation",
+          "n_success": 6,
+          "n_expected": 35,
+          "accuracy": 0.8333333333333334,
+          "missing_ids": [
+            "hidden_premise-0116",
+            "hidden_premise-0219",
+            "hidden_premise-0300",
+            "hidden_premise-0420",
+            "modality-0076",
+            "modality-0173",
+            "modality-0221",
+            "modality-0348",
+            "modality-0357",
+            "observer-0011",
+            "observer-0361",
+            "observer-0461",
+            "observer-0553",
+            "observer-0579",
+            "scope-0087",
+            "scope-0243",
+            "scope-0295",
+            "scope-0393",
+            "scope-0402",
+            "source_conflict-0040",
+            "source_conflict-0219",
+            "source_conflict-0275",
+            "source_conflict-0475",
+            "source_conflict-0510",
+            "temporal-0026",
+            "temporal-0105",
+            "temporal-0333",
+            "temporal-0371",
+            "temporal-0546"
+          ],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 5,
+            "hidden_premise": 1
+          },
+          "balanced": false,
+          "median_latency_ms": 1286.9450000000002,
+          "total_tokens": 1642,
+          "complete": false
+        }
+      ],
+      "complete": false
+    }
+  ],
+  "confirmatory_complete": false
+}

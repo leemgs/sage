@@ -21,6 +21,23 @@ Status legend: ☐ todo · ☑ done. Owner: **U** = user action, **A** = agent a
 - ☐ Compute per-model situation-vs-baseline Δ (situation − best non-situation condition).
 - ☐ Report real numbers verbatim — no fabrication, even if the effect is weak or negative.
 
+The executable integrity gate is now implemented in `code/audit_e5.py` and is
+called automatically by `code/run_e5.py` before a manuscript table can be
+generated. It joins responses to the frozen item set, prefers the latest real
+success when retries are duplicated, requires exact per-condition item and
+category coverage, and aggregates accuracy, median latency and provider-
+normalized token use. The current archived pilot correctly fails this gate;
+therefore the boxes above remain unchecked until a funded run supplies the
+missing responses.
+
+Manual audit command:
+
+```bash
+python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
+  --data paper/data/situationcatch_llm_pilot35.jsonl \
+  --conditions direct structured situation
+```
+
 ## Phase 3 — Reflect in the manuscript (A)
 - ☐ `make_e5_table.py`: `multimodel_summary.csv` → `section/tables/e5_multimodel_table.tex`.
 - ☐ `paper/main.tex`: flip `\E5readyfalse` → `\E5readytrue`.

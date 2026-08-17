@@ -176,7 +176,17 @@ def main() -> int:
     if not existing:
         print("No raw output produced; nothing to summarize.", file=sys.stderr)
         return 1
-    print(f"Completed {ran} model run(s), {skipped} with errors. Summarizing.")
+    print(f"Completed {ran} model run(s), {skipped} with errors. Auditing.")
+    # A summary of a quota-truncated run is dangerously easy to mistake for a
+    # balanced experiment.  Refuse to generate a manuscript table until every
+    # requested model/condition covers every frozen item and category.
+    rc = run([sys.executable, "code/audit_e5.py", *existing,
+              "--data", args.data, "--conditions", *args.conditions])
+    if rc != 0:
+        print("E5 integrity gate failed; manuscript table was not generated.",
+              file=sys.stderr)
+        return rc
+    print("Integrity gate passed. Summarizing.")
     rc = run([sys.executable, "code/summarize_multimodel.py", *existing,
               "--out", args.summary])
     if rc != 0:
