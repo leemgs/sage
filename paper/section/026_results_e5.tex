@@ -7,39 +7,41 @@ language model to emit an explicit situation state improves it. As a first,
 deliberately bounded test of that E5 claim, we evaluate three Gemini models
 (\texttt{gemini-2.5-flash}, \texttt{gemini-2.5-flash-lite} and
 \texttt{gemini-3.5-flash}) on a stratified, evidence-complete rendering of
-SituationCatch-Bench (five items in each of the seven categories, $n=35$),
+SituationCatch-Bench (30 items in each of the seven categories, $n=210$),
 holding the evidence block, decoding temperature ($0$), thinking budget ($0$)
 and output-token budget fixed, and varying only the prompt condition among a
-plain \emph{direct} answer, a \emph{structured} JSON prompt, and an explicit
-\emph{situation}-state prompt. The primary quantity is the within-model
-situation-on-versus-off contrast $\Delta$: the situation condition minus the
-strongest non-situational prompt for the same model, so any difference is
-attributable to the explicit-state instruction rather than to model identity,
-evidence or budget. Every raw response, token count and latency is archived, and
-a completion audit (\texttt{code/audit\_e5.py}) requires one successful response
-for every item, condition and category before these numbers may enter the
-manuscript.
+plain \emph{direct} answer, a \emph{structured} JSON prompt and an explicit
+\emph{situation}-state prompt. The primary quantity is the within-model paired
+contrast between the situation and structured conditions. Every raw response,
+token count and latency is archived, and a completion audit
+(\texttt{code/audit\_e5.py}) requires one successful response for every item,
+condition and category before these numbers may enter the manuscript; the run
+reported here passes that gate with no failed calls.
 
-\input{section/tables/e5_multimodel_table}
+\input{section/tables/e5_stats_table}
 
-The result is a null-to-negative $\Delta$ (Table~\ref{tab:e5-multimodel}):
-asking the model for an explicit situation state matches the best baseline on
-the two stronger models ($\Delta=0.0$) and \emph{underperforms} a plain
-structured prompt on the smallest model ($\Delta=-5.7$). The situation and
-structured conditions also cost roughly three times the output tokens and higher
-latency than the direct prompt. In other words, a prompt-level ``situation''
-field is not, by itself, situation awareness: consistent with the controlled
-finding that accuracy collapses once states must be \emph{sensed} from text
-rather than supplied ($100.0\%\rightarrow77.9\%$), the bottleneck is situation
-sensing and validation, not the presence of a state slot in the prompt. This
-supports the paper's central position rather than a plug-in prompting win, and
-it is exactly the kind of measurement the framework is meant to make routine.
+The result is null-to-negative (Table~\ref{tab:e5-stats}). Prompting for an
+explicit situation state never significantly beats a matched structured prompt:
+the paired situation$-$structured differences are $-2.9$, $-5.2$ and $+0.0$
+percentage points, and all three $95\%$ cluster-bootstrap intervals include
+zero. The intervals are wide because the benchmark has only seven template
+families, so resampling categories -- the honest unit of independence -- leaves
+little power for a directional claim; this is exactly the reporting discipline
+the framework asks for, and here it forbids the convenient conclusion. The
+situation and structured conditions also cost roughly three times the output
+tokens and up to twice the latency of the direct prompt, with no accuracy gain
+and no reduction in selective risk.
 
-These numbers are a single-provider (Gemini-family), small-$n$ pilot with three
-prompt conditions; they neither confirm nor refute the situation-engineering
-hypothesis at scale. A confirmatory E5 requires multiple model families under
-matched budgets, a natural-language evaluation set, strong retrieval and agentic
-baselines, human agreement and clustered uncertainty (see the reporting
-protocol). The frozen manifest, model snapshots and cost accounting are in
-\texttt{code/experiment\_manifest.e5.json}, and the run is reproduced by a single
-audited command (\texttt{python code/run\_e5.py}).
+We read this as support for the paper's central position rather than a plug-in
+prompting win: a prompt-level ``situation'' field is not situation awareness.
+Consistent with the controlled finding that accuracy collapses once states must
+be \emph{sensed} from text rather than supplied ($100.0\%\rightarrow77.9\%$),
+the bottleneck is situation sensing and validation, not the presence of a state
+slot in the prompt. These numbers are a single-provider (Gemini-family),
+$n=210$ pilot with three prompt conditions; they neither confirm nor refute the
+situation-engineering hypothesis at scale. A confirmatory E5 requires multiple
+model families under matched budgets, a natural-language evaluation set, strong
+retrieval and agentic baselines, human agreement and clustered uncertainty (see
+the reporting protocol). The frozen manifest, model snapshots and cost
+accounting are in \texttt{code/experiment\_manifest.e5.json}, and the run is
+reproduced by a single audited command (\texttt{python code/run\_e5.py}).

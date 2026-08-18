@@ -1,17 +1,19 @@
 # E5 pilot raw responses — COMPLETE (audited), single-family preliminary result
 
-> **Update (paid tier).** With a billed Gemini key the 3-model pilot ran to
-> completion and **passes the integrity gate** (`code/audit_e5.py`:
-> `confirmatory_complete: true`) — every model has one successful response for
-> all 35 items in each of the 3 conditions across 7/7 categories. The result is
-> a **null-to-negative** situation-on-versus-off contrast: explicit situation
-> prompting ties the best baseline on gemini-2.5-flash and gemini-3.5-flash
-> ($\Delta=0.0$) and underperforms a structured prompt on gemini-2.5-flash-lite
-> ($\Delta=-5.7$). This is a real, reportable finding (not fabricated) and is
-> reflected in the manuscript with `\E5readytrue`; it supports the paper's
-> thesis that sensing — not a prompt-level state slot — is the bottleneck.
-> It remains a **single-provider, small-$n$ preliminary** test; a confirmatory
-> E5 (multiple families, natural text, human agreement) is still open.
+> **Update (paid tier, expanded to n=210).** With a billed Gemini key the
+> 3-model pilot ran to completion on the full 210-item stratified sample
+> (30/category x 7) and **passes the integrity gate** (`code/audit_e5.py`:
+> `confirmatory_complete: true`, 0 failed calls). The result is **null-to-
+> negative**: prompting for an explicit situation state never significantly
+> beats a matched structured prompt — paired situation-minus-structured
+> differences are -2.9, -5.2 and +0.0 points, and all three 95% cluster-
+> bootstrap CIs (categories as clusters; `code/e5_stats.py`) include zero. The
+> situation/structured conditions cost ~3x the tokens and up to ~2x the latency
+> of the direct prompt with no accuracy or selective-risk gain. This is a real,
+> reportable finding (not fabricated), reflected in the manuscript with
+> `\E5readytrue`; it supports the thesis that sensing — not a prompt-level state
+> slot — is the bottleneck. It remains a **single-provider preliminary** test;
+> a confirmatory E5 (multiple families, natural text, human agreement) is open.
 
 The earlier free-tier attempts (before billing) did **not** complete and were
 never used as a result; that history is retained below for provenance. The

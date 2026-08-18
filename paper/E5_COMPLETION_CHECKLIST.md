@@ -46,14 +46,14 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 - ☐ Rebuild the PDF to confirm it compiles (LaTeX not available in this environment — comment-only and toggle changes are low-risk; author to run `./run.sh`). Committed and pushed to main.
 
 ## Phase 4 — NMI-reviewer-grade strengthening (needed to actually pass review)
-- ☐ Multiple model *families* (OpenAI, Anthropic, open-weight ≥ 3 families) — needs egress opened.
-- ☐ Natural-language evaluation set (SituatedQA / FreshQA / TDBench-derived), beyond schema-generated text. Repo has `situatedqa_temporal_sample.jsonl` (12 items) to expand.
-- ☐ Strong baselines: structured-prompt / RAG / agent controls isolating situation semantics from "more prompt / JSON".
-- ☐ Human inter-annotator agreement via `code/annotation_cli.py` (≥ 3 independent annotators) — external validity, the main reviewer attack point.
-- ☐ Statistics: clustered / bootstrap CIs over template families; selective-risk and risk–coverage curves; pre-registered hypotheses.
-- ☐ Cost / latency accounting for maintaining explicit state and provenance (latency + usage already recorded in raw JSONL — just aggregate).
-- ☐ Larger N (35 → full 210+).
-- ☐ Archival DOI + license (Zenodo) — pre-acceptance requirement.
+- 🔒 Multiple model *families* (OpenAI, Anthropic, open-weight ≥ 3 families) — BLOCKED: egress policy allows only Gemini in this environment; needs admin to open it.
+- ◐ Natural-language evaluation set (SituatedQA / FreshQA / TDBench-derived) — in progress; repo has `situatedqa_temporal_sample.jsonl` (12 items) to run + expand.
+- ☐ Strong baselines: structured-prompt (done) / RAG / agent controls isolating situation semantics from "more prompt / JSON". Structured control is in place; RAG/agent remain.
+- 🔒 Human inter-annotator agreement via `code/annotation_cli.py` (≥ 3 independent annotators) — BLOCKED: requires real annotators; the tool refuses synthetic ratings.
+- ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; all situation−structured 95% CIs include zero (n=210).
+- ☑ Cost / latency accounting — aggregated per condition in `code/e5_stats.py` / `e5_audited_summary.csv` (situation ≈ 3× tokens, ≈ 2× latency vs direct).
+- ☑ Larger N (35 → full 210). Done: 30/category × 7 = 210, audited, 0 failed calls.
+- 🔒 Archival DOI + license (Zenodo) — needs the user's Zenodo deposit; can prepare a LICENSE, DOI is user action.
 
 ## Summary
 - **Fill E5 honestly in the paper** = Phase 0 key + Phases 1–3 (~30–60 min agent time, < $1).
