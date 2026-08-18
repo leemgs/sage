@@ -47,7 +47,7 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 
 ## Phase 4 — NMI-reviewer-grade strengthening (needed to actually pass review)
 - 🔒 Multiple model *families* (OpenAI, Anthropic, open-weight ≥ 3 families) — BLOCKED: egress policy allows only Gemini in this environment; needs admin to open it.
-- ◐ Natural-language evaluation set (SituatedQA / FreshQA / TDBench-derived) — in progress; repo has `situatedqa_temporal_sample.jsonl` (12 items) to run + expand.
+- ☑ Natural-language check (SituatedQA, n=12): situation−structured = −17/+0/+0; corroborates the synthetic null. Raw in `paper/results/raw_nl/`. Expanding beyond 12 needs the licensed full split.
 - ☐ Strong baselines: structured-prompt (done) / RAG / agent controls isolating situation semantics from "more prompt / JSON". Structured control is in place; RAG/agent remain.
 - 🔒 Human inter-annotator agreement via `code/annotation_cli.py` (≥ 3 independent annotators) — BLOCKED: requires real annotators; the tool refuses synthetic ratings.
 - ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; all situation−structured 95% CIs include zero (n=210).

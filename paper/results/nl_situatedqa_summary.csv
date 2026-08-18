@@ -1,0 +1,10 @@
+provider,model,condition,n_success,n_error,accuracy
+gemini,gemini-2.5-flash,direct,12,0,0.08333333333333333
+gemini,gemini-2.5-flash,situation,12,0,0.5
+gemini,gemini-2.5-flash,structured,12,0,0.6666666666666666
+gemini,gemini-2.5-flash-lite,direct,12,0,0.08333333333333333
+gemini,gemini-2.5-flash-lite,situation,12,0,0.4166666666666667
+gemini,gemini-2.5-flash-lite,structured,12,0,0.4166666666666667
+gemini,gemini-3.5-flash,direct,12,0,0.08333333333333333
+gemini,gemini-3.5-flash,situation,12,0,0.5833333333333334
+gemini,gemini-3.5-flash,structured,12,0,0.5833333333333334

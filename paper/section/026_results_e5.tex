@@ -32,6 +32,15 @@ situation and structured conditions also cost roughly three times the output
 tokens and up to twice the latency of the direct prompt, with no accuracy gain
 and no reduction in selective risk.
 
+A small natural-language check points the same way. On a 12-item sample from the
+public SituatedQA temporal split, the two date-anchored conditions again show no
+advantage for the explicit situation prompt over a structured one
+(situation$-$structured of $-17$, $+0$ and $+0$ points across the three models);
+we compare only these two conditions because the direct prompt here omits the
+query date and so is not a matched control. At $n=12$ this is a smoke test, not a
+result, but it is consistent with the synthetic finding and with sensing, not
+prompting, being the bottleneck.
+
 We read this as support for the paper's central position rather than a plug-in
 prompting win: a prompt-level ``situation'' field is not situation awareness.
 Consistent with the controlled finding that accuracy collapses once states must
