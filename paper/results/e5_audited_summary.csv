@@ -1,10 +1,10 @@
 provider,model,condition,n_success,n_expected,accuracy,median_latency_ms,total_tokens,complete
 gemini,gemini-2.5-flash,direct,210,210,0.8333333333333334,679.3199999999999,20883,1
 gemini,gemini-2.5-flash,structured,210,210,0.819047619047619,1646.55,69426,1
-gemini,gemini-2.5-flash,situation,210,210,0.7904761904761904,1263.055,65258,1
+gemini,gemini-2.5-flash,situation,210,210,0.8333333333333334,1263.055,65258,1
 gemini,gemini-2.5-flash-lite,direct,210,210,0.6666666666666666,562.5450000000001,21121,1
 gemini,gemini-2.5-flash-lite,structured,210,210,0.8285714285714286,988.89,57724,1
-gemini,gemini-2.5-flash-lite,situation,210,210,0.7761904761904762,884.51,56804,1
+gemini,gemini-2.5-flash-lite,situation,210,210,0.7285714285714285,884.51,56804,1
 gemini,gemini-3.5-flash,direct,210,210,0.8666666666666667,1007.7950000000001,21296,1
 gemini,gemini-3.5-flash,structured,210,210,0.8571428571428571,1403.18,46836,1
 gemini,gemini-3.5-flash,situation,210,210,0.8571428571428571,1502.05,59762,1

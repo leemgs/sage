@@ -203,6 +203,14 @@ def extract_answer(raw, condition):
         if text.startswith("```"):
             text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
         parsed = json.loads(text)
+        # A JSON condition that decides to clarify/abstain expresses that in the
+        # action field, not the answer field. Credit it the same way the plain
+        # prompt's literal CLARIFY/ABSTAIN token is credited, so the comparison
+        # across prompt formats is fair (otherwise a correct clarification is
+        # scored as a wrong free-text answer).
+        action = str(parsed.get("action", "")).strip().upper()
+        if action in ("CLARIFY", "ABSTAIN"):
+            return action
         return str(parsed.get("answer", parsed.get("action", "")))
     except (ValueError, TypeError):
         return raw

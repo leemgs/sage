@@ -1,0 +1,4 @@
+provider,model,condition,n_success,n_error,accuracy
+gemini,gemini-2.5-flash,direct,210,0,0.8714285714285714
+gemini,gemini-2.5-flash-lite,direct,210,0,0.919047619047619
+gemini,gemini-3.5-flash,direct,210,0,0.9476190476190476

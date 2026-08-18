@@ -69,7 +69,7 @@
           "condition": "situation",
           "n_success": 210,
           "n_expected": 210,
-          "accuracy": 0.7904761904761904,
+          "accuracy": 0.8333333333333334,
           "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
@@ -142,7 +142,7 @@
           "condition": "situation",
           "n_success": 210,
           "n_expected": 210,
-          "accuracy": 0.7761904761904762,
+          "accuracy": 0.7285714285714285,
           "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {

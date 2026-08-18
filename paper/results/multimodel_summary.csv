@@ -1,9 +1,9 @@
 provider,model,condition,n_success,n_error,accuracy
 gemini,gemini-2.5-flash,direct,210,0,0.8333333333333334
-gemini,gemini-2.5-flash,situation,210,0,0.7904761904761904
+gemini,gemini-2.5-flash,situation,210,0,0.8333333333333334
 gemini,gemini-2.5-flash,structured,210,0,0.819047619047619
 gemini,gemini-2.5-flash-lite,direct,210,0,0.6666666666666666
-gemini,gemini-2.5-flash-lite,situation,210,0,0.7761904761904762
+gemini,gemini-2.5-flash-lite,situation,210,0,0.7285714285714285
 gemini,gemini-2.5-flash-lite,structured,210,0,0.8285714285714286
 gemini,gemini-3.5-flash,direct,210,0,0.8666666666666667
 gemini,gemini-3.5-flash,situation,210,0,0.8571428571428571

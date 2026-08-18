@@ -1,19 +1,23 @@
 # E5 pilot raw responses — COMPLETE (audited), single-family preliminary result
 
-> **Update (paid tier, expanded to n=210).** With a billed Gemini key the
-> 3-model pilot ran to completion on the full 210-item stratified sample
-> (30/category x 7) and **passes the integrity gate** (`code/audit_e5.py`:
-> `confirmatory_complete: true`, 0 failed calls). The result is **null-to-
-> negative**: prompting for an explicit situation state never significantly
-> beats a matched structured prompt — paired situation-minus-structured
-> differences are -2.9, -5.2 and +0.0 points, and all three 95% cluster-
-> bootstrap CIs (categories as clusters; `code/e5_stats.py`) include zero. The
-> situation/structured conditions cost ~3x the tokens and up to ~2x the latency
-> of the direct prompt with no accuracy or selective-risk gain. This is a real,
-> reportable finding (not fabricated), reflected in the manuscript with
-> `\E5readytrue`; it supports the thesis that sensing — not a prompt-level state
-> slot — is the bottleneck. It remains a **single-provider preliminary** test;
-> a confirmatory E5 (multiple families, natural text, human agreement) is open.
+> **Update (paid tier, n=210, rescored + RAG baseline).** With a billed Gemini
+> key the 3-model pilot ran to completion on the full 210-item stratified sample
+> and **passes the integrity gate** (`code/audit_e5.py`, 0 failed calls). After
+> a fair-scoring fix (JSON CLARIFY/ABSTAIN actions credited like the plain
+> prompt's token; archived responses rescored deterministically by
+> `code/rescore.py`, no re-calling), the result is **null-to-negative**:
+> paired situation-minus-structured = +1.4, -10.0, +0.0 points; the only CI that
+> excludes zero is gemini-2.5-flash-lite, where situation is significantly
+> *worse*. A retrieval-augmented baseline (top-3 lexical claims,
+> `prepare_rag_eval.py`) is the strongest condition overall (RAG 91.3% vs
+> structured 83.5% vs situation 80.6%), **except** on the two applicability-heavy
+> categories — temporal (+8.9) and observer (+5.6) — where the full-state
+> situation condition beats RAG. Cost: situation ~3x tokens / ~2x latency of
+> direct. All real, reflected in the manuscript with `\E5readytrue`; it supports
+> the thesis that applicability reasoning (temporal validity, observer
+> knowledge) — not a prompt-level state slot — is where the state matters. Still
+> a **single-provider preliminary** test; multi-family, larger natural-text and
+> human agreement remain open.
 
 The earlier free-tier attempts (before billing) did **not** complete and were
 never used as a result; that history is retained below for provenance. The
