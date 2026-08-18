@@ -1,6 +1,6 @@
 {
   "study_id": "sage-e5-multimodel-intervention",
-  "status": "READY_PENDING_CREDITS",
+  "status": "COMPLETE_PILOT_AUDITED_SINGLE_FAMILY",
   "primary_contrast": "same model + same evidence + same budget, situation off versus on",
   "data": {
     "source": "paper/data/situationcatch_bench.jsonl",

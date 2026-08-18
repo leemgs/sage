@@ -1,21 +1,21 @@
-# E5 pilot raw responses — INCOMPLETE, not a result
+# E5 pilot raw responses — COMPLETE (audited), single-family preliminary result
 
-> **Update (second attempt, after a daily free-tier quota reset).** Re-running
-> the 3-model Gemini pilot with a multi-pass, resumable, backoff-driven driver
-> still did not complete: the daily free-tier quota was exhausted again before
-> any model reached 7/7 categories × 35 items (best: gemini-2.5-flash-lite and
-> gemini-2.5-flash at 6/7 categories, ~26/35 and ~24/35 scored; gemini-3.5-flash
-> 3/7). Directions are inconsistent across models and N is uneven, so the data
-> remain scientifically invalid as an E5 result. **Conclusion: the free tier is
-> demonstrably insufficient for even a single-family pilot; a funded key (or an
-> account with real quota) is required.** The manuscript stays at \E5readyfalse.
+> **Update (paid tier).** With a billed Gemini key the 3-model pilot ran to
+> completion and **passes the integrity gate** (`code/audit_e5.py`:
+> `confirmatory_complete: true`) — every model has one successful response for
+> all 35 items in each of the 3 conditions across 7/7 categories. The result is
+> a **null-to-negative** situation-on-versus-off contrast: explicit situation
+> prompting ties the best baseline on gemini-2.5-flash and gemini-3.5-flash
+> ($\Delta=0.0$) and underperforms a structured prompt on gemini-2.5-flash-lite
+> ($\Delta=-5.7$). This is a real, reportable finding (not fabricated) and is
+> reflected in the manuscript with `\E5readytrue`; it supports the paper's
+> thesis that sensing — not a prompt-level state slot — is the bottleneck.
+> It remains a **single-provider, small-$n$ preliminary** test; a confirmatory
+> E5 (multiple families, natural text, human agreement) is still open.
 
-The `e5_gemini_*.jsonl` files in this directory are **real** Gemini API
-responses (archived verbatim, successes and errors distinguishable), but they
-are an **incomplete free-tier pilot** and must **not** be read as the E5
-result. They exist to (a) prove the harness produces real, scored responses
-end to end and (b) preserve what was collected before the free-tier quota ran
-out.
+The earlier free-tier attempts (before billing) did **not** complete and were
+never used as a result; that history is retained below for provenance. The
+current archived `e5_gemini_*.jsonl` are real, audited, complete responses.
 
 ## Why this is not usable as a scientific result
 

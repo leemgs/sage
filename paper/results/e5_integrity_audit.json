@@ -20,131 +20,88 @@
       "file": "paper/results/raw/e5_gemini_2_5_flash.jsonl",
       "provider": "gemini",
       "model": "gemini-2.5-flash",
-      "raw_records": 105,
-      "duplicate_attempts": 0,
+      "raw_records": 141,
+      "duplicate_attempts": 36,
       "conditions": [
         {
           "condition": "direct",
-          "n_success": 22,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.7272727272727273,
-          "missing_ids": [
-            "scope-0243",
-            "scope-0295",
-            "scope-0402",
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "source_conflict-0510",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8285714285714286,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
             "hidden_premise": 5,
             "modality": 5,
             "observer": 5,
-            "scope": 2
+            "scope": 5,
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 653.67,
-          "total_tokens": 2130,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 666.41,
+          "total_tokens": 3471,
+          "complete": true
         },
         {
           "condition": "structured",
-          "n_success": 23,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.7391304347826086,
-          "missing_ids": [
-            "scope-0243",
-            "scope-0295",
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "source_conflict-0510",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8285714285714286,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
             "hidden_premise": 5,
             "modality": 5,
             "observer": 5,
-            "scope": 3
+            "scope": 5,
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 1651.83,
-          "total_tokens": 7804,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 1569.66,
+          "total_tokens": 11366,
+          "complete": true
         },
         {
           "condition": "situation",
-          "n_success": 24,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.75,
-          "missing_ids": [
-            "scope-0243",
-            "scope-0295",
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0510",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8285714285714286,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
             "hidden_premise": 5,
             "modality": 5,
             "observer": 5,
-            "scope": 3,
-            "source_conflict": 1
+            "scope": 5,
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 1321.3899999999999,
-          "total_tokens": 7373,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 1278.46,
+          "total_tokens": 10754,
+          "complete": true
         }
       ],
-      "complete": false
+      "complete": true
     },
     {
       "file": "paper/results/raw/e5_gemini_2_5_flash_lite.jsonl",
       "provider": "gemini",
       "model": "gemini-2.5-flash-lite",
-      "raw_records": 105,
-      "duplicate_attempts": 0,
+      "raw_records": 131,
+      "duplicate_attempts": 26,
       "conditions": [
         {
           "condition": "direct",
-          "n_success": 27,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.5555555555555556,
-          "missing_ids": [
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.6571428571428571,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
@@ -152,29 +109,20 @@
             "modality": 5,
             "observer": 5,
             "scope": 5,
-            "source_conflict": 2
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 580.12,
-          "total_tokens": 2594,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 573.46,
+          "total_tokens": 3517,
+          "complete": true
         },
         {
           "condition": "structured",
-          "n_success": 26,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.7692307692307693,
-          "missing_ids": [
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8285714285714286,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
@@ -182,29 +130,20 @@
             "modality": 5,
             "observer": 5,
             "scope": 5,
-            "source_conflict": 1
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 1170.02,
-          "total_tokens": 7083,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 1159.16,
+          "total_tokens": 9777,
+          "complete": true
         },
         {
           "condition": "situation",
-          "n_success": 26,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.6923076923076923,
-          "missing_ids": [
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.7714285714285715,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
@@ -212,160 +151,90 @@
             "modality": 5,
             "observer": 5,
             "scope": 5,
-            "source_conflict": 1
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 1037.495,
-          "total_tokens": 6889,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 1004.89,
+          "total_tokens": 9268,
+          "complete": true
         }
       ],
-      "complete": false
+      "complete": true
     },
     {
       "file": "paper/results/raw/e5_gemini_3_5_flash.jsonl",
       "provider": "gemini",
       "model": "gemini-3.5-flash",
-      "raw_records": 34,
-      "duplicate_attempts": 0,
+      "raw_records": 116,
+      "duplicate_attempts": 11,
       "conditions": [
         {
           "condition": "direct",
-          "n_success": 9,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.6666666666666666,
-          "missing_ids": [
-            "hidden_premise-0219",
-            "hidden_premise-0420",
-            "modality-0173",
-            "modality-0221",
-            "modality-0348",
-            "modality-0357",
-            "observer-0011",
-            "observer-0361",
-            "observer-0461",
-            "observer-0553",
-            "observer-0579",
-            "scope-0087",
-            "scope-0243",
-            "scope-0295",
-            "scope-0393",
-            "scope-0402",
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "source_conflict-0510",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8571428571428571,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
-            "hidden_premise": 3,
-            "modality": 1
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 5,
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 3920.4,
-          "total_tokens": 903,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 977.03,
+          "total_tokens": 3532,
+          "complete": true
         },
         {
           "condition": "structured",
-          "n_success": 8,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.625,
-          "missing_ids": [
-            "hidden_premise-0116",
-            "hidden_premise-0420",
-            "modality-0076",
-            "modality-0173",
-            "modality-0221",
-            "modality-0348",
-            "modality-0357",
-            "observer-0011",
-            "observer-0361",
-            "observer-0461",
-            "observer-0553",
-            "observer-0579",
-            "scope-0087",
-            "scope-0243",
-            "scope-0295",
-            "scope-0393",
-            "scope-0402",
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "source_conflict-0510",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8571428571428571,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
-            "hidden_premise": 3
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 5,
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 1345.33,
-          "total_tokens": 1824,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 1345.14,
+          "total_tokens": 7703,
+          "complete": true
         },
         {
           "condition": "situation",
-          "n_success": 6,
+          "n_success": 35,
           "n_expected": 35,
-          "accuracy": 0.8333333333333334,
-          "missing_ids": [
-            "hidden_premise-0116",
-            "hidden_premise-0219",
-            "hidden_premise-0300",
-            "hidden_premise-0420",
-            "modality-0076",
-            "modality-0173",
-            "modality-0221",
-            "modality-0348",
-            "modality-0357",
-            "observer-0011",
-            "observer-0361",
-            "observer-0461",
-            "observer-0553",
-            "observer-0579",
-            "scope-0087",
-            "scope-0243",
-            "scope-0295",
-            "scope-0393",
-            "scope-0402",
-            "source_conflict-0040",
-            "source_conflict-0219",
-            "source_conflict-0275",
-            "source_conflict-0475",
-            "source_conflict-0510",
-            "temporal-0026",
-            "temporal-0105",
-            "temporal-0333",
-            "temporal-0371",
-            "temporal-0546"
-          ],
+          "accuracy": 0.8571428571428571,
+          "missing_ids": [],
           "unexpected_ids": [],
           "category_coverage": {
             "counterfactual": 5,
-            "hidden_premise": 1
+            "hidden_premise": 5,
+            "modality": 5,
+            "observer": 5,
+            "scope": 5,
+            "source_conflict": 5,
+            "temporal": 5
           },
-          "balanced": false,
-          "median_latency_ms": 1286.9450000000002,
-          "total_tokens": 1642,
-          "complete": false
+          "balanced": true,
+          "median_latency_ms": 1590.06,
+          "total_tokens": 10240,
+          "complete": true
         }
       ],
-      "complete": false
+      "complete": true
     }
   ],
-  "confirmatory_complete": false
+  "confirmatory_complete": true
 }
