@@ -6,7 +6,7 @@ The manuscript has been revised from a broad claim of a completed solution for r
 
 ## Major comment 1: Claims exceeded the experiment
 
-**Action.** Rewrote the title, abstract, introduction, Results and Discussion. Added an evidence ladder separating established, supported and proposed claims. Removed the paired P value and calibration result from headline claims. Added an explicit statement that no frontier-model efficacy is established.
+**Action.** Rewrote the title, abstract, introduction, Results and Discussion. Added an evidence ladder separating established, supported and proposed claims. Removed the paired P value and calibration result from headline claims. The completed single-provider E5 pilot is reported as null-to-negative rather than as frontier-model efficacy.
 
 ## Major comment 2: Generator-solver circularity
 
@@ -14,11 +14,11 @@ The manuscript has been revised from a broad claim of a completed solution for r
 
 ## Major comment 3: No actual LLM evaluation
 
-**Action.** Retained no invented results. Added a matched confirmatory protocol, immutable model reporting, raw-output archiving and gold/predicted/corrupted-state conditions. The manuscript states that the adapter is executable but the experiment is incomplete.
+**Action.** Retained no invented results. Completed and audited a 3-model Gemini-family evaluation on 210 stratified items, archived every raw response, and added a 12-item SituatedQA check. The manuscript limits this to preliminary single-provider evidence; multi-family confirmation remains open.
 
 ## Major comment 4: Weak baselines
 
-**Action.** Renamed current methods software controls. Specified required future baselines: direct and structured prompting, chain-of-thought, standard and temporal RAG, event/graph retrieval, reflection/verification agents and Situation Engineering under matched evidence and budgets.
+**Action.** Renamed E1--E4 methods software controls. E5 now includes direct and structured prompting plus a top-3 lexical RAG baseline under matched items; verification-agent and stronger temporal/event retrieval baselines remain future work.
 
 ## Major comment 5: Novelty relative to established fields
 
@@ -49,9 +49,9 @@ The manuscript has been revised from a broad claim of a completed solution for r
 
 ## Remaining work before a strong NMI Article submission
 
-1. Execute the multi-model natural-language study with immutable snapshots and raw outputs.
+1. Extend the audited single-provider pilot to multiple independent model families and a larger licensed natural-language split.
 2. Construct an independently annotated natural benchmark and report agreement.
 3. Add learned situation sensing and gold/predicted/corrupted-state comparisons.
-4. Use strong RAG and agent baselines under matched budgets.
+4. Add temporal/event retrieval and verification-agent baselines under matched budgets.
 5. Evaluate OOD composition, multilingual data, cost, latency and human clarification.
-6. Archive code/data in an immutable public release with DOI and licence.
+6. Deposit the MIT-licensed code/data release in an immutable archive and mint its DOI.

@@ -3,12 +3,12 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \Newlabel{1}{1}
+\newlabel{sec:introduction}{{1}{1}{}{section*.1}{}}
 \citation{zhang2021situatedqa,vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa}
 \citation{lewis2020rag}
 \citation{asai2024selfrag,yao2023react,schick2023toolformer}
 \citation{mei2025context}
 \citation{zhong2026harness,lin2026ahe}
-\newlabel{sec:introduction}{{1}{2}{}{section*.1}{}}
 \citation{barwise1983situations}
 \citation{mccarthy1969problems,kowalski1986event,reiter2001knowledge}
 \citation{allen1983interval}
@@ -16,24 +16,24 @@
 \citation{kaelbling1998pomdp,henderson2014second}
 \citation{snodgrass1992temporal}
 \citation{vanbenthem1996dynamic,stalnaker2002common}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Typical coverage of neighbouring state-based research traditions. Entries summarize common formulations rather than claiming that every method in an area has the same capabilities.}}{4}{table.1}\protected@file@percent }
-\newlabel{tab:foundations}{{1}{4}{Typical coverage of neighbouring state-based research traditions. Entries summarize common formulations rather than claiming that every method in an area has the same capabilities}{table.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Proposed situation-engineering interface. The taxonomy is a conceptual systems framework; the present experiments validate only the controlled state update and response-policy components.}}{4}{figure.1}\protected@file@percent }
-\newlabel{fig:engineering-planes}{{1}{4}{Proposed situation-engineering interface. The taxonomy is a conceptual systems framework; the present experiments validate only the controlled state update and response-policy components}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Evaluation decomposition. The present experiment supplies oracle structured situation variables and evaluates state update and response policy. End-to-end research must additionally measure natural-language situation sensing.}}{6}{figure.2}\protected@file@percent }
-\newlabel{fig:framework}{{2}{6}{Evaluation decomposition. The present experiment supplies oracle structured situation variables and evaluates state update and response policy. End-to-end research must additionally measure natural-language situation sensing}{figure.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred.}}{7}{figure.3}\protected@file@percent }
-\newlabel{fig:accuracy}{{3}{7}{Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization.}}{7}{figure.4}\protected@file@percent }
-\newlabel{fig:category}{{4}{7}{Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces From situation blindness to an applicability-aware response. \textbf  {a}, A supported appointment becomes stale after resignation. \textbf  {b}, retrieval and relevance alone do not require resolution of that transition. \textbf  {c}, situation engineering constructs a provenance-linked state, validates claim applicability and propagates unresolved variables into response policy. \textbf  {d}, SituationCatch-Bench isolates seven corresponding diagnostic axes.}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:engineering-planes}{{1}{4}{From situation blindness to an applicability-aware response. \textbf {a}, A supported appointment becomes stale after resignation. \textbf {b}, retrieval and relevance alone do not require resolution of that transition. \textbf {c}, situation engineering constructs a provenance-linked state, validates claim applicability and propagates unresolved variables into response policy. \textbf {d}, SituationCatch-Bench isolates seven corresponding diagnostic axes}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:accuracy}{{2}{6}{Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:category}{{3}{7}{Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic.}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:ablation}{{4}{7}{Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic}{figure.4}{}}
 \citation{zhang2021situatedqa}
 \citation{vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa,kim2025tdbench}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic.}}{8}{figure.5}\protected@file@percent }
-\newlabel{fig:ablation}{{5}{8}{Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic}{figure.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot).}}{8}{table.2}\protected@file@percent }
-\newlabel{tab:slot-sensing}{{2}{8}{Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot)}{table.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Evidence ladder and permitted interpretation.}}{9}{table.3}\protected@file@percent }
-\newlabel{tab:evidence-ladder}{{3}{9}{Evidence ladder and permitted interpretation}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot).}}{8}{table.1}\protected@file@percent }
+\newlabel{tab:slot-sensing}{{1}{8}{Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot)}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Evidence ladder and permitted interpretation.}}{9}{table.2}\protected@file@percent }
+\newlabel{tab:evidence-ladder}{{2}{9}{Evidence ladder and permitted interpretation}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are the only ones that license a directional claim.}}{10}{table.3}\protected@file@percent }
+\newlabel{tab:e5-stats}{{3}{10}{E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are the only ones that license a directional claim}{table.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Retrieval-augmented (RAG) baseline versus full-evidence prompting, mean accuracy over the three Gemini models on the $n=210$ sample. RAG answers from the top-3 lexically retrieved claims (plain text); Structured and Situation see all claims. On the two categories that most require reasoning over the applicability state -- temporal validity and observer knowledge -- the full-state conditions beat RAG; elsewhere a focused RAG is as good or better, and its aggregate lead is driven by clarification (hidden premise), where the plain prompt elicits the CLARIFY token more readily.}}{11}{table.4}\protected@file@percent }
+\newlabel{tab:e5-rag}{{4}{11}{Retrieval-augmented (RAG) baseline versus full-evidence prompting, mean accuracy over the three Gemini models on the $n=210$ sample. RAG answers from the top-3 lexically retrieved claims (plain text); Structured and Situation see all claims. On the two categories that most require reasoning over the applicability state -- temporal validity and observer knowledge -- the full-state conditions beat RAG; elsewhere a focused RAG is as good or better, and its aggregate lead is driven by clarification (hidden premise), where the plain prompt elicits the CLARIFY token more readily}{table.4}{}}
 \bibcite{lewis2020rag}{{1}{}{{}}{{}}}
 \bibcite{asai2024selfrag}{{2}{}{{}}{{}}}
 \bibcite{yao2023react}{{3}{}{{}}{{}}}
@@ -61,4 +61,4 @@
 \bibcite{kowalski1986event}{{25}{}{{}}{{}}}
 \bibcite{reiter2001knowledge}{{26}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{18}
+\gdef \@abspage@last{19}

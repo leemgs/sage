@@ -101,14 +101,14 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% E5 (multi-model intervention) toggle
 %% -------------------------------------------------------------
 %% E5 결과(실제 frontier/open 모델 응답)가 준비되면 아래를 true로.
-%% \E5readytrue  → Results에 E5 절과 tab:e5-multimodel 표를 포함.
-%% \E5readyfalse → 기본값(제출 청결): E5 절 미포함.
+%% \EFivereadytrue  → Results에 E5 절과 tab:e5-multimodel 표를 포함.
+%% \EFivereadyfalse → 기본값(제출 청결): E5 절 미포함.
 %% 실행 경로: OPENROUTER_API_KEY 설정 후 `python code/run_e5.py`가
 %% paper/results/multimodel_summary.csv → section/tables/e5_multimodel_table.tex
 %% 를 자동 생성한다(실데이터 없으면 PENDING placeholder). 자세한 내용은
 %% code/experiment_manifest.e5.json 참조.
-\newif\ifE5ready
-\E5readytrue
+\newif\ifEFiveready
+\EFivereadytrue
 %% =============================================================
 
 %% =============================================================
@@ -137,7 +137,7 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %%   Status: honestly scoped, but reads as a Perspective, not a Research
 %%     Article, at NMI's bar.
 %%   Action: complete E5 on real models via code/run_e5.py (gated by
-%%     code/audit_e5.py); flip \E5readytrue and report the within-model
+%%     code/audit_e5.py); flip \EFivereadytrue and report the within-model
 %%     situation-vs-baseline contrast. Until then, state E5 as preliminary.
 %%   Section: 026_results_e5 (+ abstract, evidence-ladder row).
 %%
@@ -188,7 +188,7 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% 006_abstract_nmi.tex
 %%   [R1] Do not lead with 100.0%; call oracle numbers regression coverage.
 %%   [R2] The abstract pre-announces "matched natural-text and multi-model
-%%        tests" -- until \E5readytrue, phrase E5 as a pre-specified/pending
+%%        tests" -- until \EFivereadytrue, phrase E5 as a pre-specified/pending
 %%        test, not an achieved result.
 %%
 %% 010_introduction_nmi.tex
@@ -213,7 +213,7 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %%   [R5] Report clustered/bootstrap CIs over template families for the key
 %%        contrasts; add a selective-risk / risk-coverage view.
 %%
-%% 026_results_e5.tex  (enabled by \E5readytrue)
+%% 026_results_e5.tex  (enabled by \EFivereadytrue)
 %%   [R2] Populate from code/run_e5.py once code/audit_e5.py prints
 %%        "E5 INTEGRITY GATE: PASS"; report the within-model
 %%        situation-vs-baseline delta and label the scope honestly
@@ -264,7 +264,7 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 \input{section/015_situation_engineering}
 \pdfbookmark[1]{Results}{bookmark-results}
 \input{section/025_results_ncs}
-\ifE5ready\input{section/026_results_e5}\fi   % E5 multi-model intervention (activate after code/run_e5.py)
+\ifEFiveready\input{section/026_results_e5}\fi   % E5 multi-model intervention (activate after code/run_e5.py)
 \pdfbookmark[1]{Discussion}{bookmark-discussion}
 \input{section/060_discussion}
 

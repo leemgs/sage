@@ -13,7 +13,7 @@
 > structured 83.5% vs situation 80.6%), **except** on the two applicability-heavy
 > categories — temporal (+8.9) and observer (+5.6) — where the full-state
 > situation condition beats RAG. Cost: situation ~3x tokens / ~2x latency of
-> direct. All real, reflected in the manuscript with `\E5readytrue`; it supports
+> direct. All real, reflected in the manuscript with `\EFivereadytrue`; it supports
 > the thesis that applicability reasoning (temporal validity, observer
 > knowledge) — not a prompt-level state slot — is where the state matters. Still
 > a **single-provider preliminary** test; multi-family, larger natural-text and
@@ -54,11 +54,11 @@ reset), then the existing pipeline fills the manuscript automatically:
 ```bash
 export GEMINI_API_KEY=...        # or OPENROUTER_API_KEY if that host is allowed
 python code/run_e5.py            # renders sample, runs models, summarizes, builds table
-# then flip \E5readytrue in paper/main.tex
+# then flip \EFivereadytrue in paper/main.tex
 ```
 
-Until then the manuscript keeps `\E5readyfalse` and the evidence ladder's E5 row
-(“needed to claim LLM improvement”) remains the honest status.
+The completed audited pilot now keeps `\EFivereadytrue`; any future multi-family
+extension must pass the same audit before replacing the reported evidence.
 
 `python code/audit_e5.py ...` is the authoritative completion check. The audit
 must print `E5 INTEGRITY GATE: PASS` before E5 is enabled in the manuscript.

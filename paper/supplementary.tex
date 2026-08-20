@@ -73,15 +73,18 @@ SE4 & Adaptive audited situation intelligence & Learned multimodal sensing, mult
 A natural-text extension should separately score event extraction, event coreference, temporal ordering, validity intervals, source and modality classification, scope resolution, observer belief, counterfactual frame selection, missing-variable detection, clarification utility, selective risk and claim-level situation consistency. Fixed-state policy tests and fixed-policy sensing tests are both needed to prevent final accuracy from obscuring the source of improvement.
 
 \section*{Supplementary Note 9: Frontier-model evaluation status}
-The repository includes a frozen temporal SituatedQA smoke-test sample and a
-multi-provider evaluation harness. No frontier-model outputs are reported in
-this version because the execution environment contained no provider API
-credentials and no local model checkpoints. The harness aborts rather than
-creating placeholder predictions. A publishable revision should run the full
-licensed split on at least three model families, archive raw responses and
-record exact model snapshots, dates, prompts, token budgets, costs and failed
-calls. This distinction is essential: an executable protocol is not an
-experimental result.
+The repository includes a frozen temporal SituatedQA smoke-test sample, a
+multi-provider evaluation harness and archived item-level responses from an
+audited Gemini-family pilot. Three Gemini models completed all direct,
+structured and situation conditions on the 210-item stratified synthetic
+sample (30 items in each category), with no failed calls. The repository also
+archives a 12-item SituatedQA temporal check and a top-3 lexical-retrieval
+baseline. The integrity gate joins responses to the frozen item set and refuses
+to generate a manuscript table unless every requested model, condition and
+category is complete. Thus these are real, auditable results, but only a
+single-provider preliminary test. A confirmatory revision still requires the
+full licensed natural-language split, multiple independent model families and
+a verification-agent baseline under matched budgets.
 
 
 \section*{Supplementary Note 10: Independent annotation protocol}

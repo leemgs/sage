@@ -58,28 +58,33 @@ observable text. Together, these results identify situation sensing as a
 separate engineering and evaluation target rather than treating every failure
 as retrieval or generation error.
 
-The controlled design cannot decide whether the full interface improves a
-contemporary language model beyond a matched structured prompt or temporal RAG.
-That comparison is the confirmatory submission gate for the general LLM claim:
-same model, evidence and computation budget; independently authored natural
-questions; direct, structured, temporal-retrieval, verification-agent and
-situation conditions; and paired, scenario-clustered inference. The released
-protocol makes this contrast executable, while the present results make no
-claim from incomplete pilot calls. The SE0--SE4 maturity model and longer
-research programme are provided in Supplementary Information.
+The audited E5 pilot answers a narrower question: on three Gemini models,
+explicit situation prompting does not improve accuracy over a matched
+structured prompt and trails focused lexical retrieval overall. Its
+category-level exception---situation beats retrieval on temporal validity and
+observer knowledge---is consistent with applicability reasoning mattering when
+the decisive variable is which claim is valid now or known to this observer.
+This single-provider synthetic result is not the confirmatory submission gate
+for the general LLM claim. That gate still requires the same model, evidence and
+computation budget across independently authored natural questions; multiple
+model families; direct, structured, temporal-retrieval, verification-agent and
+situation conditions; and paired, scenario-clustered inference. The SE0--SE4
+maturity model and longer research programme are provided in Supplementary
+Information.
 
 \subsection*{Limitations and risks}
 
 The diagnostic data are generated from a schema shared with the solver, so
 benchmark-solver circularity is intentional and limits external validity. The
 item count overstates statistical independence because examples share template
-families. The baselines are software controls, not state-of-the-art LLM
-systems. Confidence values are rule-derived and do not constitute neural
-calibration. No human participants, multilingual evaluation, multimodal sensing or
-deployed-agent study was completed. A small Gemini API pilot verified the
-execution path but ended at unequal category coverage when free-tier quota was
-exhausted; it is excluded from scientific results. These limitations
-are not resolved by additional prose and require new experiments.
+families. The E1--E4 baselines are software controls, while E5 remains limited
+to one provider family and a small natural-language smoke test. Confidence
+values are rule-derived and do not constitute neural calibration. No human
+participants, multilingual evaluation, multimodal sensing or deployed-agent
+study was completed. Earlier quota-truncated free-tier attempts are archived
+but excluded from scientific results; only the complete paid-tier run that
+passes the integrity gate enters the manuscript. These limitations are not
+resolved by additional prose and require new experiments.
 
 Explicit state can also create new attack surfaces. An adversary may manipulate
 timestamps, source authority, identity, scope or world labels. A centralized
