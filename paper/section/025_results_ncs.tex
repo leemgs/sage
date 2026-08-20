@@ -140,13 +140,15 @@ frontier model.
 
 Table~\ref{tab:evidence-ladder} makes the claim boundary explicit. The current
 study establishes that seven applicability invariants can be represented,
-executed and independently ablated under oracle structured states. It supports,
-but does not establish, the hypothesis that explicit situation states will
-reduce analogous errors in LLMs. End-to-end efficacy requires matched
-multi-model experiments on natural text, predicted-state evaluation, strong
-prompt/RAG/agent baselines, clustered uncertainty estimates, human annotation
-and efficiency analysis. We release the adapter, schemas and reporting protocol
-for these experiments but do not substitute unexecuted predictions for results.
+executed and independently ablated under oracle structured states. The audited
+E5 pilot tests, but does not establish, the hypothesis that explicit situation
+states reduce analogous errors in LLMs: the prompt intervention is
+null-to-negative overall in one provider family, while temporal and observer
+items show a category-specific advantage over focused retrieval. Broad
+end-to-end efficacy still requires independent model families, a larger natural
+corpus, agent baselines and human annotation. We release raw responses, the
+adapter, schemas and reporting protocol and do not substitute unexecuted
+predictions for results.
 
 \begin{table}[t]
 \caption{Evidence ladder and permitted interpretation.}

@@ -16,4 +16,8 @@ Diagnostic evaluation, unit testing of temporal/event reasoning, and controlled 
 The benchmark must not be used to claim general natural-language competence, safety in high-stakes deployment, multilingual robustness or human-level situation awareness.
 
 ## Distribution and maintenance
-The paper package contains the generator and generated JSONL. A public archival DOI should be assigned before publication.
+The paper package and public GitHub repository contain the generator and
+generated JSONL under the repository MIT licence. Third-party benchmark samples
+retain their source licences. A DOI should be cited only if and when an archival
+deposit is minted; the Git commit or release tag identifies the reviewed version
+in the meantime.

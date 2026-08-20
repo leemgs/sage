@@ -109,7 +109,35 @@ ablation is applied to all items, and its expected effect is specified before
 execution. The purpose is to test causal alignment between representation and
 failure category, not to estimate an average treatment effect in natural text.
 
-\subsection*{Protocol for end-to-end multi-model evaluation}
+\subsection*{E5 multi-model pilot and confirmatory protocol}
+
+The reported E5 pilot uses a frozen stratified sample of 210 items (30 per
+category; sampling seed 20260718) and three Gemini-family model snapshots:
+\texttt{gemini-2.5-flash}, \texttt{gemini-2.5-flash-lite} and
+\texttt{gemini-3.5-flash}. Each model receives identical evidence under direct,
+structured and explicit-situation prompts, with temperature and thinking budget
+set to zero and a common output-token limit. A separate retrieval condition
+selects the top three claims by token overlap with the question and supplies
+their plain text to the direct-answer prompt. Every request, raw response,
+normalized answer, token count, latency, failure and retry is retained. The
+completion gate joins records to the frozen sample, rejects missing or
+unexpected identifiers and requires 30 successful responses in every category
+for every requested model and condition. The reported run contains no failed
+calls and passes this gate. Stored raw responses were rescored deterministically
+after the action-equivalence rule was corrected to credit
+\textsc{Clarify}/\textsc{Abstain} uniformly in plain text and JSON; rescoring
+made no provider calls.
+
+Accuracy contrasts use category-clustered bootstrap intervals (3,000 resamples,
+seed 20260726), treating the seven template categories as clusters. These
+intervals quantify sensitivity across the available template families, not
+population uncertainty over unrestricted questions. Cost summaries report
+provider token counts and measured request latency by condition. The bundled
+12-item SituatedQA temporal sample is reported only as a smoke test; its size
+does not support a standalone inferential claim.
+
+The following larger confirmatory study remains pre-specified rather than
+completed:
 
 A confirmatory study is pre-specified to compare the following matched conditions:
 direct prompting; chain-of-thought or structured prompting; date-aware context;
@@ -143,11 +171,11 @@ item inclusion and scoring rules. Synthetic diagnostic, natural benchmark and
 model intervention are reported as separate evidence levels.
 
 The bundled \texttt{code/run\_multimodel\_eval.py} provides provider adapters and
-refuses to create placeholder outputs when credentials are absent. Incomplete
-Gemini pilot calls are archived to validate the execution path but excluded
-because quota exhaustion produced unequal category coverage and no balanced
-model-family comparison. The script is an executable protocol, not a completed
-confirmatory experiment.
+refuses to create placeholder outputs when credentials are absent. Earlier
+quota-truncated free-tier attempts remain archived but are excluded from every
+scientific aggregate. Only the complete paid-tier records admitted by
+\texttt{code/audit\_e5.py} enter the reported E5 tables. The completed pilot is
+evidence from one provider family, not the multi-family confirmatory experiment.
 
 \subsection*{Generalization and efficiency protocol}
 

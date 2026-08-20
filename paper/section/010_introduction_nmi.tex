@@ -49,7 +49,7 @@ answer-critical information. A policy then selects
 \end{equation}
 This decomposition separates evidence availability from evidence applicability.
 
-The present paper makes three contributions. First, it defines situation
+The present paper makes four contributions. First, it defines situation
 blindness as a testable failure class and relates it to established work on
 situations, temporal reasoning, belief state tracking and knowledge revision.
 Second, it specifies situation engineering as a systems contract connecting
@@ -57,8 +57,9 @@ prompt, context, retrieval, memory, tool, harness, evaluation and serving
 engineering without subsuming them. Third, it introduces SCQA and
 SituationCatch-Bench, and uses matched state conditions and component ablations
 to demonstrate that the specified applicability mechanisms are executable and
-causally separable. The decisive next test is pre-specified rather than blurred
-with this control study: the same model, evidence and computation budget, with
-and without an explicit situation layer, on independently authored natural
-text. This claim boundary distinguishes what we demonstrate from the
-language-model generalization hypothesis that remains to be tested.
+causally separable. Fourth, it reports an audited, deliberately bounded
+three-model Gemini-family intervention with a focused retrieval baseline. Its
+null-to-negative aggregate result prevents us from equating an explicit prompt
+slot with situation awareness, while its temporal and observer-category pattern
+motivates a larger cross-family natural-text test. This claim boundary
+distinguishes what we demonstrate from broad language-model generalization.

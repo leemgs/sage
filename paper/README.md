@@ -2,8 +2,9 @@
 
 ## Target venue
 - **Primary submission target: Nature Machine Intelligence (NMI)**, Springer
-  Nature (`sn-jnl.cls`, Numbered/Nature reference style). The NMI framing is
-  controlled by the `\ifNMIframing` toggle in `main.tex` (default: on).
+  Nature (`sn-jnl.cls`, Numbered/Nature reference style). `main.tex` directly
+  includes the submission title, abstract and introduction; there is no stale
+  fallback manuscript path.
 - Fallback candidates under consideration: Artificial Intelligence (AIJ),
   JAIR, TACL, TMLR.
 
@@ -38,6 +39,12 @@ Prompt engineering designs instructions, context engineering designs the informa
   not primary scientific evidence.
 - Gold-, text-predicted- and deliberately corrupted-state evaluation over all 4,200 items.
 - Vector/raster figures, datasheet and reviewer-readiness audit.
+- Audited E5 pilot: three Gemini-family models on 210 stratified items under
+  direct, structured and explicit-situation prompts, with item-level raw
+  responses, category-clustered bootstrap intervals, latency and token use.
+- Focused top-3 lexical-retrieval baseline and a 12-item SituatedQA temporal
+  smoke test. These are preliminary single-provider checks, not cross-family
+  confirmation.
 
 ## Main measured result
 SCQA achieved 100.0% exact action-and-answer accuracy in the structured diagnostic setting. The strongest non-situational control achieved 85.7%. This is explicitly reported as a constructive upper bound, not as evidence that a neural model can extract situation states from arbitrary natural language.
@@ -45,15 +52,22 @@ The deterministic text sensor achieved 77.9%, and its deliberately corrupted
 state achieved 35.1%; these are controlled sensing diagnostics.
 
 ## Submission-critical limitation
-A competitive Nature Machine Intelligence submission would be substantially stronger with independent natural-text and frontier/open-model evaluation, human annotation agreement, multilingual and multimodal stress tests and a public archival DOI. Those experiments are proposed but not fabricated in this package.
+A competitive Nature Machine Intelligence submission would be substantially
+stronger with multiple independent model families, a larger independently
+authored natural-text evaluation, human annotation agreement, and multilingual
+and multimodal stress tests. These experiments require external resources and
+are not fabricated in this package. The public GitHub repository and MIT
+licence are present; a DOI must be cited only after an archive deposit is minted.
 
 ## Build
-`./run.sh` builds `main.pdf`. Run `pdflatex supplementary.tex` twice to build `supplementary.pdf`.
+`./run.sh` builds both `main.pdf` and `supplementary.pdf` with three LaTeX
+passes each.
 
 ## Natural-language and frontier-model extension
 
 `data/situatedqa_temporal_sample.jsonl` is a 12-item smoke-test sample derived
 from the public SituatedQA temporal development split. `code/run_multimodel_eval.py`
-contains provider adapters and matched prompt conditions. No frontier-model
-result is included unless produced by an actual API call and stored as raw CSV.
+contains provider adapters and matched prompt conditions. Frontier-model
+results are included only when produced by actual API calls, retained as raw
+JSONL and admitted by the completion audit.
 See `MULTIMODEL_EXPERIMENT.md`.

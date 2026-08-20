@@ -5,7 +5,8 @@
 - [x] Situation engineering is distinguished from prompt, context and harness engineering.
 - [x] A formal evidence-applicability object, maturity model and community research agenda are provided.
 - [x] The paper contributes a framework, benchmark taxonomy, executable artifact and falsifiable ablations.
-- [ ] Neural and frontier-model validation on naturally occurring corpora remains required for a strong general NMI claim.
+- [x] A bounded neural-model check is reported on synthetic items and a 12-item natural-text smoke test.
+- [ ] Multiple independent model families and a larger naturally occurring corpus remain required for a strong general NMI claim.
 
 ## Scientific validity
 - [x] No fabricated commercial-LLM or human-study results.
@@ -40,7 +41,14 @@
 - [x] main.tex entry file and compiled PDF.
 - [x] Figures in vector and raster form.
 - [x] Supplementary Methods/Results and design guidance file.
-- [ ] Replace local package availability with public repository and DOI before submission.
+- [x] Public repository and MIT licence are stated consistently.
+- [ ] Mint and cite an archival DOI if the author creates a repository deposit; do not use a placeholder DOI.
+
+## Author-only submission gate
+- [ ] Confirm the author name, ORCID, correspondence email and affiliation exactly as they should appear in the journal system.
+- [ ] Confirm that the no-specific-funding and no-competing-interests declarations are accurate.
+- [ ] Obtain any institutional or employer publication clearance that applies.
+- [ ] Upload `main.pdf` and `supplementary.pdf` as separate files and provide the exact Git commit or release tag reviewed by editors.
 
 ## Cross-layer engineering taxonomy
 - The manuscript distinguishes prompt, context, retrieval, memory, situation, tool/function-calling, protocol/interface, harness, evaluation, observability/provenance, serving, and guardrail/security engineering.

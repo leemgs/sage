@@ -5,8 +5,8 @@
 %%  Target journal: Nature Machine Intelligence  (primary submission target)
 %%
 %%  This is the single entry file for the paper. Build: ./run.sh
-%%  (pdflatex → bibtex → pdflatex × 2  →  main.pdf)
-%%  NMI reframing toggle \ifNMIframing (default on); see README.md §4 / §8.
+%%  (pdflatex × 3 → main.pdf and supplementary.pdf)
+%%  Submission target: Nature Machine Intelligence.
 %% ============================================================
 
 \documentclass[
@@ -75,17 +75,6 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 \newcommand{\anonymous}{0}
 
 %% =============================================================
-%% NMI framing toggle
-%% -------------------------------------------------------------
-%% 1차 투고 대상 = Nature Machine Intelligence.
-%% \NMIframingtrue  → NMI용 재프레이밍(초록·서론) 사용 (기본값).
-%% \NMIframingfalse → 기존 NCS/Nature 서사로 복귀.
-%% 근거·전략: README.md §8·§9 참조.
-\newif\ifNMIframing
-\NMIframingtrue
-%% =============================================================
-
-%% =============================================================
 %% Reference URL toggle
 %% -------------------------------------------------------------
 %% 리뷰(열람)용 사본에는 각 참고문헌의 URL을 출력한다 (기본값).
@@ -111,125 +100,8 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 \EFivereadytrue
 %% =============================================================
 
-%% =============================================================
-%% NMI REVIEWER ANTICIPATION MAP  (non-printing; address before submission)
-%% -------------------------------------------------------------
-%% These are LaTeX comments only and never appear in the compiled PDF.
-%% They record the concerns a Nature Machine Intelligence referee is most
-%% likely to raise, each with a severity, the current status, the concrete
-%% revision action, and the section that must carry it. Work top-down: the
-%% two CRITICAL items decide accept/reject; the rest strengthen the case.
-%%
-%% [R1] CRITICAL — Headline oracle result is analytic, not empirical.
-%%   Concern: SCQA 100.0% vs the 85.7% control is a deterministic
-%%     consequence of the construction (equal category weights => 6/7 =
-%%     85.7%). A tautology cannot support a claim of advance.
-%%   Status: acknowledged in Results, but referees still weight it heavily.
-%%   Action: present oracle numbers strictly as regression-test coverage,
-%%     never as an effect size; lead Results with the causal ablations and
-%%     the predicted-state sensing bottleneck, not the 100/85.7 gap.
-%%   Section: 025_results_ncs.
-%%
-%% [R2] CRITICAL — No evidence situation engineering helps a real model.
-%%   Concern: by the evidence ladder, E5 (matched multi-model intervention)
-%%     and E6 (deployment/human) are not done; the paper shows a symbolic
-%%     solver passing a symbolic test, not that explicit state helps an LLM.
-%%   Status: honestly scoped, but reads as a Perspective, not a Research
-%%     Article, at NMI's bar.
-%%   Action: complete E5 on real models via code/run_e5.py (gated by
-%%     code/audit_e5.py); flip \EFivereadytrue and report the within-model
-%%     situation-vs-baseline contrast. Until then, state E5 as preliminary.
-%%   Section: 026_results_e5 (+ abstract, evidence-ladder row).
-%%
-%% [R3] MAJOR — Benchmark-solver circularity / no natural language.
-%%   Concern: diagnostic data are generated from the same schema the solver
-%%     consumes; even the 77.9% predicted-state number is a rule sensor on
-%%     templated text (time/validity slots score 0% by construction).
-%%   Action: add a natural-language evaluation (SituatedQA/FreshQA/TDBench-
-%%     derived); state external validity limits explicitly.
-%%   Section: 025_results_ncs, Discussion limitations; data/ expansion.
-%%
-%% [R4] MAJOR — Novelty is largely organisational.
-%%   Concern: heavy overlap with cited traditions (situation/event calculus,
-%%     belief revision/TMS, POMDP/DST, bitemporal DBs); the new element is a
-%%     "systems contract", not a demonstrated new capability.
-%%   Action: sharpen the one concrete, testable capability the contract adds
-%%     beyond a structured prompt, and show it empirically (ties to R2).
-%%   Section: 012_related_work, 015_situation_engineering.
-%%
-%% [R5] MINOR/MAJOR — Statistical framing.
-%%   Concern: 4,200 items overstate independence (shared template families);
-%%     confidence values are rule-derived, not calibrated.
-%%   Action: cluster/bootstrap CIs over template families for key contrasts;
-%%     add selective-risk / risk-coverage curves; avoid over-precise 100.0%.
-%%   Section: 025_results_ncs, Methods.
-%%
-%% REVISION CHECKLIST to reach NMI-accept grade (see paper/E5_COMPLETION_CHECKLIST.md):
-%%   (a) >=3 model FAMILIES, matched evidence/token/cost budgets;
-%%   (b) natural-language set; (c) strong RAG/structured-prompt baselines;
-%%   (d) human inter-annotator agreement (code/annotation_cli.py);
-%%   (e) clustered uncertainty + selective risk; (f) cost/latency accounting;
-%%   (g) archival DOI + licence before acceptance.
-%% Referee's current call: reject-and-resubmit; the above converts it.
-%% =============================================================
-
-%% =============================================================
-%% PER-SECTION REVISION NOTES  (non-printing; consolidated here on purpose)
-%% -------------------------------------------------------------
-%% Every actionable edit is kept in this file rather than scattered as inline
-%% comments across section/*.tex, so main.tex is the single control surface for
-%% the reviewer response. Tags [R1]-[R5] refer to the map above. Do the edits
-%% inside the named \input files; this list is the checklist.
-%%
-%% 001_title.tex
-%%   [R4] Keep the title's claim within what is demonstrated ("reliable
-%%        evidence use", not "solved situation understanding").
-%%
-%% 006_abstract_nmi.tex
-%%   [R1] Do not lead with 100.0%; call oracle numbers regression coverage.
-%%   [R2] The abstract pre-announces "matched natural-text and multi-model
-%%        tests" -- until \EFivereadytrue, phrase E5 as a pre-specified/pending
-%%        test, not an achieved result.
-%%
-%% 010_introduction_nmi.tex
-%%   [R4] State plainly the one concrete capability the situation contract
-%%        adds beyond a structured prompt, and promise its empirical test (R2).
-%%   [R2] Keep contribution claims bounded to E1-E4 as established.
-%%
-%% 012_related_work.tex
-%%   [R4] Add an explicit head-to-head contrast with the closest prior work
-%%        (situation/event calculus, dialogue-state tracking); operationalise
-%%        the vague Table cells ("limited"/"partial") with a concrete criterion.
-%%
-%% 015_situation_engineering.tex
-%%   [R4] Turn the contract (C_t,M_t,O_t,H_t)->(S_t,U_t,P_t) into at least one
-%%        falsifiable prediction that a non-situational baseline should fail.
-%%
-%% 025_results_ncs.tex
-%%   [R1] Frame 100.0% vs 85.7% as regression-test coverage; lead with the
-%%        causal ablations and the predicted-state sensing bottleneck.
-%%   [R3] State benchmark-solver circularity up front; explain the 0% time/
-%%        validity slots as a construction artifact, not a language finding.
-%%   [R5] Report clustered/bootstrap CIs over template families for the key
-%%        contrasts; add a selective-risk / risk-coverage view.
-%%
-%% 026_results_e5.tex  (enabled by \EFivereadytrue)
-%%   [R2] Populate from code/run_e5.py once code/audit_e5.py prints
-%%        "E5 INTEGRITY GATE: PASS"; report the within-model
-%%        situation-vs-baseline delta and label the scope honestly
-%%        (provider family, models, N, conditions, decoding).
-%%
-%% 060_discussion.tex
-%%   [R3] Make external-validity limits explicit (synthetic templates; single
-%%        family in any preliminary E5).
-%%   [R2] Say precisely what E5 does and does not license.
-%%
-%% 070_methods.tex
-%%   [R5] Describe the clustered/bootstrap CI procedure and the template-family
-%%        unit of analysis; either report the multi-model adapter results or
-%%        move its description to Discussion so Methods matches the claims.
-%% =============================================================
-
+%% Submission-readiness notes and author-only checks are maintained in
+%% paper/REVIEWER_READINESS.md rather than embedded in the journal source.
 %% =============================================================
 \begin{document}
 %% =============================================================
@@ -241,23 +113,15 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 \input{./section/005_author_nature.tex}
 
 %% ---- Abstract & Keywords -----------------------------------
-\ifNMIframing
-  \input{./section/006_abstract_nmi.tex}      % NMI framing (Nature syntax)
-\else
-  \input{./section/006_abstract_nature.tex}   % original NCS/Nature abstract
-\fi
+\input{./section/006_abstract_nmi.tex}
 
 %% sn-jnl emits the abstract inside \maketitle, so it must come after
 %% the \abstract{...} definition above.
 \maketitle
 
 %% ---- Main text (NCS structure: Intro → Results → Discussion) ---
-\ifNMIframing
-  \pdfbookmark[1]{Introduction}{bookmark-introduction}
-  \input{section/010_introduction_nmi}         % NMI-reframed introduction
-\else
-  \input{section/010_introduction}             % original introduction
-\fi
+\pdfbookmark[1]{Introduction}{bookmark-introduction}
+\input{section/010_introduction_nmi}
 \pdfbookmark[1]{Related Work}{bookmark-related}
 \input{section/012_related_work}
 \pdfbookmark[1]{Situation Engineering Framework}{bookmark-framework}
@@ -276,12 +140,13 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 \section*{Data availability}
 SituationCatch-Bench v0.1 is included in the public source repository at
 \url{https://github.com/leemgs/sage} and in the submission package as
-\texttt{data/situationcatch\_bench.jsonl}, together with its deterministic
+\texttt{paper/data/situationcatch\_bench.jsonl}, together with its deterministic
 generator, datasheet and item-level outputs. This package is sufficient to
-reproduce the controlled results. The exact reviewed version is identified by
-the Git commit attached to the submission. An immutable archival release, an
-institutionally approved licence and DOI remain required before acceptance; no
-placeholder DOI is represented as an existing deposit.
+reproduce the controlled results. The E5 and SituatedQA item-level raw responses
+are under \texttt{paper/results/raw*}. The exact reviewed version is identified
+by the Git commit or release tag supplied with the submission. Repository-owned
+materials are distributed under the MIT licence; third-party data retain their
+source licences. No unminted DOI is represented as an existing deposit.
 
 %% ---- Code availability (Nature Portfolio: standalone statement) ----
 \section*{Code availability}
@@ -294,7 +159,8 @@ program requires three complete independent packets before reporting agreement.
 Source and item-level outputs are also available at
 \url{https://github.com/leemgs/sage}. The repository README records exact
 commands; \texttt{SHA256SUMS.txt} records packaged artefact checksums. A public
-immutable release and archival DOI remain pre-acceptance requirements.
+release tag should identify the reviewed version; no DOI is claimed unless an
+archive deposit has actually been minted.
 
 %% ---- Author Contributions ---------------------------------
 \section*{Author Contributions}
