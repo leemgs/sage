@@ -40,7 +40,7 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 ## Phase 3 — Reflect in the manuscript (A) — DONE
 - ☑ `make_e5_table.py`: `multimodel_summary.csv` → `section/tables/e5_multimodel_table.tex` (now renders only the conditions actually run).
 - ☑ `paper/main.tex`: flipped `\EFivereadyfalse` → `\EFivereadytrue`.
-- ☑ Rewrote `section/026_results_e5.tex` to the actual scope (single-provider Gemini family, 3 models, N = 35 stratified, 3 conditions, thinking-off decoding, paid tier) and reports the null-to-negative result honestly.
+- ☑ Rewrote `section/026_results_e5.tex` to the actual scope (single-provider Gemini family, 3 models, N = 210 stratified, 3 prompt conditions plus RAG, thinking-off decoding, paid tier) and reports the null-to-negative result honestly.
 - ☑ Reconciled abstract (preliminary-finding clause) and the E5 evidence-ladder row.
 - ☑ Updated `paper/results/raw/E5_PILOT_STATUS.md` and `code/experiment_manifest.e5.json` status.
 - ☑ Rebuilt the PDF from the committed sources with `cd paper && ./run.sh`;
@@ -51,7 +51,7 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 - ☑ Natural-language check (SituatedQA, n=12): situation−structured = −17/+0/+0; corroborates the synthetic null. Raw in `paper/results/raw_nl/`. Expanding beyond 12 needs the licensed full split.
 - ◐ Strong baselines: structured-prompt ✓ and RAG ✓ (`prepare_rag_eval.py`, top-3 lexical retrieval; RAG leads overall 91.3% but situation wins on temporal/observer). Agentic/tool-use baseline remains.
 - 🔒 Human inter-annotator agreement via `code/annotation_cli.py` (≥ 3 independent annotators) — BLOCKED: requires real annotators; the tool refuses synthetic ratings.
-- ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; all situation−structured 95% CIs include zero (n=210).
+- ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; two situation−structured 95% CIs include zero and one excludes zero in the negative direction (n=210).
 - ☑ Cost / latency accounting — aggregated per condition in `code/e5_stats.py` / `e5_audited_summary.csv` (situation ≈ 3× tokens, ≈ 2× latency vs direct).
 - ☑ Larger N (35 → full 210). Done: 30/category × 7 = 210, audited, 0 failed calls.
 - 🔒 Archival DOI (Zenodo) — needs the user's Zenodo deposit. The MIT
