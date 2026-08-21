@@ -15,10 +15,10 @@ cannot drift apart.
 Credit-free validation (proves the harness is runnable without spending):
     python3 code/run_e5.py --provider mock --smoke 5
 
-Real run (requires OPENROUTER_API_KEY, ~6-10 USD per the manifest estimate):
+Real pilot rerun (requires GEMINI_API_KEY; scope and models are frozen in the manifest):
     python3 code/run_e5.py
 
-Cheap preflight against the paid gateway before the full run:
+Cheap preflight against the configured provider before the full run:
     python3 code/run_e5.py --smoke 3
 """
 from __future__ import annotations
@@ -124,7 +124,7 @@ def main() -> int:
 
     # Preflight: credentials. Skip fabricating anything if the key is missing.
     env_var = PROVIDER_ENV[provider]
-    if env_var and not os.environ.get(env_var):
+    if env_var and not args.dry_run and not os.environ.get(env_var):
         print(f"Missing {env_var} for provider '{provider}'. No calls were made.\n"
               f"Export the key and re-run, or use --provider mock to validate the "
               f"harness without credits.", file=sys.stderr)

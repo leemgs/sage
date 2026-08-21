@@ -7,9 +7,9 @@ python code/run_experiments.py
 python code/annotation_cli.py init \
   --input paper/data/situatedqa_temporal_sample.jsonl --out annotations
 python code/run_e5.py --provider mock --smoke 5   # credit-free E5 harness check
-python code/run_e5.py                             # full E5 run (needs OPENROUTER_API_KEY)
+python code/run_e5.py                             # pilot rerun (needs GEMINI_API_KEY)
 python code/run_multimodel_eval.py --help
-python -m pytest code/tests
+PYTHONPATH=code python -m pytest code/tests
 ```
 
 `run_e5.py` is the turnkey driver for the E5 multi-model intervention study. It

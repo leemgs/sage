@@ -13,12 +13,12 @@ Status legend: ☐ todo · ☑ done. Owner: **U** = user action, **A** = agent a
 
 ## Phase 1 — Run E5 to completion (A) — DONE
 - ☑ Recreate the keyfile in the scratchpad (outside the repo); probe the 3 models' quota.
-- ☑ `python code/run_e5.py --provider gemini --models gemini-2.5-flash gemini-2.5-flash-lite gemini-3.5-flash --conditions direct structured situation --data paper/data/situationcatch_llm_pilot35.jsonl` (resumable).
-- ☑ Verify completion: every model 7/7 categories, 35/35 scored per condition.
+- ☑ `python code/run_e5.py --provider gemini --models gemini-2.5-flash gemini-2.5-flash-lite gemini-3.5-flash --conditions direct structured situation --data paper/data/situationcatch_llm_sample.jsonl` (resumable).
+- ☑ Verify completion: every model 7/7 categories, 210/210 scored per condition (30/category).
 
 ## Phase 2 — Integrity validation (A) — DONE
 - ☑ Audit gate passes (`code/audit_e5.py`: `confirmatory_complete: true`); no missing/unbalanced category.
-- ☑ Per-model situation-vs-baseline Δ: gemini-2.5-flash +0.0, gemini-2.5-flash-lite −5.7, gemini-3.5-flash +0.0.
+- ☑ Per-model situation-vs-baseline Δ: gemini-2.5-flash +1.4, gemini-2.5-flash-lite −10.0, gemini-3.5-flash +0.0.
 - ☑ Report real numbers verbatim — the result is null-to-negative and is reported as such (no fabrication).
 
 The executable integrity gate is implemented in `code/audit_e5.py` and is called
@@ -33,7 +33,7 @@ Manual audit command:
 
 ```bash
 python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
-  --data paper/data/situationcatch_llm_pilot35.jsonl \
+  --data paper/data/situationcatch_llm_sample.jsonl \
   --conditions direct structured situation
 ```
 
