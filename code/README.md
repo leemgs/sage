@@ -7,6 +7,7 @@ python code/run_experiments.py
 python code/annotation_cli.py init \
   --input paper/data/situatedqa_temporal_sample.jsonl --out annotations
 python code/run_e5.py --provider mock --smoke 5   # credit-free E5 harness check
+python code/run_e5.py --dry-run                    # inspect frozen plan; no key needed
 python code/run_e5.py                             # pilot rerun (needs GEMINI_API_KEY)
 python code/run_multimodel_eval.py --help
 PYTHONPATH=code python -m pytest code/tests
