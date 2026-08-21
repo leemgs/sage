@@ -49,10 +49,12 @@ evidence and answer'' system. Aggregated over the three models it is the
 strongest condition ($91.3\%$ versus $83.5\%$ structured and $80.6\%$ situation):
 a focused, relevant subset beats dumping all claims plus a state instruction,
 and the elaborate situation prompt often makes the models over-think easy items.
-The exception is the two categories that most require reasoning over the
+Descriptively, the exception is the two categories that most require reasoning over the
 applicability state -- temporal validity and observer knowledge -- where the
 full-evidence situation condition beats RAG ($+8.9$ and $+5.6$ points). This is
-the thesis-relevant signal at the model level: relevance retrieval is a strong
+an exploratory, thesis-relevant pattern rather than a confirmatory comparison:
+category-level multiplicity and uncertainty preclude a directional claim.
+Relevance retrieval is a strong
 default, but exactly where applicability depends on which claim is valid \emph{now}
 or is known to \emph{this} observer, retrieving the most similar text is not
 enough. (The large hidden-premise gap is a prompt-format effect: the plain
@@ -62,8 +64,8 @@ uniformly across formats.)
 
 \input{section/tables/e5_rag_table}
 
-We read this as support for the paper's central position rather than a plug-in
-prompting win: a prompt-level ``situation'' field is not situation awareness.
+We read this as motivating the paper's distinction rather than as support for a
+plug-in prompting win: a prompt-level ``situation'' field is not situation awareness.
 Consistent with the controlled finding that accuracy collapses once states must
 be \emph{sensed} from text rather than supplied ($100.0\%\rightarrow77.9\%$),
 the bottleneck is situation sensing and validation, not the presence of a state

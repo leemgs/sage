@@ -89,13 +89,9 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% =============================================================
 %% E5 (multi-model intervention) toggle
 %% -------------------------------------------------------------
-%% E5 결과(실제 frontier/open 모델 응답)가 준비되면 아래를 true로.
-%% \EFivereadytrue  → Results에 E5 절과 tab:e5-multimodel 표를 포함.
-%% \EFivereadyfalse → 기본값(제출 청결): E5 절 미포함.
-%% 실행 경로: OPENROUTER_API_KEY 설정 후 `python code/run_e5.py`가
-%% paper/results/multimodel_summary.csv → section/tables/e5_multimodel_table.tex
-%% 를 자동 생성한다(실데이터 없으면 PENDING placeholder). 자세한 내용은
-%% code/experiment_manifest.e5.json 참조.
+%% The audited E5 pilot is included below. Its frozen manifest, raw responses,
+%% integrity audit and generated tables are shipped with this submission.
+%% Set false only when intentionally building a manuscript version without E5.
 \newif\ifEFiveready
 \EFivereadytrue
 %% =============================================================
@@ -180,6 +176,6 @@ The author declares no competing interests.
 
 %% ---- Supplementary Information --------------------------------
 %% NMI: submitted as a SEPARATE file — see supplementary.tex
-%% (builds supplementary.pdf; Supplementary Notes 1–11 and their tables).
+%% (builds supplementary.pdf; Supplementary Notes 1–13 and their tables).
 
 \end{document}
