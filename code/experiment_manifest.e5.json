@@ -53,9 +53,9 @@
     "artifact": "paper/results/raw/mock/ (see its README: simulated controls, never model evidence)"
   },
   "driver_validation": {
-    "date": "2026-07-26",
+    "date": "2026-08-21",
     "driver": "code/run_e5.py",
-    "checks": "dry-run plans all 7 models from this manifest; missing-key preflight exits 1 with no calls; mock provider runs render->evaluate->summarize end-to-end and writes multimodel_summary.csv (0 errors). Only blocker to the paid run is OPENROUTER_API_KEY credits."
+    "checks": "credential-free dry-run plans the three Gemini pilot models and three matched conditions from this manifest; missing-key real-run preflight exits 1 with no calls; mock provider remains available for harness-only validation."
   },
   "free_tier_attempt": {
     "date": "2026-07-18",
