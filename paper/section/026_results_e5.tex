@@ -57,7 +57,12 @@ category-level multiplicity and uncertainty preclude a directional claim.
 Relevance retrieval is a strong
 default, but exactly where applicability depends on which claim is valid \emph{now}
 or is known to \emph{this} observer, retrieving the most similar text is not
-enough. (The large hidden-premise gap is a prompt-format effect: the plain
+enough. A tool-using agent that issues its own \texttt{search} queries over the
+item's claims before answering (Table~\ref{tab:e5-rag}, Agent) does not close
+this gap either: it is the weakest condition overall ($77.5\%$) and drops
+furthest precisely on temporal ($64.4\%$) and observer ($66.7\%$), because
+self-directed retrieval can still fetch the most similar claim rather than the
+applicable one. (The large hidden-premise gap is a prompt-format effect: the plain
 prompt elicits the \textsc{Clarify} token more readily than the JSON conditions,
 which is why the scoring credits \textsc{Clarify}/\textsc{Abstain} actions
 uniformly across formats.)
@@ -70,11 +75,10 @@ Consistent with the controlled finding that accuracy collapses once states must
 be \emph{sensed} from text rather than supplied ($100.0\%\rightarrow77.9\%$),
 the bottleneck is situation sensing and validation, not the presence of a state
 slot in the prompt. These numbers are a single-provider (Gemini-family),
-$n=210$ pilot with three prompt conditions; they neither confirm nor refute the
+$n=210$ pilot; they neither confirm nor refute the
 situation-engineering hypothesis at scale. A confirmatory E5 still requires
 multiple model families under matched budgets, a larger natural-language
-evaluation set, agentic (tool-using) baselines beyond the retrieval baseline
-reported here, and human agreement (blinded three-annotator packets are prepared
+evaluation set, and human agreement (blinded three-annotator packets are prepared
 under \texttt{paper/annotation\_packets/}; see the reporting protocol). The frozen manifest, model snapshots and cost
 accounting are in \texttt{code/experiment\_manifest.e5.json}, and the run is
 reproduced by a single audited command (\texttt{python code/run\_e5.py}).

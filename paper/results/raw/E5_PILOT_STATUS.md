@@ -12,8 +12,11 @@
 > `prepare_rag_eval.py`) is the strongest condition overall (RAG 91.3% vs
 > structured 83.5% vs situation 80.6%), **except** on the two applicability-heavy
 > categories — temporal (+8.9) and observer (+5.6) — where the full-state
-> situation condition beats RAG. Cost: situation ~3x tokens / ~2x latency of
-> direct. All real, reflected in the manuscript with `\EFivereadytrue`; it supports
+> situation condition beats RAG. A ReAct-style tool-using agent
+> (`run_agent_eval.py`, search-then-answer) is the weakest condition overall
+> (77.5%) and drops furthest on temporal (64.4%) and observer (66.7%):
+> self-directed retrieval still fetches the most similar claim, not the
+> applicable one. Cost: situation ~3x tokens / ~2x latency of direct. All real, reflected in the manuscript with `\EFivereadytrue`; it supports
 > the thesis that applicability reasoning (temporal validity, observer
 > knowledge) — not a prompt-level state slot — is where the state matters. Still
 > a **single-provider preliminary** test; multi-family, larger natural-text and

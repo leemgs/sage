@@ -49,7 +49,7 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 ## Phase 4 — NMI-reviewer-grade strengthening (needed to actually pass review)
 - 🔒 Multiple model *families* (OpenAI, Anthropic, open-weight ≥ 3 families) — BLOCKED: egress policy allows only Gemini in this environment; needs admin to open it.
 - ☑ Natural-language check (SituatedQA, n=12): situation−structured = −17/+0/+0; corroborates the synthetic null. Raw in `paper/results/raw_nl/`. Expanding beyond 12 needs the licensed full split.
-- ◐ Strong baselines: structured-prompt ✓ and RAG ✓ (`prepare_rag_eval.py`, top-3 lexical retrieval; RAG leads overall 91.3% but situation wins on temporal/observer). Agentic/tool-use baseline remains.
+- ☑ Strong baselines: structured-prompt ✓, RAG ✓ (`prepare_rag_eval.py`, top-3 lexical retrieval), and agentic/tool-use ✓ (`run_agent_eval.py`, ReAct search-then-answer). Overall RAG 91.3% > structured 83.5% > situation 80.6% > agent 77.5%; full-evidence conditions lead on temporal/observer. No prompt-, retrieval-, or tool-based intervention wins overall.
 - 🔒 Human inter-annotator agreement via `code/annotation_cli.py` (≥ 3 independent annotators) — BLOCKED: requires real annotators; the tool refuses synthetic ratings.
 - ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; two situation−structured 95% CIs include zero and one excludes zero in the negative direction (n=210).
 - ☑ Cost / latency accounting — aggregated per condition in `code/e5_stats.py` / `e5_audited_summary.csv` (situation ≈ 3× tokens, ≈ 2× latency vs direct).
