@@ -12,6 +12,7 @@ from pathlib import Path
 
 SLOTS = ["action", "answer", "temporal_state", "modality", "scope",
          "source_status", "observer_state", "world", "notes"]
+RATING_SLOTS = SLOTS[:-1]
 
 
 def load_jsonl(path):
@@ -53,41 +54,63 @@ def fleiss_kappa(labels_by_item):
     return (pbar-pe)/(1-pe) if pe < 1 else 1.0
 
 
-def score(args):
-    files = sorted(Path(args.annotations).glob("annotator_*.csv"))
+def load_completed_annotations(directory):
+    """Load aligned packets and fail closed on invalid comparisons."""
+    files = sorted(Path(directory).glob("annotator_*.csv"))
     if len(files) < 3:
         raise SystemExit("Need at least three completed annotator files.")
-    by_slot = {s: defaultdict(list) for s in SLOTS[:-1]}
+    packets, expected_ids, questions = [], None, {}
     for path in files:
-        for row in csv.DictReader(path.open(encoding="utf-8")):
+        rows = list(csv.DictReader(path.open(encoding="utf-8")))
+        ids = [row.get("item_id", "") for row in rows]
+        if len(ids) != len(set(ids)):
+            raise SystemExit(f"Duplicate item_id in {path}")
+        if expected_ids is None:
+            expected_ids = set(ids)
+        elif set(ids) != expected_ids:
+            raise SystemExit(f"Mismatched item set in {path}")
+        for row in rows:
+            item_id, question = row["item_id"], row.get("question", "")
+            if item_id in questions and questions[item_id] != question:
+                raise SystemExit(f"Question changed for {item_id} in {path}")
+            questions[item_id] = question
+            for slot in RATING_SLOTS:
+                if not row.get(slot, "").strip():
+                    raise SystemExit(f"Missing {slot} in {path}: {item_id}")
+        packets.append((path, rows))
+    if not expected_ids:
+        raise SystemExit("Annotation packets contain no items.")
+    return packets, questions
+
+
+def score(args):
+    packets, _ = load_completed_annotations(args.annotations)
+    by_slot = {s: defaultdict(list) for s in RATING_SLOTS}
+    for _, rows in packets:
+        for row in rows:
             for slot in by_slot:
                 value = row[slot].strip()
-                if not value:
-                    raise SystemExit(f"Missing {slot} in {path}: {row['item_id']}")
                 by_slot[slot][row["item_id"]].append(value.casefold())
     report = {}
     for slot, items in by_slot.items():
-        if any(len(v) != len(files) for v in items.values()):
+        if any(len(v) != len(packets) for v in items.values()):
             raise SystemExit(f"Incomplete independent ratings for {slot}")
         report[slot] = {"fleiss_kappa": fleiss_kappa(items),
                         "unanimous_rate": sum(len(set(v)) == 1 for v in items.values())/len(items)}
-    Path(args.out).write_text(json.dumps(report, indent=2) + "\n")
-    print(json.dumps(report, indent=2))
+    output = {"schema_version": 1, "provenance": "human_annotations",
+              "synthetic": False, "n_annotators": len(packets),
+              "n_items": len(next(iter(by_slot.values()))), "slots": report}
+    Path(args.out).write_text(json.dumps(output, indent=2) + "\n")
+    print(json.dumps(output, indent=2))
 
 
 def adjudicate(args):
-    files = sorted(Path(args.annotations).glob("annotator_*.csv"))
-    if len(files) < 3:
-        raise SystemExit("Need at least three completed annotator files.")
+    packets, questions = load_completed_annotations(args.annotations)
     ratings = defaultdict(lambda: defaultdict(list))
-    questions = {}
-    for path in files:
-        for row in csv.DictReader(path.open(encoding="utf-8")):
-            questions[row["item_id"]] = row["question"]
-            for slot in SLOTS[:-1]:
+    for _, rows in packets:
+        for row in rows:
+            for slot in RATING_SLOTS:
                 value = row[slot].strip()
-                if not value:
-                    raise SystemExit(f"Missing {slot} in {path}: {row['item_id']}")
                 ratings[row["item_id"]][slot].append(value)
     rows = []
     for item_id, slots in ratings.items():
