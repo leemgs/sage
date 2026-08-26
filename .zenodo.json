@@ -1,0 +1,31 @@
+{
+  "title": "Situation engineering for reliable evidence use in artificial intelligence (SAGE / SituationCatch-Bench)",
+  "description": "Reference implementation, SituationCatch-Bench diagnostic (4,200 items), and the audited single-family Gemini E5 pilot (direct/structured/situation, RAG and agentic baselines) for the paper 'Situation engineering for reliable evidence use in artificial intelligence'. Includes the deterministic benchmark generator, evaluation harness, integrity audit, statistics, and item-level raw responses.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Lim, Geunsik",
+      "orcid": "0000-0003-1845-7132"
+    }
+  ],
+  "keywords": [
+    "situation engineering",
+    "evidence applicability",
+    "situation blindness",
+    "trustworthy artificial intelligence",
+    "hallucination",
+    "temporal reasoning",
+    "question answering",
+    "benchmark",
+    "large language models"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/leemgs/sage",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

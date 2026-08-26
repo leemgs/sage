@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software or the SituationCatch-Bench diagnostic, please cite it as below."
+title: "Situation engineering for reliable evidence use in artificial intelligence (SAGE / SituationCatch-Bench)"
+abstract: >-
+  Reference implementation and diagnostic benchmark for situation engineering:
+  the explicit construction and validation of the query-relative world state
+  that governs evidence applicability. Includes SituationCatch-Bench (4,200
+  items across seven applicability categories), the deterministic generator and
+  evaluation harness, an integrity-audited single-family Gemini E5 pilot with
+  direct/structured/situation prompts plus retrieval (RAG) and agentic
+  baselines, and item-level raw responses.
+type: software
+authors:
+  - family-names: Lim
+    given-names: Geunsik
+    orcid: "https://orcid.org/0000-0003-1845-7132"
+repository-code: "https://github.com/leemgs/sage"
+license: MIT
+version: "0.1"
+date-released: "2026-08-26"
+keywords:
+  - situation engineering
+  - evidence applicability
+  - situation blindness
+  - trustworthy artificial intelligence
+  - hallucination
+  - temporal reasoning
+  - question answering
+  - benchmark
+  - large language models
