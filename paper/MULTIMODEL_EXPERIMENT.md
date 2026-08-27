@@ -23,8 +23,21 @@ python code/run_e5.py
 whose key is missing (reporting it, never fabricating), evaluates every model
 with the resumable runner, and writes `paper/results/multimodel_summary.csv`.
 The reported Gemini-family run is complete. OpenRouter credits and permitted
-egress are still required for the planned independent-family extension. The
-per-provider commands below remain available for single-model or native-endpoint
+egress are still required for the planned independent-family extension.
+
+Before any cross-family result is cited, run the fail-closed matrix audit. It
+requires at least three provider families, identical item-condition cells for
+every model, no duplicate cells, and rejects the offline mock adapter:
+
+```bash
+python code/audit_multifamily.py paper/results/raw_nl/*.jsonl \
+  --conditions direct chain_of_thought structured date_context self_reflection situation \
+  --out paper/results/multifamily_audit.json
+```
+
+Mock records may be used only by automated harness tests; they are never model
+evidence and must not be copied into the results directory.
+The per-provider commands below remain available for single-model or native-endpoint
 runs.
 
 ## Native single-provider endpoints
