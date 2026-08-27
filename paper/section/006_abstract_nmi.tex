@@ -3,8 +3,10 @@ Artificial-intelligence systems can retrieve a well-supported fact yet apply it
 to the wrong time, scope, epistemic state or possible world. We call this
 failure \emph{situation blindness} and define \emph{situation engineering} as
 constructing and validating the query-relative state that governs evidence
-applicability. We introduce a state interface, Situation-Catching Question
-Answering and SituationCatch-Bench, a 4,200-item
+applicability. Our contribution is a testable decomposition of reliability into
+situation sensing, state update, applicability validation and response policy,
+rather than a new reasoning formalism. We instantiate this contract in
+Situation-Catching Question Answering and SituationCatch-Bench, a 4,200-item
 diagnostic spanning temporal change, missing premises, source conflict,
 modality, scope, observer knowledge and counterfactual worlds. A deterministic
 reference implementation satisfies all invariants when given oracle states;
@@ -19,7 +21,9 @@ prompting does not outperform matched structured prompting and trails focused
 top-3 retrieval overall. It exceeds retrieval only on temporal-validity and
 observer-knowledge items. This bounded result is consistent with applicability
 sensing, rather than the presence of a prompt slot, being the unresolved
-bottleneck.
+bottleneck. The principal value is therefore a mechanism-level diagnostic and
+falsifiable evaluation protocol: it identifies where an applicability
+intervention fails without claiming general language-model gains.
 }
 
 \keywords{large language models, situation engineering, evidence applicability, situation awareness, hallucination, trustworthy artificial intelligence, temporal reasoning, question answering, agent systems}
