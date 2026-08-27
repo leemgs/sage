@@ -1,5 +1,11 @@
 \section*{Results}
 
+The results follow the contribution logic established above: interface
+executability (RQ1), mechanism localization under controlled interventions
+(RQ2), and bounded transfer to model prompting (RQ3). This ordering avoids
+treating deterministic software checks and sampled model behaviour as the same
+kind of evidence.
+
 \subsection*{A controlled benchmark isolates seven applicability invariants}
 
 SituationCatch-Bench v0.1 contains 4,200 generated English instances, with 600
@@ -57,8 +63,9 @@ applicability variable, enabling mechanism-level failure localization.}
 
 Removing temporal validity, source status, modality, scope, observer knowledge,
 world identity or missing-variable detection selectively damages the matching
-category (Fig.~\ref{fig:ablation}). This causal alignment is the main empirical
-contribution of the controlled study. It shows that the implementation does not
+category (Fig.~\ref{fig:ablation}). This intervention--failure alignment is the
+main mechanistic contribution of the controlled study. Within the generated
+system, it shows that the implementation does not
 merely benefit from a generic instruction to be cautious; behaviour changes
 when the specific variable required by an item is removed. Because benchmark
 and solver share the same schema, the result is best viewed as a mechanistic

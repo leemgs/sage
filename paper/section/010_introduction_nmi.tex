@@ -49,17 +49,31 @@ answer-critical information. A policy then selects
 \end{equation}
 This decomposition separates evidence availability from evidence applicability.
 
-The present paper makes four contributions. First, it defines situation
-blindness as a testable failure class and relates it to established work on
-situations, temporal reasoning, belief state tracking and knowledge revision.
-Second, it specifies situation engineering as a systems contract connecting
-prompt, context, retrieval, memory, tool, harness, evaluation and serving
-engineering without subsuming them. Third, it introduces SCQA and
-SituationCatch-Bench, and uses matched state conditions and component ablations
-to demonstrate that the specified applicability mechanisms are executable and
-causally separable. Fourth, it reports an audited, deliberately bounded
-three-model Gemini-family intervention with a focused retrieval baseline. Its
-null-to-negative aggregate result prevents us from equating an explicit prompt
-slot with situation awareness, while its temporal and observer-category pattern
-motivates a larger cross-family natural-text test. This claim boundary
-distinguishes what we demonstrate from broad language-model generalization.
+We organize the study around three questions.
+\textbf{RQ1 (representation):} can failures involving time, scope, modality,
+source status, observer knowledge, possible world and missing information be
+expressed through one inspectable applicability interface?
+\textbf{RQ2 (localization):} when that interface fails, can matched controls
+separate state-sensing errors from update, validation and response-policy
+errors?
+\textbf{RQ3 (transfer):} does exposing the interface to current LLMs improve
+answers beyond equally informed structured, retrieval and tool-using
+baselines? RQ1 and RQ2 are evaluated as controlled software and mechanistic
+claims. RQ3 is a deliberately bounded pilot and remains open as a general
+empirical claim.
+
+This question structure yields four contributions with different evidential
+status. First, we operationalize \emph{situation blindness}: correctness
+requires both evidential support and query-relative applicability. Second, we
+specify a systems contract connecting sensing, provenance-linked state,
+validation and answer/retrieve/clarify/abstain/action policy, while leaving the
+choice of logical, probabilistic or neural implementation open. Third, we
+release SCQA and SituationCatch-Bench as mechanism-level diagnostics: matched
+state conditions and component ablations test whether each declared variable
+has its predicted behavioural consequence. Fourth, we contribute a negative
+and therefore informative boundary result. In an audited three-model
+Gemini-family pilot, an explicit situation prompt is null-to-negative against a
+matched structured prompt and trails focused retrieval overall. This prevents
+the framework contribution from being conflated with prompt superiority and
+pre-specifies the natural-text, multi-family and human-agreement evidence
+needed to test transfer.

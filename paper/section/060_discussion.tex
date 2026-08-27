@@ -51,12 +51,16 @@ verification and serving efficiency.
 
 \subsection*{What is established and what remains to be tested}
 
-This study demonstrates a formal error class, an interoperable state schema and
-category-specific causal effects of matched state ablations. It also shows that
-performance degrades sharply when state must be recovered from partially
-observable text. Together, these results identify situation sensing as a
-separate engineering and evaluation target rather than treating every failure
-as retrieval or generation error.
+The contribution is best understood as three linked advances rather than a
+claim of a universally better QA method. Conceptually, support and
+applicability become separate correctness obligations. Methodologically, the
+pipeline exposes stage-specific failure sites and supplies matched
+interventions for testing them. Empirically, the controlled study establishes
+intervention--failure alignment inside the generated system and shows that its
+oracle advantage degrades when the state must be sensed from partially
+observable text. Together, these advances make situation sensing a separate
+engineering and evaluation target rather than assigning every error to
+retrieval or generation.
 
 The audited E5 pilot answers a narrower question: on three Gemini models,
 explicit situation prompting does not improve accuracy over a matched
@@ -71,6 +75,15 @@ model families; direct, structured, temporal-retrieval, verification-agent and
 situation conditions; and paired, scenario-clustered inference. The SE0--SE4
 maturity model and longer research programme are provided in Supplementary
 Information.
+
+The negative aggregate pilot is part of the contribution, not an exception to
+it: merely requesting an explicit state does not establish that the state was
+correctly sensed, used causally or calibrated. A successful transfer study must
+therefore improve stage-level measures as well as final accuracy, survive
+matched evidence and compute budgets, replicate across independently developed
+model families, and use blinded human labels with reported agreement. These
+criteria make the framework falsifiable and distinguish representational
+transparency from behavioural benefit.
 
 \subsection*{Limitations and risks}
 
