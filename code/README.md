@@ -29,6 +29,20 @@ The annotation tool creates blinded, independently writable packets. Agreement
 and adjudication are computed only from actual annotator files; missing ratings
 cause a non-zero exit rather than synthetic labels.
 
+For reproducible **software validation only**, it can also generate three named
+simulated personas and score their deliberately imperfect labels. The generated
+manifest and agreement report are always marked `synthetic: true` and
+`NOT HUMAN-SUBJECT EVIDENCE`:
+
+```bash
+python code/annotation_cli.py simulate-personas \
+  --input paper/data/annotation_subset_70.jsonl \
+  --out paper/results/simulated_iaa/packets
+python code/annotation_cli.py score \
+  --annotations paper/results/simulated_iaa/packets \
+  --out paper/results/simulated_iaa/agreement.json
+```
+
 The multi-model runner never invents responses. It records the exact provider,
 model identifier, prompt, raw response, timestamps, latency, usage and errors in
 JSONL, and can resume an interrupted run.

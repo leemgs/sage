@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "synthetic": true,
+  "provenance": "simulated_personas",
+  "seed": 20260828,
+  "warning": "NOT HUMAN-SUBJECT EVIDENCE",
+  "personas": [
+    {
+      "id": "context_specialist",
+      "focus": "time, scope, and world state"
+    },
+    {
+      "id": "evidence_auditor",
+      "focus": "source status and modality"
+    },
+    {
+      "id": "pragmatic_reader",
+      "focus": "answerability and observer knowledge"
+    }
+  ]
+}
