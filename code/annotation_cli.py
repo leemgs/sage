@@ -13,6 +13,11 @@ from pathlib import Path
 SLOTS = ["action", "answer", "temporal_state", "modality", "scope",
          "source_status", "observer_state", "world", "notes"]
 RATING_SLOTS = SLOTS[:-1]
+PERSONAS = [
+    {"id": "context_specialist", "focus": "time, scope, and world state"},
+    {"id": "evidence_auditor", "focus": "source status and modality"},
+    {"id": "pragmatic_reader", "focus": "answerability and observer knowledge"},
+]
 
 
 def load_jsonl(path):
@@ -83,8 +88,60 @@ def load_completed_annotations(directory):
     return packets, questions
 
 
+def simulate_personas(args):
+    """Create deterministic synthetic ratings for pipeline validation only."""
+    if not 0 <= args.disagreement_rate <= 1:
+        raise SystemExit("--disagreement-rate must be between 0 and 1.")
+    items = load_jsonl(args.input)
+    if not items:
+        raise SystemExit("Input contains no items.")
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    manifest = {"schema_version": 1, "synthetic": True,
+                "provenance": "simulated_personas", "seed": args.seed,
+                "warning": "NOT HUMAN-SUBJECT EVIDENCE",
+                "personas": PERSONAS}
+    (out / "SIMULATION_MANIFEST.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    fields = ["blind_id", "item_id", "question", "evidence", *SLOTS]
+    for index, persona in enumerate(PERSONAS, 1):
+        rng = random.Random(f"{args.seed}:{persona['id']}")
+        rows = []
+        for item in items:
+            category = item["category"]
+            labels = {
+                "action": item["gold_action"], "answer": item["gold_answer"],
+                "temporal_state": "relevant" if category == "temporal" else "stable",
+                "modality": "proposed" if category == "modality" else "confirmed",
+                "scope": "limited" if category in {"scope", "hidden_premise"} else "global",
+                "source_status": "conflict" if category == "source_conflict" else "reliable",
+                "observer_state": "partial" if category == "observer" else "shared",
+                "world": "counterfactual" if category == "counterfactual" else "actual",
+                "notes": f"SIMULATED persona={persona['id']}; not a human rating",
+            }
+            # Each persona has a small, seeded interpretation difference.  This
+            # prevents the validation set from manufacturing perfect agreement.
+            if rng.random() < args.disagreement_rate:
+                slot = rng.choice(RATING_SLOTS[2:])
+                labels[slot] = f"alternate_{slot}"
+            rows.append({
+                "blind_id": hashlib.sha256(
+                    f"{args.seed}:{persona['id']}:{item['id']}".encode()).hexdigest()[:16],
+                "item_id": item["id"], "question": item["question"],
+                "evidence": json.dumps(item.get("claims", item.get("evidence", []))),
+                **labels,
+            })
+        rng.shuffle(rows)
+        with (out / f"annotator_{index}.csv").open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader(); writer.writerows(rows)
+    print(f"Created {len(PERSONAS)} simulated-persona packets in {out}")
+
+
 def score(args):
     packets, _ = load_completed_annotations(args.annotations)
+    manifest_path = Path(args.annotations) / "SIMULATION_MANIFEST.json"
+    simulation = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
     by_slot = {s: defaultdict(list) for s in RATING_SLOTS}
     for _, rows in packets:
         for row in rows:
@@ -97,9 +154,13 @@ def score(args):
             raise SystemExit(f"Incomplete independent ratings for {slot}")
         report[slot] = {"fleiss_kappa": fleiss_kappa(items),
                         "unanimous_rate": sum(len(set(v)) == 1 for v in items.values())/len(items)}
-    output = {"schema_version": 1, "provenance": "human_annotations",
-              "synthetic": False, "n_annotators": len(packets),
+    output = {"schema_version": 1,
+              "provenance": "simulated_personas" if simulation else "human_annotations",
+              "synthetic": bool(simulation), "n_annotators": len(packets),
               "n_items": len(next(iter(by_slot.values()))), "slots": report}
+    if simulation:
+        output["warning"] = "NOT HUMAN-SUBJECT EVIDENCE"
+        output["personas"] = simulation["personas"]
     Path(args.out).write_text(json.dumps(output, indent=2) + "\n")
     print(json.dumps(output, indent=2))
 
@@ -140,6 +201,11 @@ def main():
     q.add_argument("--annotations", required=True)
     q.add_argument("--out", default="paper/results/annotation_agreement.json")
     q.set_defaults(fn=score)
+    q = sub.add_parser("simulate-personas")
+    q.add_argument("--input", required=True); q.add_argument("--out", required=True)
+    q.add_argument("--seed", type=int, default=20260828)
+    q.add_argument("--disagreement-rate", type=float, default=0.12)
+    q.set_defaults(fn=simulate_personas)
     q = sub.add_parser("adjudicate")
     q.add_argument("--annotations", required=True)
     q.add_argument("--out", default="annotation_adjudication.csv")

@@ -58,6 +58,24 @@ def test_human_packets_reject_blank_field(tmp_path):
         annotation.load_completed_annotations(packets)
 
 
+def test_simulated_personas_are_explicitly_marked(tmp_path):
+    source = tmp_path / "items.jsonl"
+    source.write_text(json.dumps({
+        "id": "item-1", "category": "temporal", "question": "Who?",
+        "claims": [], "gold_action": "ANSWER", "gold_answer": "Ari",
+    }) + "\n")
+    packets = tmp_path / "simulated"
+    annotation.simulate_personas(SimpleNamespace(
+        input=str(source), out=str(packets), seed=7, disagreement_rate=0.0))
+    output = tmp_path / "agreement.json"
+    annotation.score(SimpleNamespace(annotations=str(packets), out=str(output)))
+    report = json.loads(output.read_text())
+    assert report["synthetic"] is True
+    assert report["provenance"] == "simulated_personas"
+    assert report["warning"] == "NOT HUMAN-SUBJECT EVIDENCE"
+    assert report["n_annotators"] == 3
+
+
 def test_balanced_three_family_matrix_passes():
     records = []
     for provider in ("openai", "anthropic", "gemini"):
