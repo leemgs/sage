@@ -191,8 +191,8 @@ def main():
         r"\begin{table}[t]",
         r"\caption{Gemini-family E5 accuracy with 95\% cluster-bootstrap confidence intervals "
         r"(categories as clusters; " + str(args.boot) + r" resamples), the paired "
-        r"situation$-$structured contrast, and cost. CIs that exclude zero are the "
-        r"are flagged as directional estimates only within this bounded analysis.}",
+        r"situation$-$structured contrast, and cost. CIs that exclude zero are "
+        r"flagged as directional estimates only within this bounded analysis.}",
         r"\label{tab:e5-stats}",
         r"\centering\scriptsize\setlength{\tabcolsep}{0pt}%",
         r"\begin{tabular}{lrrrrr}",
