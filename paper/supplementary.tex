@@ -78,13 +78,13 @@ multi-provider evaluation harness and archived item-level responses from an
 audited Gemini-family pilot. Three Gemini models completed all direct,
 structured and situation conditions on the 210-item stratified synthetic
 sample (30 items in each category), with no failed calls. The repository also
-archives a 12-item SituatedQA temporal check and a top-3 lexical-retrieval
-baseline. The integrity gate joins responses to the frozen item set and refuses
+archives a 12-item SituatedQA temporal check, a top-3 lexical-retrieval baseline
+and a search-then-answer tool-using agent baseline. The integrity gate joins responses to the frozen item set and refuses
 to generate a manuscript table unless every requested model, condition and
 category is complete. Thus these are real, auditable results, but only a
 single-provider preliminary test. A confirmatory revision still requires the
 full licensed natural-language split, multiple independent model families and
-a verification-agent baseline under matched budgets.
+stronger temporal-retrieval and verification-agent baselines under matched budgets.
 
 
 \section*{Supplementary Note 10: Independent annotation protocol}
@@ -95,7 +95,9 @@ or another annotator's labels. Files are frozen before agreement calculation
 and adjudication. The scorer rejects missing cells and reports slot-level
 Fleiss' $\kappa$ and unanimous agreement. Recruitment, ethics status,
 compensation, qualifications, exclusions and adjudication changes must
-accompany any reported human result. No such result is claimed here.
+accompany any reported human result. No such result is claimed here. A separate
+three-persona run validates the workflow with injected disagreements; its files
+are machine-marked synthetic and are not human-subject evidence.
 
 \section*{Supplementary Note 11: Interfaces among engineering disciplines}
 \begin{table}[h]

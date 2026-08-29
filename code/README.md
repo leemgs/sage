@@ -40,8 +40,13 @@ python code/annotation_cli.py simulate-personas \
   --out paper/results/simulated_iaa/packets
 python code/annotation_cli.py score \
   --annotations paper/results/simulated_iaa/packets \
-  --out paper/results/simulated_iaa/agreement.json
+  --out paper/results/simulated_iaa/agreement.json \
+  --provenance simulated_personas
 ```
+
+Scoring real annotations requires the explicit flag
+`--provenance human_annotations`; the tool never infers human provenance merely
+from filenames or the absence of a simulation manifest.
 
 The multi-model runner never invents responses. It records the exact provider,
 model identifier, prompt, raw response, timestamps, latency, usage and errors in

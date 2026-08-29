@@ -142,6 +142,13 @@ def score(args):
     packets, _ = load_completed_annotations(args.annotations)
     manifest_path = Path(args.annotations) / "SIMULATION_MANIFEST.json"
     simulation = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
+    requested_provenance = getattr(args, "provenance", None)
+    if simulation and requested_provenance == "human_annotations":
+        raise SystemExit("Simulation manifest conflicts with human provenance.")
+    if not simulation and requested_provenance != "human_annotations":
+        raise SystemExit(
+            "Refusing to infer human provenance; pass --provenance human_annotations "
+            "only for independently completed human packets.")
     by_slot = {s: defaultdict(list) for s in RATING_SLOTS}
     for _, rows in packets:
         for row in rows:
@@ -200,6 +207,7 @@ def main():
     q = sub.add_parser("score")
     q.add_argument("--annotations", required=True)
     q.add_argument("--out", default="paper/results/annotation_agreement.json")
+    q.add_argument("--provenance", choices=["human_annotations", "simulated_personas"])
     q.set_defaults(fn=score)
     q = sub.add_parser("simulate-personas")
     q.add_argument("--input", required=True); q.add_argument("--out", required=True)

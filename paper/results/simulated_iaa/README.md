@@ -15,7 +15,8 @@ python code/annotation_cli.py simulate-personas \
   --seed 20260828 --disagreement-rate 0.12
 python code/annotation_cli.py score \
   --annotations paper/results/simulated_iaa/packets \
-  --out paper/results/simulated_iaa/agreement.json
+  --out paper/results/simulated_iaa/agreement.json \
+  --provenance simulated_personas
 python code/annotation_cli.py adjudicate \
   --annotations paper/results/simulated_iaa/packets \
   --out paper/results/simulated_iaa/adjudication.csv

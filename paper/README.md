@@ -63,6 +63,10 @@ licence are present; a DOI must be cited only after an archive deposit is minted
 `./run.sh` builds both `main.pdf` and `supplementary.pdf` with three LaTeX
 passes each.
 
+From the repository root, `python code/audit_submission.py` then verifies the
+required submission files, PDF headers, synthetic-IAA provenance and every
+entry in `paper/SHA256SUMS.txt`. A non-zero exit blocks packaging.
+
 ## Natural-language and frontier-model extension
 
 `data/situatedqa_temporal_sample.jsonl` is a 12-item smoke-test sample derived

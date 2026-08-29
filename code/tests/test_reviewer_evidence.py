@@ -41,7 +41,8 @@ def test_ideal_mock_human_packets_score_all_slots(tmp_path):
     packets = tmp_path / "packets"
     write_mock_packets(packets)
     output = tmp_path / "agreement.json"
-    annotation.score(SimpleNamespace(annotations=str(packets), out=str(output)))
+    annotation.score(SimpleNamespace(annotations=str(packets), out=str(output),
+                                     provenance="human_annotations"))
     report = json.loads(output.read_text())
     assert report["n_annotators"] == 3 and report["n_items"] == 2
     assert set(report["slots"]) == set(annotation.RATING_SLOTS)
@@ -68,12 +69,22 @@ def test_simulated_personas_are_explicitly_marked(tmp_path):
     annotation.simulate_personas(SimpleNamespace(
         input=str(source), out=str(packets), seed=7, disagreement_rate=0.0))
     output = tmp_path / "agreement.json"
-    annotation.score(SimpleNamespace(annotations=str(packets), out=str(output)))
+    annotation.score(SimpleNamespace(annotations=str(packets), out=str(output),
+                                     provenance="simulated_personas"))
     report = json.loads(output.read_text())
     assert report["synthetic"] is True
     assert report["provenance"] == "simulated_personas"
     assert report["warning"] == "NOT HUMAN-SUBJECT EVIDENCE"
     assert report["n_annotators"] == 3
+
+
+def test_score_never_infers_human_provenance(tmp_path):
+    packets = tmp_path / "packets"
+    write_mock_packets(packets)
+    with pytest.raises(SystemExit, match="Refusing to infer human provenance"):
+        annotation.score(SimpleNamespace(
+            annotations=str(packets), out=str(tmp_path / "agreement.json"),
+            provenance=None))
 
 
 def test_balanced_three_family_matrix_passes():

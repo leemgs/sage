@@ -53,7 +53,7 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 - ☑ Simulated-persona IAA pipeline validation via `code/annotation_cli.py` (3 personas, n=70) — completed and archived under `results/simulated_iaa/`; every artifact is machine-marked synthetic and is not human-subject evidence. Real human IAA remains 🔒 BLOCKED pending independent human annotators. The same scorer rejects blank fields, duplicate or mismatched item sets, and changed questions before reporting per-slot Fleiss' kappa and unanimity.
 - ☐ Run `code/audit_multifamily.py` before reporting Phase 4: it requires ≥3 provider families with an identical, duplicate-free item-condition matrix and rejects mock records.
 - ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; two situation−structured 95% CIs include zero and one excludes zero in the negative direction (n=210).
-- ☑ Cost / latency accounting — aggregated per condition in `code/e5_stats.py` / `e5_audited_summary.csv` (situation ≈ 3× tokens, ≈ 2× latency vs direct).
+- ☑ Cost / latency accounting — aggregated per condition in `code/e5_stats.py` / `e5_audited_summary.csv` (situation uses roughly 3× total provider-reported tokens and has substantially higher median latency than direct, with model-dependent ratios).
 - ☑ Larger N (35 → full 210). Done: 30/category × 7 = 210, audited, 0 failed calls.
 - 🔒 Archival DOI (Zenodo) — needs the user's Zenodo deposit. The MIT
   `LICENSE` is complete; only the account-bound DOI deposit remains.

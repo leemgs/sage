@@ -43,12 +43,34 @@
 - [x] Supplementary Methods/Results and design guidance file.
 - [x] Public repository and MIT licence are stated consistently.
 - [ ] Mint and cite an archival DOI if the author creates a repository deposit; do not use a placeholder DOI.
+- [x] A fail-closed package audit verifies required files, PDF headers, checksums and synthetic-IAA provenance.
+
+## Final claim-risk audit
+- [x] The abstract identifies category-level E5 comparisons as descriptive and exploratory.
+- [x] Cluster-bootstrap results are described as interval estimates rather than as conventional significance tests with only seven clusters.
+- [x] Provider-reported token totals are not mislabeled as output-token counts.
+- [x] The manuscript distinguishes the generated benchmark from a natural-text corpus.
+- [x] Simulated personas are disclosed in Methods and Limitations and excluded from human evidence.
+- [x] The evidence-ladder table is formatted across the full text width to avoid the recorded overfull line.
 
 ## Author-only submission gate
 - [ ] Confirm the author name, ORCID, correspondence email and affiliation exactly as they should appear in the journal system.
 - [ ] Confirm that the no-specific-funding and no-competing-interests declarations are accurate.
 - [ ] Obtain any institutional or employer publication clearance that applies.
 - [ ] Upload `main.pdf` and `supplementary.pdf` as separate files and provide the exact Git commit or release tag reviewed by editors.
+- [ ] Select the manuscript type in the submission system and reconcile its current word, display-item and reference limits against the generated PDF.
+- [ ] Complete every journal policy form in the submission portal; repository checks cannot attest to author identity, institutional clearance or declarations.
+
+## Go/no-go assessment
+
+The package is internally consistent and suitable for editorial consideration as
+a bounded framework and conformance-study manuscript. It does **not** satisfy
+the stronger empirical claim of a broadly validated neural intervention: the
+cross-family experiment, independent natural benchmark annotation and real
+human IAA remain unexecuted. No wording change can close those evidence gaps.
+For Nature Machine Intelligence, the author should either submit with this
+explicitly bounded positioning or complete those experiments before submission;
+the repository must not relabel simulated controls as empirical evidence.
 
 ## Cross-layer engineering taxonomy
 - The manuscript distinguishes prompt, context, retrieval, memory, situation, tool/function-calling, protocol/interface, harness, evaluation, observability/provenance, serving, and guardrail/security engineering.

@@ -136,10 +136,8 @@ provider token counts and measured request latency by condition. The bundled
 12-item SituatedQA temporal sample is reported only as a smoke test; its size
 does not support a standalone inferential claim.
 
-The following larger confirmatory study remains pre-specified rather than
-completed:
-
-A confirmatory study is pre-specified to compare the following matched conditions:
+The following larger confirmatory study is specified but has not been executed.
+It would compare these matched conditions:
 direct prompting; chain-of-thought or structured prompting; date-aware context;
 standard RAG; temporal or event-aware RAG; reflection or verification agent; and
 Situation Engineering. The generation model, evidence set, retrieval corpus,
@@ -204,6 +202,10 @@ computing Fleiss' $\kappa$ and unanimous agreement for action, answer and state
 slots; incomplete packets terminate with an error. Disagreements are adjudicated
 only after independent files are frozen. No human agreement value is reported
 because independent human annotations were not collected.
+For software testing, a separate command generates three deterministic persona
+packets with injected disagreements. Its manifest and score output are marked
+\texttt{synthetic: true} and ``NOT HUMAN-SUBJECT EVIDENCE''; those values are
+excluded from the manuscript's empirical claims.
 
 Deployment studies should additionally measure state drift, invalidation
 latency, recovery after contradictory observations, action-precondition

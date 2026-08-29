@@ -21,22 +21,25 @@ reported here passes that gate with no failed calls.
 \input{section/tables/e5_stats_table}
 
 The result is null-to-negative (Table~\ref{tab:e5-stats}). Prompting for an
-explicit situation state never significantly beats a matched structured prompt:
+explicit situation state never yields a cluster-bootstrap interval indicating
+an improvement over a matched structured prompt:
 the paired situation$-$structured differences are $+1.4$, $-10.0$ and $+0.0$
 percentage points, with a $95\%$ cluster-bootstrap interval that excludes zero
 only for \texttt{gemini-2.5-flash-lite}, where the situation prompt is
-significantly \emph{worse}. The intervals are otherwise wide because the
+\emph{worse} under this analysis. The intervals are otherwise wide because the
 benchmark has only seven template families, so resampling categories -- the
 honest unit of independence -- leaves little power for a directional claim; this
 is exactly the reporting discipline the framework asks for. The situation and
-structured conditions also cost roughly three times the output tokens and up to
-twice the latency of the direct prompt, with no accuracy gain and no reduction
+structured conditions also use roughly three times the total provider-reported
+tokens and have substantially higher median latency than the direct prompt,
+with no accuracy gain and no reduction
 in selective risk.
 
 A small natural-language check points the same way. On a 12-item sample from the
 public SituatedQA temporal split, the two date-anchored conditions again show no
 advantage for the explicit situation prompt over a structured one
-(situation$-$structured of $-17$, $+0$ and $+0$ points across the three models);
+(descriptive situation$-$structured differences of $-16.7$, $+0.0$ and $+0.0$
+percentage points across the three models);
 we compare only these two conditions because the direct prompt here omits the
 query date and so is not a matched control. At $n=12$ this is a smoke test, not a
 result, but it is consistent with the synthetic finding and with sensing, not
@@ -78,7 +81,8 @@ slot in the prompt. These numbers are a single-provider (Gemini-family),
 $n=210$ pilot; they neither confirm nor refute the
 situation-engineering hypothesis at scale. A confirmatory E5 still requires
 multiple model families under matched budgets, a larger natural-language
-evaluation set, and human agreement (blinded three-annotator packets are prepared
-under \texttt{paper/annotation\_packets/}; see the reporting protocol). The frozen manifest, model snapshots and cost
+evaluation set, and human agreement (blank blinded packets are prepared under
+\texttt{paper/annotation\_packets/}; the separate simulated-persona files are
+software validation only and are not human evidence). The frozen manifest, model snapshots and cost
 accounting are in \texttt{code/experiment\_manifest.e5.json}, and the run is
 reproduced by a single audited command (\texttt{python code/run\_e5.py}).
