@@ -167,7 +167,7 @@ def main():
                    if c == "situation" and r.get("correct") is not None}
             bas = {i: r for (i, c), r in chosen.items()
                    if c == base and r.get("correct") is not None}
-            for i in set(sit) & set(bas):
+            for i in sorted(set(sit) & set(bas)):
                 paired_by_cat[category_of(i)].append(
                     int(sit[i]["correct"]) - int(bas[i]["correct"]))
             all_d = [d for v in paired_by_cat.values() for d in v]
