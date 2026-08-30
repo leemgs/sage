@@ -147,4 +147,46 @@ latency, cost and failure modes. Reporting only the model name and prompt is
 insufficient for agentic systems because performance is jointly determined by
 the model, environment and scaffolding.
 
+\section*{Supplementary Note 14: Prospective external-validity protocol}
+This note is a design and power-check record, not a report of observations.
+The illustrative percentages below are simulated expected values, selected to
+exercise the decision rules before data collection. They must be replaced by
+audited measurements and item-level records before they can be cited as model
+or human performance.
+
+\begin{table}[h]
+\centering
+\caption{Illustrative expected outcomes (simulated; not empirical evidence).}
+\begin{tabular}{lrrrr}
+\toprule
+Stratum & Structured & Temporal RAG & Situation & Human agreement \\
+\midrule
+Natural, in-domain & 68\% & 72\% & 75\% & 0.80 $\kappa$ \\
+Natural, held-out domain & 61\% & 66\% & 68\% & 0.76 $\kappa$ \\
+Author-disjoint semi-synthetic & 73\% & 76\% & 79\% & 0.82 $\kappa$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The planned minimum is 1,200 scenarios balanced across three domains, with no
+template paraphrases crossing splits. Power must be recomputed from pilot
+scenario-level variance; 1,200 is a collection target, not a guarantee of
+adequate power. The primary estimand is paired exact-accuracy difference
+(situation minus structured), clustered by scenario and reported separately by
+model family. Secondary endpoints are applicability-label F1, clarification
+utility, abstention precision, selective risk at fixed coverage, latency,
+provider-reported tokens and cost. Holm-adjusted category analyses are
+secondary. A result is confirmatory only if the pre-specified positive contrast
+replicates in at least two independent families and on the held-out natural
+stratum, while the situation condition is non-inferior to temporal RAG within a
+two-percentage-point margin. All null and adverse results remain reportable.
+
+Generator and solver teams remain separated until predictions are frozen;
+annotators are blinded to condition; exclusions, prompt changes and failed
+calls are logged; and human recruitment, consent/ethics determination,
+compensation and adjudication are documented. The machine-readable companion
+at \texttt{results/prospective\_expected\_results.json} carries a
+\texttt{synthetic: true} flag so submission audits can prevent accidental
+promotion of these values to evidence.
+
 \end{document}

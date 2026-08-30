@@ -39,6 +39,13 @@ def audit():
             errors.append("simulated IAA artifact is not marked synthetic")
         if agreement.get("provenance") != "simulated_personas":
             errors.append("simulated IAA artifact has incorrect provenance")
+    prospective_path = PAPER / "results/prospective_expected_results.json"
+    if prospective_path.exists():
+        prospective = json.loads(prospective_path.read_text(encoding="utf-8"))
+        if prospective.get("synthetic") is not True:
+            errors.append("prospective expected results are not marked synthetic")
+        if prospective.get("empirical_evidence") is not False:
+            errors.append("prospective expected results are not excluded from evidence")
     checksums = PAPER / "SHA256SUMS.txt"
     lines = [line for line in checksums.read_text().splitlines() if line.strip()]
     for line_number, line in enumerate(lines, 1):

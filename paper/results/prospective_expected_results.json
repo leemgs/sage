@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "prospective_power_and_decision_rule_check",
+  "synthetic": true,
+  "empirical_evidence": false,
+  "warning": "Illustrative expected values only. Do not cite as model or human performance.",
+  "planned_scenarios": 1200,
+  "strata": [
+    {"name": "natural_in_domain", "structured_accuracy": 0.68, "temporal_rag_accuracy": 0.72, "situation_accuracy": 0.75, "human_kappa": 0.80},
+    {"name": "natural_held_out_domain", "structured_accuracy": 0.61, "temporal_rag_accuracy": 0.66, "situation_accuracy": 0.68, "human_kappa": 0.76},
+    {"name": "author_disjoint_semi_synthetic", "structured_accuracy": 0.73, "temporal_rag_accuracy": 0.76, "situation_accuracy": 0.79, "human_kappa": 0.82}
+  ],
+  "confirmatory_gate": {
+    "positive_clustered_interval_in_at_least_two_independent_families": true,
+    "replicate_on_held_out_natural_stratum": true,
+    "temporal_rag_noninferiority_margin_percentage_points": 2.0
+  }
+}

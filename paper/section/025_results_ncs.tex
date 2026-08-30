@@ -123,6 +123,26 @@ Accuracy (\%) & 30.8 & 92.3 & 0.0 & 0.0 & 61.5 & 100.0 & 30.8 & 92.3 & 100.0\\
 \end{tabular}
 \end{table}
 
+\subsection*{Progressive stress testing separates execution, sensing and validation}
+
+Read as a three-stage stress test, the complete benchmark produces
+$100.0\%\rightarrow77.9\%\rightarrow35.1\%$: an oracle state tests execution,
+a text-derived state adds sensing error, and targeted corruption tests whether
+unvalidated state can propagate into the answer. The corresponding losses are
+22.1 and 42.8 percentage points. This progression is empirical in the limited
+sense that every stage was executed on all 4,200 items and item-level outputs
+are archived. It is not a learning curve, a comparison of three models or an
+estimate of robustness to naturally occurring corruption. In particular, the
+last stage is an intentionally severe intervention selected to damage source,
+modality and scope fields; monotonic degradation is therefore a diagnostic
+expectation rather than an independently discovered population effect.
+
+This decomposition also prevents the oracle result from carrying the paper's
+neural claim. The E5 test below is the relevant prompt-level experiment, and
+its overall result is null-to-negative within one provider family. Accordingly,
+the combined evidence supports a sensing-and-validation bottleneck, but not the
+claim that the present situation prompt solves it.
+
 \subsection*{Natural-language benchmarks establish prevalence, not SCQA efficacy}
 
 Independent resources show that situation dependence is not confined to the

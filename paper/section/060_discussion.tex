@@ -105,3 +105,30 @@ and that imperfect sensing can erase the advantage of correct update rules.
 Establishing broad utility now requires the pre-specified natural-text,
 multi-model comparison against equally resourced structured prompting,
 temporal retrieval and agent verification.
+
+\subsection*{Prospective test designed to break benchmark--solver coupling}
+
+We pre-specify the next test rather than presenting simulated numbers as a
+completed experiment. An independent data team should sample naturally
+occurring questions from at least three domains, write evidence packs without
+access to the SCQA schema or solver, and freeze them before the systems team
+maps evidence into states. The crossed evaluation uses at least three genuinely
+independent model families (including an open-weight family), with identical
+evidence and matched token and tool budgets across direct, structured,
+temporal-retrieval, verification-agent and situation conditions. Items are
+split by scenario---not paraphrase---and held-out domains and generator authors
+are reported separately. Three blinded human annotators label answerability,
+answer, applicable evidence and required state slots; disagreements are
+adjudicated only after independent labels are frozen.
+
+Supplementary Note~14 records illustrative expected values solely as a power
+and decision-rule check. They are explicitly marked \emph{prospective,
+simulated and non-evidential}; they do not enter the abstract, results tables,
+figures or conclusions. The confirmatory claim would require a positive
+situation-versus-structured paired contrast whose scenario-clustered 95\%
+interval excludes zero in at least two independent families, no material loss
+against temporal retrieval, and replication on the author-disjoint natural
+set. Human agreement, selective risk, latency, tokens and cost must be reported
+regardless of outcome. Until those gates are passed, generator--solver
+co-design, one provider family and the absence of human evaluation remain core
+limitations rather than prose-resolved concerns.
