@@ -7,6 +7,7 @@
 - [x] The paper contributes a framework, benchmark taxonomy, executable artifact and falsifiable ablations.
 - [x] A bounded neural-model check is reported on synthetic items and a 12-item natural-text smoke test.
 - [ ] Multiple independent model families and a larger naturally occurring corpus remain required for a strong general NMI claim.
+- [x] A prospective, author-disjoint external-validity protocol now freezes the multi-family comparisons, split unit, human evaluation and decision rules; its illustrative expected values are machine-marked as non-evidence.
 
 ## Scientific validity
 - [x] No fabricated commercial-LLM or human-study results.
@@ -15,6 +16,7 @@
 - [x] Claims restricted to the controlled diagnostic setting.
 - [x] Symbolic control and neural sensing are explicitly separated.
 - [ ] Independent annotation and external-domain validation are not yet performed.
+- [x] Human-label fields, blinding, adjudication, reporting and ethics metadata are pre-specified; this improves readiness but does not count as completion.
 
 ## Research usefulness
 - [x] Prompt/context/harness/situation taxonomy and comparison table.
