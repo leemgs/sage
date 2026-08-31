@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-// Build the one-page SAGE academic poster (A0 landscape) -> ppt/sage-poster.pptx
-// Run from the repository root: node ppt/build_poster.js
+// Build the one-page SAGE academic poster -> paper/presentation/sage-poster.pptx
+// Run from the repository root: node paper/presentation/build_poster.js
 const path = require("path");
 const pptxgen = require("pptxgenjs");
 
-const ROOT = path.resolve(__dirname, "..");
-const LOGO = path.join(ROOT, "assets", "sage-logo.png");
+const PAPER = path.resolve(__dirname, "..");
+const LOGO = path.join(PAPER, "assets", "sage-logo.png");
 
 // Sage Calm palette
 const DARK = "2C3E44"; // near-black slate (text, dark cards)
@@ -321,4 +321,4 @@ slide.addText([
 ], { x: x + 0.35, y: ly + 0.5, w: CW - 0.7, h: 2.6, margin: 0, fontFace: F, fontSize: 20, valign: "top" });
 
 pres.writeFile({ fileName: path.join(__dirname, "sage-poster.pptx") })
-  .then(() => console.log("Wrote ppt/sage-poster.pptx"));
+  .then(() => console.log("Wrote paper/presentation/sage-poster.pptx"));

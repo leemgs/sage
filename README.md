@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/sage-logo.png" alt="SAGE research logo" width="360">
+  <img src="paper/assets/sage-logo.png" alt="SAGE research logo" width="360">
 </p>
 
 # SAGE
@@ -29,9 +29,12 @@ SAGE는 인공지능이 질문에 답하거나 행동을 결정할 때 단순히
 
 ## 저장소 구성
 
-- `ppt/`: SAGE 연구의 배경, 핵심 개념, 실험 결과를 설명하는 발표자료를 보관합니다.
 - `code/`: SCQA 구현, gold/predicted/corrupted-state 실험, 다중 LLM 평가 및 독립 annotation 도구를 포함합니다.
-- `paper/`: `main.tex`을 시작 파일로 하는 연구논문, 보충자료, 실험 데이터, 결과와 그림을 포함합니다.
+- `paper/`: `main.tex`을 시작 파일로 하는 연구논문, 보충자료, 실험 데이터, 결과, 그림, 발표자료와 시각 자산을 포함합니다.
+
+실행 가능한 소스와 개발 의존성은 `code/`에, 논문 및 연구 결과물은
+`paper/`에 두는 2개 폴더 원칙을 적용합니다. 저장소 루트에는 안내, 인용,
+라이선스와 저장소 설정 파일만 유지합니다.
 
 ## 빠른 재현
 

@@ -10,10 +10,12 @@
 
 ## Repository layout contract
 - `../code/` - the only home of the executable implementation (engine,
-  experiments, evaluation harness, figure generation). Do not keep code
-  copies under `paper/`.
-- `paper/` - LaTeX sources, data, results and reviewer documents.
-- `../ppt/` - presentation and poster materials.
+  experiments and evaluation harness). Do not keep implementation copies under
+  `paper/`; development dependencies are pinned in `../code/requirements-dev.txt`.
+- `paper/` - the only home of research outputs: LaTeX sources, data, results,
+  figures, reviewer documents, assets and presentation materials.
+- `presentation/` - editable presentation/poster sources and generated decks.
+- `assets/` - shared visual assets used by repository and presentation files.
 
 ## Entry points
 - Manuscript: `main.tex`

@@ -5,9 +5,9 @@ from xml.sax.saxutils import escape
 import shutil
 import zipfile
 
-ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "ppt" / "sage.odp"
-LOGO = ROOT / "assets" / "sage-logo.png"
+PAPER = Path(__file__).resolve().parents[1]
+OUT = Path(__file__).resolve().with_name("sage.odp")
+LOGO = PAPER / "assets" / "sage-logo.png"
 
 NS = """xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
 xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0"
@@ -186,7 +186,7 @@ slides.append(slide("Reproducibility",
     textbox(12.9, 5.7, 7.9, 6.7,
             ["main.tex", "supplementary.tex", "4,200-item dataset",
              "item-level results", "26 linked references"], "Body") +
-    textbox(23.4, 4.1, 7.9, 1.0, "ppt/", "CardTitle") +
+    textbox(23.4, 4.1, 7.9, 1.0, "paper/presentation/", "CardTitle") +
     textbox(23.4, 5.7, 7.9, 6.7,
             ["sage.pptx", "editable source", "research narrative",
              "measured outcomes", "limitations"], "Body") +
