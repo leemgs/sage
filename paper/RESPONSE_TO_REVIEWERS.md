@@ -1,7 +1,7 @@
 # Cover letter and point-by-point response
 
-This document supports submission of *"Situation engineering for reliable
-evidence use in artificial intelligence."* It (1) states the contribution and
+This document supports submission of *"Situation engineering: separating
+evidence applicability from availability in AI systems."* It (1) states the contribution and
 its intended article type, and (2) responds point-by-point to an internal
 referee report so the editor and reviewers can see, up front, what is claimed,
 what is deliberately bounded, and what is left open. Nothing here is a claim of
