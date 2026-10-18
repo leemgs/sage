@@ -2,7 +2,8 @@
 \begin{table}[t]
 \caption{Gemini-family E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are flagged as directional estimates only within this bounded analysis.}
 \label{tab:e5-stats}
-\centering\scriptsize\setlength{\tabcolsep}{0pt}%
+\centering\scriptsize\setlength{\tabcolsep}{3pt}%
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lrrrrr}
 \toprule
 Model & Direct & Structured & Situation & $\Delta_{\text{sit-str}}$ (95\% CI) & Sit.\ tok. \\
@@ -11,5 +12,6 @@ Model & Direct & Structured & Situation & $\Delta_{\text{sit-str}}$ (95\% CI) & 
 2.5 Flash Lite & 66.7 (31.4--94.8) & 82.9 (53.3--100.0) & 72.9 (46.7--91.9) & -10.0 (-19.5,-1.9) & 270 \\
 3.5 Flash & 86.7 (59.0--100.0) & 85.7 (57.1--100.0) & 85.7 (57.1--100.0) & +0.0 (+0.0,+0.0) & 285 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
