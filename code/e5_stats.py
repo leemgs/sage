@@ -194,7 +194,8 @@ def main():
         r"situation$-$structured contrast, and cost. CIs that exclude zero are "
         r"flagged as directional estimates only within this bounded analysis.}",
         r"\label{tab:e5-stats}",
-        r"\centering\scriptsize\setlength{\tabcolsep}{0pt}%",
+        r"\centering\scriptsize\setlength{\tabcolsep}{3pt}%",
+        r"\resizebox{\columnwidth}{!}{%",
         r"\begin{tabular}{lrrrrr}",
         r"\toprule",
         r"Model & Direct & Structured & Situation & $\Delta_{\text{sit-str}}$ "
@@ -222,7 +223,7 @@ def main():
         safe = safe.replace("-flash", " Flash").replace("_", r"\_")
         lines.append(f"{safe} & {cell('direct')} & {cell('structured')} & "
                      f"{cell('situation')} & {dstr} & {tok:.0f} \\\\")
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    lines += [r"\bottomrule", r"\end{tabular}%", r"}", r"\end{table}", ""]
     Path(ROOT / args.tex_out).parent.mkdir(parents=True, exist_ok=True)
     Path(ROOT / args.tex_out).write_text("\n".join(lines))
     print(json.dumps(report, indent=2))
