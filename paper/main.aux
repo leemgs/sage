@@ -9,6 +9,20 @@
 \citation{asai2024selfrag,yao2023react,schick2023toolformer}
 \citation{mei2025context}
 \citation{zhong2026harness,lin2026ahe}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces From situation blindness to an applicability-aware response. \textbf  {a}, A supported appointment becomes stale after resignation. \textbf  {b}, retrieval and relevance alone do not require resolution of that transition. \textbf  {c}, situation engineering constructs a provenance-linked state, validates claim applicability and propagates unresolved variables into response policy. \textbf  {d}, SituationCatch-Bench isolates seven corresponding diagnostic axes.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:engineering-planes}{{1}{3}{From situation blindness to an applicability-aware response. \textbf {a}, A supported appointment becomes stale after resignation. \textbf {b}, retrieval and relevance alone do not require resolution of that transition. \textbf {c}, situation engineering constructs a provenance-linked state, validates claim applicability and propagates unresolved variables into response policy. \textbf {d}, SituationCatch-Bench isolates seven corresponding diagnostic axes}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred.}}{5}{figure.2}\protected@file@percent }
+\newlabel{fig:accuracy}{{2}{5}{Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization.}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:category}{{3}{6}{Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic.}}{6}{figure.4}\protected@file@percent }
+\newlabel{fig:ablation}{{4}{6}{Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic}{figure.4}{}}
+\citation{zhang2021situatedqa}
+\citation{vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa,kim2025tdbench}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Evidence ladder and permitted interpretation.}}{8}{table.1}\protected@file@percent }
+\newlabel{tab:evidence-ladder}{{1}{8}{Evidence ladder and permitted interpretation}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Gemini-family E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are flagged as directional estimates only within this bounded analysis.}}{9}{table.2}\protected@file@percent }
+\newlabel{tab:e5-stats}{{2}{9}{Gemini-family E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are flagged as directional estimates only within this bounded analysis}{table.2}{}}
 \citation{barwise1983situations}
 \citation{mccarthy1969problems,kowalski1986event,reiter2001knowledge}
 \citation{allen1983interval}
@@ -16,49 +30,34 @@
 \citation{kaelbling1998pomdp,henderson2014second}
 \citation{snodgrass1992temporal}
 \citation{vanbenthem1996dynamic,stalnaker2002common}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces From situation blindness to an applicability-aware response. \textbf  {a}, A supported appointment becomes stale after resignation. \textbf  {b}, retrieval and relevance alone do not require resolution of that transition. \textbf  {c}, situation engineering constructs a provenance-linked state, validates claim applicability and propagates unresolved variables into response policy. \textbf  {d}, SituationCatch-Bench isolates seven corresponding diagnostic axes.}}{4}{figure.1}\protected@file@percent }
-\newlabel{fig:engineering-planes}{{1}{4}{From situation blindness to an applicability-aware response. \textbf {a}, A supported appointment becomes stale after resignation. \textbf {b}, retrieval and relevance alone do not require resolution of that transition. \textbf {c}, situation engineering constructs a provenance-linked state, validates claim applicability and propagates unresolved variables into response policy. \textbf {d}, SituationCatch-Bench isolates seven corresponding diagnostic axes}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred.}}{6}{figure.2}\protected@file@percent }
-\newlabel{fig:accuracy}{{2}{6}{Oracle-state diagnostic accuracy. The result demonstrates that the specified invariants are executable. It does not estimate end-to-end LLM accuracy because situation variables are supplied rather than inferred}{figure.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization.}}{7}{figure.3}\protected@file@percent }
-\newlabel{fig:category}{{3}{7}{Accuracy by diagnostic category. Each category isolates one applicability variable, enabling mechanism-level failure localization}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic.}}{7}{figure.4}\protected@file@percent }
-\newlabel{fig:ablation}{{4}{7}{Oracle-state component ablations. Each removed variable recovers the predicted category-specific failure, providing a causal software diagnostic}{figure.4}{}}
-\citation{zhang2021situatedqa}
-\citation{vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa,kim2025tdbench}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot).}}{8}{table.1}\protected@file@percent }
-\newlabel{tab:slot-sensing}{{1}{8}{Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot)}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Evidence ladder and permitted interpretation.}}{9}{table.2}\protected@file@percent }
-\newlabel{tab:evidence-ladder}{{2}{9}{Evidence ladder and permitted interpretation}{table.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are the only ones that license a directional claim.}}{10}{table.3}\protected@file@percent }
-\newlabel{tab:e5-stats}{{3}{10}{E5 accuracy with 95\% cluster-bootstrap confidence intervals (categories as clusters; 3000 resamples), the paired situation$-$structured contrast, and cost. CIs that exclude zero are the only ones that license a directional claim}{table.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Retrieval-augmented (RAG) baseline versus full-evidence prompting, mean accuracy over the three Gemini models on the $n=210$ sample. RAG answers from the top-3 lexically retrieved claims (plain text); Structured and Situation see all claims. On the two categories that most require reasoning over the applicability state -- temporal validity and observer knowledge -- the full-state conditions beat RAG; elsewhere a focused RAG is as good or better, and its aggregate lead is driven by clarification (hidden premise), where the plain prompt elicits the CLARIFY token more readily.}}{11}{table.4}\protected@file@percent }
-\newlabel{tab:e5-rag}{{4}{11}{Retrieval-augmented (RAG) baseline versus full-evidence prompting, mean accuracy over the three Gemini models on the $n=210$ sample. RAG answers from the top-3 lexically retrieved claims (plain text); Structured and Situation see all claims. On the two categories that most require reasoning over the applicability state -- temporal validity and observer knowledge -- the full-state conditions beat RAG; elsewhere a focused RAG is as good or better, and its aggregate lead is driven by clarification (hidden premise), where the plain prompt elicits the CLARIFY token more readily}{table.4}{}}
-\bibcite{lewis2020rag}{{1}{}{{}}{{}}}
-\bibcite{asai2024selfrag}{{2}{}{{}}{{}}}
-\bibcite{yao2023react}{{3}{}{{}}{{}}}
-\bibcite{schick2023toolformer}{{4}{}{{}}{{}}}
-\bibcite{zhang2021situatedqa}{{5}{}{{}}{{}}}
-\bibcite{allen1983interval}{{6}{}{{}}{{}}}
-\bibcite{mei2025context}{{7}{}{{}}{{}}}
-\bibcite{zhong2026harness}{{8}{}{{}}{{}}}
-\bibcite{lin2026ahe}{{9}{}{{}}{{}}}
-\bibcite{barwise1983situations}{{10}{}{{}}{{}}}
-\bibcite{vu2023freshqa}{{11}{}{{}}{{}}}
-\bibcite{meem2024pat}{{12}{}{{}}{{}}}
-\bibcite{chen2021timeqa}{{13}{}{{}}{{}}}
-\bibcite{chen2025chronoqa}{{14}{}{{}}{{}}}
-\bibcite{kim2025tdbench}{{15}{}{{}}{{}}}
-\bibcite{vanbenthem1996dynamic}{{16}{}{{}}{{}}}
-\bibcite{stalnaker2002common}{{17}{}{{}}{{}}}
-\bibcite{alchourron1985logic}{{18}{}{{}}{{}}}
-\bibcite{doyle1979truth}{{19}{}{{}}{{}}}
-\bibcite{kaelbling1998pomdp}{{20}{}{{}}{{}}}
-\bibcite{henderson2014second}{{21}{}{{}}{{}}}
-\bibcite{snodgrass1992temporal}{{22}{}{{}}{{}}}
-\bibcite{kwon2023pagedattention}{{23}{}{{}}{{}}}
-\bibcite{mccarthy1969problems}{{24}{}{{}}{{}}}
-\bibcite{kowalski1986event}{{25}{}{{}}{{}}}
-\bibcite{reiter2001knowledge}{{26}{}{{}}{{}}}
+\bibcite{zhang2021situatedqa}{{1}{}{{}}{{}}}
+\bibcite{vu2023freshqa}{{2}{}{{}}{{}}}
+\bibcite{meem2024pat}{{3}{}{{}}{{}}}
+\bibcite{chen2021timeqa}{{4}{}{{}}{{}}}
+\bibcite{chen2025chronoqa}{{5}{}{{}}{{}}}
+\bibcite{lewis2020rag}{{6}{}{{}}{{}}}
+\bibcite{asai2024selfrag}{{7}{}{{}}{{}}}
+\bibcite{yao2023react}{{8}{}{{}}{{}}}
+\bibcite{schick2023toolformer}{{9}{}{{}}{{}}}
+\bibcite{mei2025context}{{10}{}{{}}{{}}}
+\bibcite{zhong2026harness}{{11}{}{{}}{{}}}
+\bibcite{lin2026ahe}{{12}{}{{}}{{}}}
+\bibcite{kim2025tdbench}{{13}{}{{}}{{}}}
+\bibcite{barwise1983situations}{{14}{}{{}}{{}}}
+\bibcite{mccarthy1969problems}{{15}{}{{}}{{}}}
+\bibcite{kowalski1986event}{{16}{}{{}}{{}}}
+\bibcite{reiter2001knowledge}{{17}{}{{}}{{}}}
+\bibcite{allen1983interval}{{18}{}{{}}{{}}}
+\bibcite{alchourron1985logic}{{19}{}{{}}{{}}}
+\bibcite{doyle1979truth}{{20}{}{{}}{{}}}
+\bibcite{kaelbling1998pomdp}{{21}{}{{}}{{}}}
+\bibcite{henderson2014second}{{22}{}{{}}{{}}}
+\bibcite{snodgrass1992temporal}{{23}{}{{}}{{}}}
+\bibcite{vanbenthem1996dynamic}{{24}{}{{}}{{}}}
+\bibcite{stalnaker2002common}{{25}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{20}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot).}}{21}{table.ED.1}\protected@file@percent }
+\newlabel{tab:slot-sensing}{{1}{21}{Claim-level accuracy of the deterministic text sensor ($n=7{,}800$ claims per slot)}{table.ED.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Retrieval-augmented (RAG), full-evidence prompting, and a tool-using agent, mean accuracy over the three Gemini models on the $n=210$ sample. RAG answers from the top-3 lexically retrieved claims; Structured and Situation see all claims; Agent may issue its own search queries over the item's claims before answering. Descriptively, on the two categories that most require reasoning over the applicability state -- temporal validity and observer knowledge -- the full-evidence conditions score above both retrieval and the agent; this category-level pattern is exploratory, and none of the retrieval-, prompt-, or tool-based interventions dominates overall.}}{22}{table.ED.2}\protected@file@percent }
+\newlabel{tab:e5-rag}{{2}{22}{Retrieval-augmented (RAG), full-evidence prompting, and a tool-using agent, mean accuracy over the three Gemini models on the $n=210$ sample. RAG answers from the top-3 lexically retrieved claims; Structured and Situation see all claims; Agent may issue its own search queries over the item's claims before answering. Descriptively, on the two categories that most require reasoning over the applicability state -- temporal validity and observer knowledge -- the full-evidence conditions score above both retrieval and the agent; this category-level pattern is exploratory, and none of the retrieval-, prompt-, or tool-based interventions dominates overall}{table.ED.2}{}}
+\gdef \@abspage@last{22}

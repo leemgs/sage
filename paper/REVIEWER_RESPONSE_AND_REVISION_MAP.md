@@ -22,7 +22,7 @@ The manuscript has been revised from a broad claim of a completed solution for r
 
 ## Major comment 5: Novelty relative to established fields
 
-**Action.** Added a dedicated Related conceptual foundations section and comparison table covering situation semantics, situation/event calculus, belief revision, truth maintenance, POMDPs, dialogue-state tracking, temporal knowledge graphs and bitemporal databases. The contribution is stated as a systems-level applicability contract, not a new universal logic.
+**Action.** Added a Related conceptual foundations discussion (now Methods, "Relation to prior formalisms", to respect the NMI 3,500-word main-text limit) and comparison table covering situation semantics, situation/event calculus, belief revision, truth maintenance, POMDPs, dialogue-state tracking, temporal knowledge graphs and bitemporal databases. The contribution is stated as a systems-level applicability contract, not a new universal logic.
 
 ## Major comment 6: Calibration was not meaningful
 

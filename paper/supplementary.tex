@@ -32,7 +32,7 @@ gold-, predicted- and corrupted-state outputs. Run
 \texttt{PYTHONPATH=code pytest -q code/tests} for implementation tests.
 
 \section*{Supplementary Note 6: Situation-engineering design checklist}
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \caption{Minimum reporting checklist for situation-engineered AI systems.}
 \begin{tabularx}{\linewidth}{p{3.2cm}X}
@@ -53,7 +53,7 @@ Governance & Are sensitive state variables minimized, access-controlled, correct
 \end{table}
 
 \section*{Supplementary Note 7: Situation-engineering maturity model}
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \caption{Proposed SE0--SE4 maturity levels.}
 \begin{tabularx}{\linewidth}{p{1.0cm}p{3.4cm}X}
@@ -100,7 +100,7 @@ three-persona run validates the workflow with injected disagreements; its files
 are machine-marked synthetic and are not human-subject evidence.
 
 \section*{Supplementary Note 11: Interfaces among engineering disciplines}
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \caption{Recommended typed interfaces between situation engineering and neighbouring components.}
 \begin{tabularx}{\linewidth}{p{3.2cm}p{4.2cm}X}
@@ -148,23 +148,21 @@ insufficient for agentic systems because performance is jointly determined by
 the model, environment and scaffolding.
 
 \section*{Supplementary Note 14: Prospective external-validity protocol}
-This note is a design and power-check record, not a report of observations.
-The illustrative percentages below are simulated expected values, selected to
-exercise the decision rules before data collection. They must be replaced by
-audited measurements and item-level records before they can be cited as model
-or human performance.
+This note is a design record, not a report of observations: it fixes the
+strata, targets and analysis before any external-validity data are collected.
+No outcome values are shown, because none have been measured.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
-\caption{Illustrative expected outcomes (simulated; not empirical evidence).}
-\begin{tabular}{lrrrr}
+\caption{Pre-specified external-validity design (no outcomes measured).}
+\begin{tabular}{llll}
 \toprule
-Stratum & Structured & Temporal RAG & Situation & Human agreement \\
+Stratum & Target & Split rule & Role \\
 \midrule
-Natural, in-domain & 68\% & 72\% & 75\% & 0.80 $\kappa$ \\
-Natural, held-out domain & 61\% & 66\% & 68\% & 0.76 $\kappa$ \\
-Author-disjoint semi-synthetic & 73\% & 76\% & 79\% & 0.82 $\kappa$ \\
-\bottomrule
+Natural, in-domain & 400 & no template crosses splits & primary \\
+Natural, held-out domain & 400 & domain unseen in development & confirmatory \\
+Author-disjoint semi-synthetic & 400 & disjoint generator authors & secondary \\
+\botrule
 \end{tabular}
 \end{table}
 
@@ -184,9 +182,9 @@ two-percentage-point margin. All null and adverse results remain reportable.
 Generator and solver teams remain separated until predictions are frozen;
 annotators are blinded to condition; exclusions, prompt changes and failed
 calls are logged; and human recruitment, consent/ethics determination,
-compensation and adjudication are documented. The machine-readable companion
-at \texttt{results/prospective\_expected\_results.json} carries a
-\texttt{synthetic: true} flag so submission audits can prevent accidental
-promotion of these values to evidence.
+compensation and adjudication are documented. The decision rules were dry-run only on simulated values stored in
+\texttt{results/prospective\_expected\_results.json}, which carries a
+\texttt{synthetic: true} flag so submission audits prevent their promotion to
+evidence; those values are deliberately not reported here.
 
 \end{document}

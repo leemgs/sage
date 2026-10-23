@@ -35,12 +35,9 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{makecell}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
 \usepackage{pifont}
 \usepackage{soul}
 \usepackage{listings}
-\usepackage{float}
 \usepackage{placeins}
 \usepackage{ifthen}
 \usepackage{diagbox}
@@ -111,8 +108,6 @@ pdfkeywords={situation engineering, evidence applicability, reliable AI, tempora
 %% ---- Main text (NCS structure: Intro → Results → Discussion) ---
 \pdfbookmark[1]{Introduction}{bookmark-introduction}
 \input{section/010_introduction_nmi}
-\pdfbookmark[1]{Related Work}{bookmark-related}
-\input{section/012_related_work}
 \pdfbookmark[1]{Situation Engineering Framework}{bookmark-framework}
 \input{section/015_situation_engineering}
 \pdfbookmark[1]{Results}{bookmark-results}
@@ -167,6 +162,18 @@ The author declares no competing interests.
 
 %% ---- References -------------------------------------------
 \input{section/095_reference_nature.tex}
+
+%% ---- Extended Data (NMI: up to 10 items; not counted as display items) ----
+%% Kept after the references, as in Nature-family articles. Numbered
+%% "Extended Data Table n" with hyperlink anchors distinct from main tables.
+\clearpage
+\pdfbookmark[1]{Extended Data}{bookmark-extended-data}
+\section*{Extended Data}
+\setcounter{table}{0}
+\renewcommand{\tablename}{Extended Data Table}
+\renewcommand{\theHtable}{ED.\arabic{table}}
+\input{section/tables/ed_slot_sensing_table}
+\input{section/tables/e5_rag_table}
 
 %% ---- Supplementary Information --------------------------------
 %% NMI: submitted as a SEPARATE file — see supplementary.tex
