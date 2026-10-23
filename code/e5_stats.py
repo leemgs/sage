@@ -194,36 +194,57 @@ def main():
         r"situation$-$structured contrast, and cost. CIs that exclude zero are "
         r"flagged as directional estimates only within this bounded analysis.}",
         r"\label{tab:e5-stats}",
-        r"\centering\scriptsize\setlength{\tabcolsep}{3pt}%",
-        r"\resizebox{\columnwidth}{!}{%",
-        r"\begin{tabular}{lrrrrr}",
+        # Point estimates on one row and their 95% CIs stacked on the row
+        # below, so the table fits the text block at its natural size. (A
+        # \resizebox cannot wrap this tabular: sn-jnl's \toprule/\midrule
+        # use unbalanced \noalign groups that break inside a box argument,
+        # and Nature discourages rescaled tables.)
+        r"\centering\footnotesize\setlength{\tabcolsep}{4pt}%",
+        r"\begin{tabular}{lccccr}",
         r"\toprule",
-        r"Model & Direct & Structured & Situation & $\Delta_{\text{sit-str}}$ "
-        r"(95\% CI) & Sit.\ tok. \\",
+        r"Model & Direct & Structured & Situation & "
+        r"$\Delta_{\text{sit}-\text{str}}$ & Sit.\ tokens \\",
         r"\midrule",
     ]
-    for model in sorted(report["models"]):
+
+    def signed(x):
+        # Typeset a signed percentage-point value with a true minus sign.
+        v = f"{100*x:+.1f}"
+        return v.replace("-", "$-$") if v.startswith("-") else v
+
+    models = sorted(report["models"])
+    for i, model in enumerate(models):
         mo = report["models"][model]
         c = mo["conditions"]
 
-        def cell(cond):
+        def est(cond):
+            d = c.get(cond)
+            return pct(d["accuracy"]) if d else r"\textemdash"
+
+        def ci(cond):
             d = c.get(cond)
             if not d:
-                return r"\textemdash"
+                return ""
             lo, hi = d["ci95"]
-            return f"{pct(d['accuracy'])} ({pct(lo)}--{pct(hi)})"
+            return f"[{pct(lo)}, {pct(hi)}]"
         con = mo["contrasts"].get("situation_minus_structured", {})
         if con:
             lo, hi = con["ci95"]
-            dstr = f"{100*con['delta']:+.1f} ({100*lo:+.1f},{100*hi:+.1f})"
+            dest, dci = signed(con["delta"]), f"[{signed(lo)}, {signed(hi)}]"
         else:
-            dstr = r"\textemdash"
+            dest, dci = r"\textemdash", ""
         tok = c.get("situation", {}).get("mean_tokens")
         safe = model.removeprefix("gemini-").replace("-flash-lite", " Flash Lite")
         safe = safe.replace("-flash", " Flash").replace("_", r"\_")
-        lines.append(f"{safe} & {cell('direct')} & {cell('structured')} & "
-                     f"{cell('situation')} & {dstr} & {tok:.0f} \\\\")
-    lines += [r"\bottomrule", r"\end{tabular}%", r"}", r"\end{table}", ""]
+        lines.append(f"{safe} & {est('direct')} & {est('structured')} & "
+                     f"{est('situation')} & {dest} & {tok:.0f} \\\\")
+        lines.append(f"{{\\scriptsize 95\\% CI}} & {{\\scriptsize {ci('direct')}}} & "
+                     f"{{\\scriptsize {ci('structured')}}} & "
+                     f"{{\\scriptsize {ci('situation')}}} & "
+                     f"{{\\scriptsize {dci}}} & \\\\")
+        if i < len(models) - 1:
+            lines.append(r"\addlinespace[2pt]")
+    lines += [r"\botrule", r"\end{tabular}", r"\end{table}", ""]
     Path(ROOT / args.tex_out).parent.mkdir(parents=True, exist_ok=True)
     Path(ROOT / args.tex_out).write_text("\n".join(lines))
     print(json.dumps(report, indent=2))
