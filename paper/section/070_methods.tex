@@ -23,6 +23,47 @@ answer renderer. A predicted-state condition applies a text-only deterministic
 sensor before the same update and policy stages. It evaluates composition on
 generated claim language, but not $f_{sense}$ on unrestricted natural language.
 
+\subsection*{Relation to prior formalisms}
+
+Situation engineering draws on several mature traditions but is not identical
+to any one of them. Situation semantics treats meaning relative to partial
+situations~\cite{barwise1983situations}. Situation and event calculi formalize
+how actions change fluents over time~\cite{mccarthy1969problems,
+kowalski1986event,reiter2001knowledge}. Temporal reasoning provides interval
+relations and validity semantics~\cite{allen1983interval}. Belief revision and
+truth-maintenance research asks how an agent should update inconsistent
+commitments~\cite{alchourron1985logic,doyle1979truth}. POMDPs and dialogue-state
+tracking maintain uncertainty over latent states for sequential decisions
+~\cite{kaelbling1998pomdp,henderson2014second}. Temporal knowledge graphs and
+bitemporal databases record changing facts and distinguish when a fact is valid
+from when it is stored~\cite{snodgrass1992temporal}.
+
+The proposed contribution is a systems-level applicability contract for
+generative and agentic AI. It requires these representations to connect to
+natural-language evidence, provenance, unresolved alternatives and a response
+policy that can answer, retrieve, clarify, abstain or act. Thus the novelty is
+not a new universal logic. It is the explicit decomposition of modern AI
+reliability into (i) sensing a situation from heterogeneous evidence, (ii)
+maintaining a provenance-linked state, (iii) validating applicability and
+(iv) propagating unresolved state into behaviour. This framing allows existing
+logical, probabilistic and neural methods to be compared through a common set of
+interfaces and failure measurements.
+
+A key distinction is that these traditions vary in whether they jointly expose
+time, observer, possible world, uncertainty, provenance and an answer-or-action
+gate; the proposed interface requires all of them to be reportable without
+claiming that their underlying formalisms are new.
+
+Dynamic epistemic logic and common-ground modelling formalize belief-changing
+information and mutually recognized conversational commitments
+~\cite{vanbenthem1996dynamic,stalnaker2002common}. Theory-of-mind models, world
+models and active perception further address attributed beliefs, latent
+environment state and information acquisition. These traditions reinforce rather
+than eliminate the need for careful attribution: situation engineering does not
+claim their theoretical results as new. Its proposed novelty is the systems
+contract that exposes their state variables to provenance-aware
+answer/retrieve/clarify/abstain gates in contemporary generative systems.
+
 \subsection*{Situation schema}
 
 The schema contains actors and entities; events and state transitions; valid
@@ -118,7 +159,9 @@ category; sampling seed 20260718) and three Gemini-family model snapshots:
 structured and explicit-situation prompts, with temperature and thinking budget
 set to zero and a common output-token limit. A separate retrieval condition
 selects the top three claims by token overlap with the question and supplies
-their plain text to the direct-answer prompt. Every request, raw response,
+their plain text to the direct-answer prompt. A tool-using agent condition
+follows a ReAct-style loop: the model may issue \texttt{search} queries over the
+item's claims, receives the matching claims, and then answers. Every request, raw response,
 normalized answer, token count, latency, failure and retry is retained. The
 completion gate joins records to the frozen sample, rejects missing or
 unexpected identifiers and requires 30 successful responses in every category
@@ -126,7 +169,9 @@ for every requested model and condition. The reported run contains no failed
 calls and passes this gate. Stored raw responses were rescored deterministically
 after the action-equivalence rule was corrected to credit
 \textsc{Clarify}/\textsc{Abstain} uniformly in plain text and JSON; rescoring
-made no provider calls.
+made no provider calls. The plain prompt elicits the \textsc{Clarify} token
+more readily than the JSON conditions, which accounts for the large
+hidden-premise differences in Extended Data Table~\ref{tab:e5-rag}.
 
 Accuracy contrasts use category-clustered bootstrap intervals (3,000 resamples,
 seed 20260726), treating the seven template categories as clusters. These
@@ -134,7 +179,12 @@ intervals quantify sensitivity across the available template families, not
 population uncertainty over unrestricted questions. Cost summaries report
 provider token counts and measured request latency by condition. The bundled
 12-item SituatedQA temporal sample is reported only as a smoke test; its size
-does not support a standalone inferential claim.
+does not support a standalone inferential claim. Only the two date-anchored
+conditions (structured and situation) are compared there, because the direct
+prompt omits the query date and is therefore not a matched control. The frozen
+manifest, model snapshots and cost accounting are in
+\texttt{code/experiment\_manifest.e5.json}, and the audited run is reproduced
+with \texttt{python code/run\_e5.py}.
 
 The following larger confirmatory study is specified but has not been executed.
 It would compare these matched conditions:
@@ -175,6 +225,32 @@ scientific aggregate. Only the complete paid-tier records admitted by
 \texttt{code/audit\_e5.py} enter the reported E5 tables. The completed pilot is
 evidence from one provider family, not the multi-family confirmatory experiment.
 
+\subsection*{Prospective test designed to break benchmark--solver coupling}
+
+We pre-specify the next test rather than presenting simulated numbers as a
+completed experiment. An independent data team should sample naturally
+occurring questions from at least three domains, write evidence packs without
+access to the SCQA schema or solver, and freeze them before the systems team
+maps evidence into states. The crossed evaluation uses at least three genuinely
+independent model families (including an open-weight family), with identical
+evidence and matched token and tool budgets across direct, structured,
+temporal-retrieval, verification-agent and situation conditions. Items are
+split by scenario---not paraphrase---and held-out domains and generator authors
+are reported separately. Three blinded human annotators label answerability,
+answer, applicable evidence and required state slots; disagreements are
+adjudicated only after independent labels are frozen.
+
+Supplementary Note~14 records the pre-specified strata, collection targets and
+split rules; it reports no outcome values, because none have been measured. The
+confirmatory claim would require a positive
+situation-versus-structured paired contrast whose scenario-clustered 95\%
+interval excludes zero in at least two independent families, no material loss
+against temporal retrieval, and replication on the author-disjoint natural
+set. Human agreement, selective risk, latency, tokens and cost must be reported
+regardless of outcome. Until those gates are passed, generator--solver
+co-design, one provider family and the absence of human evaluation remain core
+limitations rather than prose-resolved concerns.
+
 \subsection*{Generalization and efficiency protocol}
 
 External evaluation should pre-register held-out scenario families and test
@@ -200,7 +276,8 @@ The released annotation program generates separately shuffled, blinded packets
 for three or more annotators. It requires complete independent labels before
 computing Fleiss' $\kappa$ and unanimous agreement for action, answer and state
 slots; incomplete packets terminate with an error. Disagreements are adjudicated
-only after independent files are frozen. No human agreement value is reported
+only after independent files are frozen. Blank blinded packets for a 70-item
+stratified subset are released under \texttt{paper/annotation\_packets/}. No human agreement value is reported
 because independent human annotations were not collected.
 For software testing, a separate command generates three deterministic persona
 packets with injected disagreements. Its manifest and score output are marked

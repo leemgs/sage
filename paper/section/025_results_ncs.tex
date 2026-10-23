@@ -98,7 +98,7 @@ unwritten value. A confirmatory natural-text study must consequently report
 separate text-observable and answer-critical-missing strata.
 
 Claim-level scoring localizes the sensor's limitations
-(Table~\ref{tab:slot-sensing}). Event type reached 92.3\%, modality 100.0\%,
+(Extended Data Table~\ref{tab:slot-sensing}). Event type reached 92.3\%, modality 100.0\%,
 scope 61.5\%, actor 30.8\% and joint source/status 30.8\%. Temporal expressions
 and validity intervals scored 0\% because the generated claim strings omit the
 numeric times stored in the hidden schema: a system cannot reconstruct a state
@@ -108,20 +108,6 @@ estimates of natural extraction. In this deterministic pipeline, 927 final
 errors are attributable to sensing, zero to update/policy under gold state, and
 generation is a fixed renderer.
 
-\begin{table}[t]
-\caption{Claim-level accuracy of the deterministic text sensor
-($n=7{,}800$ claims per slot).}
-\label{tab:slot-sensing}
-\centering\scriptsize
-\setlength{\tabcolsep}{3pt}%
-\begin{tabular}{lrrrrrrrrr}
-\toprule
-Slot & Actor & Event & Time & Validity & Scope & Modality & Source & Observer & World\\
-\midrule
-Accuracy (\%) & 30.8 & 92.3 & 0.0 & 0.0 & 61.5 & 100.0 & 30.8 & 92.3 & 100.0\\
-\bottomrule
-\end{tabular}
-\end{table}
 
 \subsection*{Progressive stress testing separates execution, sensing and validation}
 

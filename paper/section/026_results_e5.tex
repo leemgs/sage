@@ -1,22 +1,15 @@
 \subsection*{A preliminary matched multi-model intervention (E5)}
 
-The controlled results above establish that the seven applicability invariants
-are executable and causally separable under oracle and predicted structured
-states (E1--E4). They do not by themselves establish that \emph{prompting} a
-language model to emit an explicit situation state improves it. As a first,
-deliberately bounded test of that E5 claim, we evaluate three Gemini models
-(\texttt{gemini-2.5-flash}, \texttt{gemini-2.5-flash-lite} and
-\texttt{gemini-3.5-flash}) on a stratified, evidence-complete rendering of
-SituationCatch-Bench (30 items in each of the seven categories, $n=210$),
-holding the evidence block, decoding temperature ($0$), thinking budget ($0$)
-and output-token budget fixed, and varying only the prompt condition among a
-plain \emph{direct} answer, a \emph{structured} JSON prompt and an explicit
-\emph{situation}-state prompt. The primary quantity is the within-model paired
-contrast between the situation and structured conditions. Every raw response,
-token count and latency is archived, and a completion audit
-(\texttt{code/audit\_e5.py}) requires one successful response for every item,
-condition and category before these numbers may enter the manuscript; the run
-reported here passes that gate with no failed calls.
+The controlled results establish that the seven applicability invariants are
+executable and causally separable (E1--E4); they do not show that
+\emph{prompting} a language model for an explicit situation state improves it.
+As a first, deliberately bounded test of that E5 claim, three Gemini models
+answer a stratified, evidence-complete sample of SituationCatch-Bench
+(30 items per category, $n=210$) with evidence, decoding and budget held fixed,
+varying only the prompt: a plain \emph{direct} answer, a \emph{structured} JSON
+prompt or an explicit \emph{situation}-state prompt (Methods). The primary
+quantity is the within-model paired situation$-$structured contrast; the run
+passes a completion audit with no failed calls.
 
 \input{section/tables/e5_stats_table}
 
@@ -28,61 +21,39 @@ percentage points, with a $95\%$ cluster-bootstrap interval that excludes zero
 only for \texttt{gemini-2.5-flash-lite}, where the situation prompt is
 \emph{worse} under this analysis. The intervals are otherwise wide because the
 benchmark has only seven template families, so resampling categories -- the
-honest unit of independence -- leaves little power for a directional claim; this
-is exactly the reporting discipline the framework asks for. The situation and
-structured conditions also use roughly three times the total provider-reported
-tokens and have substantially higher median latency than the direct prompt,
-with no accuracy gain and no reduction
-in selective risk.
+honest unit of independence -- leaves little power for a directional claim.
+The situation and structured conditions also use roughly three times the total
+provider-reported tokens and have substantially higher median latency than the
+direct prompt, with no accuracy gain and no reduction in selective risk.
 
 A small natural-language check points the same way. On a 12-item sample from the
-public SituatedQA temporal split, the two date-anchored conditions again show no
-advantage for the explicit situation prompt over a structured one
-(descriptive situation$-$structured differences of $-16.7$, $+0.0$ and $+0.0$
-percentage points across the three models);
-we compare only these two conditions because the direct prompt here omits the
-query date and so is not a matched control. At $n=12$ this is a smoke test, not a
-result, but it is consistent with the synthetic finding and with sensing, not
-prompting, being the bottleneck.
+public SituatedQA temporal split, the two date-anchored conditions show no
+advantage for the situation prompt over a structured one (descriptive
+differences of $-16.7$, $+0.0$ and $+0.0$ points across the three models). At
+$n=12$ this is a smoke test, not a result.
 
-A retrieval-augmented baseline sharpens the picture (Table~\ref{tab:e5-rag}). We
-add a RAG condition that answers from only the top-3 lexically retrieved claims
-(plain text, no situation metadata), the realistic ``retrieve the relevant
-evidence and answer'' system. Aggregated over the three models it is the
-strongest condition ($91.3\%$ versus $83.5\%$ structured and $80.6\%$ situation):
-a focused, relevant subset beats dumping all claims plus a state instruction,
-and the elaborate situation prompt often makes the models over-think easy items.
-Descriptively, the exception is the two categories that most require reasoning over the
+A retrieval-augmented baseline sharpens the picture (Extended Data
+Table~\ref{tab:e5-rag}). Answering from only the top-3 lexically retrieved
+claims, without situation metadata, is the strongest condition overall
+($91.3\%$ versus $83.5\%$ structured and $80.6\%$ situation): a focused,
+relevant subset beats all claims plus a state instruction. Descriptively, the
+exception is the two categories that most require reasoning over the
 applicability state -- temporal validity and observer knowledge -- where the
-full-evidence situation condition beats RAG ($+8.9$ and $+5.6$ points). This is
-an exploratory, thesis-relevant pattern rather than a confirmatory comparison:
-category-level multiplicity and uncertainty preclude a directional claim.
-Relevance retrieval is a strong
-default, but exactly where applicability depends on which claim is valid \emph{now}
-or is known to \emph{this} observer, retrieving the most similar text is not
-enough. A tool-using agent that issues its own \texttt{search} queries over the
-item's claims before answering (Table~\ref{tab:e5-rag}, Agent) does not close
-this gap either: it is the weakest condition overall ($77.5\%$) and drops
-furthest precisely on temporal ($64.4\%$) and observer ($66.7\%$), because
+full-evidence situation condition beats RAG ($+8.9$ and $+5.6$ points); given
+category-level multiplicity this pattern is exploratory, not confirmatory.
+Where applicability depends on which claim is valid \emph{now} or is known to
+\emph{this} observer, retrieving the most similar text is not enough. A
+tool-using agent that issues its own searches over the item's claims does not
+close this gap: it is the weakest condition overall ($77.5\%$) and drops
+furthest on temporal ($64.4\%$) and observer ($66.7\%$) items, because
 self-directed retrieval can still fetch the most similar claim rather than the
-applicable one. (The large hidden-premise gap is a prompt-format effect: the plain
-prompt elicits the \textsc{Clarify} token more readily than the JSON conditions,
-which is why the scoring credits \textsc{Clarify}/\textsc{Abstain} actions
-uniformly across formats.)
+applicable one.
 
-\input{section/tables/e5_rag_table}
-
-We read this as motivating the paper's distinction rather than as support for a
-plug-in prompting win: a prompt-level ``situation'' field is not situation awareness.
+We read this as motivating the paper's distinction rather than as a plug-in
+prompting win: a prompt-level ``situation'' field is not situation awareness.
 Consistent with the controlled finding that accuracy collapses once states must
-be \emph{sensed} from text rather than supplied ($100.0\%\rightarrow77.9\%$),
-the bottleneck is situation sensing and validation, not the presence of a state
-slot in the prompt. These numbers are a single-provider (Gemini-family),
-$n=210$ pilot; they neither confirm nor refute the
-situation-engineering hypothesis at scale. A confirmatory E5 still requires
-multiple model families under matched budgets, a larger natural-language
-evaluation set, and human agreement (blank blinded packets are prepared under
-\texttt{paper/annotation\_packets/}; the separate simulated-persona files are
-software validation only and are not human evidence). The frozen manifest, model snapshots and cost
-accounting are in \texttt{code/experiment\_manifest.e5.json}, and the run is
-reproduced by a single audited command (\texttt{python code/run\_e5.py}).
+be \emph{sensed} from text ($100.0\%\rightarrow77.9\%$), the bottleneck is
+situation sensing and validation, not a state slot in the prompt. This
+single-provider, $n=210$ pilot neither confirms nor refutes the hypothesis at
+scale; a confirmatory E5 requires multiple model families, a larger
+natural-language set and human agreement (Methods).
