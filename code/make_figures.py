@@ -21,9 +21,17 @@ RESULTS = PAPER_DIR / "results"
 FIGURES = PAPER_DIR / "figures"
 
 plt.rcParams.update({
+    # Pin the face: matplotlib >= 3.11 defaults to an OpenType-CFF font,
+    # which changes the figures' look and cannot embed cleanly as Type 42.
+    # DejaVu Sans ships with matplotlib, so regeneration is reproducible.
+    "font.family": "DejaVu Sans",
     "font.size": 9,
     "axes.edgecolor": "black",
     "savefig.bbox": "tight",
+    # Embed TrueType (Type 42) instead of Type 3 fonts: Nature artwork
+    # guidelines require editable, embedded text in vector figures.
+    "pdf.fonttype": 42,
+    "ps.fonttype": 42,
 })
 
 # Grayscale fill + hatch per method (legend order matches the manuscript).
@@ -72,7 +80,8 @@ def fig_by_category():
                label=method, color=style["color"], hatch=style["hatch"],
                edgecolor="black", linewidth=0.6)
     ax.set_xticks(range(len(categories)))
-    ax.set_xticklabels(categories, rotation=20, ha="right")
+    ax.set_xticklabels([c.replace("_", " ") for c in categories],
+                       rotation=20, ha="right")
     ax.set_xlabel("Situation category")
     ax.set_ylabel("Accuracy")
     ax.set_ylim(0, 1.05)
