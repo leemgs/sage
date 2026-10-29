@@ -32,9 +32,14 @@ baseline.
 \begin{figure}[t]
 \centering
 \includegraphics[width=.76\linewidth]{figures/accuracy.pdf}
-\caption{Oracle-state diagnostic accuracy. The result demonstrates that the
+\caption{Oracle-state diagnostic accuracy. Bars show exact action-and-answer
+accuracy of SCQA (given the oracle situation state) and three heuristic
+baselines on all $n=4{,}200$ generated items. The result demonstrates that the
 specified invariants are executable. It does not estimate end-to-end LLM
-accuracy because situation variables are supplied rather than inferred.}
+accuracy because situation variables are supplied rather than inferred. All
+systems are deterministic, so repeated runs give identical values; no error
+bars are shown because items share template families and are not independent
+samples (Methods).}
 \label{fig:accuracy}
 \end{figure}
 
@@ -48,16 +53,24 @@ mechanisms (Fig.~\ref{fig:category}).
 \begin{figure}[t]
 \centering
 \includegraphics[width=.94\linewidth]{figures/by_category.pdf}
-\caption{Accuracy by diagnostic category. Each category isolates one
-applicability variable, enabling mechanism-level failure localization.}
+\caption{Accuracy by diagnostic category. Bars show exact action-and-answer
+accuracy of each system within each category ($n=600$ items per category).
+Each category isolates one applicability variable, enabling mechanism-level
+failure localization. Values are deterministic; no error bars are shown
+(Methods).}
 \label{fig:category}
 \end{figure}
 
-\subsection*{Component ablations produce matched failure signatures}
+\subsection*{Five of seven component ablations produce matched failure signatures}
 
-Removing temporal validity, source status, modality, scope, observer knowledge,
-world identity or missing-variable detection selectively damages the matching
-category (Fig.~\ref{fig:ablation}). This causal alignment is the main empirical
+Removing temporal validity, modality, scope, observer knowledge or
+missing-variable detection selectively damages the matching category
+(Fig.~\ref{fig:ablation}). Removing source status or world identity causes no
+errors: in every generated source-conflict and counterfactual item the decisive
+claim is also the most recent, so the solver's recency fallback still answers
+correctly. These two ablations therefore test nothing in the current benchmark,
+which must decorrelate source reliability and world identity from recency. For
+the other five variables, this causal alignment is the main empirical
 contribution of the controlled study. It shows that the implementation does not
 merely benefit from a generic instruction to be cautious; behaviour changes
 when the specific variable required by an item is removed. Because benchmark
@@ -68,8 +81,13 @@ states.
 \begin{figure}[t]
 \centering
 \includegraphics[width=.76\linewidth]{figures/ablations.pdf}
-\caption{Oracle-state component ablations. Each removed variable recovers the
-predicted category-specific failure, providing a causal software diagnostic.}
+\caption{Oracle-state component ablations. Bars show SCQA exact action-and-answer
+accuracy on all $n=4{,}200$ items when one state variable is removed (`none'
+is the intact system). Five of seven removals recover the predicted
+category-specific failure; removing source status or world identity causes no
+errors because the decisive claim in those generated items is also the most
+recent (Methods). Values are
+deterministic; no error bars are shown (Methods).}
 \label{fig:ablation}
 \end{figure}
 
@@ -167,7 +185,7 @@ predictions for results.
 Evidence level & What is available & Permitted claim \\
 \midrule
 E1: formal definition & Situation schema and applicability relation & The failure class is operationally testable \\
-E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable and causally separable \\
+E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable; five of seven are causally separable by ablation \\
 E3: natural prevalence & Independent temporal/situated QA literature & Situation dependence occurs in natural questions \\
 E4: predicted-state control & Deterministic text sensor on 4,200 generated items & Sensing errors reduce controlled end-to-end accuracy; natural-text generalization remains open \\
 E5: multi-model intervention & Audited single-family (Gemini) pilot, $n=210$, situation/structured/RAG/agent conditions & Situation prompting does not improve on structured prompting overall and trails focused retrieval; temporal and observer category differences are exploratory; multi-family and natural-text confirmation remain open \\

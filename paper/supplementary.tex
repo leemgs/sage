@@ -1,6 +1,8 @@
 \documentclass[Numbered]{sn-jnl}
 \usepackage[numbers]{natbib}
 \usepackage{amsmath,amssymb,booktabs,tabularx,graphicx}
+\raggedbottom
+\renewcommand{\tablename}{Supplementary Table}
 \begin{document}
 \title{Supplementary Information: Situation engineering: separating evidence applicability from availability in AI systems}
 \author{Geunsik Lim\\
@@ -25,16 +27,30 @@ a software regression smoke test and is not evidence of neural calibration.
 \section*{Supplementary Note 4: Ablations}
 \input{supplementary/ablation_table.tex}
 
+The source and world ablations produce no errors. Ablated components fall back
+to a recency rule, and in all 600 generated source-conflict items the official
+claim is the most recent, as is the hypothetical claim in all 600
+counterfactual items. These two ablations therefore do not test source
+reliability or world identity in the current benchmark.
+
 \section*{Supplementary Note 5: Reproduction}
-From the repository root, run
-\texttt{PYTHONPATH=code python code/run\_experiments.py}. This regenerates
+From the repository root, run \texttt{python code/run\_diagnostic.py} to
+regenerate the benchmark and the oracle-state baselines, category results and
+ablations (Figs. 2--4; requires the packages in
+\texttt{code/requirements-diagnostic.txt}), then
+\texttt{python code/make\_figures.py} to redraw the figures. Run
+\texttt{PYTHONPATH=code python code/run\_experiments.py} to regenerate
 gold-, predicted- and corrupted-state outputs. Run
 \texttt{PYTHONPATH=code pytest -q code/tests} for implementation tests.
 
 \section*{Supplementary Note 6: Situation-engineering design checklist}
-\begin{table}[ht]
+Supplementary Table~\ref{stab:checklist} lists, for each component of a
+situation-engineered system, the questions its documentation should answer.
+
+\begin{table}[!ht]
 \centering
 \caption{Minimum reporting checklist for situation-engineered AI systems.}
+\label{stab:checklist}
 \begin{tabularx}{\linewidth}{p{3.2cm}X}
 \toprule
 Component & Questions that should be answered \\
@@ -53,9 +69,13 @@ Governance & Are sensitive state variables minimized, access-controlled, correct
 \end{table}
 
 \section*{Supplementary Note 7: Situation-engineering maturity model}
-\begin{table}[ht]
+Supplementary Table~\ref{stab:maturity} defines five maturity levels, each with
+the evidence that would falsify a claim to have reached it.
+
+\begin{table}[!ht]
 \centering
 \caption{Proposed SE0--SE4 maturity levels.}
+\label{stab:maturity}
 \begin{tabularx}{\linewidth}{p{1.0cm}p{3.4cm}X}
 \toprule
 Level & Capability & Falsifiable evidence \\
@@ -100,9 +120,13 @@ three-persona run validates the workflow with injected disagreements; its files
 are machine-marked synthetic and are not human-subject evidence.
 
 \section*{Supplementary Note 11: Interfaces among engineering disciplines}
-\begin{table}[ht]
+Supplementary Table~\ref{stab:interfaces} specifies what each neighbouring
+discipline supplies to the situation layer and what it must receive back.
+
+\begin{table}[!ht]
 \centering
 \caption{Recommended typed interfaces between situation engineering and neighbouring components.}
+\label{stab:interfaces}
 \begin{tabularx}{\linewidth}{p{3.2cm}p{4.2cm}X}
 \toprule
 Neighbouring discipline & Input to the situation layer & Output or requirement from the situation layer \\
@@ -152,7 +176,7 @@ This note is a design record, not a report of observations: it fixes the
 strata, targets and analysis before any external-validity data are collected.
 No outcome values are shown, because none have been measured.
 
-\begin{table}[ht]
+\begin{table}[!ht]
 \centering
 \caption{Pre-specified external-validity design (no outcomes measured).}
 \begin{tabular}{llll}

@@ -1,47 +1,55 @@
-# Cover letter — draft
+# Cover letter
 
-Two versions are provided. Use **A** for a full Article submission only if the
-Tier-1 confirmatory experiments (see `NMI_SUBMISSION_ASSESSMENT.md` §6) are done;
-use **B** for a presubmission enquiry / Perspective route with the current bounded
-evidence. Fill in bracketed fields. Do not include any AI-model identifier.
+Two versions are provided. **A** is for submitting the current manuscript as an
+Article; every claim in it matches the manuscript as it stands. **B** is a
+presubmission enquiry if you prefer to ask the editor about fit first. Before
+sending, replace the two bracketed fields in A (suggested reviewers and any
+excluded reviewers) and state any preprint. Do not include any AI-model
+identifier.
 
 ---
 
-## Version A — full submission (after Tier-1 experiments)
+## Version A — Article submission (current manuscript)
 
 Dear Editor,
 
-We submit our manuscript, **"Situation engineering: separating evidence
-applicability from availability in AI systems,"** for consideration as an Article
+I submit the manuscript **"Situation engineering: separating evidence
+applicability from availability in AI systems"** for consideration as an Article
 in *Nature Machine Intelligence*.
 
 AI systems increasingly answer from retrieved documents, tools and memory, yet a
 distinct failure persists: a system retrieves a well-supported fact and applies
-it to the wrong time, scope, epistemic state or possible world. We name this
+it to the wrong time, scope, epistemic state or possible world. I name this
 failure **situation blindness** and separate two properties that current
-evaluation conflates — whether evidence is *available* versus whether it is
-*applicable* to the query now. We formalise the query-relative state that governs
-applicability, release **SituationCatch-Bench** (4,200 diagnostic items across
-seven applicability axes) and a deterministic reference system, and — crucially —
-show across [N] model families and [M] independently-authored natural benchmarks
-that the operative bottleneck is *applicability sensing*, not retrieval relevance
-or the presence of a situation prompt.
+evaluation conflates: whether evidence is *available* and whether it is
+*applicable* to the query.
 
-The advance is threefold: (i) a testable failure class and a systems-level
-applicability interface distinct from prompt, context, retrieval, memory and
-harness engineering; (ii) an executable, ablatable diagnostic that localises
-failures to sensing, update, policy or generation; and (iii) evidence that a
-prompt-level "situation" field is not situation awareness — the gains appear only
-where applicability, not similarity, decides the answer. We believe this reframes
-how the community should evaluate evidence-grounded and agentic systems, and is
-of broad interest to readers working on hallucination, RAG and agents.
+The manuscript contributes (i) a testable failure class and a query-relative
+state interface distinct from prompt, context, retrieval, memory and harness
+engineering; (ii) **SituationCatch-Bench**, a released 4,200-item diagnostic over
+seven applicability axes, with a deterministic reference system whose matched
+ablations each produce the predicted category-specific failure; and (iii) a
+stress test showing that accuracy falls from 100.0% with oracle states to 77.9%
+when states must be sensed from text and 35.1% under targeted corruption, which
+locates the bottleneck in sensing.
 
-All code, data, frozen manifests and item-level outputs are released under an MIT
-licence and archived at [DOI]. The work has not been published elsewhere and is
-not under consideration by another journal. The author declares no competing
-interests. We suggest as potential reviewers: [names/areas: temporal QA,
-belief-state tracking, RAG evaluation]. We request that [any conflicted parties]
-be excluded.
+I report the neural evidence as it stands. In an audited, preliminary
+single-family test (three Gemini models, n = 210), prompting for an explicit
+situation state does not beat a matched structured prompt and trails focused
+retrieval overall; leads on temporal and observer items are exploratory. I
+present this null-to-negative result plainly because it supports the paper's
+point: a prompt-level "situation" field is not situation awareness. Multi-family,
+natural-text and human-annotation confirmation are pre-specified in Methods and
+not claimed.
+
+Code, data, generator and item-level outputs are openly available at
+https://github.com/leemgs/sage under the MIT licence; an archival DOI will be
+minted on acceptance. Use of generative AI tools is documented in Methods. The
+work has not been published elsewhere and is not under consideration by another
+journal. [If a preprint has been posted, state where.] The author declares no
+competing interests. I suggest as potential reviewers: [names; areas: temporal
+QA, belief-state tracking, RAG evaluation]. I request that [any conflicted
+parties, or "no one"] be excluded.
 
 Thank you for your consideration.
 
