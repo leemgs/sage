@@ -39,6 +39,8 @@ SAGE는 인공지능이 질문에 답하거나 행동을 결정할 때 단순히
 ## 빠른 재현
 
 ```bash
+python code/run_diagnostic.py      # 벤치마크 + 그림 2-4 데이터 (numpy/pandas/scipy 필요)
+python code/make_figures.py
 PYTHONPATH=code python code/run_experiments.py
 PYTHONPATH=code python -m pytest -q code/tests
 cd paper && ./run.sh

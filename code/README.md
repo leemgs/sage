@@ -3,6 +3,8 @@
 This directory is the executable source of the paper.
 
 ```bash
+python code/run_diagnostic.py   # benchmark + Figs. 2-4 data; pip install -r code/requirements-diagnostic.txt
+python code/make_figures.py
 python code/run_experiments.py
 python code/annotation_cli.py init \
   --input paper/data/situatedqa_temporal_sample.jsonl --out annotations
@@ -20,6 +22,10 @@ configured model with the resumable runner, and writes
 `paper/results/multimodel_summary.csv`. Use `--provider mock` to validate the
 harness without spending credits, `--smoke N` for a cheap preflight, and
 `--dry-run` to print the exact per-model commands. It never fabricates results.
+
+`run_diagnostic.py` generates SituationCatch-Bench (seed 20260717) and the
+oracle-state baselines, per-category results and component ablations behind
+Figs. 2-4, reproducing the released files byte-for-byte.
 
 `run_experiments.py` evaluates the complete situation engine in three settings:
 gold structured state, state predicted from claim text, and deliberately
