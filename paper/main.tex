@@ -135,9 +135,11 @@ source licences. No unminted DOI is represented as an existing deposit.
 %% ---- Code availability (Nature Portfolio: standalone statement) ----
 \section*{Code availability}
 The complete executable implementation is included under \texttt{code/}.
-Running \texttt{PYTHONPATH=code python code/run\_experiments.py}
-regenerates gold-, predicted- and corrupted-state outputs without network
-access or proprietary dependencies. The multi-model adapter records raw
+Running \texttt{python code/run\_diagnostic.py} regenerates the benchmark
+and the data for Figs.~2--4, and
+\texttt{PYTHONPATH=code python code/run\_experiments.py} regenerates gold-,
+predicted- and corrupted-state outputs, without network access or proprietary
+dependencies. The multi-model adapter records raw
 responses and errors and never creates synthetic API results. The annotation
 program requires three complete independent packets before reporting agreement
 and labels simulated-persona runs as synthetic rather than human evidence.
@@ -177,6 +179,6 @@ The author declares no competing interests.
 
 %% ---- Supplementary Information --------------------------------
 %% NMI: submitted as a SEPARATE file — see supplementary.tex
-%% (builds supplementary.pdf; Supplementary Notes 1–13 and their tables).
+%% (builds supplementary.pdf; Supplementary Notes 1–14 and their tables).
 
 \end{document}

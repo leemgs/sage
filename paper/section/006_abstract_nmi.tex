@@ -4,18 +4,17 @@ to the wrong time, scope, epistemic state or possible world. We call this
 failure \emph{situation blindness} and define \emph{situation engineering} as
 constructing the query-relative state that governs evidence applicability. We
 introduce a state interface, Situation-Catching Question Answering, and
-SituationCatch-Bench, a 4,200-item diagnostic spanning temporal change, missing
-premises, source conflict, modality, scope, observer knowledge and counterfactual
-worlds. A deterministic implementation satisfies every invariant under
+SituationCatch-Bench, a 4,200-item diagnostic spanning seven applicability
+categories from temporal change to counterfactual worlds. A deterministic implementation satisfies every invariant under
 oracle states; accuracy falls to 77.9\% under text-inferred states and 35.1\%
-after corruption, and matched ablations produce category-specific failures.
+after corruption, and five of seven matched ablations produce category-specific
+failures.
 These results establish an executable diagnostic, not language-model
 superiority. In a preliminary single-family test (three Gemini models,
 $n=210$), explicit situation prompting does not beat matched structured
-prompting and trails focused retrieval, leading only on temporal and observer
-items; these category comparisons are exploratory. This
-bounded result is consistent with applicability \emph{sensing}, not a prompt
-slot, being the bottleneck.
+prompting and trails focused retrieval, with exploratory leads only on temporal
+and observer items. This is consistent with applicability \emph{sensing}, not a
+prompt slot, being the bottleneck.
 }
 
 \keywords{large language models, situation engineering, evidence applicability, situation awareness, hallucination, trustworthy artificial intelligence, temporal reasoning, question answering, agent systems}

@@ -52,7 +52,7 @@ verification and serving efficiency.
 \subsection*{What is established and what remains to be tested}
 
 This study defines a formal error class and implements an interoperable state
-schema with category-specific effects of matched state ablations. It also shows that
+schema with category-specific effects for five of seven matched state ablations. It also shows that
 performance degrades sharply when state must be recovered from partially
 observable text. Together, these results identify situation sensing as a
 separate engineering and evaluation target rather than treating every failure
@@ -79,7 +79,9 @@ benchmark-solver circularity is intentional and limits external validity. The
 item count does not equal the number of statistically independent observations
 because examples share template
 families. The E1--E4 baselines are software controls, while E5 remains limited
-to one provider family and a small natural-language smoke test. Confidence
+to one provider family and a small natural-language smoke test. In the generated source-conflict and counterfactual items the decisive claim
+is also the most recent, so those two ablations cannot fail and do not test
+source reliability or world identity. Confidence
 values are rule-derived and do not constitute neural calibration. No human
 participants, multilingual evaluation, multimodal sensing or deployed-agent
 study was completed. The archived three-persona agreement run is explicitly

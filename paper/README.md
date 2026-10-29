@@ -20,7 +20,8 @@
 ## Entry points
 - Manuscript: `main.tex`
 - Supplement: `supplementary.tex`
-- Experiment (repository root): `PYTHONPATH=code python code/run_experiments.py`
+- Benchmark and Figs. 2-4 (repository root): `python code/run_diagnostic.py` then `python code/make_figures.py` (needs `code/requirements-diagnostic.txt`)
+- Predicted/corrupted-state experiment (repository root): `PYTHONPATH=code python code/run_experiments.py`
 
 ## Central research proposition
 Prompt engineering designs instructions, context engineering designs the information payload, and harness engineering designs the runtime around an AI agent. Situation engineering designs and validates the active world state that determines which available facts apply to the current query or action. The paper formalizes this as an independent, complementary reliability layer rather than a synonym for longer context.
