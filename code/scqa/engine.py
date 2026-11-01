@@ -25,7 +25,7 @@ def predict_claim(text: str) -> dict[str, Any]:
         out["event"] = "invite"
     elif "no decision" in t:
         out["event"] = "not_decided"
-    elif "considering closing" in t:
+    elif "considering closing" in t or "voted to close" in t:
         out["event"] = "close"
     elif "restructuring" in t:
         out["event"] = "restructure"
@@ -57,9 +57,16 @@ def predict_claim(text: str) -> dict[str, Any]:
     return out
 
 
+def predict_user_region(question: str) -> str | None:
+    """Read a premise the user states about themselves, e.g. "I live in Beta"."""
+    m = re.search(r"\bI live in ([A-Z][A-Za-z-]+)", question)
+    return m.group(1) if m else None
+
+
 def predict_state(item: dict[str, Any]) -> dict[str, Any]:
     predicted = copy.deepcopy(item)
     predicted["claims"] = [predict_claim(c["text"]) for c in item["claims"]]
+    predicted["user_region"] = predict_user_region(item["question"])
     predicted["state_source"] = "predicted_from_text"
     return predicted
 
@@ -82,7 +89,14 @@ def decide(item: dict[str, Any]) -> dict[str, Any]:
     """Apply auditable category semantics to a supplied or predicted state."""
     cat, claims = item["category"], item["claims"]
     if cat == "hidden_premise":
-        return {"action": "CLARIFY", "answer": "CLARIFY", "confidence": .93}
+        region = item.get("user_region")
+        if region is None:
+            return {"action": "CLARIFY", "answer": "CLARIFY", "confidence": .93}
+        qt = item["query_time"]
+        eligible = any(c.get("event") == "eligibility" and
+                       c.get("scope") in ("global", region) and
+                       qt <= c.get("valid_to", qt) for c in claims)
+        return _answer("yes" if eligible else "no", .94)
     if cat == "temporal":
         holder = None
         for c in sorted(claims, key=lambda z: z.get("time", 0)):
