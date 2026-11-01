@@ -6,15 +6,15 @@ constructing the query-relative state that governs evidence applicability. We
 introduce a state interface, Situation-Catching Question Answering, and
 SituationCatch-Bench, a 4,200-item diagnostic spanning seven applicability
 categories from temporal change to counterfactual worlds. A deterministic implementation satisfies every invariant under
-oracle states; accuracy falls to 77.9\% under text-inferred states and 35.1\%
-after corruption, and five of seven matched ablations produce category-specific
-failures.
+oracle states; accuracy falls to 66.5\% under text-inferred states and 45.1\%
+after corruption, and each matched ablation produces a failure confined to its
+category.
 These results establish an executable diagnostic, not language-model
 superiority. In a preliminary single-family test (three Gemini models,
-$n=210$), explicit situation prompting does not beat matched structured
-prompting and trails focused retrieval, with exploratory leads only on temporal
-and observer items. This is consistent with applicability \emph{sensing}, not a
-prompt slot, being the bottleneck.
+$n=210$), explicit situation prompting never beats matched structured
+prompting, and supplying the same claims without timestamps collapses accuracy
+on time-dependent items. This is consistent with applicability \emph{sensing},
+not a prompt slot, being the bottleneck.
 }
 
 \keywords{large language models, situation engineering, evidence applicability, situation awareness, hallucination, trustworthy artificial intelligence, temporal reasoning, question answering, agent systems}

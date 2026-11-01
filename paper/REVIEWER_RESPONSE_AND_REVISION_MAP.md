@@ -44,7 +44,7 @@ The manuscript has been revised from a broad claim of a completed solution for r
 - Expanded the AI-use disclosure.
 - Added PDF title, author, keywords and section bookmarks.
 - Replaced the abbreviated laboratory name and flagged institutional wording for author verification.
-- Stated explicitly that the 85.7% control result is the arithmetic consequence of six successful equally weighted categories.
+- Stated explicitly that the 85.7% control result (v0.1) was the arithmetic consequence of six successful equally weighted categories; benchmark v0.2 then balanced answers and claim recency in every category, so the controls now sit near chance (47.4-54.3%).
 - Added a research reporting protocol and machine-readable manifest recommendation.
 
 ## Remaining work before a strong NMI Article submission

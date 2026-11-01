@@ -8,19 +8,23 @@ SAGE는 인공지능이 질문에 답하거나 행동을 결정할 때 단순히
 
 ## 현재 연구 산출물
 
-- **SituationCatch-Bench v0.1**: 7개 상황 범주의 통제형 진단
-  4,200개와 고정 생성 시드, 항목별 출력을 포함합니다.
+- **SituationCatch-Bench v0.2**: 7개 상황 범주의 통제형 진단
+  4,200개와 고정 생성 시드, 항목별 출력을 포함합니다. 범주마다 정답과
+  주장 최신성을 균형화해 상수 답이나 "가장 최근 주장" 규칙이 우연 수준을
+  넘지 못합니다(v0.1과 그 결과는 `paper/data/v0.1/`, `paper/results/v0.1/`에 보존).
 - **SCQA 참조 구현**: oracle gold state에서 100.0%, 생성된 claim
-  text에서 결정적으로 추정한 state에서 77.9%, 해당 state를
-  의도적으로 손상한 조건에서 35.1%의 exact action-and-answer
+  text에서 결정적으로 추정한 state에서 66.5%, 해당 state를
+  의도적으로 손상한 조건에서 45.1%의 exact action-and-answer
   accuracy를 기록합니다.
 - **Audited E5 pilot**: Gemini-family 3개 모델, 범주별 30개씩
   총 210개 항목에서 direct/structured/explicit-situation prompt를 매칭해
-  평가했습니다. Explicit-situation prompt는 structured prompt를 유의하게
-  능가하지 못했고, 한 모델에서는 유의하게 낮았습니다.
-- **Retrieval 및 natural-text checks**: top-3 lexical RAG가 전체 평균
-  91.3%로 structured 83.5%와 situation 80.6%보다 높았습니다. SituatedQA
-  12개 스모크 테스트도 포함하지만, 이 결과는 확증 결과가 아닙니다.
+  평가했습니다(v0.2). Explicit-situation prompt는 세 모델 모두에서 structured
+  prompt보다 높지 않았고(−2.9, −14.8, −2.9%p), 한 모델에서는 유의하게
+  낮았습니다.
+- **Retrieval 및 natural-text checks**: timestamp 등 메타데이터 없이 같은
+  claim을 주는 RAG는 전체 79.4%(structured 86.3%, situation 79.5%)였고,
+  temporal 항목에서 44.4%로 무너졌습니다. SituatedQA 12개 스모크 테스트도
+  포함하지만, 이 결과는 확증 결과가 아닙니다.
 
 이 수치들은 구조화된 통제 환경과 단일 provider-family에서의 진단
 결과입니다. 자연적으로 발생한 질문에 대한 일반적 성능 향상,

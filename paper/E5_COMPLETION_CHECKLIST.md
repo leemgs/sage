@@ -18,7 +18,8 @@ Status legend: ☐ todo · ☑ done. Owner: **U** = user action, **A** = agent a
 
 ## Phase 2 — Integrity validation (A) — DONE
 - ☑ Audit gate passes (`code/audit_e5.py`: `confirmatory_complete: true`); no missing/unbalanced category.
-- ☑ Per-model situation-vs-baseline Δ: gemini-2.5-flash +1.4, gemini-2.5-flash-lite −10.0, gemini-3.5-flash +0.0.
+- ☑ (v0.1) Per-model situation-vs-baseline Δ: gemini-2.5-flash +1.4, gemini-2.5-flash-lite −10.0, gemini-3.5-flash +0.0.
+- ☑ **v0.2 re-run** (balanced benchmark, same three models via OpenRouter, 0 reasoning tokens, gate PASS): situation−structured −2.9, −14.8, −2.9.
 - ☑ Report real numbers verbatim — the result is null-to-negative and is reported as such (no fabrication).
 
 The executable integrity gate is implemented in `code/audit_e5.py` and is called
@@ -49,7 +50,7 @@ python code/audit_e5.py paper/results/raw/e5_gemini_*.jsonl \
 ## Phase 4 — NMI-reviewer-grade strengthening (needed to actually pass review)
 - 🔒 Multiple model *families* (OpenAI, Anthropic, open-weight ≥ 3 families) — BLOCKED: egress policy allows only Gemini in this environment; needs admin to open it.
 - ☑ Natural-language check (SituatedQA, n=12): situation−structured = −17/+0/+0; corroborates the synthetic null. Raw in `paper/results/raw_nl/`. Expanding beyond 12 needs the licensed full split.
-- ☑ Strong baselines: structured-prompt ✓, RAG ✓ (`prepare_rag_eval.py`, top-3 lexical retrieval), and agentic/tool-use ✓ (`run_agent_eval.py`, ReAct search-then-answer). Overall RAG 91.3% > structured 83.5% > situation 80.6% > agent 77.5%; full-evidence conditions lead on temporal/observer. No prompt-, retrieval-, or tool-based intervention wins overall.
+- ☑ Strong baselines: structured-prompt ✓, RAG ✓ (`prepare_rag_eval.py`, top-3 lexical retrieval), and agentic/tool-use ✓ (`run_agent_eval.py`, ReAct search-then-answer). Overall RAG 91.3% > structured 83.5% > situation 80.6% > agent 77.5%; full-evidence conditions lead on temporal/observer. No prompt-, retrieval-, or tool-based intervention wins overall. (v0.1). **v0.2**: structured 86.3% > situation 79.5% ≈ RAG 79.4% (no-metadata) > agent 71.0%; RAG fails on temporal (44.4%).
 - ☑ Simulated-persona IAA pipeline validation via `code/annotation_cli.py` (3 personas, n=70) — completed and archived under `results/simulated_iaa/`; every artifact is machine-marked synthetic and is not human-subject evidence. Real human IAA remains 🔒 BLOCKED pending independent human annotators. The same scorer rejects blank fields, duplicate or mismatched item sets, and changed questions before reporting per-slot Fleiss' kappa and unanimity.
 - ☐ Run `code/audit_multifamily.py` before reporting Phase 4: it requires ≥3 provider families with an identical, duplicate-free item-condition matrix and rejects mock records.
 - ☑ Statistics: clustered/bootstrap CIs over template families + selective-risk/coverage — `code/e5_stats.py`; two situation−structured 95% CIs include zero and one excludes zero in the negative direction (n=210).

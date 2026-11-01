@@ -16,6 +16,7 @@ harness trace $H_t$, situation construction produces candidate states
 $\mathcal{S}_t$ with unresolved variables $U_t$ and provenance $P_t$:
 \begin{equation}
 (q,E,M_t,O_t,H_t)\rightarrow(\mathcal{S}_t,U_t,P_t).
+\label{eq:contract}
 \end{equation}
 Each evidence claim is assigned a query-relative applicability value
 \begin{equation}
@@ -91,14 +92,9 @@ learned parameters. It is designed to test whether removing a required variable
 produces the matching failure signature, not to compete with contemporary
 language models.
 
-This scope matters for interpretation. The generated benchmark and solver share
-an ontology, making the oracle-state experiment analogous to a protocol
-conformance suite. The predicted-state condition introduces sensing error but
-still uses generated English. Natural-language generalization, comparison with
-strong prompting and retrieval systems, multilingual transfer, human
-annotation and deployment efficiency remain untested hypotheses. The released
-multi-provider and annotation programs make these studies executable but do not
-turn an unexecuted protocol into evidence.
+Because the generated benchmark and solver share an ontology, the oracle-state
+experiment is analogous to a protocol conformance suite, and the predicted-state
+condition still uses generated English.
 
 \subsection*{Testable predictions}
 

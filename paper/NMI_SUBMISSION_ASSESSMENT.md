@@ -41,7 +41,7 @@ concedes it does not yet meet (2).
 | NMI criterion | Current manuscript | Gap to close |
 |---|---|---|
 | Conceptual novelty | Strong — "situation blindness", evidence *applicability* vs *availability*, the situation-engineering interface | Framing risk: reviewers in belief-revision / temporal-QA / dialogue-state may see it as re-packaging (the paper pre-empts this in Related work, but a positive empirical hook is what disarms it) |
-| Empirical advance | Weak — synthetic conformance suite (100→77.9→35.1%) + a **null** Gemini pilot | The decisive missing piece. Needs a *positive*, generalising result |
+| Empirical advance | Weak — synthetic conformance suite (v0.2: 100→66.5→45.1%) + a **null** Gemini pilot | The decisive missing piece. Needs a *positive*, generalising result |
 | External validity | Low — one synthetic generator, one model family, no human data | Multi-family + independent natural benchmark + human IAA |
 | Breadth of interest | Good — evidence use / hallucination / agents are central topics | Preserved once the result generalises |
 | Rigor / reproducibility | Excellent — one-command runs, frozen manifests, integrity audits, honest limitations | Already a strength; keep it |
@@ -54,7 +54,7 @@ concedes it does not yet meet (2).
   paper's best asset and should headline the title, abstract and cover letter.
 - **The evidence ladder (E1–E6)** is exemplary scientific hygiene and exactly
   the kind of honesty NMI editors respond well to.
-- **The sensing bottleneck finding** — accuracy collapses (100→77.9%) once the
+- **The sensing bottleneck finding** — accuracy collapses (v0.2: 100→66.5%) once the
   state must be *sensed* from text rather than supplied, and the null prompt
   result is consistent with sensing (not a prompt slot) being the real
   bottleneck. This is a real, defensible, interesting claim. It is currently

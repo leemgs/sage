@@ -2,7 +2,7 @@
 
 \subsection*{A controlled benchmark isolates seven applicability invariants}
 
-SituationCatch-Bench v0.1 contains 4,200 generated English instances, with 600
+SituationCatch-Bench v0.2 contains 4,200 generated English instances, with 600
 instances in each of seven diagnostic categories: temporal state change,
 omitted answer-critical premises, source conflict, proposed versus confirmed
 events, local versus universal scope, observer-dependent knowledge and real
@@ -10,24 +10,29 @@ versus counterfactual worlds. Every item provides a question, shuffled claims,
 query time, required state variables, a gold action and, where answerable, a
 gold answer. The benchmark is intentionally transparent: each category is a
 software-level test of one applicability invariant rather than a claim to
-natural linguistic diversity.
+natural linguistic diversity. Within every category the gold answers are
+balanced and, wherever claim order could decide the answer, the decisive claim
+is the most recent one in exactly half of the items, so neither a constant
+answer nor a recency rule can exceed chance on the decisive variable (Methods).
+Version 0.1 lacked this balancing; it is archived with its results.
 
 \subsection*{Oracle-state control satisfies the generated invariants}
 
 SCQA was compared with lexical retrieval, recency-ranked retrieval and a
 latest-mention rule. All methods received the same generated claims; SCQA alone
 used the complete oracle situation state and transition semantics. SCQA obtained
-100.0\% action-and-answer accuracy. Latest mention obtained 85.7\%, recency
-ranking 71.4\% and lexical retrieval 70.0\% (Fig.~\ref{fig:accuracy}). These
+100.0\% action-and-answer accuracy. Lexical retrieval obtained 54.3\%, recency
+ranking 50.0\% and latest mention 47.4\% (Fig.~\ref{fig:accuracy}). These
 numbers are deterministic consequences of the benchmark and implementation and
 should be interpreted as regression-test coverage, not as estimates of model
 performance in a population of natural questions.
 
-The 85.7\% value is structurally induced: the categories are equally weighted
-and the latest-mention control systematically fails the hidden-premise category,
-so success on six categories yields $6/7=85.7\%$. The 14.3 percentage-point gap
-is therefore not presented as an empirical effect size against a competitive
-baseline.
+The control values are structurally induced. Each control reads one selected
+claim at face value, and because every category is balanced, such a reading is
+right about half of the time; the gaps to SCQA are therefore not presented as
+empirical effect sizes against competitive baselines. The one exception is
+lexical retrieval on counterfactual items (100\%): the question names the
+hypothetical scenario, so content-word overlap selects the hypothetical claim.
 
 \begin{figure}[t]
 \centering
@@ -43,12 +48,16 @@ samples (Methods).}
 \label{fig:accuracy}
 \end{figure}
 
-The category-level pattern provides the useful result. Latest mention fails on
-hidden-premise items because it answers when clarification is required. Recency
-ranking fails when the newest global event is not known to the queried observer.
-Lexical overlap is vulnerable to weak but topically similar conflicting claims.
-Thus a single aggregate ``hallucination'' label hides distinct and testable
-mechanisms (Fig.~\ref{fig:category}).
+The category-level pattern provides the useful result (Fig.~\ref{fig:category}).
+All three controls answer hidden-premise items without asking and score 25\%,
+being right only when a stated premise makes the answer yes. On temporal items
+they fail whenever the query time precedes the latest event, so recency ranking,
+which always selects the newest appointment, scores exactly 50\%. On
+source-conflict and counterfactual items recency is right only when the decisive
+claim happens to be the newest (50\%), and a status-blind reading of modality
+items is right on every confirmed closure but on only half of the undecided
+ones (about 75\%). Thus a single aggregate ``hallucination'' label hides
+distinct and testable mechanisms.
 
 \begin{figure}[t]
 \centering
@@ -61,17 +70,16 @@ failure localization. Values are deterministic; no error bars are shown
 \label{fig:category}
 \end{figure}
 
-\subsection*{Five of seven component ablations produce matched failure signatures}
+\subsection*{Component ablations produce matched failure signatures}
 
-Removing temporal validity, modality, scope, observer knowledge or
-missing-variable detection selectively damages the matching category
-(Fig.~\ref{fig:ablation}). Removing source status or world identity causes no
-errors: in every generated source-conflict and counterfactual item the decisive
-claim is also the most recent, so the solver's recency fallback still answers
-correctly. These two ablations therefore test nothing in the current benchmark,
-which must decorrelate source reliability and world identity from recency. For
-the other five variables, this causal alignment is the main empirical
-contribution of the controlled study. It shows that the implementation does not
+Removing any one of temporal validity, source status, modality, scope, observer
+knowledge, world identity or missing-variable detection produces exactly 300
+errors, all within the matching category and none elsewhere
+(Fig.~\ref{fig:ablation}). In v0.1 the source and world ablations produced no
+errors, because the decisive claim was always also the most recent; the
+balanced generator removes that confound, so every ablation now tests its
+variable. This causal alignment is the main empirical contribution of the
+controlled study. It shows that the implementation does not
 merely benefit from a generic instruction to be cautious; behaviour changes
 when the specific variable required by an item is removed. Because benchmark
 and solver share the same schema, the result is best viewed as a mechanistic
@@ -83,11 +91,9 @@ states.
 \includegraphics[width=.76\linewidth]{figures/ablations.pdf}
 \caption{Oracle-state component ablations. Bars show SCQA exact action-and-answer
 accuracy on all $n=4{,}200$ items when one state variable is removed (`none'
-is the intact system). Five of seven removals recover the predicted
-category-specific failure; removing source status or world identity causes no
-errors because the decisive claim in those generated items is also the most
-recent (Methods). Values are
-deterministic; no error bars are shown (Methods).}
+is the intact system). Each removal produces exactly 300 errors, all in the
+category whose variable was removed. Values are deterministic; no error bars
+are shown (Methods).}
 \label{fig:ablation}
 \end{figure}
 
@@ -99,30 +105,24 @@ regime, the sensor must reconstruct a state from the rendered claims; variables
 not expressed in those claims remain unobservable rather than being silently
 copied from gold metadata. Across
 all 4,200 diagnostic instances, action-and-answer accuracy fell from 100.0\%
-with gold states to 77.9\% with predicted states. Deliberately overwriting
-source status, modality and scope in the predicted state reduced accuracy
-further to 35.1\%. These are complete executions, not projected values. They
+with gold states to 66.5\% with predicted states. Deliberately overwriting
+source status, modality and scope (which also carries world identity) in the
+predicted state reduced accuracy further to 45.1\%. These are complete executions, not projected values. They
 show that the oracle result is not preserved when situation sensing is
 imperfect. Because the texts are generated from the same seven scenario
 families and the sensor is a transparent rule baseline, these results remain
 controlled diagnostics rather than evidence of natural-language or LLM
-generalization.
-
-This comparison is therefore a partial-observability stress test, not a fair
-estimate of extraction from evidence-complete prose. In particular, a missing
-time should induce retrieval, clarification or abstention when it is
-answer-critical; it should not be scored as though a sensor could infer an
-unwritten value. A confirmatory natural-text study must consequently report
-separate text-observable and answer-critical-missing strata.
+generalization, and a partial-observability stress test rather than an estimate
+of extraction from evidence-complete prose (Methods).
 
 Claim-level scoring localizes the sensor's limitations
 (Extended Data Table~\ref{tab:slot-sensing}). Event type reached 92.3\%, modality 100.0\%,
-scope 61.5\%, actor 30.8\% and joint source/status 30.8\%. Temporal expressions
+scope 61.5\%, actor 30.8\% and joint source/status 34.6\%. Temporal expressions
 and validity intervals scored 0\% because the generated claim strings omit the
 numeric times stored in the hidden schema: a system cannot reconstruct a state
 variable that is neither expressed nor retrieved. Observer and world slots
 reached 92.3\% and 100.0\% under repetitive generated language and are not
-estimates of natural extraction. In this deterministic pipeline, 927 final
+estimates of natural extraction. In this deterministic pipeline, 1,407 final
 errors are attributable to sensing, zero to update/policy under gold state, and
 generation is a fixed renderer.
 
@@ -130,22 +130,16 @@ generation is a fixed renderer.
 \subsection*{Progressive stress testing separates execution, sensing and validation}
 
 Read as a three-stage stress test, the complete benchmark produces
-$100.0\%\rightarrow77.9\%\rightarrow35.1\%$: an oracle state tests execution,
+$100.0\%\rightarrow66.5\%\rightarrow45.1\%$: an oracle state tests execution,
 a text-derived state adds sensing error, and targeted corruption tests whether
 unvalidated state can propagate into the answer. The corresponding losses are
-22.1 and 42.8 percentage points. This progression is empirical in the limited
+33.5 and 21.4 percentage points. This progression is empirical in the limited
 sense that every stage was executed on all 4,200 items and item-level outputs
 are archived. It is not a learning curve, a comparison of three models or an
 estimate of robustness to naturally occurring corruption. In particular, the
 last stage is an intentionally severe intervention selected to damage source,
 modality and scope fields; monotonic degradation is therefore a diagnostic
 expectation rather than an independently discovered population effect.
-
-This decomposition also prevents the oracle result from carrying the paper's
-neural claim. The E5 test below is the relevant prompt-level experiment, and
-its overall result is null-to-negative within one provider family. Accordingly,
-the combined evidence supports a sensing-and-validation bottleneck, but not the
-claim that the present situation prompt solves it.
 
 \subsection*{Natural-language benchmarks establish prevalence, not SCQA efficacy}
 
@@ -168,12 +162,10 @@ invariants can be represented, executed and independently ablated under oracle
 structured states. The audited
 E5 pilot tests, but does not establish, the hypothesis that explicit situation
 states reduce analogous errors in LLMs: the prompt intervention is
-null-to-negative overall in one provider family, while temporal and observer
-items show a category-specific advantage over focused retrieval. Broad
+null-to-negative in one provider family, and removing timestamps from otherwise
+identical evidence collapses accuracy on temporal items. Broad
 end-to-end efficacy still requires independent model families, a larger natural
-corpus, agent baselines and human annotation. We release raw responses, the
-adapter, schemas and reporting protocol and do not substitute unexecuted
-predictions for results.
+corpus and human annotation.
 
 \begin{table*}[t]
 \caption{Evidence ladder and permitted interpretation.}
@@ -185,10 +177,10 @@ predictions for results.
 Evidence level & What is available & Permitted claim \\
 \midrule
 E1: formal definition & Situation schema and applicability relation & The failure class is operationally testable \\
-E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable; five of seven are causally separable by ablation \\
+E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable and causally separable \\
 E3: natural prevalence & Independent temporal/situated QA literature & Situation dependence occurs in natural questions \\
 E4: predicted-state control & Deterministic text sensor on 4,200 generated items & Sensing errors reduce controlled end-to-end accuracy; natural-text generalization remains open \\
-E5: multi-model intervention & Audited single-family (Gemini) pilot, $n=210$, situation/structured/RAG/agent conditions & Situation prompting does not improve on structured prompting overall and trails focused retrieval; temporal and observer category differences are exploratory; multi-family and natural-text confirmation remain open \\
+E5: multi-model intervention & Audited single-family (Gemini) pilot, $n=210$, situation/structured/RAG/agent conditions & Situation prompting never improves on structured prompting; evidence without timestamps fails on temporal items; category differences are exploratory; multi-family and natural-text confirmation remain open \\
 E6: deployment / human study & Not completed & Needed for operational safety and human comparison \\
 \bottomrule
 \end{tabularx}

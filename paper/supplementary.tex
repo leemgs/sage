@@ -12,7 +12,7 @@ Sungkyunkwan University, Suwon, South Korea\\
 \maketitle
 
 \section*{Supplementary Note 1: Benchmark schema}
-Each JSONL item contains id, category, query time, question, claims, required variables, gold action and gold answer. Claims contain text and auditable event metadata.
+Each JSONL item contains id, category, query time, question, claims, user region (when the question states one), required variables, gold action and gold answer. Claims contain text and auditable event metadata. This is version 0.2, in which every category is balanced so that no constant answer and no recency rule exceeds chance on the decisive variable (Methods); version 0.1 and all of its results are archived in the repository under \texttt{data/v0.1/} and \texttt{results/v0.1/}.
 
 \section*{Supplementary Note 2: Complete aggregate results}
 \input{supplementary/results_table.tex}
@@ -27,18 +27,19 @@ a software regression smoke test and is not evidence of neural calibration.
 \section*{Supplementary Note 4: Ablations}
 \input{supplementary/ablation_table.tex}
 
-The source and world ablations produce no errors. Ablated components fall back
-to a recency rule, and in all 600 generated source-conflict items the official
-claim is the most recent, as is the hypothetical claim in all 600
-counterfactual items. These two ablations therefore do not test source
-reliability or world identity in the current benchmark.
+Each ablation produces exactly 300 errors, all in the category whose variable
+was removed. In v0.1 the source and world ablations produced no errors, because
+in all 600 source-conflict items the official claim was the most recent, as was
+the hypothetical claim in all 600 counterfactual items; v0.2 makes the decisive
+claim the most recent in exactly half of these items.
 
 \section*{Supplementary Note 5: Reproduction}
 From the repository root, run \texttt{python code/run\_diagnostic.py} to
 regenerate the benchmark and the oracle-state baselines, category results and
 ablations (Figs. 2--4; requires the packages in
 \texttt{code/requirements-diagnostic.txt}), then
-\texttt{python code/make\_figures.py} to redraw the figures. Run
+\texttt{python code/make\_figures.py} to redraw the figures and \texttt{python code/make\_supplement\_tables.py}
+to rewrite the tables in Supplementary Notes 2--4. Run
 \texttt{PYTHONPATH=code python code/run\_experiments.py} to regenerate
 gold-, predicted- and corrupted-state outputs. Run
 \texttt{PYTHONPATH=code pytest -q code/tests} for implementation tests.
@@ -95,11 +96,12 @@ A natural-text extension should separately score event extraction, event corefer
 \section*{Supplementary Note 9: Frontier-model evaluation status}
 The repository includes a frozen temporal SituatedQA smoke-test sample, a
 multi-provider evaluation harness and archived item-level responses from an
-audited Gemini-family pilot. Three Gemini models completed all direct,
-structured and situation conditions on the 210-item stratified synthetic
-sample (30 items in each category), with no failed calls. The repository also
-archives a 12-item SituatedQA temporal check, a top-3 lexical-retrieval baseline
-and a search-then-answer tool-using agent baseline. The integrity gate joins responses to the frozen item set and refuses
+audited Gemini-family pilot. On SituationCatch-Bench v0.2, three Gemini models
+completed all direct, structured and situation conditions on the 210-item
+stratified sample (30 items in each category), with no failed calls. The
+repository also archives a 12-item SituatedQA temporal check, a plain-text
+retrieval baseline and a search-then-answer tool-using agent baseline, as well
+as the v0.1 pilot and aborted v0.2 attempts, which enter no result. The integrity gate joins responses to the frozen item set and refuses
 to generate a manuscript table unless every requested model, condition and
 category is complete. Thus these are real, auditable results, but only a
 single-provider preliminary test. A confirmatory revision still requires the
