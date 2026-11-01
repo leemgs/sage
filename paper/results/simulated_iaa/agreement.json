@@ -18,15 +18,15 @@
       "unanimous_rate": 0.9571428571428572
     },
     "modality": {
-      "fleiss_kappa": 0.7050147492625368,
+      "fleiss_kappa": 0.5756718528995759,
       "unanimous_rate": 0.8571428571428571
     },
     "scope": {
-      "fleiss_kappa": 0.8699958728848535,
+      "fleiss_kappa": 0.861963190184049,
       "unanimous_rate": 0.9142857142857143
     },
     "source_status": {
-      "fleiss_kappa": 0.862385321100917,
+      "fleiss_kappa": 0.8623853211009179,
       "unanimous_rate": 0.9428571428571428
     },
     "observer_state": {

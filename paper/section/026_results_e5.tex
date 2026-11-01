@@ -1,7 +1,7 @@
 \subsection*{A preliminary matched multi-model intervention (E5)}
 
 The controlled results establish that the seven applicability invariants are
-executable and, for five of seven, causally separable (E1--E4); they do not show that
+executable and causally separable (E1--E4); they do not show that
 \emph{prompting} a language model for an explicit situation state improves it.
 As a first, deliberately bounded test of that E5 claim, three Gemini models
 answer a stratified, evidence-complete sample of SituationCatch-Bench
@@ -14,45 +14,43 @@ passes a completion audit with no failed calls.
 \input{section/tables/e5_stats_table}
 
 The result is null-to-negative (Table~\ref{tab:e5-stats}). Prompting for an
-explicit situation state never yields a cluster-bootstrap interval indicating
-an improvement over a matched structured prompt:
-the paired situation$-$structured differences are $+1.4$, $-10.0$ and $+0.0$
-percentage points, with a $95\%$ cluster-bootstrap interval that excludes zero
-only for \texttt{gemini-2.5-flash-lite}, where the situation prompt is
-\emph{worse} under this analysis. The intervals are otherwise wide because the
-benchmark has only seven template families, so resampling categories -- the
-honest unit of independence -- leaves little power for a directional claim.
-The situation and structured conditions also use roughly three times the total
-provider-reported tokens and have substantially higher median latency than the
-direct prompt, with no accuracy gain and no reduction in selective risk.
+explicit situation state never improves on a matched structured prompt: the
+paired situation$-$structured differences are $-2.9$, $-14.8$ and $-2.9$
+percentage points. The $95\%$ cluster-bootstrap interval excludes zero only for
+\texttt{gemini-2.5-flash-lite}, where the situation prompt is \emph{worse}, and
+for \texttt{gemini-3.5-flash} its upper bound is zero. The intervals are wide
+because the benchmark has only seven template families, so resampling
+categories -- the honest unit of independence -- leaves little power for a
+directional claim. Relative to the direct prompt, the situation prompt uses
+2.7--3.0 times the provider-reported tokens and has higher median latency, with
+no accuracy gain and no reduction in selective risk.
 
 A small natural-language check points the same way. On a 12-item sample from the
-public SituatedQA temporal split, the two date-anchored conditions show no
-advantage for the situation prompt over a structured one (descriptive
-differences of $-16.7$, $+0.0$ and $+0.0$ points across the three models). At
-$n=12$ this is a smoke test, not a result.
+public SituatedQA temporal split, the two date-anchored conditions differ by at
+most one item (situation$-$structured differences of $0.0$, $0.0$ and $+8.3$
+points across the three models). At $n=12$ this is a smoke test, not a result.
 
-A retrieval-augmented baseline sharpens the picture (Extended Data
-Table~\ref{tab:e5-rag}). Answering from only the top-3 lexically retrieved
-claims, without situation metadata, is the strongest condition overall
-($91.3\%$ versus $83.5\%$ structured and $80.6\%$ situation): a focused,
-relevant subset beats all claims plus a state instruction. Descriptively, the
-exception is the two categories that most require reasoning over the
-applicability state -- temporal validity and observer knowledge -- where the
-full-evidence situation condition beats RAG ($+8.9$ and $+5.6$ points); given
-category-level multiplicity this pattern is exploratory, not confirmatory.
-Where applicability depends on which claim is valid \emph{now} or is known to
-\emph{this} observer, retrieving the most similar text is not enough. A
-tool-using agent that issues its own searches over the item's claims does not
-close this gap: it is the weakest condition overall ($77.5\%$) and drops
-furthest on temporal ($64.4\%$) and observer ($66.7\%$) items, because
-self-directed retrieval can still fetch the most similar claim rather than the
-applicable one.
+Retrieval shows which variables matter (Extended Data Table~\ref{tab:e5-rag}).
+Because every item has at most three claims, the top-3 retrieval condition
+receives all claims, in time order, but as plain text without timestamps,
+status, source, scope or observer metadata. It reaches $79.4\%$ overall,
+against $86.3\%$ structured and $79.5\%$ situation, and collapses on temporal
+items ($44.4\%$ versus $95.6$--$97.8\%$ with metadata), where the answer
+depends on when the query falls relative to each event. It is higher than the
+full-evidence conditions on hidden-premise, counterfactual and scope items.
+Removing the applicability metadata therefore harms the category whose answer
+depends on it, while relevant text alone suffices elsewhere; given
+category-level multiplicity these comparisons are exploratory. In v0.1, where
+the decisive claim was always the newest, the same retrieval condition was the
+strongest ($91.3\%$), an artefact that the balanced benchmark removes. A
+tool-using agent that issues its own searches over the item's claims is the
+weakest condition overall ($71.0\%$) and drops furthest on temporal items
+($33.3\%$), because its search results likewise omit timestamps.
 
 We read this as motivating the paper's distinction rather than as a plug-in
 prompting win: a prompt-level ``situation'' field is not situation awareness.
 Consistent with the controlled finding that accuracy collapses once states must
-be \emph{sensed} from text ($100.0\%\rightarrow77.9\%$), the bottleneck is
+be \emph{sensed} from text ($100.0\%\rightarrow66.5\%$), the bottleneck is
 situation sensing and validation, not a state slot in the prompt. This
 single-provider, $n=210$ pilot neither confirms nor refutes the hypothesis at
 scale; a confirmatory E5 requires multiple model families, a larger

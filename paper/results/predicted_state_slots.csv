@@ -16214,7 +16214,7 @@ modality-0001,modality,time,2,0,0.0
 modality-0001,modality,validity,2,0,0.0
 modality-0001,modality,scope,2,0,0.0
 modality-0001,modality,modality,2,2,1.0
-modality-0001,modality,source_status,2,1,0.5
+modality-0001,modality,source_status,2,2,1.0
 modality-0001,modality,observer_knowledge,2,2,1.0
 modality-0001,modality,world,2,2,1.0
 modality-0002,modality,actor,2,0,0.0
@@ -16232,7 +16232,7 @@ modality-0003,modality,time,2,0,0.0
 modality-0003,modality,validity,2,0,0.0
 modality-0003,modality,scope,2,0,0.0
 modality-0003,modality,modality,2,2,1.0
-modality-0003,modality,source_status,2,1,0.5
+modality-0003,modality,source_status,2,2,1.0
 modality-0003,modality,observer_knowledge,2,2,1.0
 modality-0003,modality,world,2,2,1.0
 modality-0004,modality,actor,2,0,0.0
@@ -16250,7 +16250,7 @@ modality-0005,modality,time,2,0,0.0
 modality-0005,modality,validity,2,0,0.0
 modality-0005,modality,scope,2,0,0.0
 modality-0005,modality,modality,2,2,1.0
-modality-0005,modality,source_status,2,1,0.5
+modality-0005,modality,source_status,2,2,1.0
 modality-0005,modality,observer_knowledge,2,2,1.0
 modality-0005,modality,world,2,2,1.0
 modality-0006,modality,actor,2,0,0.0
@@ -16268,7 +16268,7 @@ modality-0007,modality,time,2,0,0.0
 modality-0007,modality,validity,2,0,0.0
 modality-0007,modality,scope,2,0,0.0
 modality-0007,modality,modality,2,2,1.0
-modality-0007,modality,source_status,2,1,0.5
+modality-0007,modality,source_status,2,2,1.0
 modality-0007,modality,observer_knowledge,2,2,1.0
 modality-0007,modality,world,2,2,1.0
 modality-0008,modality,actor,2,0,0.0
@@ -16286,7 +16286,7 @@ modality-0009,modality,time,2,0,0.0
 modality-0009,modality,validity,2,0,0.0
 modality-0009,modality,scope,2,0,0.0
 modality-0009,modality,modality,2,2,1.0
-modality-0009,modality,source_status,2,1,0.5
+modality-0009,modality,source_status,2,2,1.0
 modality-0009,modality,observer_knowledge,2,2,1.0
 modality-0009,modality,world,2,2,1.0
 modality-0010,modality,actor,2,0,0.0
@@ -16304,7 +16304,7 @@ modality-0011,modality,time,2,0,0.0
 modality-0011,modality,validity,2,0,0.0
 modality-0011,modality,scope,2,0,0.0
 modality-0011,modality,modality,2,2,1.0
-modality-0011,modality,source_status,2,1,0.5
+modality-0011,modality,source_status,2,2,1.0
 modality-0011,modality,observer_knowledge,2,2,1.0
 modality-0011,modality,world,2,2,1.0
 modality-0012,modality,actor,2,0,0.0
@@ -16322,7 +16322,7 @@ modality-0013,modality,time,2,0,0.0
 modality-0013,modality,validity,2,0,0.0
 modality-0013,modality,scope,2,0,0.0
 modality-0013,modality,modality,2,2,1.0
-modality-0013,modality,source_status,2,1,0.5
+modality-0013,modality,source_status,2,2,1.0
 modality-0013,modality,observer_knowledge,2,2,1.0
 modality-0013,modality,world,2,2,1.0
 modality-0014,modality,actor,2,0,0.0
@@ -16340,7 +16340,7 @@ modality-0015,modality,time,2,0,0.0
 modality-0015,modality,validity,2,0,0.0
 modality-0015,modality,scope,2,0,0.0
 modality-0015,modality,modality,2,2,1.0
-modality-0015,modality,source_status,2,1,0.5
+modality-0015,modality,source_status,2,2,1.0
 modality-0015,modality,observer_knowledge,2,2,1.0
 modality-0015,modality,world,2,2,1.0
 modality-0016,modality,actor,2,0,0.0
@@ -16358,7 +16358,7 @@ modality-0017,modality,time,2,0,0.0
 modality-0017,modality,validity,2,0,0.0
 modality-0017,modality,scope,2,0,0.0
 modality-0017,modality,modality,2,2,1.0
-modality-0017,modality,source_status,2,1,0.5
+modality-0017,modality,source_status,2,2,1.0
 modality-0017,modality,observer_knowledge,2,2,1.0
 modality-0017,modality,world,2,2,1.0
 modality-0018,modality,actor,2,0,0.0
@@ -16376,7 +16376,7 @@ modality-0019,modality,time,2,0,0.0
 modality-0019,modality,validity,2,0,0.0
 modality-0019,modality,scope,2,0,0.0
 modality-0019,modality,modality,2,2,1.0
-modality-0019,modality,source_status,2,1,0.5
+modality-0019,modality,source_status,2,2,1.0
 modality-0019,modality,observer_knowledge,2,2,1.0
 modality-0019,modality,world,2,2,1.0
 modality-0020,modality,actor,2,0,0.0
@@ -16394,7 +16394,7 @@ modality-0021,modality,time,2,0,0.0
 modality-0021,modality,validity,2,0,0.0
 modality-0021,modality,scope,2,0,0.0
 modality-0021,modality,modality,2,2,1.0
-modality-0021,modality,source_status,2,1,0.5
+modality-0021,modality,source_status,2,2,1.0
 modality-0021,modality,observer_knowledge,2,2,1.0
 modality-0021,modality,world,2,2,1.0
 modality-0022,modality,actor,2,0,0.0
@@ -16412,7 +16412,7 @@ modality-0023,modality,time,2,0,0.0
 modality-0023,modality,validity,2,0,0.0
 modality-0023,modality,scope,2,0,0.0
 modality-0023,modality,modality,2,2,1.0
-modality-0023,modality,source_status,2,1,0.5
+modality-0023,modality,source_status,2,2,1.0
 modality-0023,modality,observer_knowledge,2,2,1.0
 modality-0023,modality,world,2,2,1.0
 modality-0024,modality,actor,2,0,0.0
@@ -16430,7 +16430,7 @@ modality-0025,modality,time,2,0,0.0
 modality-0025,modality,validity,2,0,0.0
 modality-0025,modality,scope,2,0,0.0
 modality-0025,modality,modality,2,2,1.0
-modality-0025,modality,source_status,2,1,0.5
+modality-0025,modality,source_status,2,2,1.0
 modality-0025,modality,observer_knowledge,2,2,1.0
 modality-0025,modality,world,2,2,1.0
 modality-0026,modality,actor,2,0,0.0
@@ -16448,7 +16448,7 @@ modality-0027,modality,time,2,0,0.0
 modality-0027,modality,validity,2,0,0.0
 modality-0027,modality,scope,2,0,0.0
 modality-0027,modality,modality,2,2,1.0
-modality-0027,modality,source_status,2,1,0.5
+modality-0027,modality,source_status,2,2,1.0
 modality-0027,modality,observer_knowledge,2,2,1.0
 modality-0027,modality,world,2,2,1.0
 modality-0028,modality,actor,2,0,0.0
@@ -16466,7 +16466,7 @@ modality-0029,modality,time,2,0,0.0
 modality-0029,modality,validity,2,0,0.0
 modality-0029,modality,scope,2,0,0.0
 modality-0029,modality,modality,2,2,1.0
-modality-0029,modality,source_status,2,1,0.5
+modality-0029,modality,source_status,2,2,1.0
 modality-0029,modality,observer_knowledge,2,2,1.0
 modality-0029,modality,world,2,2,1.0
 modality-0030,modality,actor,2,0,0.0
@@ -16484,7 +16484,7 @@ modality-0031,modality,time,2,0,0.0
 modality-0031,modality,validity,2,0,0.0
 modality-0031,modality,scope,2,0,0.0
 modality-0031,modality,modality,2,2,1.0
-modality-0031,modality,source_status,2,1,0.5
+modality-0031,modality,source_status,2,2,1.0
 modality-0031,modality,observer_knowledge,2,2,1.0
 modality-0031,modality,world,2,2,1.0
 modality-0032,modality,actor,2,0,0.0
@@ -16502,7 +16502,7 @@ modality-0033,modality,time,2,0,0.0
 modality-0033,modality,validity,2,0,0.0
 modality-0033,modality,scope,2,0,0.0
 modality-0033,modality,modality,2,2,1.0
-modality-0033,modality,source_status,2,1,0.5
+modality-0033,modality,source_status,2,2,1.0
 modality-0033,modality,observer_knowledge,2,2,1.0
 modality-0033,modality,world,2,2,1.0
 modality-0034,modality,actor,2,0,0.0
@@ -16520,7 +16520,7 @@ modality-0035,modality,time,2,0,0.0
 modality-0035,modality,validity,2,0,0.0
 modality-0035,modality,scope,2,0,0.0
 modality-0035,modality,modality,2,2,1.0
-modality-0035,modality,source_status,2,1,0.5
+modality-0035,modality,source_status,2,2,1.0
 modality-0035,modality,observer_knowledge,2,2,1.0
 modality-0035,modality,world,2,2,1.0
 modality-0036,modality,actor,2,0,0.0
@@ -16538,7 +16538,7 @@ modality-0037,modality,time,2,0,0.0
 modality-0037,modality,validity,2,0,0.0
 modality-0037,modality,scope,2,0,0.0
 modality-0037,modality,modality,2,2,1.0
-modality-0037,modality,source_status,2,1,0.5
+modality-0037,modality,source_status,2,2,1.0
 modality-0037,modality,observer_knowledge,2,2,1.0
 modality-0037,modality,world,2,2,1.0
 modality-0038,modality,actor,2,0,0.0
@@ -16556,7 +16556,7 @@ modality-0039,modality,time,2,0,0.0
 modality-0039,modality,validity,2,0,0.0
 modality-0039,modality,scope,2,0,0.0
 modality-0039,modality,modality,2,2,1.0
-modality-0039,modality,source_status,2,1,0.5
+modality-0039,modality,source_status,2,2,1.0
 modality-0039,modality,observer_knowledge,2,2,1.0
 modality-0039,modality,world,2,2,1.0
 modality-0040,modality,actor,2,0,0.0
@@ -16574,7 +16574,7 @@ modality-0041,modality,time,2,0,0.0
 modality-0041,modality,validity,2,0,0.0
 modality-0041,modality,scope,2,0,0.0
 modality-0041,modality,modality,2,2,1.0
-modality-0041,modality,source_status,2,1,0.5
+modality-0041,modality,source_status,2,2,1.0
 modality-0041,modality,observer_knowledge,2,2,1.0
 modality-0041,modality,world,2,2,1.0
 modality-0042,modality,actor,2,0,0.0
@@ -16592,7 +16592,7 @@ modality-0043,modality,time,2,0,0.0
 modality-0043,modality,validity,2,0,0.0
 modality-0043,modality,scope,2,0,0.0
 modality-0043,modality,modality,2,2,1.0
-modality-0043,modality,source_status,2,1,0.5
+modality-0043,modality,source_status,2,2,1.0
 modality-0043,modality,observer_knowledge,2,2,1.0
 modality-0043,modality,world,2,2,1.0
 modality-0044,modality,actor,2,0,0.0
@@ -16610,7 +16610,7 @@ modality-0045,modality,time,2,0,0.0
 modality-0045,modality,validity,2,0,0.0
 modality-0045,modality,scope,2,0,0.0
 modality-0045,modality,modality,2,2,1.0
-modality-0045,modality,source_status,2,1,0.5
+modality-0045,modality,source_status,2,2,1.0
 modality-0045,modality,observer_knowledge,2,2,1.0
 modality-0045,modality,world,2,2,1.0
 modality-0046,modality,actor,2,0,0.0
@@ -16628,7 +16628,7 @@ modality-0047,modality,time,2,0,0.0
 modality-0047,modality,validity,2,0,0.0
 modality-0047,modality,scope,2,0,0.0
 modality-0047,modality,modality,2,2,1.0
-modality-0047,modality,source_status,2,1,0.5
+modality-0047,modality,source_status,2,2,1.0
 modality-0047,modality,observer_knowledge,2,2,1.0
 modality-0047,modality,world,2,2,1.0
 modality-0048,modality,actor,2,0,0.0
@@ -16646,7 +16646,7 @@ modality-0049,modality,time,2,0,0.0
 modality-0049,modality,validity,2,0,0.0
 modality-0049,modality,scope,2,0,0.0
 modality-0049,modality,modality,2,2,1.0
-modality-0049,modality,source_status,2,1,0.5
+modality-0049,modality,source_status,2,2,1.0
 modality-0049,modality,observer_knowledge,2,2,1.0
 modality-0049,modality,world,2,2,1.0
 modality-0050,modality,actor,2,0,0.0
@@ -16664,7 +16664,7 @@ modality-0051,modality,time,2,0,0.0
 modality-0051,modality,validity,2,0,0.0
 modality-0051,modality,scope,2,0,0.0
 modality-0051,modality,modality,2,2,1.0
-modality-0051,modality,source_status,2,1,0.5
+modality-0051,modality,source_status,2,2,1.0
 modality-0051,modality,observer_knowledge,2,2,1.0
 modality-0051,modality,world,2,2,1.0
 modality-0052,modality,actor,2,0,0.0
@@ -16682,7 +16682,7 @@ modality-0053,modality,time,2,0,0.0
 modality-0053,modality,validity,2,0,0.0
 modality-0053,modality,scope,2,0,0.0
 modality-0053,modality,modality,2,2,1.0
-modality-0053,modality,source_status,2,1,0.5
+modality-0053,modality,source_status,2,2,1.0
 modality-0053,modality,observer_knowledge,2,2,1.0
 modality-0053,modality,world,2,2,1.0
 modality-0054,modality,actor,2,0,0.0
@@ -16700,7 +16700,7 @@ modality-0055,modality,time,2,0,0.0
 modality-0055,modality,validity,2,0,0.0
 modality-0055,modality,scope,2,0,0.0
 modality-0055,modality,modality,2,2,1.0
-modality-0055,modality,source_status,2,1,0.5
+modality-0055,modality,source_status,2,2,1.0
 modality-0055,modality,observer_knowledge,2,2,1.0
 modality-0055,modality,world,2,2,1.0
 modality-0056,modality,actor,2,0,0.0
@@ -16718,7 +16718,7 @@ modality-0057,modality,time,2,0,0.0
 modality-0057,modality,validity,2,0,0.0
 modality-0057,modality,scope,2,0,0.0
 modality-0057,modality,modality,2,2,1.0
-modality-0057,modality,source_status,2,1,0.5
+modality-0057,modality,source_status,2,2,1.0
 modality-0057,modality,observer_knowledge,2,2,1.0
 modality-0057,modality,world,2,2,1.0
 modality-0058,modality,actor,2,0,0.0
@@ -16736,7 +16736,7 @@ modality-0059,modality,time,2,0,0.0
 modality-0059,modality,validity,2,0,0.0
 modality-0059,modality,scope,2,0,0.0
 modality-0059,modality,modality,2,2,1.0
-modality-0059,modality,source_status,2,1,0.5
+modality-0059,modality,source_status,2,2,1.0
 modality-0059,modality,observer_knowledge,2,2,1.0
 modality-0059,modality,world,2,2,1.0
 modality-0060,modality,actor,2,0,0.0
@@ -16754,7 +16754,7 @@ modality-0061,modality,time,2,0,0.0
 modality-0061,modality,validity,2,0,0.0
 modality-0061,modality,scope,2,0,0.0
 modality-0061,modality,modality,2,2,1.0
-modality-0061,modality,source_status,2,1,0.5
+modality-0061,modality,source_status,2,2,1.0
 modality-0061,modality,observer_knowledge,2,2,1.0
 modality-0061,modality,world,2,2,1.0
 modality-0062,modality,actor,2,0,0.0
@@ -16772,7 +16772,7 @@ modality-0063,modality,time,2,0,0.0
 modality-0063,modality,validity,2,0,0.0
 modality-0063,modality,scope,2,0,0.0
 modality-0063,modality,modality,2,2,1.0
-modality-0063,modality,source_status,2,1,0.5
+modality-0063,modality,source_status,2,2,1.0
 modality-0063,modality,observer_knowledge,2,2,1.0
 modality-0063,modality,world,2,2,1.0
 modality-0064,modality,actor,2,0,0.0
@@ -16790,7 +16790,7 @@ modality-0065,modality,time,2,0,0.0
 modality-0065,modality,validity,2,0,0.0
 modality-0065,modality,scope,2,0,0.0
 modality-0065,modality,modality,2,2,1.0
-modality-0065,modality,source_status,2,1,0.5
+modality-0065,modality,source_status,2,2,1.0
 modality-0065,modality,observer_knowledge,2,2,1.0
 modality-0065,modality,world,2,2,1.0
 modality-0066,modality,actor,2,0,0.0
@@ -16808,7 +16808,7 @@ modality-0067,modality,time,2,0,0.0
 modality-0067,modality,validity,2,0,0.0
 modality-0067,modality,scope,2,0,0.0
 modality-0067,modality,modality,2,2,1.0
-modality-0067,modality,source_status,2,1,0.5
+modality-0067,modality,source_status,2,2,1.0
 modality-0067,modality,observer_knowledge,2,2,1.0
 modality-0067,modality,world,2,2,1.0
 modality-0068,modality,actor,2,0,0.0
@@ -16826,7 +16826,7 @@ modality-0069,modality,time,2,0,0.0
 modality-0069,modality,validity,2,0,0.0
 modality-0069,modality,scope,2,0,0.0
 modality-0069,modality,modality,2,2,1.0
-modality-0069,modality,source_status,2,1,0.5
+modality-0069,modality,source_status,2,2,1.0
 modality-0069,modality,observer_knowledge,2,2,1.0
 modality-0069,modality,world,2,2,1.0
 modality-0070,modality,actor,2,0,0.0
@@ -16844,7 +16844,7 @@ modality-0071,modality,time,2,0,0.0
 modality-0071,modality,validity,2,0,0.0
 modality-0071,modality,scope,2,0,0.0
 modality-0071,modality,modality,2,2,1.0
-modality-0071,modality,source_status,2,1,0.5
+modality-0071,modality,source_status,2,2,1.0
 modality-0071,modality,observer_knowledge,2,2,1.0
 modality-0071,modality,world,2,2,1.0
 modality-0072,modality,actor,2,0,0.0
@@ -16862,7 +16862,7 @@ modality-0073,modality,time,2,0,0.0
 modality-0073,modality,validity,2,0,0.0
 modality-0073,modality,scope,2,0,0.0
 modality-0073,modality,modality,2,2,1.0
-modality-0073,modality,source_status,2,1,0.5
+modality-0073,modality,source_status,2,2,1.0
 modality-0073,modality,observer_knowledge,2,2,1.0
 modality-0073,modality,world,2,2,1.0
 modality-0074,modality,actor,2,0,0.0
@@ -16880,7 +16880,7 @@ modality-0075,modality,time,2,0,0.0
 modality-0075,modality,validity,2,0,0.0
 modality-0075,modality,scope,2,0,0.0
 modality-0075,modality,modality,2,2,1.0
-modality-0075,modality,source_status,2,1,0.5
+modality-0075,modality,source_status,2,2,1.0
 modality-0075,modality,observer_knowledge,2,2,1.0
 modality-0075,modality,world,2,2,1.0
 modality-0076,modality,actor,2,0,0.0
@@ -16898,7 +16898,7 @@ modality-0077,modality,time,2,0,0.0
 modality-0077,modality,validity,2,0,0.0
 modality-0077,modality,scope,2,0,0.0
 modality-0077,modality,modality,2,2,1.0
-modality-0077,modality,source_status,2,1,0.5
+modality-0077,modality,source_status,2,2,1.0
 modality-0077,modality,observer_knowledge,2,2,1.0
 modality-0077,modality,world,2,2,1.0
 modality-0078,modality,actor,2,0,0.0
@@ -16916,7 +16916,7 @@ modality-0079,modality,time,2,0,0.0
 modality-0079,modality,validity,2,0,0.0
 modality-0079,modality,scope,2,0,0.0
 modality-0079,modality,modality,2,2,1.0
-modality-0079,modality,source_status,2,1,0.5
+modality-0079,modality,source_status,2,2,1.0
 modality-0079,modality,observer_knowledge,2,2,1.0
 modality-0079,modality,world,2,2,1.0
 modality-0080,modality,actor,2,0,0.0
@@ -16934,7 +16934,7 @@ modality-0081,modality,time,2,0,0.0
 modality-0081,modality,validity,2,0,0.0
 modality-0081,modality,scope,2,0,0.0
 modality-0081,modality,modality,2,2,1.0
-modality-0081,modality,source_status,2,1,0.5
+modality-0081,modality,source_status,2,2,1.0
 modality-0081,modality,observer_knowledge,2,2,1.0
 modality-0081,modality,world,2,2,1.0
 modality-0082,modality,actor,2,0,0.0
@@ -16952,7 +16952,7 @@ modality-0083,modality,time,2,0,0.0
 modality-0083,modality,validity,2,0,0.0
 modality-0083,modality,scope,2,0,0.0
 modality-0083,modality,modality,2,2,1.0
-modality-0083,modality,source_status,2,1,0.5
+modality-0083,modality,source_status,2,2,1.0
 modality-0083,modality,observer_knowledge,2,2,1.0
 modality-0083,modality,world,2,2,1.0
 modality-0084,modality,actor,2,0,0.0
@@ -16970,7 +16970,7 @@ modality-0085,modality,time,2,0,0.0
 modality-0085,modality,validity,2,0,0.0
 modality-0085,modality,scope,2,0,0.0
 modality-0085,modality,modality,2,2,1.0
-modality-0085,modality,source_status,2,1,0.5
+modality-0085,modality,source_status,2,2,1.0
 modality-0085,modality,observer_knowledge,2,2,1.0
 modality-0085,modality,world,2,2,1.0
 modality-0086,modality,actor,2,0,0.0
@@ -16988,7 +16988,7 @@ modality-0087,modality,time,2,0,0.0
 modality-0087,modality,validity,2,0,0.0
 modality-0087,modality,scope,2,0,0.0
 modality-0087,modality,modality,2,2,1.0
-modality-0087,modality,source_status,2,1,0.5
+modality-0087,modality,source_status,2,2,1.0
 modality-0087,modality,observer_knowledge,2,2,1.0
 modality-0087,modality,world,2,2,1.0
 modality-0088,modality,actor,2,0,0.0
@@ -17006,7 +17006,7 @@ modality-0089,modality,time,2,0,0.0
 modality-0089,modality,validity,2,0,0.0
 modality-0089,modality,scope,2,0,0.0
 modality-0089,modality,modality,2,2,1.0
-modality-0089,modality,source_status,2,1,0.5
+modality-0089,modality,source_status,2,2,1.0
 modality-0089,modality,observer_knowledge,2,2,1.0
 modality-0089,modality,world,2,2,1.0
 modality-0090,modality,actor,2,0,0.0
@@ -17024,7 +17024,7 @@ modality-0091,modality,time,2,0,0.0
 modality-0091,modality,validity,2,0,0.0
 modality-0091,modality,scope,2,0,0.0
 modality-0091,modality,modality,2,2,1.0
-modality-0091,modality,source_status,2,1,0.5
+modality-0091,modality,source_status,2,2,1.0
 modality-0091,modality,observer_knowledge,2,2,1.0
 modality-0091,modality,world,2,2,1.0
 modality-0092,modality,actor,2,0,0.0
@@ -17042,7 +17042,7 @@ modality-0093,modality,time,2,0,0.0
 modality-0093,modality,validity,2,0,0.0
 modality-0093,modality,scope,2,0,0.0
 modality-0093,modality,modality,2,2,1.0
-modality-0093,modality,source_status,2,1,0.5
+modality-0093,modality,source_status,2,2,1.0
 modality-0093,modality,observer_knowledge,2,2,1.0
 modality-0093,modality,world,2,2,1.0
 modality-0094,modality,actor,2,0,0.0
@@ -17060,7 +17060,7 @@ modality-0095,modality,time,2,0,0.0
 modality-0095,modality,validity,2,0,0.0
 modality-0095,modality,scope,2,0,0.0
 modality-0095,modality,modality,2,2,1.0
-modality-0095,modality,source_status,2,1,0.5
+modality-0095,modality,source_status,2,2,1.0
 modality-0095,modality,observer_knowledge,2,2,1.0
 modality-0095,modality,world,2,2,1.0
 modality-0096,modality,actor,2,0,0.0
@@ -17078,7 +17078,7 @@ modality-0097,modality,time,2,0,0.0
 modality-0097,modality,validity,2,0,0.0
 modality-0097,modality,scope,2,0,0.0
 modality-0097,modality,modality,2,2,1.0
-modality-0097,modality,source_status,2,1,0.5
+modality-0097,modality,source_status,2,2,1.0
 modality-0097,modality,observer_knowledge,2,2,1.0
 modality-0097,modality,world,2,2,1.0
 modality-0098,modality,actor,2,0,0.0
@@ -17096,7 +17096,7 @@ modality-0099,modality,time,2,0,0.0
 modality-0099,modality,validity,2,0,0.0
 modality-0099,modality,scope,2,0,0.0
 modality-0099,modality,modality,2,2,1.0
-modality-0099,modality,source_status,2,1,0.5
+modality-0099,modality,source_status,2,2,1.0
 modality-0099,modality,observer_knowledge,2,2,1.0
 modality-0099,modality,world,2,2,1.0
 modality-0100,modality,actor,2,0,0.0
@@ -17114,7 +17114,7 @@ modality-0101,modality,time,2,0,0.0
 modality-0101,modality,validity,2,0,0.0
 modality-0101,modality,scope,2,0,0.0
 modality-0101,modality,modality,2,2,1.0
-modality-0101,modality,source_status,2,1,0.5
+modality-0101,modality,source_status,2,2,1.0
 modality-0101,modality,observer_knowledge,2,2,1.0
 modality-0101,modality,world,2,2,1.0
 modality-0102,modality,actor,2,0,0.0
@@ -17132,7 +17132,7 @@ modality-0103,modality,time,2,0,0.0
 modality-0103,modality,validity,2,0,0.0
 modality-0103,modality,scope,2,0,0.0
 modality-0103,modality,modality,2,2,1.0
-modality-0103,modality,source_status,2,1,0.5
+modality-0103,modality,source_status,2,2,1.0
 modality-0103,modality,observer_knowledge,2,2,1.0
 modality-0103,modality,world,2,2,1.0
 modality-0104,modality,actor,2,0,0.0
@@ -17150,7 +17150,7 @@ modality-0105,modality,time,2,0,0.0
 modality-0105,modality,validity,2,0,0.0
 modality-0105,modality,scope,2,0,0.0
 modality-0105,modality,modality,2,2,1.0
-modality-0105,modality,source_status,2,1,0.5
+modality-0105,modality,source_status,2,2,1.0
 modality-0105,modality,observer_knowledge,2,2,1.0
 modality-0105,modality,world,2,2,1.0
 modality-0106,modality,actor,2,0,0.0
@@ -17168,7 +17168,7 @@ modality-0107,modality,time,2,0,0.0
 modality-0107,modality,validity,2,0,0.0
 modality-0107,modality,scope,2,0,0.0
 modality-0107,modality,modality,2,2,1.0
-modality-0107,modality,source_status,2,1,0.5
+modality-0107,modality,source_status,2,2,1.0
 modality-0107,modality,observer_knowledge,2,2,1.0
 modality-0107,modality,world,2,2,1.0
 modality-0108,modality,actor,2,0,0.0
@@ -17186,7 +17186,7 @@ modality-0109,modality,time,2,0,0.0
 modality-0109,modality,validity,2,0,0.0
 modality-0109,modality,scope,2,0,0.0
 modality-0109,modality,modality,2,2,1.0
-modality-0109,modality,source_status,2,1,0.5
+modality-0109,modality,source_status,2,2,1.0
 modality-0109,modality,observer_knowledge,2,2,1.0
 modality-0109,modality,world,2,2,1.0
 modality-0110,modality,actor,2,0,0.0
@@ -17204,7 +17204,7 @@ modality-0111,modality,time,2,0,0.0
 modality-0111,modality,validity,2,0,0.0
 modality-0111,modality,scope,2,0,0.0
 modality-0111,modality,modality,2,2,1.0
-modality-0111,modality,source_status,2,1,0.5
+modality-0111,modality,source_status,2,2,1.0
 modality-0111,modality,observer_knowledge,2,2,1.0
 modality-0111,modality,world,2,2,1.0
 modality-0112,modality,actor,2,0,0.0
@@ -17222,7 +17222,7 @@ modality-0113,modality,time,2,0,0.0
 modality-0113,modality,validity,2,0,0.0
 modality-0113,modality,scope,2,0,0.0
 modality-0113,modality,modality,2,2,1.0
-modality-0113,modality,source_status,2,1,0.5
+modality-0113,modality,source_status,2,2,1.0
 modality-0113,modality,observer_knowledge,2,2,1.0
 modality-0113,modality,world,2,2,1.0
 modality-0114,modality,actor,2,0,0.0
@@ -17240,7 +17240,7 @@ modality-0115,modality,time,2,0,0.0
 modality-0115,modality,validity,2,0,0.0
 modality-0115,modality,scope,2,0,0.0
 modality-0115,modality,modality,2,2,1.0
-modality-0115,modality,source_status,2,1,0.5
+modality-0115,modality,source_status,2,2,1.0
 modality-0115,modality,observer_knowledge,2,2,1.0
 modality-0115,modality,world,2,2,1.0
 modality-0116,modality,actor,2,0,0.0
@@ -17258,7 +17258,7 @@ modality-0117,modality,time,2,0,0.0
 modality-0117,modality,validity,2,0,0.0
 modality-0117,modality,scope,2,0,0.0
 modality-0117,modality,modality,2,2,1.0
-modality-0117,modality,source_status,2,1,0.5
+modality-0117,modality,source_status,2,2,1.0
 modality-0117,modality,observer_knowledge,2,2,1.0
 modality-0117,modality,world,2,2,1.0
 modality-0118,modality,actor,2,0,0.0
@@ -17276,7 +17276,7 @@ modality-0119,modality,time,2,0,0.0
 modality-0119,modality,validity,2,0,0.0
 modality-0119,modality,scope,2,0,0.0
 modality-0119,modality,modality,2,2,1.0
-modality-0119,modality,source_status,2,1,0.5
+modality-0119,modality,source_status,2,2,1.0
 modality-0119,modality,observer_knowledge,2,2,1.0
 modality-0119,modality,world,2,2,1.0
 modality-0120,modality,actor,2,0,0.0
@@ -17294,7 +17294,7 @@ modality-0121,modality,time,2,0,0.0
 modality-0121,modality,validity,2,0,0.0
 modality-0121,modality,scope,2,0,0.0
 modality-0121,modality,modality,2,2,1.0
-modality-0121,modality,source_status,2,1,0.5
+modality-0121,modality,source_status,2,2,1.0
 modality-0121,modality,observer_knowledge,2,2,1.0
 modality-0121,modality,world,2,2,1.0
 modality-0122,modality,actor,2,0,0.0
@@ -17312,7 +17312,7 @@ modality-0123,modality,time,2,0,0.0
 modality-0123,modality,validity,2,0,0.0
 modality-0123,modality,scope,2,0,0.0
 modality-0123,modality,modality,2,2,1.0
-modality-0123,modality,source_status,2,1,0.5
+modality-0123,modality,source_status,2,2,1.0
 modality-0123,modality,observer_knowledge,2,2,1.0
 modality-0123,modality,world,2,2,1.0
 modality-0124,modality,actor,2,0,0.0
@@ -17330,7 +17330,7 @@ modality-0125,modality,time,2,0,0.0
 modality-0125,modality,validity,2,0,0.0
 modality-0125,modality,scope,2,0,0.0
 modality-0125,modality,modality,2,2,1.0
-modality-0125,modality,source_status,2,1,0.5
+modality-0125,modality,source_status,2,2,1.0
 modality-0125,modality,observer_knowledge,2,2,1.0
 modality-0125,modality,world,2,2,1.0
 modality-0126,modality,actor,2,0,0.0
@@ -17348,7 +17348,7 @@ modality-0127,modality,time,2,0,0.0
 modality-0127,modality,validity,2,0,0.0
 modality-0127,modality,scope,2,0,0.0
 modality-0127,modality,modality,2,2,1.0
-modality-0127,modality,source_status,2,1,0.5
+modality-0127,modality,source_status,2,2,1.0
 modality-0127,modality,observer_knowledge,2,2,1.0
 modality-0127,modality,world,2,2,1.0
 modality-0128,modality,actor,2,0,0.0
@@ -17366,7 +17366,7 @@ modality-0129,modality,time,2,0,0.0
 modality-0129,modality,validity,2,0,0.0
 modality-0129,modality,scope,2,0,0.0
 modality-0129,modality,modality,2,2,1.0
-modality-0129,modality,source_status,2,1,0.5
+modality-0129,modality,source_status,2,2,1.0
 modality-0129,modality,observer_knowledge,2,2,1.0
 modality-0129,modality,world,2,2,1.0
 modality-0130,modality,actor,2,0,0.0
@@ -17384,7 +17384,7 @@ modality-0131,modality,time,2,0,0.0
 modality-0131,modality,validity,2,0,0.0
 modality-0131,modality,scope,2,0,0.0
 modality-0131,modality,modality,2,2,1.0
-modality-0131,modality,source_status,2,1,0.5
+modality-0131,modality,source_status,2,2,1.0
 modality-0131,modality,observer_knowledge,2,2,1.0
 modality-0131,modality,world,2,2,1.0
 modality-0132,modality,actor,2,0,0.0
@@ -17402,7 +17402,7 @@ modality-0133,modality,time,2,0,0.0
 modality-0133,modality,validity,2,0,0.0
 modality-0133,modality,scope,2,0,0.0
 modality-0133,modality,modality,2,2,1.0
-modality-0133,modality,source_status,2,1,0.5
+modality-0133,modality,source_status,2,2,1.0
 modality-0133,modality,observer_knowledge,2,2,1.0
 modality-0133,modality,world,2,2,1.0
 modality-0134,modality,actor,2,0,0.0
@@ -17420,7 +17420,7 @@ modality-0135,modality,time,2,0,0.0
 modality-0135,modality,validity,2,0,0.0
 modality-0135,modality,scope,2,0,0.0
 modality-0135,modality,modality,2,2,1.0
-modality-0135,modality,source_status,2,1,0.5
+modality-0135,modality,source_status,2,2,1.0
 modality-0135,modality,observer_knowledge,2,2,1.0
 modality-0135,modality,world,2,2,1.0
 modality-0136,modality,actor,2,0,0.0
@@ -17438,7 +17438,7 @@ modality-0137,modality,time,2,0,0.0
 modality-0137,modality,validity,2,0,0.0
 modality-0137,modality,scope,2,0,0.0
 modality-0137,modality,modality,2,2,1.0
-modality-0137,modality,source_status,2,1,0.5
+modality-0137,modality,source_status,2,2,1.0
 modality-0137,modality,observer_knowledge,2,2,1.0
 modality-0137,modality,world,2,2,1.0
 modality-0138,modality,actor,2,0,0.0
@@ -17456,7 +17456,7 @@ modality-0139,modality,time,2,0,0.0
 modality-0139,modality,validity,2,0,0.0
 modality-0139,modality,scope,2,0,0.0
 modality-0139,modality,modality,2,2,1.0
-modality-0139,modality,source_status,2,1,0.5
+modality-0139,modality,source_status,2,2,1.0
 modality-0139,modality,observer_knowledge,2,2,1.0
 modality-0139,modality,world,2,2,1.0
 modality-0140,modality,actor,2,0,0.0
@@ -17474,7 +17474,7 @@ modality-0141,modality,time,2,0,0.0
 modality-0141,modality,validity,2,0,0.0
 modality-0141,modality,scope,2,0,0.0
 modality-0141,modality,modality,2,2,1.0
-modality-0141,modality,source_status,2,1,0.5
+modality-0141,modality,source_status,2,2,1.0
 modality-0141,modality,observer_knowledge,2,2,1.0
 modality-0141,modality,world,2,2,1.0
 modality-0142,modality,actor,2,0,0.0
@@ -17492,7 +17492,7 @@ modality-0143,modality,time,2,0,0.0
 modality-0143,modality,validity,2,0,0.0
 modality-0143,modality,scope,2,0,0.0
 modality-0143,modality,modality,2,2,1.0
-modality-0143,modality,source_status,2,1,0.5
+modality-0143,modality,source_status,2,2,1.0
 modality-0143,modality,observer_knowledge,2,2,1.0
 modality-0143,modality,world,2,2,1.0
 modality-0144,modality,actor,2,0,0.0
@@ -17510,7 +17510,7 @@ modality-0145,modality,time,2,0,0.0
 modality-0145,modality,validity,2,0,0.0
 modality-0145,modality,scope,2,0,0.0
 modality-0145,modality,modality,2,2,1.0
-modality-0145,modality,source_status,2,1,0.5
+modality-0145,modality,source_status,2,2,1.0
 modality-0145,modality,observer_knowledge,2,2,1.0
 modality-0145,modality,world,2,2,1.0
 modality-0146,modality,actor,2,0,0.0
@@ -17528,7 +17528,7 @@ modality-0147,modality,time,2,0,0.0
 modality-0147,modality,validity,2,0,0.0
 modality-0147,modality,scope,2,0,0.0
 modality-0147,modality,modality,2,2,1.0
-modality-0147,modality,source_status,2,1,0.5
+modality-0147,modality,source_status,2,2,1.0
 modality-0147,modality,observer_knowledge,2,2,1.0
 modality-0147,modality,world,2,2,1.0
 modality-0148,modality,actor,2,0,0.0
@@ -17546,7 +17546,7 @@ modality-0149,modality,time,2,0,0.0
 modality-0149,modality,validity,2,0,0.0
 modality-0149,modality,scope,2,0,0.0
 modality-0149,modality,modality,2,2,1.0
-modality-0149,modality,source_status,2,1,0.5
+modality-0149,modality,source_status,2,2,1.0
 modality-0149,modality,observer_knowledge,2,2,1.0
 modality-0149,modality,world,2,2,1.0
 modality-0150,modality,actor,2,0,0.0
@@ -17564,7 +17564,7 @@ modality-0151,modality,time,2,0,0.0
 modality-0151,modality,validity,2,0,0.0
 modality-0151,modality,scope,2,0,0.0
 modality-0151,modality,modality,2,2,1.0
-modality-0151,modality,source_status,2,1,0.5
+modality-0151,modality,source_status,2,2,1.0
 modality-0151,modality,observer_knowledge,2,2,1.0
 modality-0151,modality,world,2,2,1.0
 modality-0152,modality,actor,2,0,0.0
@@ -17582,7 +17582,7 @@ modality-0153,modality,time,2,0,0.0
 modality-0153,modality,validity,2,0,0.0
 modality-0153,modality,scope,2,0,0.0
 modality-0153,modality,modality,2,2,1.0
-modality-0153,modality,source_status,2,1,0.5
+modality-0153,modality,source_status,2,2,1.0
 modality-0153,modality,observer_knowledge,2,2,1.0
 modality-0153,modality,world,2,2,1.0
 modality-0154,modality,actor,2,0,0.0
@@ -17600,7 +17600,7 @@ modality-0155,modality,time,2,0,0.0
 modality-0155,modality,validity,2,0,0.0
 modality-0155,modality,scope,2,0,0.0
 modality-0155,modality,modality,2,2,1.0
-modality-0155,modality,source_status,2,1,0.5
+modality-0155,modality,source_status,2,2,1.0
 modality-0155,modality,observer_knowledge,2,2,1.0
 modality-0155,modality,world,2,2,1.0
 modality-0156,modality,actor,2,0,0.0
@@ -17618,7 +17618,7 @@ modality-0157,modality,time,2,0,0.0
 modality-0157,modality,validity,2,0,0.0
 modality-0157,modality,scope,2,0,0.0
 modality-0157,modality,modality,2,2,1.0
-modality-0157,modality,source_status,2,1,0.5
+modality-0157,modality,source_status,2,2,1.0
 modality-0157,modality,observer_knowledge,2,2,1.0
 modality-0157,modality,world,2,2,1.0
 modality-0158,modality,actor,2,0,0.0
@@ -17636,7 +17636,7 @@ modality-0159,modality,time,2,0,0.0
 modality-0159,modality,validity,2,0,0.0
 modality-0159,modality,scope,2,0,0.0
 modality-0159,modality,modality,2,2,1.0
-modality-0159,modality,source_status,2,1,0.5
+modality-0159,modality,source_status,2,2,1.0
 modality-0159,modality,observer_knowledge,2,2,1.0
 modality-0159,modality,world,2,2,1.0
 modality-0160,modality,actor,2,0,0.0
@@ -17654,7 +17654,7 @@ modality-0161,modality,time,2,0,0.0
 modality-0161,modality,validity,2,0,0.0
 modality-0161,modality,scope,2,0,0.0
 modality-0161,modality,modality,2,2,1.0
-modality-0161,modality,source_status,2,1,0.5
+modality-0161,modality,source_status,2,2,1.0
 modality-0161,modality,observer_knowledge,2,2,1.0
 modality-0161,modality,world,2,2,1.0
 modality-0162,modality,actor,2,0,0.0
@@ -17672,7 +17672,7 @@ modality-0163,modality,time,2,0,0.0
 modality-0163,modality,validity,2,0,0.0
 modality-0163,modality,scope,2,0,0.0
 modality-0163,modality,modality,2,2,1.0
-modality-0163,modality,source_status,2,1,0.5
+modality-0163,modality,source_status,2,2,1.0
 modality-0163,modality,observer_knowledge,2,2,1.0
 modality-0163,modality,world,2,2,1.0
 modality-0164,modality,actor,2,0,0.0
@@ -17690,7 +17690,7 @@ modality-0165,modality,time,2,0,0.0
 modality-0165,modality,validity,2,0,0.0
 modality-0165,modality,scope,2,0,0.0
 modality-0165,modality,modality,2,2,1.0
-modality-0165,modality,source_status,2,1,0.5
+modality-0165,modality,source_status,2,2,1.0
 modality-0165,modality,observer_knowledge,2,2,1.0
 modality-0165,modality,world,2,2,1.0
 modality-0166,modality,actor,2,0,0.0
@@ -17708,7 +17708,7 @@ modality-0167,modality,time,2,0,0.0
 modality-0167,modality,validity,2,0,0.0
 modality-0167,modality,scope,2,0,0.0
 modality-0167,modality,modality,2,2,1.0
-modality-0167,modality,source_status,2,1,0.5
+modality-0167,modality,source_status,2,2,1.0
 modality-0167,modality,observer_knowledge,2,2,1.0
 modality-0167,modality,world,2,2,1.0
 modality-0168,modality,actor,2,0,0.0
@@ -17726,7 +17726,7 @@ modality-0169,modality,time,2,0,0.0
 modality-0169,modality,validity,2,0,0.0
 modality-0169,modality,scope,2,0,0.0
 modality-0169,modality,modality,2,2,1.0
-modality-0169,modality,source_status,2,1,0.5
+modality-0169,modality,source_status,2,2,1.0
 modality-0169,modality,observer_knowledge,2,2,1.0
 modality-0169,modality,world,2,2,1.0
 modality-0170,modality,actor,2,0,0.0
@@ -17744,7 +17744,7 @@ modality-0171,modality,time,2,0,0.0
 modality-0171,modality,validity,2,0,0.0
 modality-0171,modality,scope,2,0,0.0
 modality-0171,modality,modality,2,2,1.0
-modality-0171,modality,source_status,2,1,0.5
+modality-0171,modality,source_status,2,2,1.0
 modality-0171,modality,observer_knowledge,2,2,1.0
 modality-0171,modality,world,2,2,1.0
 modality-0172,modality,actor,2,0,0.0
@@ -17762,7 +17762,7 @@ modality-0173,modality,time,2,0,0.0
 modality-0173,modality,validity,2,0,0.0
 modality-0173,modality,scope,2,0,0.0
 modality-0173,modality,modality,2,2,1.0
-modality-0173,modality,source_status,2,1,0.5
+modality-0173,modality,source_status,2,2,1.0
 modality-0173,modality,observer_knowledge,2,2,1.0
 modality-0173,modality,world,2,2,1.0
 modality-0174,modality,actor,2,0,0.0
@@ -17780,7 +17780,7 @@ modality-0175,modality,time,2,0,0.0
 modality-0175,modality,validity,2,0,0.0
 modality-0175,modality,scope,2,0,0.0
 modality-0175,modality,modality,2,2,1.0
-modality-0175,modality,source_status,2,1,0.5
+modality-0175,modality,source_status,2,2,1.0
 modality-0175,modality,observer_knowledge,2,2,1.0
 modality-0175,modality,world,2,2,1.0
 modality-0176,modality,actor,2,0,0.0
@@ -17798,7 +17798,7 @@ modality-0177,modality,time,2,0,0.0
 modality-0177,modality,validity,2,0,0.0
 modality-0177,modality,scope,2,0,0.0
 modality-0177,modality,modality,2,2,1.0
-modality-0177,modality,source_status,2,1,0.5
+modality-0177,modality,source_status,2,2,1.0
 modality-0177,modality,observer_knowledge,2,2,1.0
 modality-0177,modality,world,2,2,1.0
 modality-0178,modality,actor,2,0,0.0
@@ -17816,7 +17816,7 @@ modality-0179,modality,time,2,0,0.0
 modality-0179,modality,validity,2,0,0.0
 modality-0179,modality,scope,2,0,0.0
 modality-0179,modality,modality,2,2,1.0
-modality-0179,modality,source_status,2,1,0.5
+modality-0179,modality,source_status,2,2,1.0
 modality-0179,modality,observer_knowledge,2,2,1.0
 modality-0179,modality,world,2,2,1.0
 modality-0180,modality,actor,2,0,0.0
@@ -17834,7 +17834,7 @@ modality-0181,modality,time,2,0,0.0
 modality-0181,modality,validity,2,0,0.0
 modality-0181,modality,scope,2,0,0.0
 modality-0181,modality,modality,2,2,1.0
-modality-0181,modality,source_status,2,1,0.5
+modality-0181,modality,source_status,2,2,1.0
 modality-0181,modality,observer_knowledge,2,2,1.0
 modality-0181,modality,world,2,2,1.0
 modality-0182,modality,actor,2,0,0.0
@@ -17852,7 +17852,7 @@ modality-0183,modality,time,2,0,0.0
 modality-0183,modality,validity,2,0,0.0
 modality-0183,modality,scope,2,0,0.0
 modality-0183,modality,modality,2,2,1.0
-modality-0183,modality,source_status,2,1,0.5
+modality-0183,modality,source_status,2,2,1.0
 modality-0183,modality,observer_knowledge,2,2,1.0
 modality-0183,modality,world,2,2,1.0
 modality-0184,modality,actor,2,0,0.0
@@ -17870,7 +17870,7 @@ modality-0185,modality,time,2,0,0.0
 modality-0185,modality,validity,2,0,0.0
 modality-0185,modality,scope,2,0,0.0
 modality-0185,modality,modality,2,2,1.0
-modality-0185,modality,source_status,2,1,0.5
+modality-0185,modality,source_status,2,2,1.0
 modality-0185,modality,observer_knowledge,2,2,1.0
 modality-0185,modality,world,2,2,1.0
 modality-0186,modality,actor,2,0,0.0
@@ -17888,7 +17888,7 @@ modality-0187,modality,time,2,0,0.0
 modality-0187,modality,validity,2,0,0.0
 modality-0187,modality,scope,2,0,0.0
 modality-0187,modality,modality,2,2,1.0
-modality-0187,modality,source_status,2,1,0.5
+modality-0187,modality,source_status,2,2,1.0
 modality-0187,modality,observer_knowledge,2,2,1.0
 modality-0187,modality,world,2,2,1.0
 modality-0188,modality,actor,2,0,0.0
@@ -17906,7 +17906,7 @@ modality-0189,modality,time,2,0,0.0
 modality-0189,modality,validity,2,0,0.0
 modality-0189,modality,scope,2,0,0.0
 modality-0189,modality,modality,2,2,1.0
-modality-0189,modality,source_status,2,1,0.5
+modality-0189,modality,source_status,2,2,1.0
 modality-0189,modality,observer_knowledge,2,2,1.0
 modality-0189,modality,world,2,2,1.0
 modality-0190,modality,actor,2,0,0.0
@@ -17924,7 +17924,7 @@ modality-0191,modality,time,2,0,0.0
 modality-0191,modality,validity,2,0,0.0
 modality-0191,modality,scope,2,0,0.0
 modality-0191,modality,modality,2,2,1.0
-modality-0191,modality,source_status,2,1,0.5
+modality-0191,modality,source_status,2,2,1.0
 modality-0191,modality,observer_knowledge,2,2,1.0
 modality-0191,modality,world,2,2,1.0
 modality-0192,modality,actor,2,0,0.0
@@ -17942,7 +17942,7 @@ modality-0193,modality,time,2,0,0.0
 modality-0193,modality,validity,2,0,0.0
 modality-0193,modality,scope,2,0,0.0
 modality-0193,modality,modality,2,2,1.0
-modality-0193,modality,source_status,2,1,0.5
+modality-0193,modality,source_status,2,2,1.0
 modality-0193,modality,observer_knowledge,2,2,1.0
 modality-0193,modality,world,2,2,1.0
 modality-0194,modality,actor,2,0,0.0
@@ -17960,7 +17960,7 @@ modality-0195,modality,time,2,0,0.0
 modality-0195,modality,validity,2,0,0.0
 modality-0195,modality,scope,2,0,0.0
 modality-0195,modality,modality,2,2,1.0
-modality-0195,modality,source_status,2,1,0.5
+modality-0195,modality,source_status,2,2,1.0
 modality-0195,modality,observer_knowledge,2,2,1.0
 modality-0195,modality,world,2,2,1.0
 modality-0196,modality,actor,2,0,0.0
@@ -17978,7 +17978,7 @@ modality-0197,modality,time,2,0,0.0
 modality-0197,modality,validity,2,0,0.0
 modality-0197,modality,scope,2,0,0.0
 modality-0197,modality,modality,2,2,1.0
-modality-0197,modality,source_status,2,1,0.5
+modality-0197,modality,source_status,2,2,1.0
 modality-0197,modality,observer_knowledge,2,2,1.0
 modality-0197,modality,world,2,2,1.0
 modality-0198,modality,actor,2,0,0.0
@@ -17996,7 +17996,7 @@ modality-0199,modality,time,2,0,0.0
 modality-0199,modality,validity,2,0,0.0
 modality-0199,modality,scope,2,0,0.0
 modality-0199,modality,modality,2,2,1.0
-modality-0199,modality,source_status,2,1,0.5
+modality-0199,modality,source_status,2,2,1.0
 modality-0199,modality,observer_knowledge,2,2,1.0
 modality-0199,modality,world,2,2,1.0
 modality-0200,modality,actor,2,0,0.0
@@ -18014,7 +18014,7 @@ modality-0201,modality,time,2,0,0.0
 modality-0201,modality,validity,2,0,0.0
 modality-0201,modality,scope,2,0,0.0
 modality-0201,modality,modality,2,2,1.0
-modality-0201,modality,source_status,2,1,0.5
+modality-0201,modality,source_status,2,2,1.0
 modality-0201,modality,observer_knowledge,2,2,1.0
 modality-0201,modality,world,2,2,1.0
 modality-0202,modality,actor,2,0,0.0
@@ -18032,7 +18032,7 @@ modality-0203,modality,time,2,0,0.0
 modality-0203,modality,validity,2,0,0.0
 modality-0203,modality,scope,2,0,0.0
 modality-0203,modality,modality,2,2,1.0
-modality-0203,modality,source_status,2,1,0.5
+modality-0203,modality,source_status,2,2,1.0
 modality-0203,modality,observer_knowledge,2,2,1.0
 modality-0203,modality,world,2,2,1.0
 modality-0204,modality,actor,2,0,0.0
@@ -18050,7 +18050,7 @@ modality-0205,modality,time,2,0,0.0
 modality-0205,modality,validity,2,0,0.0
 modality-0205,modality,scope,2,0,0.0
 modality-0205,modality,modality,2,2,1.0
-modality-0205,modality,source_status,2,1,0.5
+modality-0205,modality,source_status,2,2,1.0
 modality-0205,modality,observer_knowledge,2,2,1.0
 modality-0205,modality,world,2,2,1.0
 modality-0206,modality,actor,2,0,0.0
@@ -18068,7 +18068,7 @@ modality-0207,modality,time,2,0,0.0
 modality-0207,modality,validity,2,0,0.0
 modality-0207,modality,scope,2,0,0.0
 modality-0207,modality,modality,2,2,1.0
-modality-0207,modality,source_status,2,1,0.5
+modality-0207,modality,source_status,2,2,1.0
 modality-0207,modality,observer_knowledge,2,2,1.0
 modality-0207,modality,world,2,2,1.0
 modality-0208,modality,actor,2,0,0.0
@@ -18086,7 +18086,7 @@ modality-0209,modality,time,2,0,0.0
 modality-0209,modality,validity,2,0,0.0
 modality-0209,modality,scope,2,0,0.0
 modality-0209,modality,modality,2,2,1.0
-modality-0209,modality,source_status,2,1,0.5
+modality-0209,modality,source_status,2,2,1.0
 modality-0209,modality,observer_knowledge,2,2,1.0
 modality-0209,modality,world,2,2,1.0
 modality-0210,modality,actor,2,0,0.0
@@ -18104,7 +18104,7 @@ modality-0211,modality,time,2,0,0.0
 modality-0211,modality,validity,2,0,0.0
 modality-0211,modality,scope,2,0,0.0
 modality-0211,modality,modality,2,2,1.0
-modality-0211,modality,source_status,2,1,0.5
+modality-0211,modality,source_status,2,2,1.0
 modality-0211,modality,observer_knowledge,2,2,1.0
 modality-0211,modality,world,2,2,1.0
 modality-0212,modality,actor,2,0,0.0
@@ -18122,7 +18122,7 @@ modality-0213,modality,time,2,0,0.0
 modality-0213,modality,validity,2,0,0.0
 modality-0213,modality,scope,2,0,0.0
 modality-0213,modality,modality,2,2,1.0
-modality-0213,modality,source_status,2,1,0.5
+modality-0213,modality,source_status,2,2,1.0
 modality-0213,modality,observer_knowledge,2,2,1.0
 modality-0213,modality,world,2,2,1.0
 modality-0214,modality,actor,2,0,0.0
@@ -18140,7 +18140,7 @@ modality-0215,modality,time,2,0,0.0
 modality-0215,modality,validity,2,0,0.0
 modality-0215,modality,scope,2,0,0.0
 modality-0215,modality,modality,2,2,1.0
-modality-0215,modality,source_status,2,1,0.5
+modality-0215,modality,source_status,2,2,1.0
 modality-0215,modality,observer_knowledge,2,2,1.0
 modality-0215,modality,world,2,2,1.0
 modality-0216,modality,actor,2,0,0.0
@@ -18158,7 +18158,7 @@ modality-0217,modality,time,2,0,0.0
 modality-0217,modality,validity,2,0,0.0
 modality-0217,modality,scope,2,0,0.0
 modality-0217,modality,modality,2,2,1.0
-modality-0217,modality,source_status,2,1,0.5
+modality-0217,modality,source_status,2,2,1.0
 modality-0217,modality,observer_knowledge,2,2,1.0
 modality-0217,modality,world,2,2,1.0
 modality-0218,modality,actor,2,0,0.0
@@ -18176,7 +18176,7 @@ modality-0219,modality,time,2,0,0.0
 modality-0219,modality,validity,2,0,0.0
 modality-0219,modality,scope,2,0,0.0
 modality-0219,modality,modality,2,2,1.0
-modality-0219,modality,source_status,2,1,0.5
+modality-0219,modality,source_status,2,2,1.0
 modality-0219,modality,observer_knowledge,2,2,1.0
 modality-0219,modality,world,2,2,1.0
 modality-0220,modality,actor,2,0,0.0
@@ -18194,7 +18194,7 @@ modality-0221,modality,time,2,0,0.0
 modality-0221,modality,validity,2,0,0.0
 modality-0221,modality,scope,2,0,0.0
 modality-0221,modality,modality,2,2,1.0
-modality-0221,modality,source_status,2,1,0.5
+modality-0221,modality,source_status,2,2,1.0
 modality-0221,modality,observer_knowledge,2,2,1.0
 modality-0221,modality,world,2,2,1.0
 modality-0222,modality,actor,2,0,0.0
@@ -18212,7 +18212,7 @@ modality-0223,modality,time,2,0,0.0
 modality-0223,modality,validity,2,0,0.0
 modality-0223,modality,scope,2,0,0.0
 modality-0223,modality,modality,2,2,1.0
-modality-0223,modality,source_status,2,1,0.5
+modality-0223,modality,source_status,2,2,1.0
 modality-0223,modality,observer_knowledge,2,2,1.0
 modality-0223,modality,world,2,2,1.0
 modality-0224,modality,actor,2,0,0.0
@@ -18230,7 +18230,7 @@ modality-0225,modality,time,2,0,0.0
 modality-0225,modality,validity,2,0,0.0
 modality-0225,modality,scope,2,0,0.0
 modality-0225,modality,modality,2,2,1.0
-modality-0225,modality,source_status,2,1,0.5
+modality-0225,modality,source_status,2,2,1.0
 modality-0225,modality,observer_knowledge,2,2,1.0
 modality-0225,modality,world,2,2,1.0
 modality-0226,modality,actor,2,0,0.0
@@ -18248,7 +18248,7 @@ modality-0227,modality,time,2,0,0.0
 modality-0227,modality,validity,2,0,0.0
 modality-0227,modality,scope,2,0,0.0
 modality-0227,modality,modality,2,2,1.0
-modality-0227,modality,source_status,2,1,0.5
+modality-0227,modality,source_status,2,2,1.0
 modality-0227,modality,observer_knowledge,2,2,1.0
 modality-0227,modality,world,2,2,1.0
 modality-0228,modality,actor,2,0,0.0
@@ -18266,7 +18266,7 @@ modality-0229,modality,time,2,0,0.0
 modality-0229,modality,validity,2,0,0.0
 modality-0229,modality,scope,2,0,0.0
 modality-0229,modality,modality,2,2,1.0
-modality-0229,modality,source_status,2,1,0.5
+modality-0229,modality,source_status,2,2,1.0
 modality-0229,modality,observer_knowledge,2,2,1.0
 modality-0229,modality,world,2,2,1.0
 modality-0230,modality,actor,2,0,0.0
@@ -18284,7 +18284,7 @@ modality-0231,modality,time,2,0,0.0
 modality-0231,modality,validity,2,0,0.0
 modality-0231,modality,scope,2,0,0.0
 modality-0231,modality,modality,2,2,1.0
-modality-0231,modality,source_status,2,1,0.5
+modality-0231,modality,source_status,2,2,1.0
 modality-0231,modality,observer_knowledge,2,2,1.0
 modality-0231,modality,world,2,2,1.0
 modality-0232,modality,actor,2,0,0.0
@@ -18302,7 +18302,7 @@ modality-0233,modality,time,2,0,0.0
 modality-0233,modality,validity,2,0,0.0
 modality-0233,modality,scope,2,0,0.0
 modality-0233,modality,modality,2,2,1.0
-modality-0233,modality,source_status,2,1,0.5
+modality-0233,modality,source_status,2,2,1.0
 modality-0233,modality,observer_knowledge,2,2,1.0
 modality-0233,modality,world,2,2,1.0
 modality-0234,modality,actor,2,0,0.0
@@ -18320,7 +18320,7 @@ modality-0235,modality,time,2,0,0.0
 modality-0235,modality,validity,2,0,0.0
 modality-0235,modality,scope,2,0,0.0
 modality-0235,modality,modality,2,2,1.0
-modality-0235,modality,source_status,2,1,0.5
+modality-0235,modality,source_status,2,2,1.0
 modality-0235,modality,observer_knowledge,2,2,1.0
 modality-0235,modality,world,2,2,1.0
 modality-0236,modality,actor,2,0,0.0
@@ -18338,7 +18338,7 @@ modality-0237,modality,time,2,0,0.0
 modality-0237,modality,validity,2,0,0.0
 modality-0237,modality,scope,2,0,0.0
 modality-0237,modality,modality,2,2,1.0
-modality-0237,modality,source_status,2,1,0.5
+modality-0237,modality,source_status,2,2,1.0
 modality-0237,modality,observer_knowledge,2,2,1.0
 modality-0237,modality,world,2,2,1.0
 modality-0238,modality,actor,2,0,0.0
@@ -18356,7 +18356,7 @@ modality-0239,modality,time,2,0,0.0
 modality-0239,modality,validity,2,0,0.0
 modality-0239,modality,scope,2,0,0.0
 modality-0239,modality,modality,2,2,1.0
-modality-0239,modality,source_status,2,1,0.5
+modality-0239,modality,source_status,2,2,1.0
 modality-0239,modality,observer_knowledge,2,2,1.0
 modality-0239,modality,world,2,2,1.0
 modality-0240,modality,actor,2,0,0.0
@@ -18374,7 +18374,7 @@ modality-0241,modality,time,2,0,0.0
 modality-0241,modality,validity,2,0,0.0
 modality-0241,modality,scope,2,0,0.0
 modality-0241,modality,modality,2,2,1.0
-modality-0241,modality,source_status,2,1,0.5
+modality-0241,modality,source_status,2,2,1.0
 modality-0241,modality,observer_knowledge,2,2,1.0
 modality-0241,modality,world,2,2,1.0
 modality-0242,modality,actor,2,0,0.0
@@ -18392,7 +18392,7 @@ modality-0243,modality,time,2,0,0.0
 modality-0243,modality,validity,2,0,0.0
 modality-0243,modality,scope,2,0,0.0
 modality-0243,modality,modality,2,2,1.0
-modality-0243,modality,source_status,2,1,0.5
+modality-0243,modality,source_status,2,2,1.0
 modality-0243,modality,observer_knowledge,2,2,1.0
 modality-0243,modality,world,2,2,1.0
 modality-0244,modality,actor,2,0,0.0
@@ -18410,7 +18410,7 @@ modality-0245,modality,time,2,0,0.0
 modality-0245,modality,validity,2,0,0.0
 modality-0245,modality,scope,2,0,0.0
 modality-0245,modality,modality,2,2,1.0
-modality-0245,modality,source_status,2,1,0.5
+modality-0245,modality,source_status,2,2,1.0
 modality-0245,modality,observer_knowledge,2,2,1.0
 modality-0245,modality,world,2,2,1.0
 modality-0246,modality,actor,2,0,0.0
@@ -18428,7 +18428,7 @@ modality-0247,modality,time,2,0,0.0
 modality-0247,modality,validity,2,0,0.0
 modality-0247,modality,scope,2,0,0.0
 modality-0247,modality,modality,2,2,1.0
-modality-0247,modality,source_status,2,1,0.5
+modality-0247,modality,source_status,2,2,1.0
 modality-0247,modality,observer_knowledge,2,2,1.0
 modality-0247,modality,world,2,2,1.0
 modality-0248,modality,actor,2,0,0.0
@@ -18446,7 +18446,7 @@ modality-0249,modality,time,2,0,0.0
 modality-0249,modality,validity,2,0,0.0
 modality-0249,modality,scope,2,0,0.0
 modality-0249,modality,modality,2,2,1.0
-modality-0249,modality,source_status,2,1,0.5
+modality-0249,modality,source_status,2,2,1.0
 modality-0249,modality,observer_knowledge,2,2,1.0
 modality-0249,modality,world,2,2,1.0
 modality-0250,modality,actor,2,0,0.0
@@ -18464,7 +18464,7 @@ modality-0251,modality,time,2,0,0.0
 modality-0251,modality,validity,2,0,0.0
 modality-0251,modality,scope,2,0,0.0
 modality-0251,modality,modality,2,2,1.0
-modality-0251,modality,source_status,2,1,0.5
+modality-0251,modality,source_status,2,2,1.0
 modality-0251,modality,observer_knowledge,2,2,1.0
 modality-0251,modality,world,2,2,1.0
 modality-0252,modality,actor,2,0,0.0
@@ -18482,7 +18482,7 @@ modality-0253,modality,time,2,0,0.0
 modality-0253,modality,validity,2,0,0.0
 modality-0253,modality,scope,2,0,0.0
 modality-0253,modality,modality,2,2,1.0
-modality-0253,modality,source_status,2,1,0.5
+modality-0253,modality,source_status,2,2,1.0
 modality-0253,modality,observer_knowledge,2,2,1.0
 modality-0253,modality,world,2,2,1.0
 modality-0254,modality,actor,2,0,0.0
@@ -18500,7 +18500,7 @@ modality-0255,modality,time,2,0,0.0
 modality-0255,modality,validity,2,0,0.0
 modality-0255,modality,scope,2,0,0.0
 modality-0255,modality,modality,2,2,1.0
-modality-0255,modality,source_status,2,1,0.5
+modality-0255,modality,source_status,2,2,1.0
 modality-0255,modality,observer_knowledge,2,2,1.0
 modality-0255,modality,world,2,2,1.0
 modality-0256,modality,actor,2,0,0.0
@@ -18518,7 +18518,7 @@ modality-0257,modality,time,2,0,0.0
 modality-0257,modality,validity,2,0,0.0
 modality-0257,modality,scope,2,0,0.0
 modality-0257,modality,modality,2,2,1.0
-modality-0257,modality,source_status,2,1,0.5
+modality-0257,modality,source_status,2,2,1.0
 modality-0257,modality,observer_knowledge,2,2,1.0
 modality-0257,modality,world,2,2,1.0
 modality-0258,modality,actor,2,0,0.0
@@ -18536,7 +18536,7 @@ modality-0259,modality,time,2,0,0.0
 modality-0259,modality,validity,2,0,0.0
 modality-0259,modality,scope,2,0,0.0
 modality-0259,modality,modality,2,2,1.0
-modality-0259,modality,source_status,2,1,0.5
+modality-0259,modality,source_status,2,2,1.0
 modality-0259,modality,observer_knowledge,2,2,1.0
 modality-0259,modality,world,2,2,1.0
 modality-0260,modality,actor,2,0,0.0
@@ -18554,7 +18554,7 @@ modality-0261,modality,time,2,0,0.0
 modality-0261,modality,validity,2,0,0.0
 modality-0261,modality,scope,2,0,0.0
 modality-0261,modality,modality,2,2,1.0
-modality-0261,modality,source_status,2,1,0.5
+modality-0261,modality,source_status,2,2,1.0
 modality-0261,modality,observer_knowledge,2,2,1.0
 modality-0261,modality,world,2,2,1.0
 modality-0262,modality,actor,2,0,0.0
@@ -18572,7 +18572,7 @@ modality-0263,modality,time,2,0,0.0
 modality-0263,modality,validity,2,0,0.0
 modality-0263,modality,scope,2,0,0.0
 modality-0263,modality,modality,2,2,1.0
-modality-0263,modality,source_status,2,1,0.5
+modality-0263,modality,source_status,2,2,1.0
 modality-0263,modality,observer_knowledge,2,2,1.0
 modality-0263,modality,world,2,2,1.0
 modality-0264,modality,actor,2,0,0.0
@@ -18590,7 +18590,7 @@ modality-0265,modality,time,2,0,0.0
 modality-0265,modality,validity,2,0,0.0
 modality-0265,modality,scope,2,0,0.0
 modality-0265,modality,modality,2,2,1.0
-modality-0265,modality,source_status,2,1,0.5
+modality-0265,modality,source_status,2,2,1.0
 modality-0265,modality,observer_knowledge,2,2,1.0
 modality-0265,modality,world,2,2,1.0
 modality-0266,modality,actor,2,0,0.0
@@ -18608,7 +18608,7 @@ modality-0267,modality,time,2,0,0.0
 modality-0267,modality,validity,2,0,0.0
 modality-0267,modality,scope,2,0,0.0
 modality-0267,modality,modality,2,2,1.0
-modality-0267,modality,source_status,2,1,0.5
+modality-0267,modality,source_status,2,2,1.0
 modality-0267,modality,observer_knowledge,2,2,1.0
 modality-0267,modality,world,2,2,1.0
 modality-0268,modality,actor,2,0,0.0
@@ -18626,7 +18626,7 @@ modality-0269,modality,time,2,0,0.0
 modality-0269,modality,validity,2,0,0.0
 modality-0269,modality,scope,2,0,0.0
 modality-0269,modality,modality,2,2,1.0
-modality-0269,modality,source_status,2,1,0.5
+modality-0269,modality,source_status,2,2,1.0
 modality-0269,modality,observer_knowledge,2,2,1.0
 modality-0269,modality,world,2,2,1.0
 modality-0270,modality,actor,2,0,0.0
@@ -18644,7 +18644,7 @@ modality-0271,modality,time,2,0,0.0
 modality-0271,modality,validity,2,0,0.0
 modality-0271,modality,scope,2,0,0.0
 modality-0271,modality,modality,2,2,1.0
-modality-0271,modality,source_status,2,1,0.5
+modality-0271,modality,source_status,2,2,1.0
 modality-0271,modality,observer_knowledge,2,2,1.0
 modality-0271,modality,world,2,2,1.0
 modality-0272,modality,actor,2,0,0.0
@@ -18662,7 +18662,7 @@ modality-0273,modality,time,2,0,0.0
 modality-0273,modality,validity,2,0,0.0
 modality-0273,modality,scope,2,0,0.0
 modality-0273,modality,modality,2,2,1.0
-modality-0273,modality,source_status,2,1,0.5
+modality-0273,modality,source_status,2,2,1.0
 modality-0273,modality,observer_knowledge,2,2,1.0
 modality-0273,modality,world,2,2,1.0
 modality-0274,modality,actor,2,0,0.0
@@ -18680,7 +18680,7 @@ modality-0275,modality,time,2,0,0.0
 modality-0275,modality,validity,2,0,0.0
 modality-0275,modality,scope,2,0,0.0
 modality-0275,modality,modality,2,2,1.0
-modality-0275,modality,source_status,2,1,0.5
+modality-0275,modality,source_status,2,2,1.0
 modality-0275,modality,observer_knowledge,2,2,1.0
 modality-0275,modality,world,2,2,1.0
 modality-0276,modality,actor,2,0,0.0
@@ -18698,7 +18698,7 @@ modality-0277,modality,time,2,0,0.0
 modality-0277,modality,validity,2,0,0.0
 modality-0277,modality,scope,2,0,0.0
 modality-0277,modality,modality,2,2,1.0
-modality-0277,modality,source_status,2,1,0.5
+modality-0277,modality,source_status,2,2,1.0
 modality-0277,modality,observer_knowledge,2,2,1.0
 modality-0277,modality,world,2,2,1.0
 modality-0278,modality,actor,2,0,0.0
@@ -18716,7 +18716,7 @@ modality-0279,modality,time,2,0,0.0
 modality-0279,modality,validity,2,0,0.0
 modality-0279,modality,scope,2,0,0.0
 modality-0279,modality,modality,2,2,1.0
-modality-0279,modality,source_status,2,1,0.5
+modality-0279,modality,source_status,2,2,1.0
 modality-0279,modality,observer_knowledge,2,2,1.0
 modality-0279,modality,world,2,2,1.0
 modality-0280,modality,actor,2,0,0.0
@@ -18734,7 +18734,7 @@ modality-0281,modality,time,2,0,0.0
 modality-0281,modality,validity,2,0,0.0
 modality-0281,modality,scope,2,0,0.0
 modality-0281,modality,modality,2,2,1.0
-modality-0281,modality,source_status,2,1,0.5
+modality-0281,modality,source_status,2,2,1.0
 modality-0281,modality,observer_knowledge,2,2,1.0
 modality-0281,modality,world,2,2,1.0
 modality-0282,modality,actor,2,0,0.0
@@ -18752,7 +18752,7 @@ modality-0283,modality,time,2,0,0.0
 modality-0283,modality,validity,2,0,0.0
 modality-0283,modality,scope,2,0,0.0
 modality-0283,modality,modality,2,2,1.0
-modality-0283,modality,source_status,2,1,0.5
+modality-0283,modality,source_status,2,2,1.0
 modality-0283,modality,observer_knowledge,2,2,1.0
 modality-0283,modality,world,2,2,1.0
 modality-0284,modality,actor,2,0,0.0
@@ -18770,7 +18770,7 @@ modality-0285,modality,time,2,0,0.0
 modality-0285,modality,validity,2,0,0.0
 modality-0285,modality,scope,2,0,0.0
 modality-0285,modality,modality,2,2,1.0
-modality-0285,modality,source_status,2,1,0.5
+modality-0285,modality,source_status,2,2,1.0
 modality-0285,modality,observer_knowledge,2,2,1.0
 modality-0285,modality,world,2,2,1.0
 modality-0286,modality,actor,2,0,0.0
@@ -18788,7 +18788,7 @@ modality-0287,modality,time,2,0,0.0
 modality-0287,modality,validity,2,0,0.0
 modality-0287,modality,scope,2,0,0.0
 modality-0287,modality,modality,2,2,1.0
-modality-0287,modality,source_status,2,1,0.5
+modality-0287,modality,source_status,2,2,1.0
 modality-0287,modality,observer_knowledge,2,2,1.0
 modality-0287,modality,world,2,2,1.0
 modality-0288,modality,actor,2,0,0.0
@@ -18806,7 +18806,7 @@ modality-0289,modality,time,2,0,0.0
 modality-0289,modality,validity,2,0,0.0
 modality-0289,modality,scope,2,0,0.0
 modality-0289,modality,modality,2,2,1.0
-modality-0289,modality,source_status,2,1,0.5
+modality-0289,modality,source_status,2,2,1.0
 modality-0289,modality,observer_knowledge,2,2,1.0
 modality-0289,modality,world,2,2,1.0
 modality-0290,modality,actor,2,0,0.0
@@ -18824,7 +18824,7 @@ modality-0291,modality,time,2,0,0.0
 modality-0291,modality,validity,2,0,0.0
 modality-0291,modality,scope,2,0,0.0
 modality-0291,modality,modality,2,2,1.0
-modality-0291,modality,source_status,2,1,0.5
+modality-0291,modality,source_status,2,2,1.0
 modality-0291,modality,observer_knowledge,2,2,1.0
 modality-0291,modality,world,2,2,1.0
 modality-0292,modality,actor,2,0,0.0
@@ -18842,7 +18842,7 @@ modality-0293,modality,time,2,0,0.0
 modality-0293,modality,validity,2,0,0.0
 modality-0293,modality,scope,2,0,0.0
 modality-0293,modality,modality,2,2,1.0
-modality-0293,modality,source_status,2,1,0.5
+modality-0293,modality,source_status,2,2,1.0
 modality-0293,modality,observer_knowledge,2,2,1.0
 modality-0293,modality,world,2,2,1.0
 modality-0294,modality,actor,2,0,0.0
@@ -18860,7 +18860,7 @@ modality-0295,modality,time,2,0,0.0
 modality-0295,modality,validity,2,0,0.0
 modality-0295,modality,scope,2,0,0.0
 modality-0295,modality,modality,2,2,1.0
-modality-0295,modality,source_status,2,1,0.5
+modality-0295,modality,source_status,2,2,1.0
 modality-0295,modality,observer_knowledge,2,2,1.0
 modality-0295,modality,world,2,2,1.0
 modality-0296,modality,actor,2,0,0.0
@@ -18878,7 +18878,7 @@ modality-0297,modality,time,2,0,0.0
 modality-0297,modality,validity,2,0,0.0
 modality-0297,modality,scope,2,0,0.0
 modality-0297,modality,modality,2,2,1.0
-modality-0297,modality,source_status,2,1,0.5
+modality-0297,modality,source_status,2,2,1.0
 modality-0297,modality,observer_knowledge,2,2,1.0
 modality-0297,modality,world,2,2,1.0
 modality-0298,modality,actor,2,0,0.0
@@ -18896,7 +18896,7 @@ modality-0299,modality,time,2,0,0.0
 modality-0299,modality,validity,2,0,0.0
 modality-0299,modality,scope,2,0,0.0
 modality-0299,modality,modality,2,2,1.0
-modality-0299,modality,source_status,2,1,0.5
+modality-0299,modality,source_status,2,2,1.0
 modality-0299,modality,observer_knowledge,2,2,1.0
 modality-0299,modality,world,2,2,1.0
 modality-0300,modality,actor,2,0,0.0
@@ -18914,7 +18914,7 @@ modality-0301,modality,time,2,0,0.0
 modality-0301,modality,validity,2,0,0.0
 modality-0301,modality,scope,2,0,0.0
 modality-0301,modality,modality,2,2,1.0
-modality-0301,modality,source_status,2,1,0.5
+modality-0301,modality,source_status,2,2,1.0
 modality-0301,modality,observer_knowledge,2,2,1.0
 modality-0301,modality,world,2,2,1.0
 modality-0302,modality,actor,2,0,0.0
@@ -18932,7 +18932,7 @@ modality-0303,modality,time,2,0,0.0
 modality-0303,modality,validity,2,0,0.0
 modality-0303,modality,scope,2,0,0.0
 modality-0303,modality,modality,2,2,1.0
-modality-0303,modality,source_status,2,1,0.5
+modality-0303,modality,source_status,2,2,1.0
 modality-0303,modality,observer_knowledge,2,2,1.0
 modality-0303,modality,world,2,2,1.0
 modality-0304,modality,actor,2,0,0.0
@@ -18950,7 +18950,7 @@ modality-0305,modality,time,2,0,0.0
 modality-0305,modality,validity,2,0,0.0
 modality-0305,modality,scope,2,0,0.0
 modality-0305,modality,modality,2,2,1.0
-modality-0305,modality,source_status,2,1,0.5
+modality-0305,modality,source_status,2,2,1.0
 modality-0305,modality,observer_knowledge,2,2,1.0
 modality-0305,modality,world,2,2,1.0
 modality-0306,modality,actor,2,0,0.0
@@ -18968,7 +18968,7 @@ modality-0307,modality,time,2,0,0.0
 modality-0307,modality,validity,2,0,0.0
 modality-0307,modality,scope,2,0,0.0
 modality-0307,modality,modality,2,2,1.0
-modality-0307,modality,source_status,2,1,0.5
+modality-0307,modality,source_status,2,2,1.0
 modality-0307,modality,observer_knowledge,2,2,1.0
 modality-0307,modality,world,2,2,1.0
 modality-0308,modality,actor,2,0,0.0
@@ -18986,7 +18986,7 @@ modality-0309,modality,time,2,0,0.0
 modality-0309,modality,validity,2,0,0.0
 modality-0309,modality,scope,2,0,0.0
 modality-0309,modality,modality,2,2,1.0
-modality-0309,modality,source_status,2,1,0.5
+modality-0309,modality,source_status,2,2,1.0
 modality-0309,modality,observer_knowledge,2,2,1.0
 modality-0309,modality,world,2,2,1.0
 modality-0310,modality,actor,2,0,0.0
@@ -19004,7 +19004,7 @@ modality-0311,modality,time,2,0,0.0
 modality-0311,modality,validity,2,0,0.0
 modality-0311,modality,scope,2,0,0.0
 modality-0311,modality,modality,2,2,1.0
-modality-0311,modality,source_status,2,1,0.5
+modality-0311,modality,source_status,2,2,1.0
 modality-0311,modality,observer_knowledge,2,2,1.0
 modality-0311,modality,world,2,2,1.0
 modality-0312,modality,actor,2,0,0.0
@@ -19022,7 +19022,7 @@ modality-0313,modality,time,2,0,0.0
 modality-0313,modality,validity,2,0,0.0
 modality-0313,modality,scope,2,0,0.0
 modality-0313,modality,modality,2,2,1.0
-modality-0313,modality,source_status,2,1,0.5
+modality-0313,modality,source_status,2,2,1.0
 modality-0313,modality,observer_knowledge,2,2,1.0
 modality-0313,modality,world,2,2,1.0
 modality-0314,modality,actor,2,0,0.0
@@ -19040,7 +19040,7 @@ modality-0315,modality,time,2,0,0.0
 modality-0315,modality,validity,2,0,0.0
 modality-0315,modality,scope,2,0,0.0
 modality-0315,modality,modality,2,2,1.0
-modality-0315,modality,source_status,2,1,0.5
+modality-0315,modality,source_status,2,2,1.0
 modality-0315,modality,observer_knowledge,2,2,1.0
 modality-0315,modality,world,2,2,1.0
 modality-0316,modality,actor,2,0,0.0
@@ -19058,7 +19058,7 @@ modality-0317,modality,time,2,0,0.0
 modality-0317,modality,validity,2,0,0.0
 modality-0317,modality,scope,2,0,0.0
 modality-0317,modality,modality,2,2,1.0
-modality-0317,modality,source_status,2,1,0.5
+modality-0317,modality,source_status,2,2,1.0
 modality-0317,modality,observer_knowledge,2,2,1.0
 modality-0317,modality,world,2,2,1.0
 modality-0318,modality,actor,2,0,0.0
@@ -19076,7 +19076,7 @@ modality-0319,modality,time,2,0,0.0
 modality-0319,modality,validity,2,0,0.0
 modality-0319,modality,scope,2,0,0.0
 modality-0319,modality,modality,2,2,1.0
-modality-0319,modality,source_status,2,1,0.5
+modality-0319,modality,source_status,2,2,1.0
 modality-0319,modality,observer_knowledge,2,2,1.0
 modality-0319,modality,world,2,2,1.0
 modality-0320,modality,actor,2,0,0.0
@@ -19094,7 +19094,7 @@ modality-0321,modality,time,2,0,0.0
 modality-0321,modality,validity,2,0,0.0
 modality-0321,modality,scope,2,0,0.0
 modality-0321,modality,modality,2,2,1.0
-modality-0321,modality,source_status,2,1,0.5
+modality-0321,modality,source_status,2,2,1.0
 modality-0321,modality,observer_knowledge,2,2,1.0
 modality-0321,modality,world,2,2,1.0
 modality-0322,modality,actor,2,0,0.0
@@ -19112,7 +19112,7 @@ modality-0323,modality,time,2,0,0.0
 modality-0323,modality,validity,2,0,0.0
 modality-0323,modality,scope,2,0,0.0
 modality-0323,modality,modality,2,2,1.0
-modality-0323,modality,source_status,2,1,0.5
+modality-0323,modality,source_status,2,2,1.0
 modality-0323,modality,observer_knowledge,2,2,1.0
 modality-0323,modality,world,2,2,1.0
 modality-0324,modality,actor,2,0,0.0
@@ -19130,7 +19130,7 @@ modality-0325,modality,time,2,0,0.0
 modality-0325,modality,validity,2,0,0.0
 modality-0325,modality,scope,2,0,0.0
 modality-0325,modality,modality,2,2,1.0
-modality-0325,modality,source_status,2,1,0.5
+modality-0325,modality,source_status,2,2,1.0
 modality-0325,modality,observer_knowledge,2,2,1.0
 modality-0325,modality,world,2,2,1.0
 modality-0326,modality,actor,2,0,0.0
@@ -19148,7 +19148,7 @@ modality-0327,modality,time,2,0,0.0
 modality-0327,modality,validity,2,0,0.0
 modality-0327,modality,scope,2,0,0.0
 modality-0327,modality,modality,2,2,1.0
-modality-0327,modality,source_status,2,1,0.5
+modality-0327,modality,source_status,2,2,1.0
 modality-0327,modality,observer_knowledge,2,2,1.0
 modality-0327,modality,world,2,2,1.0
 modality-0328,modality,actor,2,0,0.0
@@ -19166,7 +19166,7 @@ modality-0329,modality,time,2,0,0.0
 modality-0329,modality,validity,2,0,0.0
 modality-0329,modality,scope,2,0,0.0
 modality-0329,modality,modality,2,2,1.0
-modality-0329,modality,source_status,2,1,0.5
+modality-0329,modality,source_status,2,2,1.0
 modality-0329,modality,observer_knowledge,2,2,1.0
 modality-0329,modality,world,2,2,1.0
 modality-0330,modality,actor,2,0,0.0
@@ -19184,7 +19184,7 @@ modality-0331,modality,time,2,0,0.0
 modality-0331,modality,validity,2,0,0.0
 modality-0331,modality,scope,2,0,0.0
 modality-0331,modality,modality,2,2,1.0
-modality-0331,modality,source_status,2,1,0.5
+modality-0331,modality,source_status,2,2,1.0
 modality-0331,modality,observer_knowledge,2,2,1.0
 modality-0331,modality,world,2,2,1.0
 modality-0332,modality,actor,2,0,0.0
@@ -19202,7 +19202,7 @@ modality-0333,modality,time,2,0,0.0
 modality-0333,modality,validity,2,0,0.0
 modality-0333,modality,scope,2,0,0.0
 modality-0333,modality,modality,2,2,1.0
-modality-0333,modality,source_status,2,1,0.5
+modality-0333,modality,source_status,2,2,1.0
 modality-0333,modality,observer_knowledge,2,2,1.0
 modality-0333,modality,world,2,2,1.0
 modality-0334,modality,actor,2,0,0.0
@@ -19220,7 +19220,7 @@ modality-0335,modality,time,2,0,0.0
 modality-0335,modality,validity,2,0,0.0
 modality-0335,modality,scope,2,0,0.0
 modality-0335,modality,modality,2,2,1.0
-modality-0335,modality,source_status,2,1,0.5
+modality-0335,modality,source_status,2,2,1.0
 modality-0335,modality,observer_knowledge,2,2,1.0
 modality-0335,modality,world,2,2,1.0
 modality-0336,modality,actor,2,0,0.0
@@ -19238,7 +19238,7 @@ modality-0337,modality,time,2,0,0.0
 modality-0337,modality,validity,2,0,0.0
 modality-0337,modality,scope,2,0,0.0
 modality-0337,modality,modality,2,2,1.0
-modality-0337,modality,source_status,2,1,0.5
+modality-0337,modality,source_status,2,2,1.0
 modality-0337,modality,observer_knowledge,2,2,1.0
 modality-0337,modality,world,2,2,1.0
 modality-0338,modality,actor,2,0,0.0
@@ -19256,7 +19256,7 @@ modality-0339,modality,time,2,0,0.0
 modality-0339,modality,validity,2,0,0.0
 modality-0339,modality,scope,2,0,0.0
 modality-0339,modality,modality,2,2,1.0
-modality-0339,modality,source_status,2,1,0.5
+modality-0339,modality,source_status,2,2,1.0
 modality-0339,modality,observer_knowledge,2,2,1.0
 modality-0339,modality,world,2,2,1.0
 modality-0340,modality,actor,2,0,0.0
@@ -19274,7 +19274,7 @@ modality-0341,modality,time,2,0,0.0
 modality-0341,modality,validity,2,0,0.0
 modality-0341,modality,scope,2,0,0.0
 modality-0341,modality,modality,2,2,1.0
-modality-0341,modality,source_status,2,1,0.5
+modality-0341,modality,source_status,2,2,1.0
 modality-0341,modality,observer_knowledge,2,2,1.0
 modality-0341,modality,world,2,2,1.0
 modality-0342,modality,actor,2,0,0.0
@@ -19292,7 +19292,7 @@ modality-0343,modality,time,2,0,0.0
 modality-0343,modality,validity,2,0,0.0
 modality-0343,modality,scope,2,0,0.0
 modality-0343,modality,modality,2,2,1.0
-modality-0343,modality,source_status,2,1,0.5
+modality-0343,modality,source_status,2,2,1.0
 modality-0343,modality,observer_knowledge,2,2,1.0
 modality-0343,modality,world,2,2,1.0
 modality-0344,modality,actor,2,0,0.0
@@ -19310,7 +19310,7 @@ modality-0345,modality,time,2,0,0.0
 modality-0345,modality,validity,2,0,0.0
 modality-0345,modality,scope,2,0,0.0
 modality-0345,modality,modality,2,2,1.0
-modality-0345,modality,source_status,2,1,0.5
+modality-0345,modality,source_status,2,2,1.0
 modality-0345,modality,observer_knowledge,2,2,1.0
 modality-0345,modality,world,2,2,1.0
 modality-0346,modality,actor,2,0,0.0
@@ -19328,7 +19328,7 @@ modality-0347,modality,time,2,0,0.0
 modality-0347,modality,validity,2,0,0.0
 modality-0347,modality,scope,2,0,0.0
 modality-0347,modality,modality,2,2,1.0
-modality-0347,modality,source_status,2,1,0.5
+modality-0347,modality,source_status,2,2,1.0
 modality-0347,modality,observer_knowledge,2,2,1.0
 modality-0347,modality,world,2,2,1.0
 modality-0348,modality,actor,2,0,0.0
@@ -19346,7 +19346,7 @@ modality-0349,modality,time,2,0,0.0
 modality-0349,modality,validity,2,0,0.0
 modality-0349,modality,scope,2,0,0.0
 modality-0349,modality,modality,2,2,1.0
-modality-0349,modality,source_status,2,1,0.5
+modality-0349,modality,source_status,2,2,1.0
 modality-0349,modality,observer_knowledge,2,2,1.0
 modality-0349,modality,world,2,2,1.0
 modality-0350,modality,actor,2,0,0.0
@@ -19364,7 +19364,7 @@ modality-0351,modality,time,2,0,0.0
 modality-0351,modality,validity,2,0,0.0
 modality-0351,modality,scope,2,0,0.0
 modality-0351,modality,modality,2,2,1.0
-modality-0351,modality,source_status,2,1,0.5
+modality-0351,modality,source_status,2,2,1.0
 modality-0351,modality,observer_knowledge,2,2,1.0
 modality-0351,modality,world,2,2,1.0
 modality-0352,modality,actor,2,0,0.0
@@ -19382,7 +19382,7 @@ modality-0353,modality,time,2,0,0.0
 modality-0353,modality,validity,2,0,0.0
 modality-0353,modality,scope,2,0,0.0
 modality-0353,modality,modality,2,2,1.0
-modality-0353,modality,source_status,2,1,0.5
+modality-0353,modality,source_status,2,2,1.0
 modality-0353,modality,observer_knowledge,2,2,1.0
 modality-0353,modality,world,2,2,1.0
 modality-0354,modality,actor,2,0,0.0
@@ -19400,7 +19400,7 @@ modality-0355,modality,time,2,0,0.0
 modality-0355,modality,validity,2,0,0.0
 modality-0355,modality,scope,2,0,0.0
 modality-0355,modality,modality,2,2,1.0
-modality-0355,modality,source_status,2,1,0.5
+modality-0355,modality,source_status,2,2,1.0
 modality-0355,modality,observer_knowledge,2,2,1.0
 modality-0355,modality,world,2,2,1.0
 modality-0356,modality,actor,2,0,0.0
@@ -19418,7 +19418,7 @@ modality-0357,modality,time,2,0,0.0
 modality-0357,modality,validity,2,0,0.0
 modality-0357,modality,scope,2,0,0.0
 modality-0357,modality,modality,2,2,1.0
-modality-0357,modality,source_status,2,1,0.5
+modality-0357,modality,source_status,2,2,1.0
 modality-0357,modality,observer_knowledge,2,2,1.0
 modality-0357,modality,world,2,2,1.0
 modality-0358,modality,actor,2,0,0.0
@@ -19436,7 +19436,7 @@ modality-0359,modality,time,2,0,0.0
 modality-0359,modality,validity,2,0,0.0
 modality-0359,modality,scope,2,0,0.0
 modality-0359,modality,modality,2,2,1.0
-modality-0359,modality,source_status,2,1,0.5
+modality-0359,modality,source_status,2,2,1.0
 modality-0359,modality,observer_knowledge,2,2,1.0
 modality-0359,modality,world,2,2,1.0
 modality-0360,modality,actor,2,0,0.0
@@ -19454,7 +19454,7 @@ modality-0361,modality,time,2,0,0.0
 modality-0361,modality,validity,2,0,0.0
 modality-0361,modality,scope,2,0,0.0
 modality-0361,modality,modality,2,2,1.0
-modality-0361,modality,source_status,2,1,0.5
+modality-0361,modality,source_status,2,2,1.0
 modality-0361,modality,observer_knowledge,2,2,1.0
 modality-0361,modality,world,2,2,1.0
 modality-0362,modality,actor,2,0,0.0
@@ -19472,7 +19472,7 @@ modality-0363,modality,time,2,0,0.0
 modality-0363,modality,validity,2,0,0.0
 modality-0363,modality,scope,2,0,0.0
 modality-0363,modality,modality,2,2,1.0
-modality-0363,modality,source_status,2,1,0.5
+modality-0363,modality,source_status,2,2,1.0
 modality-0363,modality,observer_knowledge,2,2,1.0
 modality-0363,modality,world,2,2,1.0
 modality-0364,modality,actor,2,0,0.0
@@ -19490,7 +19490,7 @@ modality-0365,modality,time,2,0,0.0
 modality-0365,modality,validity,2,0,0.0
 modality-0365,modality,scope,2,0,0.0
 modality-0365,modality,modality,2,2,1.0
-modality-0365,modality,source_status,2,1,0.5
+modality-0365,modality,source_status,2,2,1.0
 modality-0365,modality,observer_knowledge,2,2,1.0
 modality-0365,modality,world,2,2,1.0
 modality-0366,modality,actor,2,0,0.0
@@ -19508,7 +19508,7 @@ modality-0367,modality,time,2,0,0.0
 modality-0367,modality,validity,2,0,0.0
 modality-0367,modality,scope,2,0,0.0
 modality-0367,modality,modality,2,2,1.0
-modality-0367,modality,source_status,2,1,0.5
+modality-0367,modality,source_status,2,2,1.0
 modality-0367,modality,observer_knowledge,2,2,1.0
 modality-0367,modality,world,2,2,1.0
 modality-0368,modality,actor,2,0,0.0
@@ -19526,7 +19526,7 @@ modality-0369,modality,time,2,0,0.0
 modality-0369,modality,validity,2,0,0.0
 modality-0369,modality,scope,2,0,0.0
 modality-0369,modality,modality,2,2,1.0
-modality-0369,modality,source_status,2,1,0.5
+modality-0369,modality,source_status,2,2,1.0
 modality-0369,modality,observer_knowledge,2,2,1.0
 modality-0369,modality,world,2,2,1.0
 modality-0370,modality,actor,2,0,0.0
@@ -19544,7 +19544,7 @@ modality-0371,modality,time,2,0,0.0
 modality-0371,modality,validity,2,0,0.0
 modality-0371,modality,scope,2,0,0.0
 modality-0371,modality,modality,2,2,1.0
-modality-0371,modality,source_status,2,1,0.5
+modality-0371,modality,source_status,2,2,1.0
 modality-0371,modality,observer_knowledge,2,2,1.0
 modality-0371,modality,world,2,2,1.0
 modality-0372,modality,actor,2,0,0.0
@@ -19562,7 +19562,7 @@ modality-0373,modality,time,2,0,0.0
 modality-0373,modality,validity,2,0,0.0
 modality-0373,modality,scope,2,0,0.0
 modality-0373,modality,modality,2,2,1.0
-modality-0373,modality,source_status,2,1,0.5
+modality-0373,modality,source_status,2,2,1.0
 modality-0373,modality,observer_knowledge,2,2,1.0
 modality-0373,modality,world,2,2,1.0
 modality-0374,modality,actor,2,0,0.0
@@ -19580,7 +19580,7 @@ modality-0375,modality,time,2,0,0.0
 modality-0375,modality,validity,2,0,0.0
 modality-0375,modality,scope,2,0,0.0
 modality-0375,modality,modality,2,2,1.0
-modality-0375,modality,source_status,2,1,0.5
+modality-0375,modality,source_status,2,2,1.0
 modality-0375,modality,observer_knowledge,2,2,1.0
 modality-0375,modality,world,2,2,1.0
 modality-0376,modality,actor,2,0,0.0
@@ -19598,7 +19598,7 @@ modality-0377,modality,time,2,0,0.0
 modality-0377,modality,validity,2,0,0.0
 modality-0377,modality,scope,2,0,0.0
 modality-0377,modality,modality,2,2,1.0
-modality-0377,modality,source_status,2,1,0.5
+modality-0377,modality,source_status,2,2,1.0
 modality-0377,modality,observer_knowledge,2,2,1.0
 modality-0377,modality,world,2,2,1.0
 modality-0378,modality,actor,2,0,0.0
@@ -19616,7 +19616,7 @@ modality-0379,modality,time,2,0,0.0
 modality-0379,modality,validity,2,0,0.0
 modality-0379,modality,scope,2,0,0.0
 modality-0379,modality,modality,2,2,1.0
-modality-0379,modality,source_status,2,1,0.5
+modality-0379,modality,source_status,2,2,1.0
 modality-0379,modality,observer_knowledge,2,2,1.0
 modality-0379,modality,world,2,2,1.0
 modality-0380,modality,actor,2,0,0.0
@@ -19634,7 +19634,7 @@ modality-0381,modality,time,2,0,0.0
 modality-0381,modality,validity,2,0,0.0
 modality-0381,modality,scope,2,0,0.0
 modality-0381,modality,modality,2,2,1.0
-modality-0381,modality,source_status,2,1,0.5
+modality-0381,modality,source_status,2,2,1.0
 modality-0381,modality,observer_knowledge,2,2,1.0
 modality-0381,modality,world,2,2,1.0
 modality-0382,modality,actor,2,0,0.0
@@ -19652,7 +19652,7 @@ modality-0383,modality,time,2,0,0.0
 modality-0383,modality,validity,2,0,0.0
 modality-0383,modality,scope,2,0,0.0
 modality-0383,modality,modality,2,2,1.0
-modality-0383,modality,source_status,2,1,0.5
+modality-0383,modality,source_status,2,2,1.0
 modality-0383,modality,observer_knowledge,2,2,1.0
 modality-0383,modality,world,2,2,1.0
 modality-0384,modality,actor,2,0,0.0
@@ -19670,7 +19670,7 @@ modality-0385,modality,time,2,0,0.0
 modality-0385,modality,validity,2,0,0.0
 modality-0385,modality,scope,2,0,0.0
 modality-0385,modality,modality,2,2,1.0
-modality-0385,modality,source_status,2,1,0.5
+modality-0385,modality,source_status,2,2,1.0
 modality-0385,modality,observer_knowledge,2,2,1.0
 modality-0385,modality,world,2,2,1.0
 modality-0386,modality,actor,2,0,0.0
@@ -19688,7 +19688,7 @@ modality-0387,modality,time,2,0,0.0
 modality-0387,modality,validity,2,0,0.0
 modality-0387,modality,scope,2,0,0.0
 modality-0387,modality,modality,2,2,1.0
-modality-0387,modality,source_status,2,1,0.5
+modality-0387,modality,source_status,2,2,1.0
 modality-0387,modality,observer_knowledge,2,2,1.0
 modality-0387,modality,world,2,2,1.0
 modality-0388,modality,actor,2,0,0.0
@@ -19706,7 +19706,7 @@ modality-0389,modality,time,2,0,0.0
 modality-0389,modality,validity,2,0,0.0
 modality-0389,modality,scope,2,0,0.0
 modality-0389,modality,modality,2,2,1.0
-modality-0389,modality,source_status,2,1,0.5
+modality-0389,modality,source_status,2,2,1.0
 modality-0389,modality,observer_knowledge,2,2,1.0
 modality-0389,modality,world,2,2,1.0
 modality-0390,modality,actor,2,0,0.0
@@ -19724,7 +19724,7 @@ modality-0391,modality,time,2,0,0.0
 modality-0391,modality,validity,2,0,0.0
 modality-0391,modality,scope,2,0,0.0
 modality-0391,modality,modality,2,2,1.0
-modality-0391,modality,source_status,2,1,0.5
+modality-0391,modality,source_status,2,2,1.0
 modality-0391,modality,observer_knowledge,2,2,1.0
 modality-0391,modality,world,2,2,1.0
 modality-0392,modality,actor,2,0,0.0
@@ -19742,7 +19742,7 @@ modality-0393,modality,time,2,0,0.0
 modality-0393,modality,validity,2,0,0.0
 modality-0393,modality,scope,2,0,0.0
 modality-0393,modality,modality,2,2,1.0
-modality-0393,modality,source_status,2,1,0.5
+modality-0393,modality,source_status,2,2,1.0
 modality-0393,modality,observer_knowledge,2,2,1.0
 modality-0393,modality,world,2,2,1.0
 modality-0394,modality,actor,2,0,0.0
@@ -19760,7 +19760,7 @@ modality-0395,modality,time,2,0,0.0
 modality-0395,modality,validity,2,0,0.0
 modality-0395,modality,scope,2,0,0.0
 modality-0395,modality,modality,2,2,1.0
-modality-0395,modality,source_status,2,1,0.5
+modality-0395,modality,source_status,2,2,1.0
 modality-0395,modality,observer_knowledge,2,2,1.0
 modality-0395,modality,world,2,2,1.0
 modality-0396,modality,actor,2,0,0.0
@@ -19778,7 +19778,7 @@ modality-0397,modality,time,2,0,0.0
 modality-0397,modality,validity,2,0,0.0
 modality-0397,modality,scope,2,0,0.0
 modality-0397,modality,modality,2,2,1.0
-modality-0397,modality,source_status,2,1,0.5
+modality-0397,modality,source_status,2,2,1.0
 modality-0397,modality,observer_knowledge,2,2,1.0
 modality-0397,modality,world,2,2,1.0
 modality-0398,modality,actor,2,0,0.0
@@ -19796,7 +19796,7 @@ modality-0399,modality,time,2,0,0.0
 modality-0399,modality,validity,2,0,0.0
 modality-0399,modality,scope,2,0,0.0
 modality-0399,modality,modality,2,2,1.0
-modality-0399,modality,source_status,2,1,0.5
+modality-0399,modality,source_status,2,2,1.0
 modality-0399,modality,observer_knowledge,2,2,1.0
 modality-0399,modality,world,2,2,1.0
 modality-0400,modality,actor,2,0,0.0
@@ -19814,7 +19814,7 @@ modality-0401,modality,time,2,0,0.0
 modality-0401,modality,validity,2,0,0.0
 modality-0401,modality,scope,2,0,0.0
 modality-0401,modality,modality,2,2,1.0
-modality-0401,modality,source_status,2,1,0.5
+modality-0401,modality,source_status,2,2,1.0
 modality-0401,modality,observer_knowledge,2,2,1.0
 modality-0401,modality,world,2,2,1.0
 modality-0402,modality,actor,2,0,0.0
@@ -19832,7 +19832,7 @@ modality-0403,modality,time,2,0,0.0
 modality-0403,modality,validity,2,0,0.0
 modality-0403,modality,scope,2,0,0.0
 modality-0403,modality,modality,2,2,1.0
-modality-0403,modality,source_status,2,1,0.5
+modality-0403,modality,source_status,2,2,1.0
 modality-0403,modality,observer_knowledge,2,2,1.0
 modality-0403,modality,world,2,2,1.0
 modality-0404,modality,actor,2,0,0.0
@@ -19850,7 +19850,7 @@ modality-0405,modality,time,2,0,0.0
 modality-0405,modality,validity,2,0,0.0
 modality-0405,modality,scope,2,0,0.0
 modality-0405,modality,modality,2,2,1.0
-modality-0405,modality,source_status,2,1,0.5
+modality-0405,modality,source_status,2,2,1.0
 modality-0405,modality,observer_knowledge,2,2,1.0
 modality-0405,modality,world,2,2,1.0
 modality-0406,modality,actor,2,0,0.0
@@ -19868,7 +19868,7 @@ modality-0407,modality,time,2,0,0.0
 modality-0407,modality,validity,2,0,0.0
 modality-0407,modality,scope,2,0,0.0
 modality-0407,modality,modality,2,2,1.0
-modality-0407,modality,source_status,2,1,0.5
+modality-0407,modality,source_status,2,2,1.0
 modality-0407,modality,observer_knowledge,2,2,1.0
 modality-0407,modality,world,2,2,1.0
 modality-0408,modality,actor,2,0,0.0
@@ -19886,7 +19886,7 @@ modality-0409,modality,time,2,0,0.0
 modality-0409,modality,validity,2,0,0.0
 modality-0409,modality,scope,2,0,0.0
 modality-0409,modality,modality,2,2,1.0
-modality-0409,modality,source_status,2,1,0.5
+modality-0409,modality,source_status,2,2,1.0
 modality-0409,modality,observer_knowledge,2,2,1.0
 modality-0409,modality,world,2,2,1.0
 modality-0410,modality,actor,2,0,0.0
@@ -19904,7 +19904,7 @@ modality-0411,modality,time,2,0,0.0
 modality-0411,modality,validity,2,0,0.0
 modality-0411,modality,scope,2,0,0.0
 modality-0411,modality,modality,2,2,1.0
-modality-0411,modality,source_status,2,1,0.5
+modality-0411,modality,source_status,2,2,1.0
 modality-0411,modality,observer_knowledge,2,2,1.0
 modality-0411,modality,world,2,2,1.0
 modality-0412,modality,actor,2,0,0.0
@@ -19922,7 +19922,7 @@ modality-0413,modality,time,2,0,0.0
 modality-0413,modality,validity,2,0,0.0
 modality-0413,modality,scope,2,0,0.0
 modality-0413,modality,modality,2,2,1.0
-modality-0413,modality,source_status,2,1,0.5
+modality-0413,modality,source_status,2,2,1.0
 modality-0413,modality,observer_knowledge,2,2,1.0
 modality-0413,modality,world,2,2,1.0
 modality-0414,modality,actor,2,0,0.0
@@ -19940,7 +19940,7 @@ modality-0415,modality,time,2,0,0.0
 modality-0415,modality,validity,2,0,0.0
 modality-0415,modality,scope,2,0,0.0
 modality-0415,modality,modality,2,2,1.0
-modality-0415,modality,source_status,2,1,0.5
+modality-0415,modality,source_status,2,2,1.0
 modality-0415,modality,observer_knowledge,2,2,1.0
 modality-0415,modality,world,2,2,1.0
 modality-0416,modality,actor,2,0,0.0
@@ -19958,7 +19958,7 @@ modality-0417,modality,time,2,0,0.0
 modality-0417,modality,validity,2,0,0.0
 modality-0417,modality,scope,2,0,0.0
 modality-0417,modality,modality,2,2,1.0
-modality-0417,modality,source_status,2,1,0.5
+modality-0417,modality,source_status,2,2,1.0
 modality-0417,modality,observer_knowledge,2,2,1.0
 modality-0417,modality,world,2,2,1.0
 modality-0418,modality,actor,2,0,0.0
@@ -19976,7 +19976,7 @@ modality-0419,modality,time,2,0,0.0
 modality-0419,modality,validity,2,0,0.0
 modality-0419,modality,scope,2,0,0.0
 modality-0419,modality,modality,2,2,1.0
-modality-0419,modality,source_status,2,1,0.5
+modality-0419,modality,source_status,2,2,1.0
 modality-0419,modality,observer_knowledge,2,2,1.0
 modality-0419,modality,world,2,2,1.0
 modality-0420,modality,actor,2,0,0.0
@@ -19994,7 +19994,7 @@ modality-0421,modality,time,2,0,0.0
 modality-0421,modality,validity,2,0,0.0
 modality-0421,modality,scope,2,0,0.0
 modality-0421,modality,modality,2,2,1.0
-modality-0421,modality,source_status,2,1,0.5
+modality-0421,modality,source_status,2,2,1.0
 modality-0421,modality,observer_knowledge,2,2,1.0
 modality-0421,modality,world,2,2,1.0
 modality-0422,modality,actor,2,0,0.0
@@ -20012,7 +20012,7 @@ modality-0423,modality,time,2,0,0.0
 modality-0423,modality,validity,2,0,0.0
 modality-0423,modality,scope,2,0,0.0
 modality-0423,modality,modality,2,2,1.0
-modality-0423,modality,source_status,2,1,0.5
+modality-0423,modality,source_status,2,2,1.0
 modality-0423,modality,observer_knowledge,2,2,1.0
 modality-0423,modality,world,2,2,1.0
 modality-0424,modality,actor,2,0,0.0
@@ -20030,7 +20030,7 @@ modality-0425,modality,time,2,0,0.0
 modality-0425,modality,validity,2,0,0.0
 modality-0425,modality,scope,2,0,0.0
 modality-0425,modality,modality,2,2,1.0
-modality-0425,modality,source_status,2,1,0.5
+modality-0425,modality,source_status,2,2,1.0
 modality-0425,modality,observer_knowledge,2,2,1.0
 modality-0425,modality,world,2,2,1.0
 modality-0426,modality,actor,2,0,0.0
@@ -20048,7 +20048,7 @@ modality-0427,modality,time,2,0,0.0
 modality-0427,modality,validity,2,0,0.0
 modality-0427,modality,scope,2,0,0.0
 modality-0427,modality,modality,2,2,1.0
-modality-0427,modality,source_status,2,1,0.5
+modality-0427,modality,source_status,2,2,1.0
 modality-0427,modality,observer_knowledge,2,2,1.0
 modality-0427,modality,world,2,2,1.0
 modality-0428,modality,actor,2,0,0.0
@@ -20066,7 +20066,7 @@ modality-0429,modality,time,2,0,0.0
 modality-0429,modality,validity,2,0,0.0
 modality-0429,modality,scope,2,0,0.0
 modality-0429,modality,modality,2,2,1.0
-modality-0429,modality,source_status,2,1,0.5
+modality-0429,modality,source_status,2,2,1.0
 modality-0429,modality,observer_knowledge,2,2,1.0
 modality-0429,modality,world,2,2,1.0
 modality-0430,modality,actor,2,0,0.0
@@ -20084,7 +20084,7 @@ modality-0431,modality,time,2,0,0.0
 modality-0431,modality,validity,2,0,0.0
 modality-0431,modality,scope,2,0,0.0
 modality-0431,modality,modality,2,2,1.0
-modality-0431,modality,source_status,2,1,0.5
+modality-0431,modality,source_status,2,2,1.0
 modality-0431,modality,observer_knowledge,2,2,1.0
 modality-0431,modality,world,2,2,1.0
 modality-0432,modality,actor,2,0,0.0
@@ -20102,7 +20102,7 @@ modality-0433,modality,time,2,0,0.0
 modality-0433,modality,validity,2,0,0.0
 modality-0433,modality,scope,2,0,0.0
 modality-0433,modality,modality,2,2,1.0
-modality-0433,modality,source_status,2,1,0.5
+modality-0433,modality,source_status,2,2,1.0
 modality-0433,modality,observer_knowledge,2,2,1.0
 modality-0433,modality,world,2,2,1.0
 modality-0434,modality,actor,2,0,0.0
@@ -20120,7 +20120,7 @@ modality-0435,modality,time,2,0,0.0
 modality-0435,modality,validity,2,0,0.0
 modality-0435,modality,scope,2,0,0.0
 modality-0435,modality,modality,2,2,1.0
-modality-0435,modality,source_status,2,1,0.5
+modality-0435,modality,source_status,2,2,1.0
 modality-0435,modality,observer_knowledge,2,2,1.0
 modality-0435,modality,world,2,2,1.0
 modality-0436,modality,actor,2,0,0.0
@@ -20138,7 +20138,7 @@ modality-0437,modality,time,2,0,0.0
 modality-0437,modality,validity,2,0,0.0
 modality-0437,modality,scope,2,0,0.0
 modality-0437,modality,modality,2,2,1.0
-modality-0437,modality,source_status,2,1,0.5
+modality-0437,modality,source_status,2,2,1.0
 modality-0437,modality,observer_knowledge,2,2,1.0
 modality-0437,modality,world,2,2,1.0
 modality-0438,modality,actor,2,0,0.0
@@ -20156,7 +20156,7 @@ modality-0439,modality,time,2,0,0.0
 modality-0439,modality,validity,2,0,0.0
 modality-0439,modality,scope,2,0,0.0
 modality-0439,modality,modality,2,2,1.0
-modality-0439,modality,source_status,2,1,0.5
+modality-0439,modality,source_status,2,2,1.0
 modality-0439,modality,observer_knowledge,2,2,1.0
 modality-0439,modality,world,2,2,1.0
 modality-0440,modality,actor,2,0,0.0
@@ -20174,7 +20174,7 @@ modality-0441,modality,time,2,0,0.0
 modality-0441,modality,validity,2,0,0.0
 modality-0441,modality,scope,2,0,0.0
 modality-0441,modality,modality,2,2,1.0
-modality-0441,modality,source_status,2,1,0.5
+modality-0441,modality,source_status,2,2,1.0
 modality-0441,modality,observer_knowledge,2,2,1.0
 modality-0441,modality,world,2,2,1.0
 modality-0442,modality,actor,2,0,0.0
@@ -20192,7 +20192,7 @@ modality-0443,modality,time,2,0,0.0
 modality-0443,modality,validity,2,0,0.0
 modality-0443,modality,scope,2,0,0.0
 modality-0443,modality,modality,2,2,1.0
-modality-0443,modality,source_status,2,1,0.5
+modality-0443,modality,source_status,2,2,1.0
 modality-0443,modality,observer_knowledge,2,2,1.0
 modality-0443,modality,world,2,2,1.0
 modality-0444,modality,actor,2,0,0.0
@@ -20210,7 +20210,7 @@ modality-0445,modality,time,2,0,0.0
 modality-0445,modality,validity,2,0,0.0
 modality-0445,modality,scope,2,0,0.0
 modality-0445,modality,modality,2,2,1.0
-modality-0445,modality,source_status,2,1,0.5
+modality-0445,modality,source_status,2,2,1.0
 modality-0445,modality,observer_knowledge,2,2,1.0
 modality-0445,modality,world,2,2,1.0
 modality-0446,modality,actor,2,0,0.0
@@ -20228,7 +20228,7 @@ modality-0447,modality,time,2,0,0.0
 modality-0447,modality,validity,2,0,0.0
 modality-0447,modality,scope,2,0,0.0
 modality-0447,modality,modality,2,2,1.0
-modality-0447,modality,source_status,2,1,0.5
+modality-0447,modality,source_status,2,2,1.0
 modality-0447,modality,observer_knowledge,2,2,1.0
 modality-0447,modality,world,2,2,1.0
 modality-0448,modality,actor,2,0,0.0
@@ -20246,7 +20246,7 @@ modality-0449,modality,time,2,0,0.0
 modality-0449,modality,validity,2,0,0.0
 modality-0449,modality,scope,2,0,0.0
 modality-0449,modality,modality,2,2,1.0
-modality-0449,modality,source_status,2,1,0.5
+modality-0449,modality,source_status,2,2,1.0
 modality-0449,modality,observer_knowledge,2,2,1.0
 modality-0449,modality,world,2,2,1.0
 modality-0450,modality,actor,2,0,0.0
@@ -20264,7 +20264,7 @@ modality-0451,modality,time,2,0,0.0
 modality-0451,modality,validity,2,0,0.0
 modality-0451,modality,scope,2,0,0.0
 modality-0451,modality,modality,2,2,1.0
-modality-0451,modality,source_status,2,1,0.5
+modality-0451,modality,source_status,2,2,1.0
 modality-0451,modality,observer_knowledge,2,2,1.0
 modality-0451,modality,world,2,2,1.0
 modality-0452,modality,actor,2,0,0.0
@@ -20282,7 +20282,7 @@ modality-0453,modality,time,2,0,0.0
 modality-0453,modality,validity,2,0,0.0
 modality-0453,modality,scope,2,0,0.0
 modality-0453,modality,modality,2,2,1.0
-modality-0453,modality,source_status,2,1,0.5
+modality-0453,modality,source_status,2,2,1.0
 modality-0453,modality,observer_knowledge,2,2,1.0
 modality-0453,modality,world,2,2,1.0
 modality-0454,modality,actor,2,0,0.0
@@ -20300,7 +20300,7 @@ modality-0455,modality,time,2,0,0.0
 modality-0455,modality,validity,2,0,0.0
 modality-0455,modality,scope,2,0,0.0
 modality-0455,modality,modality,2,2,1.0
-modality-0455,modality,source_status,2,1,0.5
+modality-0455,modality,source_status,2,2,1.0
 modality-0455,modality,observer_knowledge,2,2,1.0
 modality-0455,modality,world,2,2,1.0
 modality-0456,modality,actor,2,0,0.0
@@ -20318,7 +20318,7 @@ modality-0457,modality,time,2,0,0.0
 modality-0457,modality,validity,2,0,0.0
 modality-0457,modality,scope,2,0,0.0
 modality-0457,modality,modality,2,2,1.0
-modality-0457,modality,source_status,2,1,0.5
+modality-0457,modality,source_status,2,2,1.0
 modality-0457,modality,observer_knowledge,2,2,1.0
 modality-0457,modality,world,2,2,1.0
 modality-0458,modality,actor,2,0,0.0
@@ -20336,7 +20336,7 @@ modality-0459,modality,time,2,0,0.0
 modality-0459,modality,validity,2,0,0.0
 modality-0459,modality,scope,2,0,0.0
 modality-0459,modality,modality,2,2,1.0
-modality-0459,modality,source_status,2,1,0.5
+modality-0459,modality,source_status,2,2,1.0
 modality-0459,modality,observer_knowledge,2,2,1.0
 modality-0459,modality,world,2,2,1.0
 modality-0460,modality,actor,2,0,0.0
@@ -20354,7 +20354,7 @@ modality-0461,modality,time,2,0,0.0
 modality-0461,modality,validity,2,0,0.0
 modality-0461,modality,scope,2,0,0.0
 modality-0461,modality,modality,2,2,1.0
-modality-0461,modality,source_status,2,1,0.5
+modality-0461,modality,source_status,2,2,1.0
 modality-0461,modality,observer_knowledge,2,2,1.0
 modality-0461,modality,world,2,2,1.0
 modality-0462,modality,actor,2,0,0.0
@@ -20372,7 +20372,7 @@ modality-0463,modality,time,2,0,0.0
 modality-0463,modality,validity,2,0,0.0
 modality-0463,modality,scope,2,0,0.0
 modality-0463,modality,modality,2,2,1.0
-modality-0463,modality,source_status,2,1,0.5
+modality-0463,modality,source_status,2,2,1.0
 modality-0463,modality,observer_knowledge,2,2,1.0
 modality-0463,modality,world,2,2,1.0
 modality-0464,modality,actor,2,0,0.0
@@ -20390,7 +20390,7 @@ modality-0465,modality,time,2,0,0.0
 modality-0465,modality,validity,2,0,0.0
 modality-0465,modality,scope,2,0,0.0
 modality-0465,modality,modality,2,2,1.0
-modality-0465,modality,source_status,2,1,0.5
+modality-0465,modality,source_status,2,2,1.0
 modality-0465,modality,observer_knowledge,2,2,1.0
 modality-0465,modality,world,2,2,1.0
 modality-0466,modality,actor,2,0,0.0
@@ -20408,7 +20408,7 @@ modality-0467,modality,time,2,0,0.0
 modality-0467,modality,validity,2,0,0.0
 modality-0467,modality,scope,2,0,0.0
 modality-0467,modality,modality,2,2,1.0
-modality-0467,modality,source_status,2,1,0.5
+modality-0467,modality,source_status,2,2,1.0
 modality-0467,modality,observer_knowledge,2,2,1.0
 modality-0467,modality,world,2,2,1.0
 modality-0468,modality,actor,2,0,0.0
@@ -20426,7 +20426,7 @@ modality-0469,modality,time,2,0,0.0
 modality-0469,modality,validity,2,0,0.0
 modality-0469,modality,scope,2,0,0.0
 modality-0469,modality,modality,2,2,1.0
-modality-0469,modality,source_status,2,1,0.5
+modality-0469,modality,source_status,2,2,1.0
 modality-0469,modality,observer_knowledge,2,2,1.0
 modality-0469,modality,world,2,2,1.0
 modality-0470,modality,actor,2,0,0.0
@@ -20444,7 +20444,7 @@ modality-0471,modality,time,2,0,0.0
 modality-0471,modality,validity,2,0,0.0
 modality-0471,modality,scope,2,0,0.0
 modality-0471,modality,modality,2,2,1.0
-modality-0471,modality,source_status,2,1,0.5
+modality-0471,modality,source_status,2,2,1.0
 modality-0471,modality,observer_knowledge,2,2,1.0
 modality-0471,modality,world,2,2,1.0
 modality-0472,modality,actor,2,0,0.0
@@ -20462,7 +20462,7 @@ modality-0473,modality,time,2,0,0.0
 modality-0473,modality,validity,2,0,0.0
 modality-0473,modality,scope,2,0,0.0
 modality-0473,modality,modality,2,2,1.0
-modality-0473,modality,source_status,2,1,0.5
+modality-0473,modality,source_status,2,2,1.0
 modality-0473,modality,observer_knowledge,2,2,1.0
 modality-0473,modality,world,2,2,1.0
 modality-0474,modality,actor,2,0,0.0
@@ -20480,7 +20480,7 @@ modality-0475,modality,time,2,0,0.0
 modality-0475,modality,validity,2,0,0.0
 modality-0475,modality,scope,2,0,0.0
 modality-0475,modality,modality,2,2,1.0
-modality-0475,modality,source_status,2,1,0.5
+modality-0475,modality,source_status,2,2,1.0
 modality-0475,modality,observer_knowledge,2,2,1.0
 modality-0475,modality,world,2,2,1.0
 modality-0476,modality,actor,2,0,0.0
@@ -20498,7 +20498,7 @@ modality-0477,modality,time,2,0,0.0
 modality-0477,modality,validity,2,0,0.0
 modality-0477,modality,scope,2,0,0.0
 modality-0477,modality,modality,2,2,1.0
-modality-0477,modality,source_status,2,1,0.5
+modality-0477,modality,source_status,2,2,1.0
 modality-0477,modality,observer_knowledge,2,2,1.0
 modality-0477,modality,world,2,2,1.0
 modality-0478,modality,actor,2,0,0.0
@@ -20516,7 +20516,7 @@ modality-0479,modality,time,2,0,0.0
 modality-0479,modality,validity,2,0,0.0
 modality-0479,modality,scope,2,0,0.0
 modality-0479,modality,modality,2,2,1.0
-modality-0479,modality,source_status,2,1,0.5
+modality-0479,modality,source_status,2,2,1.0
 modality-0479,modality,observer_knowledge,2,2,1.0
 modality-0479,modality,world,2,2,1.0
 modality-0480,modality,actor,2,0,0.0
@@ -20534,7 +20534,7 @@ modality-0481,modality,time,2,0,0.0
 modality-0481,modality,validity,2,0,0.0
 modality-0481,modality,scope,2,0,0.0
 modality-0481,modality,modality,2,2,1.0
-modality-0481,modality,source_status,2,1,0.5
+modality-0481,modality,source_status,2,2,1.0
 modality-0481,modality,observer_knowledge,2,2,1.0
 modality-0481,modality,world,2,2,1.0
 modality-0482,modality,actor,2,0,0.0
@@ -20552,7 +20552,7 @@ modality-0483,modality,time,2,0,0.0
 modality-0483,modality,validity,2,0,0.0
 modality-0483,modality,scope,2,0,0.0
 modality-0483,modality,modality,2,2,1.0
-modality-0483,modality,source_status,2,1,0.5
+modality-0483,modality,source_status,2,2,1.0
 modality-0483,modality,observer_knowledge,2,2,1.0
 modality-0483,modality,world,2,2,1.0
 modality-0484,modality,actor,2,0,0.0
@@ -20570,7 +20570,7 @@ modality-0485,modality,time,2,0,0.0
 modality-0485,modality,validity,2,0,0.0
 modality-0485,modality,scope,2,0,0.0
 modality-0485,modality,modality,2,2,1.0
-modality-0485,modality,source_status,2,1,0.5
+modality-0485,modality,source_status,2,2,1.0
 modality-0485,modality,observer_knowledge,2,2,1.0
 modality-0485,modality,world,2,2,1.0
 modality-0486,modality,actor,2,0,0.0
@@ -20588,7 +20588,7 @@ modality-0487,modality,time,2,0,0.0
 modality-0487,modality,validity,2,0,0.0
 modality-0487,modality,scope,2,0,0.0
 modality-0487,modality,modality,2,2,1.0
-modality-0487,modality,source_status,2,1,0.5
+modality-0487,modality,source_status,2,2,1.0
 modality-0487,modality,observer_knowledge,2,2,1.0
 modality-0487,modality,world,2,2,1.0
 modality-0488,modality,actor,2,0,0.0
@@ -20606,7 +20606,7 @@ modality-0489,modality,time,2,0,0.0
 modality-0489,modality,validity,2,0,0.0
 modality-0489,modality,scope,2,0,0.0
 modality-0489,modality,modality,2,2,1.0
-modality-0489,modality,source_status,2,1,0.5
+modality-0489,modality,source_status,2,2,1.0
 modality-0489,modality,observer_knowledge,2,2,1.0
 modality-0489,modality,world,2,2,1.0
 modality-0490,modality,actor,2,0,0.0
@@ -20624,7 +20624,7 @@ modality-0491,modality,time,2,0,0.0
 modality-0491,modality,validity,2,0,0.0
 modality-0491,modality,scope,2,0,0.0
 modality-0491,modality,modality,2,2,1.0
-modality-0491,modality,source_status,2,1,0.5
+modality-0491,modality,source_status,2,2,1.0
 modality-0491,modality,observer_knowledge,2,2,1.0
 modality-0491,modality,world,2,2,1.0
 modality-0492,modality,actor,2,0,0.0
@@ -20642,7 +20642,7 @@ modality-0493,modality,time,2,0,0.0
 modality-0493,modality,validity,2,0,0.0
 modality-0493,modality,scope,2,0,0.0
 modality-0493,modality,modality,2,2,1.0
-modality-0493,modality,source_status,2,1,0.5
+modality-0493,modality,source_status,2,2,1.0
 modality-0493,modality,observer_knowledge,2,2,1.0
 modality-0493,modality,world,2,2,1.0
 modality-0494,modality,actor,2,0,0.0
@@ -20660,7 +20660,7 @@ modality-0495,modality,time,2,0,0.0
 modality-0495,modality,validity,2,0,0.0
 modality-0495,modality,scope,2,0,0.0
 modality-0495,modality,modality,2,2,1.0
-modality-0495,modality,source_status,2,1,0.5
+modality-0495,modality,source_status,2,2,1.0
 modality-0495,modality,observer_knowledge,2,2,1.0
 modality-0495,modality,world,2,2,1.0
 modality-0496,modality,actor,2,0,0.0
@@ -20678,7 +20678,7 @@ modality-0497,modality,time,2,0,0.0
 modality-0497,modality,validity,2,0,0.0
 modality-0497,modality,scope,2,0,0.0
 modality-0497,modality,modality,2,2,1.0
-modality-0497,modality,source_status,2,1,0.5
+modality-0497,modality,source_status,2,2,1.0
 modality-0497,modality,observer_knowledge,2,2,1.0
 modality-0497,modality,world,2,2,1.0
 modality-0498,modality,actor,2,0,0.0
@@ -20696,7 +20696,7 @@ modality-0499,modality,time,2,0,0.0
 modality-0499,modality,validity,2,0,0.0
 modality-0499,modality,scope,2,0,0.0
 modality-0499,modality,modality,2,2,1.0
-modality-0499,modality,source_status,2,1,0.5
+modality-0499,modality,source_status,2,2,1.0
 modality-0499,modality,observer_knowledge,2,2,1.0
 modality-0499,modality,world,2,2,1.0
 modality-0500,modality,actor,2,0,0.0
@@ -20714,7 +20714,7 @@ modality-0501,modality,time,2,0,0.0
 modality-0501,modality,validity,2,0,0.0
 modality-0501,modality,scope,2,0,0.0
 modality-0501,modality,modality,2,2,1.0
-modality-0501,modality,source_status,2,1,0.5
+modality-0501,modality,source_status,2,2,1.0
 modality-0501,modality,observer_knowledge,2,2,1.0
 modality-0501,modality,world,2,2,1.0
 modality-0502,modality,actor,2,0,0.0
@@ -20732,7 +20732,7 @@ modality-0503,modality,time,2,0,0.0
 modality-0503,modality,validity,2,0,0.0
 modality-0503,modality,scope,2,0,0.0
 modality-0503,modality,modality,2,2,1.0
-modality-0503,modality,source_status,2,1,0.5
+modality-0503,modality,source_status,2,2,1.0
 modality-0503,modality,observer_knowledge,2,2,1.0
 modality-0503,modality,world,2,2,1.0
 modality-0504,modality,actor,2,0,0.0
@@ -20750,7 +20750,7 @@ modality-0505,modality,time,2,0,0.0
 modality-0505,modality,validity,2,0,0.0
 modality-0505,modality,scope,2,0,0.0
 modality-0505,modality,modality,2,2,1.0
-modality-0505,modality,source_status,2,1,0.5
+modality-0505,modality,source_status,2,2,1.0
 modality-0505,modality,observer_knowledge,2,2,1.0
 modality-0505,modality,world,2,2,1.0
 modality-0506,modality,actor,2,0,0.0
@@ -20768,7 +20768,7 @@ modality-0507,modality,time,2,0,0.0
 modality-0507,modality,validity,2,0,0.0
 modality-0507,modality,scope,2,0,0.0
 modality-0507,modality,modality,2,2,1.0
-modality-0507,modality,source_status,2,1,0.5
+modality-0507,modality,source_status,2,2,1.0
 modality-0507,modality,observer_knowledge,2,2,1.0
 modality-0507,modality,world,2,2,1.0
 modality-0508,modality,actor,2,0,0.0
@@ -20786,7 +20786,7 @@ modality-0509,modality,time,2,0,0.0
 modality-0509,modality,validity,2,0,0.0
 modality-0509,modality,scope,2,0,0.0
 modality-0509,modality,modality,2,2,1.0
-modality-0509,modality,source_status,2,1,0.5
+modality-0509,modality,source_status,2,2,1.0
 modality-0509,modality,observer_knowledge,2,2,1.0
 modality-0509,modality,world,2,2,1.0
 modality-0510,modality,actor,2,0,0.0
@@ -20804,7 +20804,7 @@ modality-0511,modality,time,2,0,0.0
 modality-0511,modality,validity,2,0,0.0
 modality-0511,modality,scope,2,0,0.0
 modality-0511,modality,modality,2,2,1.0
-modality-0511,modality,source_status,2,1,0.5
+modality-0511,modality,source_status,2,2,1.0
 modality-0511,modality,observer_knowledge,2,2,1.0
 modality-0511,modality,world,2,2,1.0
 modality-0512,modality,actor,2,0,0.0
@@ -20822,7 +20822,7 @@ modality-0513,modality,time,2,0,0.0
 modality-0513,modality,validity,2,0,0.0
 modality-0513,modality,scope,2,0,0.0
 modality-0513,modality,modality,2,2,1.0
-modality-0513,modality,source_status,2,1,0.5
+modality-0513,modality,source_status,2,2,1.0
 modality-0513,modality,observer_knowledge,2,2,1.0
 modality-0513,modality,world,2,2,1.0
 modality-0514,modality,actor,2,0,0.0
@@ -20840,7 +20840,7 @@ modality-0515,modality,time,2,0,0.0
 modality-0515,modality,validity,2,0,0.0
 modality-0515,modality,scope,2,0,0.0
 modality-0515,modality,modality,2,2,1.0
-modality-0515,modality,source_status,2,1,0.5
+modality-0515,modality,source_status,2,2,1.0
 modality-0515,modality,observer_knowledge,2,2,1.0
 modality-0515,modality,world,2,2,1.0
 modality-0516,modality,actor,2,0,0.0
@@ -20858,7 +20858,7 @@ modality-0517,modality,time,2,0,0.0
 modality-0517,modality,validity,2,0,0.0
 modality-0517,modality,scope,2,0,0.0
 modality-0517,modality,modality,2,2,1.0
-modality-0517,modality,source_status,2,1,0.5
+modality-0517,modality,source_status,2,2,1.0
 modality-0517,modality,observer_knowledge,2,2,1.0
 modality-0517,modality,world,2,2,1.0
 modality-0518,modality,actor,2,0,0.0
@@ -20876,7 +20876,7 @@ modality-0519,modality,time,2,0,0.0
 modality-0519,modality,validity,2,0,0.0
 modality-0519,modality,scope,2,0,0.0
 modality-0519,modality,modality,2,2,1.0
-modality-0519,modality,source_status,2,1,0.5
+modality-0519,modality,source_status,2,2,1.0
 modality-0519,modality,observer_knowledge,2,2,1.0
 modality-0519,modality,world,2,2,1.0
 modality-0520,modality,actor,2,0,0.0
@@ -20894,7 +20894,7 @@ modality-0521,modality,time,2,0,0.0
 modality-0521,modality,validity,2,0,0.0
 modality-0521,modality,scope,2,0,0.0
 modality-0521,modality,modality,2,2,1.0
-modality-0521,modality,source_status,2,1,0.5
+modality-0521,modality,source_status,2,2,1.0
 modality-0521,modality,observer_knowledge,2,2,1.0
 modality-0521,modality,world,2,2,1.0
 modality-0522,modality,actor,2,0,0.0
@@ -20912,7 +20912,7 @@ modality-0523,modality,time,2,0,0.0
 modality-0523,modality,validity,2,0,0.0
 modality-0523,modality,scope,2,0,0.0
 modality-0523,modality,modality,2,2,1.0
-modality-0523,modality,source_status,2,1,0.5
+modality-0523,modality,source_status,2,2,1.0
 modality-0523,modality,observer_knowledge,2,2,1.0
 modality-0523,modality,world,2,2,1.0
 modality-0524,modality,actor,2,0,0.0
@@ -20930,7 +20930,7 @@ modality-0525,modality,time,2,0,0.0
 modality-0525,modality,validity,2,0,0.0
 modality-0525,modality,scope,2,0,0.0
 modality-0525,modality,modality,2,2,1.0
-modality-0525,modality,source_status,2,1,0.5
+modality-0525,modality,source_status,2,2,1.0
 modality-0525,modality,observer_knowledge,2,2,1.0
 modality-0525,modality,world,2,2,1.0
 modality-0526,modality,actor,2,0,0.0
@@ -20948,7 +20948,7 @@ modality-0527,modality,time,2,0,0.0
 modality-0527,modality,validity,2,0,0.0
 modality-0527,modality,scope,2,0,0.0
 modality-0527,modality,modality,2,2,1.0
-modality-0527,modality,source_status,2,1,0.5
+modality-0527,modality,source_status,2,2,1.0
 modality-0527,modality,observer_knowledge,2,2,1.0
 modality-0527,modality,world,2,2,1.0
 modality-0528,modality,actor,2,0,0.0
@@ -20966,7 +20966,7 @@ modality-0529,modality,time,2,0,0.0
 modality-0529,modality,validity,2,0,0.0
 modality-0529,modality,scope,2,0,0.0
 modality-0529,modality,modality,2,2,1.0
-modality-0529,modality,source_status,2,1,0.5
+modality-0529,modality,source_status,2,2,1.0
 modality-0529,modality,observer_knowledge,2,2,1.0
 modality-0529,modality,world,2,2,1.0
 modality-0530,modality,actor,2,0,0.0
@@ -20984,7 +20984,7 @@ modality-0531,modality,time,2,0,0.0
 modality-0531,modality,validity,2,0,0.0
 modality-0531,modality,scope,2,0,0.0
 modality-0531,modality,modality,2,2,1.0
-modality-0531,modality,source_status,2,1,0.5
+modality-0531,modality,source_status,2,2,1.0
 modality-0531,modality,observer_knowledge,2,2,1.0
 modality-0531,modality,world,2,2,1.0
 modality-0532,modality,actor,2,0,0.0
@@ -21002,7 +21002,7 @@ modality-0533,modality,time,2,0,0.0
 modality-0533,modality,validity,2,0,0.0
 modality-0533,modality,scope,2,0,0.0
 modality-0533,modality,modality,2,2,1.0
-modality-0533,modality,source_status,2,1,0.5
+modality-0533,modality,source_status,2,2,1.0
 modality-0533,modality,observer_knowledge,2,2,1.0
 modality-0533,modality,world,2,2,1.0
 modality-0534,modality,actor,2,0,0.0
@@ -21020,7 +21020,7 @@ modality-0535,modality,time,2,0,0.0
 modality-0535,modality,validity,2,0,0.0
 modality-0535,modality,scope,2,0,0.0
 modality-0535,modality,modality,2,2,1.0
-modality-0535,modality,source_status,2,1,0.5
+modality-0535,modality,source_status,2,2,1.0
 modality-0535,modality,observer_knowledge,2,2,1.0
 modality-0535,modality,world,2,2,1.0
 modality-0536,modality,actor,2,0,0.0
@@ -21038,7 +21038,7 @@ modality-0537,modality,time,2,0,0.0
 modality-0537,modality,validity,2,0,0.0
 modality-0537,modality,scope,2,0,0.0
 modality-0537,modality,modality,2,2,1.0
-modality-0537,modality,source_status,2,1,0.5
+modality-0537,modality,source_status,2,2,1.0
 modality-0537,modality,observer_knowledge,2,2,1.0
 modality-0537,modality,world,2,2,1.0
 modality-0538,modality,actor,2,0,0.0
@@ -21056,7 +21056,7 @@ modality-0539,modality,time,2,0,0.0
 modality-0539,modality,validity,2,0,0.0
 modality-0539,modality,scope,2,0,0.0
 modality-0539,modality,modality,2,2,1.0
-modality-0539,modality,source_status,2,1,0.5
+modality-0539,modality,source_status,2,2,1.0
 modality-0539,modality,observer_knowledge,2,2,1.0
 modality-0539,modality,world,2,2,1.0
 modality-0540,modality,actor,2,0,0.0
@@ -21074,7 +21074,7 @@ modality-0541,modality,time,2,0,0.0
 modality-0541,modality,validity,2,0,0.0
 modality-0541,modality,scope,2,0,0.0
 modality-0541,modality,modality,2,2,1.0
-modality-0541,modality,source_status,2,1,0.5
+modality-0541,modality,source_status,2,2,1.0
 modality-0541,modality,observer_knowledge,2,2,1.0
 modality-0541,modality,world,2,2,1.0
 modality-0542,modality,actor,2,0,0.0
@@ -21092,7 +21092,7 @@ modality-0543,modality,time,2,0,0.0
 modality-0543,modality,validity,2,0,0.0
 modality-0543,modality,scope,2,0,0.0
 modality-0543,modality,modality,2,2,1.0
-modality-0543,modality,source_status,2,1,0.5
+modality-0543,modality,source_status,2,2,1.0
 modality-0543,modality,observer_knowledge,2,2,1.0
 modality-0543,modality,world,2,2,1.0
 modality-0544,modality,actor,2,0,0.0
@@ -21110,7 +21110,7 @@ modality-0545,modality,time,2,0,0.0
 modality-0545,modality,validity,2,0,0.0
 modality-0545,modality,scope,2,0,0.0
 modality-0545,modality,modality,2,2,1.0
-modality-0545,modality,source_status,2,1,0.5
+modality-0545,modality,source_status,2,2,1.0
 modality-0545,modality,observer_knowledge,2,2,1.0
 modality-0545,modality,world,2,2,1.0
 modality-0546,modality,actor,2,0,0.0
@@ -21128,7 +21128,7 @@ modality-0547,modality,time,2,0,0.0
 modality-0547,modality,validity,2,0,0.0
 modality-0547,modality,scope,2,0,0.0
 modality-0547,modality,modality,2,2,1.0
-modality-0547,modality,source_status,2,1,0.5
+modality-0547,modality,source_status,2,2,1.0
 modality-0547,modality,observer_knowledge,2,2,1.0
 modality-0547,modality,world,2,2,1.0
 modality-0548,modality,actor,2,0,0.0
@@ -21146,7 +21146,7 @@ modality-0549,modality,time,2,0,0.0
 modality-0549,modality,validity,2,0,0.0
 modality-0549,modality,scope,2,0,0.0
 modality-0549,modality,modality,2,2,1.0
-modality-0549,modality,source_status,2,1,0.5
+modality-0549,modality,source_status,2,2,1.0
 modality-0549,modality,observer_knowledge,2,2,1.0
 modality-0549,modality,world,2,2,1.0
 modality-0550,modality,actor,2,0,0.0
@@ -21164,7 +21164,7 @@ modality-0551,modality,time,2,0,0.0
 modality-0551,modality,validity,2,0,0.0
 modality-0551,modality,scope,2,0,0.0
 modality-0551,modality,modality,2,2,1.0
-modality-0551,modality,source_status,2,1,0.5
+modality-0551,modality,source_status,2,2,1.0
 modality-0551,modality,observer_knowledge,2,2,1.0
 modality-0551,modality,world,2,2,1.0
 modality-0552,modality,actor,2,0,0.0
@@ -21182,7 +21182,7 @@ modality-0553,modality,time,2,0,0.0
 modality-0553,modality,validity,2,0,0.0
 modality-0553,modality,scope,2,0,0.0
 modality-0553,modality,modality,2,2,1.0
-modality-0553,modality,source_status,2,1,0.5
+modality-0553,modality,source_status,2,2,1.0
 modality-0553,modality,observer_knowledge,2,2,1.0
 modality-0553,modality,world,2,2,1.0
 modality-0554,modality,actor,2,0,0.0
@@ -21200,7 +21200,7 @@ modality-0555,modality,time,2,0,0.0
 modality-0555,modality,validity,2,0,0.0
 modality-0555,modality,scope,2,0,0.0
 modality-0555,modality,modality,2,2,1.0
-modality-0555,modality,source_status,2,1,0.5
+modality-0555,modality,source_status,2,2,1.0
 modality-0555,modality,observer_knowledge,2,2,1.0
 modality-0555,modality,world,2,2,1.0
 modality-0556,modality,actor,2,0,0.0
@@ -21218,7 +21218,7 @@ modality-0557,modality,time,2,0,0.0
 modality-0557,modality,validity,2,0,0.0
 modality-0557,modality,scope,2,0,0.0
 modality-0557,modality,modality,2,2,1.0
-modality-0557,modality,source_status,2,1,0.5
+modality-0557,modality,source_status,2,2,1.0
 modality-0557,modality,observer_knowledge,2,2,1.0
 modality-0557,modality,world,2,2,1.0
 modality-0558,modality,actor,2,0,0.0
@@ -21236,7 +21236,7 @@ modality-0559,modality,time,2,0,0.0
 modality-0559,modality,validity,2,0,0.0
 modality-0559,modality,scope,2,0,0.0
 modality-0559,modality,modality,2,2,1.0
-modality-0559,modality,source_status,2,1,0.5
+modality-0559,modality,source_status,2,2,1.0
 modality-0559,modality,observer_knowledge,2,2,1.0
 modality-0559,modality,world,2,2,1.0
 modality-0560,modality,actor,2,0,0.0
@@ -21254,7 +21254,7 @@ modality-0561,modality,time,2,0,0.0
 modality-0561,modality,validity,2,0,0.0
 modality-0561,modality,scope,2,0,0.0
 modality-0561,modality,modality,2,2,1.0
-modality-0561,modality,source_status,2,1,0.5
+modality-0561,modality,source_status,2,2,1.0
 modality-0561,modality,observer_knowledge,2,2,1.0
 modality-0561,modality,world,2,2,1.0
 modality-0562,modality,actor,2,0,0.0
@@ -21272,7 +21272,7 @@ modality-0563,modality,time,2,0,0.0
 modality-0563,modality,validity,2,0,0.0
 modality-0563,modality,scope,2,0,0.0
 modality-0563,modality,modality,2,2,1.0
-modality-0563,modality,source_status,2,1,0.5
+modality-0563,modality,source_status,2,2,1.0
 modality-0563,modality,observer_knowledge,2,2,1.0
 modality-0563,modality,world,2,2,1.0
 modality-0564,modality,actor,2,0,0.0
@@ -21290,7 +21290,7 @@ modality-0565,modality,time,2,0,0.0
 modality-0565,modality,validity,2,0,0.0
 modality-0565,modality,scope,2,0,0.0
 modality-0565,modality,modality,2,2,1.0
-modality-0565,modality,source_status,2,1,0.5
+modality-0565,modality,source_status,2,2,1.0
 modality-0565,modality,observer_knowledge,2,2,1.0
 modality-0565,modality,world,2,2,1.0
 modality-0566,modality,actor,2,0,0.0
@@ -21308,7 +21308,7 @@ modality-0567,modality,time,2,0,0.0
 modality-0567,modality,validity,2,0,0.0
 modality-0567,modality,scope,2,0,0.0
 modality-0567,modality,modality,2,2,1.0
-modality-0567,modality,source_status,2,1,0.5
+modality-0567,modality,source_status,2,2,1.0
 modality-0567,modality,observer_knowledge,2,2,1.0
 modality-0567,modality,world,2,2,1.0
 modality-0568,modality,actor,2,0,0.0
@@ -21326,7 +21326,7 @@ modality-0569,modality,time,2,0,0.0
 modality-0569,modality,validity,2,0,0.0
 modality-0569,modality,scope,2,0,0.0
 modality-0569,modality,modality,2,2,1.0
-modality-0569,modality,source_status,2,1,0.5
+modality-0569,modality,source_status,2,2,1.0
 modality-0569,modality,observer_knowledge,2,2,1.0
 modality-0569,modality,world,2,2,1.0
 modality-0570,modality,actor,2,0,0.0
@@ -21344,7 +21344,7 @@ modality-0571,modality,time,2,0,0.0
 modality-0571,modality,validity,2,0,0.0
 modality-0571,modality,scope,2,0,0.0
 modality-0571,modality,modality,2,2,1.0
-modality-0571,modality,source_status,2,1,0.5
+modality-0571,modality,source_status,2,2,1.0
 modality-0571,modality,observer_knowledge,2,2,1.0
 modality-0571,modality,world,2,2,1.0
 modality-0572,modality,actor,2,0,0.0
@@ -21362,7 +21362,7 @@ modality-0573,modality,time,2,0,0.0
 modality-0573,modality,validity,2,0,0.0
 modality-0573,modality,scope,2,0,0.0
 modality-0573,modality,modality,2,2,1.0
-modality-0573,modality,source_status,2,1,0.5
+modality-0573,modality,source_status,2,2,1.0
 modality-0573,modality,observer_knowledge,2,2,1.0
 modality-0573,modality,world,2,2,1.0
 modality-0574,modality,actor,2,0,0.0
@@ -21380,7 +21380,7 @@ modality-0575,modality,time,2,0,0.0
 modality-0575,modality,validity,2,0,0.0
 modality-0575,modality,scope,2,0,0.0
 modality-0575,modality,modality,2,2,1.0
-modality-0575,modality,source_status,2,1,0.5
+modality-0575,modality,source_status,2,2,1.0
 modality-0575,modality,observer_knowledge,2,2,1.0
 modality-0575,modality,world,2,2,1.0
 modality-0576,modality,actor,2,0,0.0
@@ -21398,7 +21398,7 @@ modality-0577,modality,time,2,0,0.0
 modality-0577,modality,validity,2,0,0.0
 modality-0577,modality,scope,2,0,0.0
 modality-0577,modality,modality,2,2,1.0
-modality-0577,modality,source_status,2,1,0.5
+modality-0577,modality,source_status,2,2,1.0
 modality-0577,modality,observer_knowledge,2,2,1.0
 modality-0577,modality,world,2,2,1.0
 modality-0578,modality,actor,2,0,0.0
@@ -21416,7 +21416,7 @@ modality-0579,modality,time,2,0,0.0
 modality-0579,modality,validity,2,0,0.0
 modality-0579,modality,scope,2,0,0.0
 modality-0579,modality,modality,2,2,1.0
-modality-0579,modality,source_status,2,1,0.5
+modality-0579,modality,source_status,2,2,1.0
 modality-0579,modality,observer_knowledge,2,2,1.0
 modality-0579,modality,world,2,2,1.0
 modality-0580,modality,actor,2,0,0.0
@@ -21434,7 +21434,7 @@ modality-0581,modality,time,2,0,0.0
 modality-0581,modality,validity,2,0,0.0
 modality-0581,modality,scope,2,0,0.0
 modality-0581,modality,modality,2,2,1.0
-modality-0581,modality,source_status,2,1,0.5
+modality-0581,modality,source_status,2,2,1.0
 modality-0581,modality,observer_knowledge,2,2,1.0
 modality-0581,modality,world,2,2,1.0
 modality-0582,modality,actor,2,0,0.0
@@ -21452,7 +21452,7 @@ modality-0583,modality,time,2,0,0.0
 modality-0583,modality,validity,2,0,0.0
 modality-0583,modality,scope,2,0,0.0
 modality-0583,modality,modality,2,2,1.0
-modality-0583,modality,source_status,2,1,0.5
+modality-0583,modality,source_status,2,2,1.0
 modality-0583,modality,observer_knowledge,2,2,1.0
 modality-0583,modality,world,2,2,1.0
 modality-0584,modality,actor,2,0,0.0
@@ -21470,7 +21470,7 @@ modality-0585,modality,time,2,0,0.0
 modality-0585,modality,validity,2,0,0.0
 modality-0585,modality,scope,2,0,0.0
 modality-0585,modality,modality,2,2,1.0
-modality-0585,modality,source_status,2,1,0.5
+modality-0585,modality,source_status,2,2,1.0
 modality-0585,modality,observer_knowledge,2,2,1.0
 modality-0585,modality,world,2,2,1.0
 modality-0586,modality,actor,2,0,0.0
@@ -21488,7 +21488,7 @@ modality-0587,modality,time,2,0,0.0
 modality-0587,modality,validity,2,0,0.0
 modality-0587,modality,scope,2,0,0.0
 modality-0587,modality,modality,2,2,1.0
-modality-0587,modality,source_status,2,1,0.5
+modality-0587,modality,source_status,2,2,1.0
 modality-0587,modality,observer_knowledge,2,2,1.0
 modality-0587,modality,world,2,2,1.0
 modality-0588,modality,actor,2,0,0.0
@@ -21506,7 +21506,7 @@ modality-0589,modality,time,2,0,0.0
 modality-0589,modality,validity,2,0,0.0
 modality-0589,modality,scope,2,0,0.0
 modality-0589,modality,modality,2,2,1.0
-modality-0589,modality,source_status,2,1,0.5
+modality-0589,modality,source_status,2,2,1.0
 modality-0589,modality,observer_knowledge,2,2,1.0
 modality-0589,modality,world,2,2,1.0
 modality-0590,modality,actor,2,0,0.0
@@ -21524,7 +21524,7 @@ modality-0591,modality,time,2,0,0.0
 modality-0591,modality,validity,2,0,0.0
 modality-0591,modality,scope,2,0,0.0
 modality-0591,modality,modality,2,2,1.0
-modality-0591,modality,source_status,2,1,0.5
+modality-0591,modality,source_status,2,2,1.0
 modality-0591,modality,observer_knowledge,2,2,1.0
 modality-0591,modality,world,2,2,1.0
 modality-0592,modality,actor,2,0,0.0
@@ -21542,7 +21542,7 @@ modality-0593,modality,time,2,0,0.0
 modality-0593,modality,validity,2,0,0.0
 modality-0593,modality,scope,2,0,0.0
 modality-0593,modality,modality,2,2,1.0
-modality-0593,modality,source_status,2,1,0.5
+modality-0593,modality,source_status,2,2,1.0
 modality-0593,modality,observer_knowledge,2,2,1.0
 modality-0593,modality,world,2,2,1.0
 modality-0594,modality,actor,2,0,0.0
@@ -21560,7 +21560,7 @@ modality-0595,modality,time,2,0,0.0
 modality-0595,modality,validity,2,0,0.0
 modality-0595,modality,scope,2,0,0.0
 modality-0595,modality,modality,2,2,1.0
-modality-0595,modality,source_status,2,1,0.5
+modality-0595,modality,source_status,2,2,1.0
 modality-0595,modality,observer_knowledge,2,2,1.0
 modality-0595,modality,world,2,2,1.0
 modality-0596,modality,actor,2,0,0.0
@@ -21578,7 +21578,7 @@ modality-0597,modality,time,2,0,0.0
 modality-0597,modality,validity,2,0,0.0
 modality-0597,modality,scope,2,0,0.0
 modality-0597,modality,modality,2,2,1.0
-modality-0597,modality,source_status,2,1,0.5
+modality-0597,modality,source_status,2,2,1.0
 modality-0597,modality,observer_knowledge,2,2,1.0
 modality-0597,modality,world,2,2,1.0
 modality-0598,modality,actor,2,0,0.0
@@ -21596,7 +21596,7 @@ modality-0599,modality,time,2,0,0.0
 modality-0599,modality,validity,2,0,0.0
 modality-0599,modality,scope,2,0,0.0
 modality-0599,modality,modality,2,2,1.0
-modality-0599,modality,source_status,2,1,0.5
+modality-0599,modality,source_status,2,2,1.0
 modality-0599,modality,observer_knowledge,2,2,1.0
 modality-0599,modality,world,2,2,1.0
 scope-0000,scope,actor,1,0,0.0

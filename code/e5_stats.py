@@ -236,7 +236,7 @@ def main():
         else:
             dest, dci = r"\textemdash", ""
         tok = c.get("situation", {}).get("mean_tokens")
-        safe = model.removeprefix("gemini-").replace("-flash-lite", " Flash Lite")
+        safe = model.split("/")[-1].removeprefix("gemini-").replace("-flash-lite", " Flash Lite")
         safe = safe.replace("-flash", " Flash").replace("_", r"\_")
         lines.append(f"{safe} & {est('direct')} & {est('structured')} & "
                      f"{est('situation')} & {dest} & {tok:.0f} \\\\")

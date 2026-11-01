@@ -1,0 +1,4 @@
+condition,n,accuracy
+gold_state,4200,1.0
+predicted_state,4200,0.7792857142857142
+corrupted_state,4200,0.3507142857142857

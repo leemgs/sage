@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "provenance": "simulated_personas",
+  "synthetic": true,
+  "n_annotators": 3,
+  "n_items": 70,
+  "slots": {
+    "action": {
+      "fleiss_kappa": 1.0,
+      "unanimous_rate": 1.0
+    },
+    "answer": {
+      "fleiss_kappa": 1.0,
+      "unanimous_rate": 1.0
+    },
+    "temporal_state": {
+      "fleiss_kappa": 0.8886335513523069,
+      "unanimous_rate": 0.9571428571428572
+    },
+    "modality": {
+      "fleiss_kappa": 0.7050147492625368,
+      "unanimous_rate": 0.8571428571428571
+    },
+    "scope": {
+      "fleiss_kappa": 0.8699958728848535,
+      "unanimous_rate": 0.9142857142857143
+    },
+    "source_status": {
+      "fleiss_kappa": 0.862385321100917,
+      "unanimous_rate": 0.9428571428571428
+    },
+    "observer_state": {
+      "fleiss_kappa": 1.0,
+      "unanimous_rate": 1.0
+    },
+    "world": {
+      "fleiss_kappa": 0.824444072897509,
+      "unanimous_rate": 0.9285714285714286
+    }
+  },
+  "warning": "NOT HUMAN-SUBJECT EVIDENCE",
+  "personas": [
+    {
+      "id": "context_specialist",
+      "focus": "time, scope, and world state"
+    },
+    {
+      "id": "evidence_auditor",
+      "focus": "source status and modality"
+    },
+    {
+      "id": "pragmatic_reader",
+      "focus": "answerability and observer knowledge"
+    }
+  ]
+}

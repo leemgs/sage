@@ -1,6 +1,6 @@
 {
   "n_items": 4200,
-  "sensing_attributed_errors": 927,
+  "sensing_attributed_errors": 1407,
   "update_policy_errors_under_gold_state": 0,
   "generation_errors": 0,
   "note": "Attribution is identifiable only in this deterministic controlled pipeline."

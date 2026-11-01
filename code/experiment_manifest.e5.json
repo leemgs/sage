@@ -1,40 +1,46 @@
 {
   "study_id": "sage-e5-multimodel-intervention",
-  "status": "COMPLETE_PILOT_AUDITED_SINGLE_FAMILY",
+  "status": "COMPLETE_PILOT_AUDITED_SINGLE_FAMILY_V0_2",
   "primary_contrast": "same model + same evidence + same budget, situation off versus on",
   "data": {
-    "source": "paper/data/situationcatch_bench.jsonl",
+    "source": "paper/data/situationcatch_bench.jsonl (SituationCatch-Bench v0.2)",
     "rendered_sample": "paper/data/situationcatch_llm_sample.jsonl",
     "sampling": "30 items per category x 7 categories = 210 items, seed 20260718",
-    "rendering": "evidence-complete: claim text plus bracketed structured metadata (time, validity, status, source, scope, observers); identical evidence block for all conditions"
+    "rendering": "evidence-complete: claim text plus bracketed structured metadata (time, validity, status, source, scope, observers); identical evidence block for all conditions",
+    "v0_1_archive": "paper/data/v0.1/ and paper/results/v0.1/ (v0.1 pilot, native Gemini API, 2026-07/08)"
   },
   "conditions": [
     "direct",
     "structured",
     "situation"
   ],
-  "provider": "gemini",
+  "provider": "openrouter (upstream Google; the native API no longer serves gemini-2.5-flash/-lite to new projects)",
   "models": {
     "pilot": [
-      "gemini-2.5-flash",
-      "gemini-2.5-flash-lite",
-      "gemini-3.5-flash"
+      "google/gemini-2.5-flash",
+      "google/gemini-2.5-flash-lite",
+      "google/gemini-3.5-flash"
     ]
   },
   "fixed_controls": {
     "temperature": 0,
     "output_token_budget": 1024,
+    "reasoning": "disabled ({'enabled': false}); gemini-3.5-flash refuses that and runs at {'effort': 'minimal'}; every recorded call used 0 reasoning tokens",
     "retries": "resumable harness; rerun same command to retry errored calls"
   },
   "scale_and_cost": {
-    "completed_calls": "210 items x 3 conditions x 3 models = 1,890",
+    "calls": "per model: 630 prompt-condition calls + 210 RAG + agent turns + 36 SituatedQA calls",
     "sampling": "30 items per category",
     "scope": "single-provider-family pilot; not the pre-specified multi-family confirmation"
   },
   "commands": [
-    "python3 code/run_e5.py --provider gemini --models gemini-2.5-flash gemini-2.5-flash-lite gemini-3.5-flash --conditions direct structured situation",
-    "python3 code/run_e5.py --provider mock --smoke 5   # harness validation only; never model evidence",
-    "python3 code/run_e5.py --dry-run"
+    "python code/run_diagnostic.py && PYTHONPATH=code python code/prepare_llm_eval.py && python code/prepare_rag_eval.py --k 3",
+    "python code/run_e5.py   # main conditions for the three models via OpenRouter (needs OPENROUTER_API_KEY)",
+    "python code/run_multimodel_eval.py --provider openrouter --model MODEL --data paper/data/situationcatch_rag_sample.jsonl --conditions direct --max-tokens 1024 --out paper/results/raw_rag/e5_SLUG.jsonl",
+    "python code/run_agent_eval.py --provider openrouter --model MODEL --out paper/results/raw_agent/agent_SLUG.jsonl",
+    "python code/run_multimodel_eval.py --provider openrouter --model MODEL --data paper/data/situatedqa_temporal_sample.jsonl --conditions direct structured situation --max-tokens 1024 --out paper/results/raw_nl/nl_SLUG.jsonl",
+    "python code/run_e5.py --provider mock --smoke 5   # harness validation only; never model evidence",
+    "python code/run_e5.py --dry-run"
   ],
   "manual_commands": [
     "PYTHONPATH=code python3 code/prepare_llm_eval.py",
@@ -76,5 +82,9 @@
       "situation"
     ],
     "note": "Candidate model identifiers must be frozen only when the confirmatory study is run; they are not reported as completed evidence."
+  },
+  "v0_2_run": {
+    "date": "2026-10-31",
+    "aborted_attempts": "paper/results/raw/aborted_substitute_models/ (substitute-model run; native free-tier run stopped at its 20-request daily quota); excluded from all results"
   }
 }

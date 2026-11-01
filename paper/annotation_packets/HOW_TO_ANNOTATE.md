@@ -59,11 +59,14 @@
 
 | item_id | action | answer | temporal_state | modality | scope | source_status | observer_state | world |
 |---------|--------|--------|----------------|----------|-------|----------------|----------------|-------|
-| temporal-0165 (현재 디렉터?) | ANSWER | Juno | relevant | confirmed | global | reliable | shared | actual |
-| counterfactual-0486 (가정 시나리오) | ANSWER | yes | stable | confirmed | global | reliable | shared | **counterfactual** |
-| hidden_premise-0153 (지금 등록 가능?) | **CLARIFY** | CLARIFY | stable | confirmed | **limited** | reliable | shared | actual |
-| source_conflict-0462 (디렉터 누구?) | ANSWER | Faye | stable | confirmed | global | **conflict** | shared | actual |
-| observer-0575 (Luca가 믿는가?) | ANSWER | yes | stable | confirmed | global | reliable | **partial** | actual |
+| temporal-0079 (t=5의 매니저?) | ANSWER | Hana | **relevant** | confirmed | global | reliable | shared | actual |
+| counterfactual-0233 (가정 시나리오) | ANSWER | no | stable | confirmed | global | reliable | shared | **counterfactual** |
+| hidden_premise-0008 (지금 등록 가능?) | **CLARIFY** | CLARIFY | stable | confirmed | **limited** | reliable | shared | actual |
+| source_conflict-0371 (리드는 누구?) | ANSWER | Bora | stable | confirmed | global | **conflict** | shared | actual |
+| observer-0420 (Dina가 믿는가?) | ANSWER | yes | stable | confirmed | global | reliable | **partial** | actual |
+
+> 같은 카테고리라도 정답은 문항마다 다릅니다(예: 전제가 주어진 hidden_premise는 `ANSWER`).
+> 반대 경우의 채우는 법은 `EXAMPLE_WALKTHROUGH.md` 끝의 표를 보세요.
 
 ---
 

@@ -9,6 +9,7 @@ as human-subject evidence.
 Reproduce the run from the repository root:
 
 ```bash
+python code/prepare_annotation_subset.py
 python code/annotation_cli.py simulate-personas \
   --input paper/data/annotation_subset_70.jsonl \
   --out paper/results/simulated_iaa/packets \

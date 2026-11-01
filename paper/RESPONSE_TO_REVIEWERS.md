@@ -21,12 +21,12 @@ This paper contributes, in order of weight:
    seven applicability categories, with a deterministic generator, datasheet,
    and item-level outputs.
 3. **A bounded, audited empirical finding.** Under oracle states a reference
-   implementation satisfies all invariants (100.0%); accuracy falls to 77.9%
-   with text-inferred states and 35.1% under targeted corruption, localizing an
-   independent *sensing* bottleneck. In a preliminary three-model
-   Gemini-family test (n = 210), prompting for an explicit situation state does
-   **not** beat matched structured prompting and trails focused retrieval; a
-   tool-using agent is weakest. We report this null-to-negative result plainly.
+   implementation satisfies all invariants (100.0%); accuracy falls to 66.5%
+   with text-inferred states and 45.1% under targeted corruption, consistent
+   with a *sensing* bottleneck. In a preliminary three-model Gemini-family test
+   (n = 210), prompting for an explicit situation state **never** beats matched
+   structured prompting; evidence without timestamps fails on time-dependent
+   items; a tool-using agent is weakest. We report this null-to-negative result plainly.
 
 We therefore position the manuscript as a **problem-formulation + resource +
 diagnostic** paper, not as a method that claims state-of-the-art performance.
@@ -49,13 +49,19 @@ human-subject evidence. Code, data, generator, and checksums are released.
 **R1 — "The headline oracle result is analytic, not an effect size."**
 Agreed, and we now say so explicitly: oracle accuracy is presented as
 regression-test coverage of the specified invariants, not as a competitive
-effect size. The 85.7% control value is described as a structural consequence of
-the equally-weighted categories, not an empirical baseline.
+effect size. Beyond that, we found that benchmark v0.1 fixed one answer per
+category and always made the decisive claim the most recent, so answer priors
+and recency solved most categories (the 85.7% control value) and two ablations
+could not fail. Benchmark v0.2 balances answers and claim recency in every
+category: the controls fall to 47.4-54.3%, and each of the seven ablations now
+produces exactly 300 errors, all in its own category. v0.1 and its results are
+archived.
 
 **R2 — "No evidence the intervention helps a real model."**
 We ran the intervention (E5) on three Gemini models, n = 210, under matched
-evidence/decoding/budget, audited for complete and balanced coverage. The honest
-outcome is null-to-negative (paired situation−structured = +1.4, −10.0, +0.0
+evidence/decoding/budget, audited for complete and balanced coverage, and re-ran
+it in full on benchmark v0.2 with the same models and analysis. The honest
+outcome is null-to-negative (paired situation−structured = −2.9, −14.8, −2.9
 points; only gemini-2.5-flash-lite's 95% cluster-bootstrap interval excludes
 zero, and there it is *worse*). We do not claim improvement. This result is
 consistent with, and motivates, the paper's central point: an explicit
@@ -65,10 +71,12 @@ sensing/validation of the state.
 **R3 — "Benchmark–solver circularity; little natural language; baselines."**
 We acknowledge the synthetic benchmark shares a schema with the solver and state
 this as an external-validity limit. We add (i) a 12-item SituatedQA natural-text
-probe (reported honestly as a smoke test, not a result), (ii) a top-3 retrieval
-(RAG) baseline, and (iii) a ReAct-style tool-using agent baseline. RAG is
-strongest overall; the full-evidence conditions lead only on temporal-validity
-and observer-knowledge items, which we mark as exploratory. A larger
+probe (reported honestly as a smoke test, not a result), (ii) a retrieval
+baseline, and (iii) a ReAct-style tool-using agent baseline. Because items have
+at most three claims, the retrieval condition receives every claim but without
+timestamps or metadata; it is 79.4% overall against 86.3% structured and 79.5%
+situation, and fails on temporal items (44.4%). We state that it is a metadata
+ablation rather than a test of retrieval over a large corpus. A larger
 natural-text corpus remains future work and is pre-registered in the external
 -validity protocol.
 

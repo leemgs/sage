@@ -1,0 +1,7 @@
+{
+  "best_baseline": "Latest-mention",
+  "difference": 0.14285714285714285,
+  "paired_signflip_p": 9.999000099990002e-05,
+  "n_items": 4200,
+  "n_seeds": 5
+}

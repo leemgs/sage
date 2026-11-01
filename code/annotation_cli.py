@@ -88,6 +88,24 @@ def load_completed_annotations(directory):
     return packets, questions
 
 
+def reference_labels(item):
+    """Codebook labels implied by an item's generated situation state.
+
+    Used only to build synthetic validation packets and the worked example;
+    human annotators never see these values.
+    """
+    cat, ans = item["category"], str(item["gold_answer"]).lower()
+    return {
+        "action": item["gold_action"], "answer": item["gold_answer"],
+        "temporal_state": "relevant" if cat == "temporal" else "stable",
+        "modality": "proposed" if cat == "modality" and ans == "no" else "confirmed",
+        "scope": "limited" if cat == "hidden_premise" or (cat == "scope" and ans == "no") else "global",
+        "source_status": "conflict" if cat == "source_conflict" else "reliable",
+        "observer_state": "partial" if cat == "observer" and ans == "yes" else "shared",
+        "world": "counterfactual" if cat == "counterfactual" else "actual",
+    }
+
+
 def simulate_personas(args):
     """Create deterministic synthetic ratings for pipeline validation only."""
     if not 0 <= args.disagreement_rate <= 1:
@@ -108,17 +126,8 @@ def simulate_personas(args):
         rng = random.Random(f"{args.seed}:{persona['id']}")
         rows = []
         for item in items:
-            category = item["category"]
-            labels = {
-                "action": item["gold_action"], "answer": item["gold_answer"],
-                "temporal_state": "relevant" if category == "temporal" else "stable",
-                "modality": "proposed" if category == "modality" else "confirmed",
-                "scope": "limited" if category in {"scope", "hidden_premise"} else "global",
-                "source_status": "conflict" if category == "source_conflict" else "reliable",
-                "observer_state": "partial" if category == "observer" else "shared",
-                "world": "counterfactual" if category == "counterfactual" else "actual",
-                "notes": f"SIMULATED persona={persona['id']}; not a human rating",
-            }
+            labels = reference_labels(item)
+            labels["notes"] = f"SIMULATED persona={persona['id']}; not a human rating"
             # Each persona has a small, seeded interpretation difference.  This
             # prevents the validation set from manufacturing perfect agreement.
             if rng.random() < args.disagreement_rate:

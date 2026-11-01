@@ -34,7 +34,7 @@ Prompt engineering designs instructions, context engineering designs the informa
 - Research agenda connecting RAG, temporal reasoning, knowledge graphs, agent memory, calibration, human-AI interaction and safety.
 
 ## Included empirical work
-- SituationCatch-Bench v0.1: 4,200 controlled diagnostic instances, seven categories.
+- SituationCatch-Bench v0.2: 4,200 controlled diagnostic instances, seven categories, with answers and claim recency balanced within every category (v0.1 is archived under `data/v0.1/` and `results/v0.1/`).
 - Executable SCQA symbolic control layer.
 - Lexical-RAG, Recency-RAG and Latest-mention controls.
 - Item-level predictions and seven mechanistic ablations. Legacy item-level
@@ -50,9 +50,9 @@ Prompt engineering designs instructions, context engineering designs the informa
   confirmation.
 
 ## Main measured result
-SCQA achieved 100.0% exact action-and-answer accuracy in the structured diagnostic setting. The strongest non-situational control achieved 85.7%. This is explicitly reported as a constructive upper bound, not as evidence that a neural model can extract situation states from arbitrary natural language.
-The deterministic text sensor achieved 77.9%, and its deliberately corrupted
-state achieved 35.1%; these are controlled sensing diagnostics.
+SCQA achieved 100.0% exact action-and-answer accuracy in the structured diagnostic setting. The strongest situation-blind control achieved 54.3%, close to the chance level that the balanced design implies. This is explicitly reported as a constructive upper bound, not as evidence that a neural model can extract situation states from arbitrary natural language.
+The deterministic text sensor achieved 66.5%, and its deliberately corrupted
+state achieved 45.1%; these are controlled sensing diagnostics.
 
 ## Submission-critical limitation
 A competitive Nature Machine Intelligence submission would be substantially

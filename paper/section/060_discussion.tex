@@ -9,21 +9,8 @@ separately.
 
 \subsection*{A complementary layer, not a replacement vocabulary}
 
-Prompt, context, retrieval, memory, tool, harness, evaluation, security and
-serving engineering retain distinct responsibilities. Prompts specify the task;
-context and retrieval supply evidence; memory preserves observations; tools
-provide capabilities; harnesses govern workflow and permissions; evaluations
-measure behaviour; serving systems manage resource constraints. Situation
-engineering owns the query-relative semantics of the active state and the
-propagation of unresolved applicability into policy. A useful contract is
-\begin{equation}
-(C_t,M_t,O_t,H_t)\rightarrow(\mathcal{S}_t,U_t,P_t),
-\end{equation}
-where context, memory, tool observations and harness traces produce candidate
-situations $\mathcal{S}_t$, unresolved variables $U_t$ and the permitted policy
-$P_t$.
-
-This contract prevents conceptual inflation. Retrieval quality should not be
+The situation contract of equation~(\ref{eq:contract}) is meant to prevent
+conceptual inflation. Retrieval quality should not be
 renamed situation engineering, and a JSON field named ``situation'' is not
 evidence of situation awareness. A system must show that state representation
 causally changes behaviour in predicted cases, that state uncertainty affects
@@ -52,7 +39,7 @@ verification and serving efficiency.
 \subsection*{What is established and what remains to be tested}
 
 This study defines a formal error class and implements an interoperable state
-schema with category-specific effects for five of seven matched state ablations. It also shows that
+schema with category-specific effects of matched state ablations. It also shows that
 performance degrades sharply when state must be recovered from partially
 observable text. Together, these results identify situation sensing as a
 separate engineering and evaluation target rather than treating every failure
@@ -60,10 +47,21 @@ as retrieval or generation error.
 
 The audited E5 pilot answers a narrower question: on three Gemini models,
 explicit situation prompting does not improve accuracy over a matched
-structured prompt and trails focused lexical retrieval overall. Its
-category-level exception---situation beats retrieval on temporal validity and
-observer knowledge---is consistent with applicability reasoning mattering when
-the decisive variable is which claim is valid now or known to this observer.
+structured prompt in any of the three models. Removing the applicability
+metadata from otherwise identical evidence leaves accuracy largely intact where
+relevant text suffices but collapses it on temporal items, where the decisive
+variable is when the query falls relative to each event. The models therefore
+use timestamps when they are given, but an instruction to build a situation
+state adds nothing beyond structured prompting.
+
+Of the framework's predictions, the controlled ones hold: corrupting or removing
+one state variable damages only its matching category, and predicted-state
+errors decompose into sensing rather than update or policy failures. The first
+neural prediction does not hold at the prompt level: an explicit situation state
+did not improve the categories whose decisive variables it names. This is
+consistent with the prediction that gains should vanish when a baseline already
+represents the same state, as the structured prompt does, but it means the
+present evidence does not show a benefit of situation prompting itself.
 This single-provider, generated-benchmark result is not sufficient to confirm
 the general LLM claim. Such confirmation still requires the same model, evidence and
 computation budget across independently authored natural questions; multiple
@@ -79,16 +77,17 @@ benchmark-solver circularity is intentional and limits external validity. The
 item count does not equal the number of statistically independent observations
 because examples share template
 families. The E1--E4 baselines are software controls, while E5 remains limited
-to one provider family and a small natural-language smoke test. In the generated source-conflict and counterfactual items the decisive claim
-is also the most recent, so those two ablations cannot fail and do not test
-source reliability or world identity. Confidence
+to one provider family and a small natural-language smoke test. Balancing
+answers and claim recency removes the shortcuts found in v0.1, but each
+category still varies only one or two template factors, so other surface
+regularities may remain. Confidence
 values are rule-derived and do not constitute neural calibration. No human
 participants, multilingual evaluation, multimodal sensing or deployed-agent
 study was completed. The archived three-persona agreement run is explicitly
 synthetic and validates software plumbing only; it cannot replace independent
-annotation. Earlier quota-truncated free-tier attempts are archived
-but excluded from scientific results; only the complete paid-tier run that
-passes the integrity gate enters the manuscript. These limitations are not
+annotation. Earlier and aborted runs are archived but excluded from
+scientific results; only the complete run that passes the integrity gate
+enters the manuscript. These limitations are not
 resolved by additional prose and require new experiments.
 
 Explicit state can also create new attack surfaces. An adversary may manipulate

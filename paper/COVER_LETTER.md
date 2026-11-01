@@ -27,17 +27,18 @@ evaluation conflates: whether evidence is *available* and whether it is
 The manuscript contributes (i) a testable failure class and a query-relative
 state interface distinct from prompt, context, retrieval, memory and harness
 engineering; (ii) **SituationCatch-Bench**, a released 4,200-item diagnostic over
-seven applicability axes, with a deterministic reference system whose matched
-ablations each produce the predicted category-specific failure; and (iii) a
-stress test showing that accuracy falls from 100.0% with oracle states to 77.9%
-when states must be sensed from text and 35.1% under targeted corruption, which
-locates the bottleneck in sensing.
+seven applicability axes in which no constant answer or recency rule exceeds
+chance, with a deterministic reference system whose seven matched ablations
+each produce a failure confined to their category; and (iii) a stress test
+showing that accuracy falls from 100.0% with oracle states to 66.5% when states
+must be sensed from text by a rule-based sensor and 45.1% under targeted
+corruption, consistent with a sensing bottleneck.
 
 I report the neural evidence as it stands. In an audited, preliminary
 single-family test (three Gemini models, n = 210), prompting for an explicit
-situation state does not beat a matched structured prompt and trails focused
-retrieval overall; leads on temporal and observer items are exploratory. I
-present this null-to-negative result plainly because it supports the paper's
+situation state never beats a matched structured prompt (differences of -2.9,
+-14.8 and -2.9 points), and giving the same claims without timestamps collapses
+accuracy on time-dependent items. I present this null-to-negative result plainly because it supports the paper's
 point: a prompt-level "situation" field is not situation awareness. Multi-family,
 natural-text and human-annotation confirmation are pre-specified in Methods and
 not claimed.
@@ -77,9 +78,10 @@ neural pilot.
 I want to be transparent about the evidence boundary up front. The controlled
 results are a conformance suite co-designed with the solver, and the neural pilot
 is single-family (Gemini, n = 210) and **null-to-negative**: prompting for an
-explicit situation state does not beat a matched structured prompt and trails
-focused retrieval overall. The scientifically useful signal is that accuracy
-collapses once the state must be *sensed* from text (100% → 77.9%), consistent
+explicit situation state never beats a matched structured prompt. The
+scientifically useful signals are that accuracy falls once the state must be
+*sensed* from text (100% → 66.5%) and that evidence stripped of timestamps fails
+on time-dependent items, consistent
 with *sensing*, not a prompt slot, being the bottleneck. A multi-family,
 natural-benchmark, human-annotated confirmation is specified but not yet run.
 

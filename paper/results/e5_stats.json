@@ -8,190 +8,190 @@
   ],
   "bootstrap": 3000,
   "models": {
-    "gemini-2.5-flash": {
+    "google/gemini-2.5-flash": {
       "conditions": {
         "direct": {
           "n": 210,
-          "accuracy": 0.8333333333333334,
+          "accuracy": 0.8476190476190476,
           "ci95": [
-            0.5428571428571428,
-            1.0
+            0.6428571428571429,
+            0.9857142857142858
           ],
-          "median_latency_ms": 679.3199999999999,
-          "mean_tokens": 99.44285714285714,
-          "coverage": 0.9809523809523809,
-          "selective_risk": 0.15048543689320393,
-          "n_abstain_or_clarify": 4
+          "median_latency_ms": 638.5150000000001,
+          "mean_tokens": 99.55238095238096,
+          "coverage": 0.919047619047619,
+          "selective_risk": 0.08290155440414504,
+          "n_abstain_or_clarify": 17
         },
         "structured": {
           "n": 210,
-          "accuracy": 0.819047619047619,
+          "accuracy": 0.8380952380952381,
           "ci95": [
-            0.5285714285714286,
-            1.0
+            0.6619047619047619,
+            0.9714285714285714
           ],
-          "median_latency_ms": 1646.55,
-          "mean_tokens": 330.6,
+          "median_latency_ms": 1660.315,
+          "mean_tokens": 338.747619047619,
           "coverage": 1.0,
-          "selective_risk": 0.18095238095238098,
+          "selective_risk": 0.16190476190476188,
           "n_abstain_or_clarify": 0
         },
         "situation": {
           "n": 210,
-          "accuracy": 0.8333333333333334,
+          "accuracy": 0.8095238095238095,
           "ci95": [
-            0.6095238095238096,
-            1.0
+            0.6333333333333333,
+            0.9571428571428572
           ],
-          "median_latency_ms": 1263.055,
-          "mean_tokens": 310.752380952381,
-          "coverage": 0.9571428571428572,
-          "selective_risk": 0.17412935323383083,
-          "n_abstain_or_clarify": 9
+          "median_latency_ms": 1231.6100000000001,
+          "mean_tokens": 296.62857142857143,
+          "coverage": 0.9761904761904762,
+          "selective_risk": 0.17560975609756102,
+          "n_abstain_or_clarify": 5
         }
       },
       "contrasts": {
         "situation_minus_structured": {
           "n_pairs": 210,
-          "delta": 0.014285714285714285,
+          "delta": -0.02857142857142857,
           "ci95": [
-            -0.1619047619047619,
-            0.17142857142857143
+            -0.1523809523809524,
+            0.06666666666666667
           ],
           "interval_excludes_zero": false
         },
         "situation_minus_direct": {
           "n_pairs": 210,
-          "delta": 0.0,
+          "delta": -0.0380952380952381,
           "ci95": [
-            -0.12857142857142856,
-            0.12857142857142856
+            -0.14761904761904762,
+            0.05714285714285714
           ],
           "interval_excludes_zero": false
         }
       }
     },
-    "gemini-2.5-flash-lite": {
+    "google/gemini-2.5-flash-lite": {
       "conditions": {
         "direct": {
           "n": 210,
-          "accuracy": 0.6666666666666666,
+          "accuracy": 0.7095238095238096,
           "ci95": [
-            0.3142857142857143,
-            0.9476190476190476
+            0.5047619047619047,
+            0.8952380952380953
           ],
-          "median_latency_ms": 562.5450000000001,
-          "mean_tokens": 100.57619047619048,
-          "coverage": 0.8476190476190476,
-          "selective_risk": 0.2247191011235955,
-          "n_abstain_or_clarify": 32
+          "median_latency_ms": 540.7049999999999,
+          "mean_tokens": 100.47142857142858,
+          "coverage": 0.8142857142857143,
+          "selective_risk": 0.14035087719298245,
+          "n_abstain_or_clarify": 39
         },
         "structured": {
           "n": 210,
-          "accuracy": 0.8285714285714286,
+          "accuracy": 0.9047619047619048,
           "ci95": [
-            0.5333333333333333,
+            0.7333333333333333,
             1.0
           ],
-          "median_latency_ms": 988.89,
-          "mean_tokens": 274.87619047619046,
+          "median_latency_ms": 908.405,
+          "mean_tokens": 272.55238095238093,
           "coverage": 1.0,
-          "selective_risk": 0.17142857142857137,
+          "selective_risk": 0.09523809523809523,
           "n_abstain_or_clarify": 0
         },
         "situation": {
           "n": 210,
-          "accuracy": 0.7285714285714285,
+          "accuracy": 0.7571428571428571,
           "ci95": [
-            0.4666666666666667,
-            0.919047619047619
+            0.5619047619047619,
+            0.9047619047619048
           ],
-          "median_latency_ms": 884.51,
-          "mean_tokens": 270.4952380952381,
-          "coverage": 0.8857142857142857,
-          "selective_risk": 0.18279569892473113,
-          "n_abstain_or_clarify": 24
+          "median_latency_ms": 832.855,
+          "mean_tokens": 269.3952380952381,
+          "coverage": 0.8380952380952381,
+          "selective_risk": 0.09659090909090906,
+          "n_abstain_or_clarify": 34
         }
       },
       "contrasts": {
         "situation_minus_structured": {
           "n_pairs": 210,
-          "delta": -0.1,
+          "delta": -0.14761904761904762,
           "ci95": [
-            -0.19523809523809524,
-            -0.01904761904761905
+            -0.24761904761904763,
+            -0.06190476190476191
           ],
           "interval_excludes_zero": true
         },
         "situation_minus_direct": {
           "n_pairs": 210,
-          "delta": 0.06190476190476191,
+          "delta": 0.047619047619047616,
           "ci95": [
-            -0.10952380952380952,
-            0.2761904761904762
+            -0.14761904761904762,
+            0.24761904761904763
           ],
           "interval_excludes_zero": false
         }
       }
     },
-    "gemini-3.5-flash": {
+    "google/gemini-3.5-flash": {
       "conditions": {
         "direct": {
           "n": 210,
-          "accuracy": 0.8666666666666667,
+          "accuracy": 0.861904761904762,
           "ci95": [
-            0.5904761904761905,
+            0.680952380952381,
             1.0
           ],
-          "median_latency_ms": 1007.7950000000001,
-          "mean_tokens": 101.4095238095238,
-          "coverage": 0.9952380952380953,
-          "selective_risk": 0.13397129186602874,
-          "n_abstain_or_clarify": 1
+          "median_latency_ms": 1223.92,
+          "mean_tokens": 98.11428571428571,
+          "coverage": 0.8571428571428571,
+          "selective_risk": 0.050000000000000044,
+          "n_abstain_or_clarify": 30
         },
         "structured": {
           "n": 210,
-          "accuracy": 0.8571428571428571,
+          "accuracy": 0.8476190476190476,
           "ci95": [
-            0.5714285714285714,
+            0.6428571428571429,
             1.0
           ],
-          "median_latency_ms": 1403.18,
-          "mean_tokens": 223.02857142857144,
+          "median_latency_ms": 1736.685,
+          "mean_tokens": 220.4142857142857,
           "coverage": 1.0,
-          "selective_risk": 0.1428571428571429,
+          "selective_risk": 0.1523809523809524,
           "n_abstain_or_clarify": 0
         },
         "situation": {
           "n": 210,
-          "accuracy": 0.8571428571428571,
+          "accuracy": 0.819047619047619,
           "ci95": [
-            0.5714285714285714,
+            0.5761904761904761,
             1.0
           ],
-          "median_latency_ms": 1502.05,
-          "mean_tokens": 284.5809523809524,
-          "coverage": 1.0,
-          "selective_risk": 0.1428571428571429,
-          "n_abstain_or_clarify": 0
+          "median_latency_ms": 1897.835,
+          "mean_tokens": 289.3047619047619,
+          "coverage": 0.9857142857142858,
+          "selective_risk": 0.1690821256038647,
+          "n_abstain_or_clarify": 3
         }
       },
       "contrasts": {
         "situation_minus_structured": {
           "n_pairs": 210,
-          "delta": 0.0,
+          "delta": -0.02857142857142857,
           "ci95": [
-            0.0,
+            -0.08095238095238096,
             0.0
           ],
           "interval_excludes_zero": false
         },
         "situation_minus_direct": {
           "n_pairs": 210,
-          "delta": -0.009523809523809525,
+          "delta": -0.04285714285714286,
           "ci95": [
-            -0.0380952380952381,
-            0.0
+            -0.14285714285714285,
+            0.009523809523809525
           ],
           "interval_excludes_zero": false
         }

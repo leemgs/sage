@@ -1,0 +1,8 @@
+category,Latest-mention,Lexical-RAG,Recency-RAG,SCQA
+counterfactual,1.0,1.0,1.0,1.0
+hidden_premise,0.0,0.0,0.0,1.0
+modality,1.0,1.0,1.0,1.0
+observer,1.0,0.53,0.0,1.0
+scope,1.0,1.0,1.0,1.0
+source_conflict,1.0,1.0,1.0,1.0
+temporal,1.0,0.37166666666666665,1.0,1.0

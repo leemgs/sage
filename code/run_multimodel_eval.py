@@ -126,18 +126,34 @@ def call_gemini(model, system, user, key, max_tokens):
     return text.strip(), data.get("usageMetadata", {}), data.get("responseId")
 
 
-def call_chat_completions(base_url, extra_headers=None):
+def call_chat_completions(base_url, extra_headers=None, extra_body=None):
     def call(model, system, user, key, max_tokens):
         body = {"model": model, "temperature": 0, "max_tokens": max_tokens,
                 "messages": [{"role": "system", "content": system},
-                             {"role": "user", "content": user}]}
-        data = post(f"{base_url}/chat/completions",
-                    {"Authorization": f"Bearer {key}", **(extra_headers or {})},
-                    body)
+                             {"role": "user", "content": user}],
+                **(extra_body or {})}
+        headers = {"Authorization": f"Bearer {key}", **(extra_headers or {})}
+        try:
+            data = post(f"{base_url}/chat/completions", headers, body)
+        except RuntimeError as exc:
+            # Some models (e.g. gemini-3.5-flash) refuse to disable reasoning;
+            # request the minimum effort instead (0 reasoning tokens observed).
+            if "Reasoning is mandatory" not in str(exc):
+                raise
+            body = {**body, "reasoning": {"effort": "minimal"}}
+            data = post(f"{base_url}/chat/completions", headers, body)
         text = " ".join((c.get("message") or {}).get("content") or ""
                         for c in data.get("choices", []))
-        return text.strip(), data.get("usage", {}), data.get("id")
+        usage = dict(data.get("usage") or {})
+        if data.get("provider"):   # upstream host chosen by a router, for provenance
+            usage["upstream_provider"] = data["provider"]
+        return text.strip(), usage, data.get("id")
     return call
+
+
+# OpenRouter: disable model reasoning so routed Gemini models run with thinking
+# off, matching the native adapter's thinkingBudget=0.
+OPENROUTER_BODY = {"reasoning": {"enabled": False}}
 
 
 def call_mock(model, system, user, key, max_tokens=None):
@@ -175,7 +191,8 @@ ADAPTERS = {
     "anthropic": ("ANTHROPIC_API_KEY", call_anthropic),
     "gemini": ("GEMINI_API_KEY", call_gemini),
     "openrouter": ("OPENROUTER_API_KEY",
-                   call_chat_completions("https://openrouter.ai/api/v1")),
+                   call_chat_completions("https://openrouter.ai/api/v1",
+                                         extra_body=OPENROUTER_BODY)),
     "xai": ("XAI_API_KEY",
             call_chat_completions("https://api.x.ai/v1")),
     "mock": (None, call_mock),
