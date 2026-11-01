@@ -68,6 +68,32 @@ def gemini_turn(model, contents, key, max_tokens=512):
     return text.strip(), data.get("usageMetadata", {})
 
 
+def openrouter_turn(model, contents, key, max_tokens=512):
+    """Same turn via OpenRouter's chat API, reasoning off (as thinkingBudget=0)."""
+    messages = [{"role": "system", "content": SYSTEM}] + [
+        {"role": "assistant" if c["role"] == "model" else "user",
+         "content": " ".join(p["text"] for p in c["parts"])} for c in contents]
+    body = {"model": model, "temperature": 0, "max_tokens": max_tokens,
+            "messages": messages, "reasoning": {"enabled": False}}
+    url, headers = "https://openrouter.ai/api/v1/chat/completions", {"Authorization": f"Bearer {key}"}
+    try:
+        data = post(url, headers, body)
+    except RuntimeError as exc:
+        if "Reasoning is mandatory" not in str(exc):   # see run_multimodel_eval
+            raise
+        data = post(url, headers, {**body, "reasoning": {"effort": "minimal"}})
+    text = " ".join((c.get("message") or {}).get("content") or ""
+                    for c in data.get("choices", []))
+    usage = data.get("usage") or {}
+    return text.strip(), {"totalTokenCount": usage.get("total_tokens", 0),
+                          "reasoningTokens": (usage.get("completion_tokens_details")
+                                              or {}).get("reasoning_tokens", 0)}
+
+
+TURN = {"gemini": gemini_turn, "openrouter": openrouter_turn}
+KEYS = {"gemini": "GEMINI_API_KEY", "openrouter": "OPENROUTER_API_KEY"}
+
+
 def parse(reply):
     t = reply.strip()
     if t.startswith("```"):
@@ -78,24 +104,26 @@ def parse(reply):
         return None
 
 
-def run_item(model, item, key, max_steps):
+def run_item(model, item, key, max_steps, turn=gemini_turn):
     q = f"Query time: {item['query_time']}. Question: {item['question']}"
     contents = [{"role": "user", "parts": [{"text": q}]}]
     transcript = []
     usage_total = 0
+    reasoning_total = 0
     for step in range(max_steps + 1):
-        reply, usage = gemini_turn(model, contents, key)
+        reply, usage = turn(model, contents, key)
         usage_total += int((usage or {}).get("totalTokenCount", 0) or 0)
+        reasoning_total += int((usage or {}).get("reasoningTokens", 0) or 0)
         transcript.append(reply)
         obj = parse(reply)
         contents.append({"role": "model", "parts": [{"text": reply}]})
         if not obj:
-            return "", "malformed", transcript, usage_total
+            return "", "malformed", transcript, usage_total, reasoning_total
         tool = str(obj.get("tool", "")).lower()
         if tool == "answer":
-            return str(obj.get("value", "")), "answer", transcript, usage_total
+            return str(obj.get("value", "")), "answer", transcript, usage_total, reasoning_total
         if tool == "clarify":
-            return "CLARIFY", "clarify", transcript, usage_total
+            return "CLARIFY", "clarify", transcript, usage_total, reasoning_total
         if tool == "search" and step < max_steps:
             hits = search(str(obj.get("query", "")), item["claims"])
             obs = "Search results:\n" + "\n".join(f"- {h}" for h in hits)
@@ -104,17 +132,19 @@ def run_item(model, item, key, max_steps):
         # out of search budget: force a final answer
         contents.append({"role": "user", "parts": [{"text":
             "Search budget exhausted. Reply now with answer or clarify JSON."}]})
-    reply, usage = gemini_turn(model, contents, key)
+    reply, usage = turn(model, contents, key)
     usage_total += int((usage or {}).get("totalTokenCount", 0) or 0)
+    reasoning_total += int((usage or {}).get("reasoningTokens", 0) or 0)
     obj = parse(reply) or {}
     if str(obj.get("tool", "")).lower() == "clarify":
-        return "CLARIFY", "clarify", transcript + [reply], usage_total
-    return str(obj.get("value", reply)), "answer", transcript + [reply], usage_total
+        return "CLARIFY", "clarify", transcript + [reply], usage_total, reasoning_total
+    return str(obj.get("value", reply)), "answer", transcript + [reply], usage_total, reasoning_total
 
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--model", required=True)
+    p.add_argument("--provider", choices=sorted(TURN), default="gemini")
     p.add_argument("--data", default="paper/data/situationcatch_bench.jsonl")
     p.add_argument("--ids-from", default="paper/data/situationcatch_llm_sample.jsonl")
     p.add_argument("--out", required=True)
@@ -122,9 +152,9 @@ def main():
     p.add_argument("--sleep", type=float, default=0.25)
     p.add_argument("--limit", type=int)
     args = p.parse_args()
-    key = os.environ.get("GEMINI_API_KEY")
+    key = os.environ.get(KEYS[args.provider])
     if not key:
-        raise SystemExit("Missing GEMINI_API_KEY; no calls were made.")
+        raise SystemExit(f"Missing {KEYS[args.provider]}; no calls were made.")
 
     wanted = {json.loads(l)["id"] for l in Path(args.ids_from).read_text().splitlines()
               if l.strip()}
@@ -146,17 +176,18 @@ def main():
                 continue
             gold = ([item["gold_answer"]] if item["gold_action"] == "ANSWER"
                     else [item["gold_action"]])
-            rec = {"id": item["id"], "provider": "gemini", "model": args.model,
+            rec = {"id": item["id"], "provider": args.provider, "model": args.model,
                    "condition": "agent", "gold": gold,
                    "started_at": dt.datetime.now(dt.timezone.utc).isoformat()}
             tic = time.perf_counter()
             try:
-                answer, final, transcript, toks = run_item(
-                    args.model, item, key, args.max_steps)
+                answer, final, transcript, toks, reasoning = run_item(
+                    args.model, item, key, args.max_steps, TURN[args.provider])
                 rec.update(normalized_answer=answer, final_action=final,
                            correct=int(any(matches(g, answer) for g in gold)),
                            n_steps=len(transcript), transcript=transcript,
-                           usage={"totalTokenCount": toks}, error=None)
+                           usage={"totalTokenCount": toks,
+                                  "reasoningTokens": reasoning}, error=None)
             except Exception as exc:
                 rec.update(normalized_answer=None, correct=None,
                            usage={}, error=f"{type(exc).__name__}: {exc}")

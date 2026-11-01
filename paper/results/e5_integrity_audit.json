@@ -1,0 +1,240 @@
+{
+  "data": "paper/data/situationcatch_llm_sample.jsonl",
+  "n_items": 210,
+  "expected_category_coverage": {
+    "counterfactual": 30,
+    "hidden_premise": 30,
+    "modality": 30,
+    "observer": 30,
+    "scope": 30,
+    "source_conflict": 30,
+    "temporal": 30
+  },
+  "conditions": [
+    "direct",
+    "structured",
+    "situation"
+  ],
+  "models": [
+    {
+      "file": "paper/results/raw/e5_gemini_2_5_flash.jsonl",
+      "provider": "openrouter",
+      "model": "google/gemini-2.5-flash",
+      "raw_records": 630,
+      "duplicate_attempts": 0,
+      "conditions": [
+        {
+          "condition": "direct",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.8476190476190476,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 638.5150000000001,
+          "total_tokens": 20906,
+          "complete": true
+        },
+        {
+          "condition": "structured",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.8380952380952381,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 1660.315,
+          "total_tokens": 71137,
+          "complete": true
+        },
+        {
+          "condition": "situation",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.8095238095238095,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 1231.6100000000001,
+          "total_tokens": 62292,
+          "complete": true
+        }
+      ],
+      "complete": true
+    },
+    {
+      "file": "paper/results/raw/e5_gemini_2_5_flash_lite.jsonl",
+      "provider": "openrouter",
+      "model": "google/gemini-2.5-flash-lite",
+      "raw_records": 630,
+      "duplicate_attempts": 0,
+      "conditions": [
+        {
+          "condition": "direct",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.7095238095238096,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 540.7049999999999,
+          "total_tokens": 21099,
+          "complete": true
+        },
+        {
+          "condition": "structured",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.9047619047619048,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 908.405,
+          "total_tokens": 57236,
+          "complete": true
+        },
+        {
+          "condition": "situation",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.7571428571428571,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 832.855,
+          "total_tokens": 56573,
+          "complete": true
+        }
+      ],
+      "complete": true
+    },
+    {
+      "file": "paper/results/raw/e5_gemini_3_5_flash.jsonl",
+      "provider": "openrouter",
+      "model": "google/gemini-3.5-flash",
+      "raw_records": 630,
+      "duplicate_attempts": 0,
+      "conditions": [
+        {
+          "condition": "direct",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.861904761904762,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 1223.92,
+          "total_tokens": 20604,
+          "complete": true
+        },
+        {
+          "condition": "structured",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.8476190476190476,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 1736.685,
+          "total_tokens": 46287,
+          "complete": true
+        },
+        {
+          "condition": "situation",
+          "n_success": 210,
+          "n_expected": 210,
+          "accuracy": 0.819047619047619,
+          "missing_ids": [],
+          "unexpected_ids": [],
+          "category_coverage": {
+            "counterfactual": 30,
+            "hidden_premise": 30,
+            "modality": 30,
+            "observer": 30,
+            "scope": 30,
+            "source_conflict": 30,
+            "temporal": 30
+          },
+          "balanced": true,
+          "median_latency_ms": 1897.835,
+          "total_tokens": 60754,
+          "complete": true
+        }
+      ],
+      "complete": true
+    }
+  ],
+  "confirmatory_complete": true
+}

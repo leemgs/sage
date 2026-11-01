@@ -1,0 +1,10 @@
+provider,model,condition,n_success,n_error,accuracy
+openrouter,google/gemini-2.5-flash,direct,210,0,0.8476190476190476
+openrouter,google/gemini-2.5-flash,situation,210,0,0.8095238095238095
+openrouter,google/gemini-2.5-flash,structured,210,0,0.8380952380952381
+openrouter,google/gemini-2.5-flash-lite,direct,210,0,0.7095238095238096
+openrouter,google/gemini-2.5-flash-lite,situation,210,0,0.7571428571428571
+openrouter,google/gemini-2.5-flash-lite,structured,210,0,0.9047619047619048
+openrouter,google/gemini-3.5-flash,direct,210,0,0.861904761904762
+openrouter,google/gemini-3.5-flash,situation,210,0,0.819047619047619
+openrouter,google/gemini-3.5-flash,structured,210,0,0.8476190476190476

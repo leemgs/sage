@@ -1,0 +1,10 @@
+provider,model,condition,n_success,n_expected,accuracy,median_latency_ms,total_tokens,complete
+openrouter,google/gemini-2.5-flash,direct,210,210,0.8476190476190476,638.5150000000001,20906,1
+openrouter,google/gemini-2.5-flash,structured,210,210,0.8380952380952381,1660.315,71137,1
+openrouter,google/gemini-2.5-flash,situation,210,210,0.8095238095238095,1231.6100000000001,62292,1
+openrouter,google/gemini-2.5-flash-lite,direct,210,210,0.7095238095238096,540.7049999999999,21099,1
+openrouter,google/gemini-2.5-flash-lite,structured,210,210,0.9047619047619048,908.405,57236,1
+openrouter,google/gemini-2.5-flash-lite,situation,210,210,0.7571428571428571,832.855,56573,1
+openrouter,google/gemini-3.5-flash,direct,210,210,0.861904761904762,1223.92,20604,1
+openrouter,google/gemini-3.5-flash,structured,210,210,0.8476190476190476,1736.685,46287,1
+openrouter,google/gemini-3.5-flash,situation,210,210,0.819047619047619,1897.835,60754,1

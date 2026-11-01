@@ -47,8 +47,9 @@ PROVIDER_ENV = {
 
 
 def slug(model: str) -> str:
-    """Filesystem-safe token for a model identifier (e.g. openai/gpt-5.1)."""
-    return re.sub(r"[^A-Za-z0-9]+", "_", model).strip("_").lower()
+    """Filesystem-safe token for a model identifier, without a router prefix
+    (google/gemini-2.5-flash -> gemini_2_5_flash)."""
+    return re.sub(r"[^A-Za-z0-9]+", "_", model.split("/")[-1]).strip("_").lower()
 
 
 def load_manifest() -> dict:
