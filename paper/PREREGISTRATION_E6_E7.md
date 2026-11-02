@@ -77,3 +77,35 @@ benchmark is specific to the rule-based sensor.
 **Known limitation, stated in advance.** Claim texts contain no timestamps, so no sensor
 can recover `time`; temporal items whose answer depends on the query time are therefore
 not recoverable from text by design. This is reported, not corrected after the fact.
+
+## Amendment 1 (2026-11-02, before any outcome was inspected)
+
+**What happened.** The first launch of E6/E7 exhausted the OpenRouter account's
+credit (the account held about $5; the API then returned HTTP 402). All runs were
+stopped. Only row and error counts of the partial files were examined; no
+accuracy, slot score or other outcome of any partial record was computed or viewed
+before this amendment.
+
+**Change, for cost only.** The primary E6 families become three independent
+developers whose models are all inexpensive and open-weight:
+`meta-llama/llama-4-maverick` (Meta), `deepseek/deepseek-v4.1-flash` (DeepSeek) and
+`qwen/qwen3.8-flash` (Alibaba/Qwen). `anthropic/claude-sonnet-5.5` and
+`openai/gpt-6.1-sol` are dropped; there are now no secondary models. E7 uses these
+three models plus `google/gemini-2.5-flash`. Conditions, prompts, sample, decoding,
+the primary contrast, the decision rule (an interval above zero in at least two of
+the three primary families) and the E7 interpretation rule are unchanged.
+
+**Consequence, stated in advance.** E6 can no longer speak for the proprietary
+Anthropic and OpenAI families; this is reported as a limitation.
+
+**Partial records.** Records of the three retained E6 models and the E7 models that
+succeeded before the halt were produced by the same code and settings and are kept;
+the resumable runners complete the remaining items. Records of the dropped models
+(3 and 1 successful main-condition calls, 1 each in E7) are moved to
+`paper/results/raw_e6/aborted_credit_exhausted/` and excluded.
+
+**Tool correction.** `code/audit_multifamily.py` counted a family by the record's
+`provider` field, so every OpenRouter record counted as one family. It now counts the
+model developer (the `vendor/` prefix of a gateway model id), as the pre-registered
+"provider families" intends; new tests check that one developer reached through a
+gateway counts as one family.
