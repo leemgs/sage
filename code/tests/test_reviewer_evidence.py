@@ -104,3 +104,23 @@ def test_multifamily_rejects_mock_adapter():
                 "condition": "direct", "error": None, "usage": {"mock": True}}]
     with pytest.raises(ValueError, match="synthetic/mock"):
         multifamily.audit_records(records, ["direct"], min_families=1)
+
+
+def _gateway_records(models):
+    return [{"provider": "openrouter", "model": m, "id": item, "condition": c,
+             "correct": 1, "error": None, "usage": {}}
+            for m in models for item in ("i1", "i2") for c in ("direct", "situation")]
+
+
+def test_gateway_records_count_families_by_developer():
+    report = multifamily.audit_records(
+        _gateway_records(["anthropic/a", "openai/b", "meta-llama/c"]),
+        ["direct", "situation"])
+    assert report["provider_families"] == ["anthropic", "meta-llama", "openai"]
+
+
+def test_one_developer_via_gateway_is_one_family():
+    with pytest.raises(ValueError, match="found 1"):
+        multifamily.audit_records(
+            _gateway_records(["google/x", "google/y", "google/z"]),
+            ["direct", "situation"])

@@ -6,13 +6,26 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 
+# Gateways route to many developers, so for them the family is the model's
+# developer prefix (openrouter "anthropic/claude-..." -> anthropic), not the
+# gateway; a native provider is its own family (gemini -> google).
+GATEWAYS = {"openrouter"}
+NATIVE = {"gemini": "google", "openai": "openai", "anthropic": "anthropic", "xai": "xai"}
+
+
+def model_family(provider, model):
+    if provider in GATEWAYS and model and "/" in model:
+        return model.split("/", 1)[0]
+    return NATIVE.get(provider, provider)
+
+
 def audit_records(records, expected_conditions, min_families=3):
     successful = [r for r in records if r.get("error") is None]
     if any(r.get("provider") == "mock" or r.get("usage", {}).get("mock")
            for r in successful):
         raise ValueError("synthetic/mock records cannot support multi-family evidence")
     models = {(r.get("provider"), r.get("model")) for r in successful}
-    providers = {provider for provider, _ in models}
+    providers = {model_family(provider, model) for provider, model in models}
     if len(providers) < min_families:
         raise ValueError(f"need >= {min_families} provider families; found {len(providers)}")
     cells = defaultdict(Counter)
