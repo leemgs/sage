@@ -51,8 +51,9 @@ Code, data, generator and item-level outputs are openly available at
 https://github.com/leemgs/sage under the MIT licence; an archival DOI will be
 minted on acceptance. Use of generative AI tools is documented in Methods. The
 work has not been published elsewhere and is not under consideration by another
-journal. [If a preprint has been posted, state where.] The author declares no
-competing interests. I suggest as potential reviewers: [names; areas: temporal
+journal. [If a preprint has been posted, state where.] The work received no
+funding and was carried out as an unpaid contribution to the research
+community; the author declares no competing interests. I suggest as potential reviewers: [names; areas: temporal
 QA, belief-state tracking, RAG evaluation]. I request that [any conflicted
 parties, or "no one"] be excluded.
 

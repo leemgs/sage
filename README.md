@@ -90,6 +90,12 @@ inter-annotator agreement, agentic/tool-use baseline은 아직 완료되지 않�
 상세한 제출 gate는 [`paper/REVIEWER_READINESS.md`](paper/REVIEWER_READINESS.md),
 재현 범위와 제한은 [`paper/README.md`](paper/README.md)에 있습니다.
 
+## 연구 목적과 펀딩
+
+이 연구는 어떠한 연구비나 수익도 받지 않은 **비영리·무펀딩 연구**입니다. 전 세계 연구자들의
+연구 활동을 돕기 위한 재능 기부로 수행되며, 코드·데이터·결과를 MIT 라이선스로 공개합니다.
+사전 등록된 E8 실험은 비용 없이 재현할 수 있도록 무료(`:free`) 모델 엔드포인트만 사용합니다.
+
 ## 라이선스
 
 코드, 논문 소스와 함께 배포되는 연구 산출물은 저장소 루트의
