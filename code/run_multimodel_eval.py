@@ -37,6 +37,10 @@ def _retry_delay_seconds(detail):
     return float(m.group(1)) if m else None
 
 
+class DailyQuotaExhausted(RuntimeError):
+    """A free tier's daily request quota is spent; stop instead of recording errors."""
+
+
 def post(url, headers, body, max_retries=6):
     """POST JSON; transparently back off on rate-limit / transient errors.
 
@@ -55,6 +59,8 @@ def post(url, headers, body, max_retries=6):
                 return json.loads(response.read())
         except urllib.error.HTTPError as exc:
             detail = exc.read().decode("utf-8", errors="replace")
+            if exc.code == 429 and re.search(r"per[- ]day", detail, re.I):
+                raise DailyQuotaExhausted(detail[:300])
             transient = exc.code in (429, 500, 502, 503, 504)
             if transient and attempt < max_retries:
                 wait = _retry_delay_seconds(detail)
@@ -296,6 +302,9 @@ def main():
                                       matches(x, answer) for x in gold)),
                                   usage=usage,
                                   request_id=request_id, error=None)
+                except DailyQuotaExhausted as exc:
+                    print(f"Daily free quota exhausted; stopping (resume later): {exc}")
+                    raise SystemExit(3)
                 except Exception as exc:
                     record.update(raw_response=None, normalized_answer=None,
                                   gold=item["answers"], correct=None, usage={},

@@ -1,3 +1,5 @@
 .env
 __pycache__/
 *.py[cod]
+paper/data/local/
+paper/results/raw_e8/nl_local/
