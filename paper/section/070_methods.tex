@@ -259,8 +259,8 @@ pilot, earlier quota-truncated free-tier attempts and aborted v0.2 attempts
 (substitute models and a free-tier native run stopped by its daily quota)
 remain archived but are excluded from every scientific aggregate. Only the
 complete records admitted by \texttt{code/audit\_e5.py} enter the reported E5
-tables. The completed pilot is
-evidence from one provider family, not the multi-family confirmatory experiment.
+tables. Together with E6 these runs cover four model families but not the
+natural-language confirmatory experiment specified below.
 
 \subsection*{Pre-registered multi-family replication (E6) and LLM sensors (E7)}
 
@@ -290,6 +290,21 @@ whole word for both sensors alike. An invalid output is retried once and then
 scored as a sensing failure. Claim texts contain no timestamps, so the time
 slot is unrecoverable by design for every sensor.
 
+Two analyses were added after the data were seen and are reported as such.
+First, the pre-registered extractor parses a JSON answer only when the whole
+response is JSON and does not map a boolean answer to yes or no; Llama often
+wrote prose before its JSON or answered \texttt{"answer": false}. A
+sensitivity analysis (\texttt{code/sensitivity\_rescore.py}) applies one more
+robust extractor -- the last JSON object in the response, booleans mapped to
+yes/no -- to every record of all six models alike, without altering the
+archived files; the pre-registered results remain primary. Second, E7's
+interpretation rule did not fit the data cleanly (the shortfall lay mainly in
+the unrecoverable time slot, yet claim-level cue-slot accuracy was 69--76\%),
+so we report all pre-registered measures and add the split of end-to-end
+accuracy into temporal and other items. The multi-family audit was corrected
+before the analysis to count families by model developer rather than by the
+gateway that served them.
+
 \subsection*{Prospective test designed to break benchmark--solver coupling}
 
 We pre-specify the next test rather than presenting simulated numbers as a
@@ -313,8 +328,9 @@ interval excludes zero in at least two independent families, no material loss
 against temporal retrieval, and replication on the author-disjoint natural
 set. Human agreement, selective risk, latency, tokens and cost must be reported
 regardless of outcome. Until those gates are passed, generator--solver
-co-design, one provider family and the absence of human evaluation remain core
-limitations rather than prose-resolved concerns.
+co-design, the absence of proprietary families beyond Gemini, of natural text
+and of human evaluation remain core limitations rather than prose-resolved
+concerns.
 
 \subsection*{Generalization and efficiency protocol}
 

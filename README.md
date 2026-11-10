@@ -21,6 +21,12 @@ SAGE는 인공지능이 질문에 답하거나 행동을 결정할 때 단순히
   평가했습니다(v0.2). Explicit-situation prompt는 세 모델 모두에서 structured
   prompt보다 높지 않았고(−2.9, −14.8, −2.9%p), 한 모델에서는 유의하게
   낮았습니다.
+- **E6 사전 등록 다중 패밀리 재현**: Meta·DeepSeek·Qwen 모델(−4.3, +19.5, −0.5%p).
+  사전 등록 판정 규칙(3개 중 2개 패밀리에서 CI>0)을 충족하지 않아 "차이 없음"으로
+  보고합니다. +19.5는 추출기 산물이며, 사후 민감도 분석에서는 어떤 모델도 0보다 높지
+  않습니다. Timestamp 없는 claim은 모든 패밀리에서 시간 의존 항목에 실패합니다(23–50%).
+- **E7 LLM 센서**: 규칙 센서와 같은 입력으로 LLM이 state를 채우면 end-to-end가
+  65.7% → 79.0–87.1%로 오르지만, 텍스트에 없는 시각 정보는 복원하지 못합니다.
 - **Retrieval 및 natural-text checks**: timestamp 등 메타데이터 없이 같은
   claim을 주는 RAG는 전체 79.4%(structured 86.3%, situation 79.5%)였고,
   temporal 항목에서 44.4%로 무너졌습니다. SituatedQA 12개 스모크 테스트도

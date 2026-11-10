@@ -1,57 +1,66 @@
-\subsection*{A preliminary matched multi-model intervention (E5)}
+\subsection*{Situation prompting across four model families (E5, E6)}
 
 The controlled results establish that the seven applicability invariants are
 executable and causally separable (E1--E4); they do not show that
 \emph{prompting} a language model for an explicit situation state improves it.
-As a first, deliberately bounded test of that E5 claim, three Gemini models
-answer a stratified, evidence-complete sample of SituationCatch-Bench
-(30 items per category, $n=210$) with evidence, decoding and budget held fixed,
-varying only the prompt: a plain \emph{direct} answer, a \emph{structured} JSON
-prompt or an explicit \emph{situation}-state prompt (Methods). The primary
-quantity is the within-model paired situation$-$structured contrast; the run
-passes a completion audit with no failed calls.
+E5 tests this with three Gemini models, and a pre-registered replication (E6)
+repeats it unchanged with three open-weight models from Meta, DeepSeek and
+Qwen. Each model answers the same stratified sample (30 items per category,
+$n=210$) with evidence, decoding and budget fixed, under a plain \emph{direct}
+answer, a \emph{structured} JSON prompt or an explicit \emph{situation}-state
+prompt (Methods). The primary quantity is the within-model paired
+situation$-$structured contrast; every run passes the completion audit with no
+failed calls, and E6 passes a multi-family audit.
 
 \input{section/tables/e5_stats_table}
 
-The result is null-to-negative (Table~\ref{tab:e5-stats}). Prompting for an
-explicit situation state never improves on a matched structured prompt: the
-paired situation$-$structured differences are $-2.9$, $-14.8$ and $-2.9$
-percentage points. The $95\%$ cluster-bootstrap interval excludes zero only for
-\texttt{gemini-2.5-flash-lite}, where the situation prompt is \emph{worse}, and
-for \texttt{gemini-3.5-flash} its upper bound is zero. The intervals are wide
-because the benchmark has only seven template families, so resampling
-categories -- the honest unit of independence -- leaves little power for a
-directional claim. Relative to the direct prompt, the situation prompt uses
-2.7--3.0 times the provider-reported tokens and has higher median latency, with
-no accuracy gain and no reduction in selective risk.
+Explicit situation prompting does not improve on structured prompting
+(Table~\ref{tab:e5-stats}, Extended Data Table~\ref{tab:e6-stats}). The
+paired differences are $-2.9$, $-14.8$ and $-2.9$ percentage points in Gemini
+and $-4.3$, $+19.5$ and $-0.5$ in E6, so the pre-registered criterion for an
+improvement -- an interval above zero in at least two of the three E6 families
+-- is not met. The one positive contrast (Llama, $+19.5$ [$+5.2$, $+36.2$]) is a
+scoring artefact: Llama often wraps its structured JSON in prose or answers
+with a boolean, which the pre-registered extractor misses. A post-hoc
+sensitivity analysis that applies one more robust extractor to all six models
+changes 47 Llama records and turns its contrast into $-1.9$ [$-7.1$, $+1.9$];
+under it, situation prompting is never above structured prompting in any model
+($-1.9$ to $-14.8$ points). Intervals are wide because the benchmark has only
+seven template families (Methods). The situation prompt costs 2.7--6.2 times
+the tokens of the direct prompt. On 12 SituatedQA temporal items the two
+prompts differ by at most one item in every model, a smoke test only.
 
-A small natural-language check points the same way. On a 12-item sample from the
-public SituatedQA temporal split, the two date-anchored conditions differ by at
-most one item (situation$-$structured differences of $0.0$, $0.0$ and $+8.3$
-points across the three models). At $n=12$ this is a smoke test, not a result.
-
-Retrieval shows which variables matter (Extended Data Table~\ref{tab:e5-rag}).
-Because every item has at most three claims, the top-3 retrieval condition
-receives all claims, in time order, but as plain text without timestamps,
-status, source, scope or observer metadata. It reaches $79.4\%$ overall,
-against $86.3\%$ structured and $79.5\%$ situation, and collapses on temporal
-items ($44.4\%$ versus $95.6$--$97.8\%$ with metadata), where the answer
-depends on when the query falls relative to each event. It is higher than the
-full-evidence conditions on hidden-premise, counterfactual and scope items.
-Removing the applicability metadata therefore harms the category whose answer
-depends on it, while relevant text alone suffices elsewhere; given
-category-level multiplicity these comparisons are exploratory. In v0.1, where
-the decisive claim was always the newest, the same retrieval condition was the
+Removing metadata shows which variables matter (Extended Data
+Tables~\ref{tab:e5-rag} and~\ref{tab:e6-rag}). Because each item has at most
+three claims, the retrieval condition receives every claim, but as plain text
+without timestamps, status, source, scope or observers. Temporal accuracy then
+falls to $44.4\%$ in Gemini and to 23--50\% per E6 model, against 95.6--100\%
+with metadata, as the pre-registered secondary hypothesis predicted in every
+family, while relevant text alone suffices for most other categories. In v0.1,
+where the decisive claim was always the newest, the same condition was the
 strongest ($91.3\%$), an artefact that the balanced benchmark removes. A
-tool-using agent that issues its own searches over the item's claims is the
-weakest condition overall ($71.0\%$) and drops furthest on temporal items
-($33.3\%$), because its search results likewise omit timestamps.
+tool-using agent, whose searches also omit timestamps, is weakest on temporal
+items ($33.3\%$ in Gemini, $14.4\%$ in E6).
 
-We read this as motivating the paper's distinction rather than as a plug-in
-prompting win: a prompt-level ``situation'' field is not situation awareness.
-Consistent with the controlled finding that accuracy collapses once states must
-be \emph{sensed} from text ($100.0\%\rightarrow66.5\%$), the bottleneck is
-situation sensing and validation, not a state slot in the prompt. This
-single-provider, $n=210$ pilot neither confirms nor refutes the hypothesis at
-scale; a confirmatory E5 requires multiple model families, a larger
-natural-language set and human agreement (Methods).
+\subsection*{LLM sensors recover most situation cues (E7)}
+
+Is the sensing gap specific to the rule-based sensor? In a second
+pre-registered study (E7), four LLMs receive exactly that sensor's inputs --
+query time, question and claim texts -- and fill the same state slots, which
+drive the unchanged SCQA engine (Extended Data Table~\ref{tab:e7-sensor}).
+On the same 210 items, end-to-end accuracy rises from $65.7\%$ for the rule
+sensor to 79.0--87.1\%, and on non-temporal items from $71.1\%$ to
+85.6--96.1\%; source-conflict items go from $0\%$ to $100\%$. Temporal items
+stay at 33--40\% for every sensor, because the claim texts state no times.
+Most of the rule sensor's gap is therefore specific to it; what remains is
+information absent from the text, plus residual errors on observer knowledge
+and missing premises. Claim-level slot scores track decisions poorly, as
+vocabulary differences that leave the answer unchanged still count as errors.
+
+Together, these studies separate two things that the oracle results cannot:
+an explicit situation field adds nothing beyond structured prompting in any of
+four model families, whereas stripping applicability metadata from otherwise
+identical evidence is decisive for time-dependent items. Availability of the
+right claims is not enough when their applicability cannot be read. These are
+synthetic, single-benchmark results; independent natural-language evidence and
+human agreement are still required (Methods).

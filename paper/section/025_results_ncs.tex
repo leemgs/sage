@@ -97,7 +97,7 @@ are shown (Methods).}
 \label{fig:ablation}
 \end{figure}
 
-\subsection*{Partial observability exposes a sensing bottleneck}
+\subsection*{Partial observability exposes a sensing gap}
 
 We evaluated two observability regimes. In the evidence-complete control, all
 required variables are supplied in the structured state. In the text-only
@@ -160,12 +160,12 @@ Table~\ref{tab:evidence-ladder} makes the claim boundary explicit. The current
 study shows within its co-designed conformance suite that seven applicability
 invariants can be represented, executed and independently ablated under oracle
 structured states. The audited
-E5 pilot tests, but does not establish, the hypothesis that explicit situation
-states reduce analogous errors in LLMs: the prompt intervention is
-null-to-negative in one provider family, and removing timestamps from otherwise
-identical evidence collapses accuracy on temporal items. Broad
-end-to-end efficacy still requires independent model families, a larger natural
-corpus and human annotation.
+E5 and E6 studies test, but do not support, the hypothesis that explicit
+situation states reduce analogous errors in LLMs: the prompt intervention
+shows no detectable benefit in four model families, while removing timestamps
+from otherwise identical evidence collapses accuracy on temporal items. Broad
+end-to-end efficacy still requires independently authored natural text,
+proprietary families beyond Gemini and human annotation.
 
 \begin{table*}[t]
 \caption{Evidence ladder and permitted interpretation.}
@@ -180,7 +180,7 @@ E1: formal definition & Situation schema and applicability relation & The failur
 E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable and causally separable \\
 E3: natural prevalence & Independent temporal/situated QA literature & Situation dependence occurs in natural questions \\
 E4: predicted-state control & Deterministic text sensor on 4,200 generated items & Sensing errors reduce controlled end-to-end accuracy; natural-text generalization remains open \\
-E5: multi-model intervention & Audited single-family (Gemini) pilot, $n=210$, situation/structured/RAG/agent conditions & Situation prompting never improves on structured prompting; evidence without timestamps fails on temporal items; category differences are exploratory; multi-family and natural-text confirmation remain open \\
+E5/E6: multi-model intervention & Six models, four families (Gemini; pre-registered Meta, DeepSeek, Qwen), $n=210$, situation/structured/RAG/agent conditions; E7: LLM sensors & Situation prompting never improves on structured prompting; evidence without timestamps fails on temporal items; category differences are exploratory; multi-family and natural-text confirmation remain open \\
 E6: deployment / human study & Not completed & Needed for operational safety and human comparison \\
 \bottomrule
 \end{tabularx}

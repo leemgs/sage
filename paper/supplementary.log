@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.10.29)  1 NOV 2026 07:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.10.29)  10 NOV 2026 09:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,77 +669,77 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Task, desired out-put, con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Candidate claims, pas-sages,
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 147--147
+Underfull \hbox (badness 1231) in paragraph at lines 152--152
 \OT1/cmr/m/n/8.03 times-tamps and source meta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Validity, super-s-es-sion,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Tool schema, pre-con-di-tions,
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 147--147
+Underfull \hbox (badness 1033) in paragraph at lines 152--152
 \OT1/cmr/m/n/8.03 results, side effects and error
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 147--147
+Underfull \hbox (badness 1297) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Capability nego-ti-a-tion, autho-
  []
 
 
-Underfull \hbox (badness 4181) in paragraph at lines 147--147
+Underfull \hbox (badness 4181) in paragraph at lines 152--152
 \OT1/cmr/m/n/8.03 riza-tion scopes and resource
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Workflow trace, check-points,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 \OT1/cmr/m/n/8.03 answer/retrieve/clarify/abstain
  []
 
 
-Underfull \hbox (badness 4229) in paragraph at lines 147--147
+Underfull \hbox (badness 4229) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Observability engi-neer-
  []
 
 
-Underfull \hbox (badness 5519) in paragraph at lines 147--147
+Underfull \hbox (badness 5519) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Active-state snap-shot, alter-na-
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 147--147
+Underfull \hbox (badness 2096) in paragraph at lines 152--152
 \OT1/cmr/m/n/8.03 tives, unre-solved vari-ables and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 Model avail-abil-ity, latency,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\OT1/cmr/m/n/8.03 State-dependent autho-riza-tion
  []
 
@@ -753,6 +753,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
 (./supplementary.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -762,8 +765,8 @@ Package rerunfilecheck Info: File `supplementary.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12033 strings out of 476106
- 184811 string characters out of 5793932
+ 12034 strings out of 476106
+ 184817 string characters out of 5793932
  1940975 words of memory out of 5000000
  33816 multiletter control sequences out of 15000+600000
  569171 words of font info for 79 fonts, out of 8000000 for 9000
@@ -779,10 +782,10 @@ ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt9.pfb>
-Output written on supplementary.pdf (6 pages, 155116 bytes).
+Output written on supplementary.pdf (7 pages, 157341 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
+ 115 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 26 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
