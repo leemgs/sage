@@ -42,12 +42,14 @@ Prompt engineering designs instructions, context engineering designs the informa
   not primary scientific evidence.
 - Gold-, text-predicted- and deliberately corrupted-state evaluation over all 4,200 items.
 - Vector/raster figures, datasheet and reviewer-readiness audit.
-- Audited E5 pilot: three Gemini-family models on 210 stratified items under
+- Audited E5 study: three Gemini-family models on 210 stratified items under
   direct, structured and explicit-situation prompts, with item-level raw
   responses, category-clustered bootstrap intervals, latency and token use.
-- Focused top-3 lexical-retrieval baseline and a 12-item SituatedQA temporal
-  smoke test. These are preliminary single-provider checks, not cross-family
-  confirmation.
+- Pre-registered E6 replication with Meta, DeepSeek and Qwen models
+  (`PREREGISTRATION_E6_E7.md`, `results/raw_e6/`, `results/e6_*`) and E7
+  LLM-sensor study (`results/raw_sensor/`, `results/llm_sensor_summary.json`).
+- No-metadata retrieval condition, tool-using agent and a 12-item SituatedQA
+  temporal smoke test (a smoke test only).
 
 ## Main measured result
 SCQA achieved 100.0% exact action-and-answer accuracy in the structured diagnostic setting. The strongest situation-blind control achieved 54.3%, close to the chance level that the balanced design implies. This is explicitly reported as a constructive upper bound, not as evidence that a neural model can extract situation states from arbitrary natural language.

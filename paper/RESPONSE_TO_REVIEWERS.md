@@ -23,10 +23,14 @@ This paper contributes, in order of weight:
 3. **A bounded, audited empirical finding.** Under oracle states a reference
    implementation satisfies all invariants (100.0%); accuracy falls to 66.5%
    with text-inferred states and 45.1% under targeted corruption, consistent
-   with a *sensing* bottleneck. In a preliminary three-model Gemini-family test
-   (n = 210), prompting for an explicit situation state **never** beats matched
-   structured prompting; evidence without timestamps fails on time-dependent
-   items; a tool-using agent is weakest. We report this null-to-negative result plainly.
+   with a *sensing* bottleneck for that rule-based sensor. Across six models
+   from four families (three Gemini models; a pre-registered replication with
+   Meta, DeepSeek and Qwen models; n = 210 each), prompting for an explicit
+   situation state does not beat matched structured prompting under the
+   pre-registered decision rule; evidence without timestamps fails on
+   time-dependent items in every family. Language-model sensors (E7) recover
+   most cues the rule-based sensor misses (65.7% → 79.0–87.1%), but not
+   information absent from the text. We report these results plainly.
 
 We therefore position the manuscript as a **problem-formulation + resource +
 diagnostic** paper, not as a method that claims state-of-the-art performance.
@@ -65,8 +69,12 @@ outcome is null-to-negative (paired situation−structured = −2.9, −14.8, �
 points; only gemini-2.5-flash-lite's 95% cluster-bootstrap interval excludes
 zero, and there it is *worse*). We do not claim improvement. This result is
 consistent with, and motivates, the paper's central point: an explicit
-"situation" field in a prompt is not situation awareness; the bottleneck is
-sensing/validation of the state.
+"situation" field in a prompt is not situation awareness. A pre-registered
+replication (E6; Meta, DeepSeek, Qwen) gives −4.3, +19.5 and −0.5 points; the
+decision rule (interval above zero in ≥2 of 3 families) is not met, so we report
+no detectable difference. The single positive contrast is an extractor artefact
+(prose-wrapped JSON, boolean answers); a post-hoc sensitivity analysis, labelled
+as such, gives −1.9 [−7.1, +1.9] for that model and no model above zero.
 
 **R3 — "Benchmark–solver circularity; little natural language; baselines."**
 We acknowledge the synthetic benchmark shares a schema with the solver and state
@@ -87,11 +95,12 @@ deterministic), paired for within-model contrasts, plus selective risk and cost.
 Category-level differences are labelled exploratory because of multiplicity.
 
 **M-A — "Single model family (Gemini)."**
-Acknowledged as the primary external-validity limitation. We do not make a
-cross-family claim; `code/audit_multifamily.py` fails closed (requires ≥3
-provider families, rejects mock records) and currently reports "found 1", which
-we take as the honest status. Extension to independent families is specified in
-the protocol and blocked only by provider access, not by design.
+Addressed in part. The pre-registered E6 replication adds Meta, DeepSeek and
+Qwen models (3,258 records, no failed calls, no reasoning tokens);
+`code/audit_multifamily.py` now certifies four developer families. The planned
+Anthropic and OpenAI models were dropped before any outcome was inspected
+because API credit ran out (Amendment 1, `paper/PREREGISTRATION_E6_E7.md`), so
+no proprietary family beyond Gemini is covered; this is stated as a limitation.
 
 **M-B — "No human inter-annotator agreement."**
 Acknowledged. Blinded three-annotator packets over a 70-item stratified subset

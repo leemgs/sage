@@ -1,0 +1,10 @@
+provider,model,condition,n_success,n_expected,accuracy,median_latency_ms,total_tokens,complete
+openrouter,deepseek/deepseek-v4.1-flash,direct,210,210,0.8571428571428571,471.79999999999995,20708,1
+openrouter,deepseek/deepseek-v4.1-flash,structured,210,210,0.8857142857142857,1058.01,49450,1
+openrouter,deepseek/deepseek-v4.1-flash,situation,210,210,0.8428571428571429,1321.75,70475,1
+openrouter,meta-llama/llama-4-maverick,direct,210,210,0.8285714285714286,506.61,22843,1
+openrouter,meta-llama/llama-4-maverick,structured,210,210,0.7238095238095238,5710.3099999999995,129582,1
+openrouter,meta-llama/llama-4-maverick,situation,210,210,0.919047619047619,6062.365,141415,1
+openrouter,qwen/qwen3.8-flash,direct,210,210,0.8476190476190476,1001.395,24261,1
+openrouter,qwen/qwen3.8-flash,structured,210,210,0.8904761904761904,3462.505,68990,1
+openrouter,qwen/qwen3.8-flash,situation,210,210,0.8857142857142857,3656.685,77996,1

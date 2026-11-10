@@ -1,0 +1,10 @@
+provider,model,condition,n_success,n_error,accuracy
+openrouter,deepseek/deepseek-v4.1-flash,direct,12,0,0.08333333333333333
+openrouter,deepseek/deepseek-v4.1-flash,situation,12,0,0.75
+openrouter,deepseek/deepseek-v4.1-flash,structured,12,0,0.75
+openrouter,meta-llama/llama-4-maverick,direct,12,0,0.08333333333333333
+openrouter,meta-llama/llama-4-maverick,situation,12,0,0.4166666666666667
+openrouter,meta-llama/llama-4-maverick,structured,12,0,0.5
+openrouter,qwen/qwen3.8-flash,direct,12,0,0.08333333333333333
+openrouter,qwen/qwen3.8-flash,situation,12,0,0.5833333333333334
+openrouter,qwen/qwen3.8-flash,structured,12,0,0.5833333333333334

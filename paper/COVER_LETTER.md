@@ -34,14 +34,18 @@ showing that accuracy falls from 100.0% with oracle states to 66.5% when states
 must be sensed from text by a rule-based sensor and 45.1% under targeted
 corruption, consistent with a sensing bottleneck.
 
-I report the neural evidence as it stands. In an audited, preliminary
-single-family test (three Gemini models, n = 210), prompting for an explicit
-situation state never beats a matched structured prompt (differences of -2.9,
--14.8 and -2.9 points), and giving the same claims without timestamps collapses
-accuracy on time-dependent items. I present this null-to-negative result plainly because it supports the paper's
-point: a prompt-level "situation" field is not situation awareness. Multi-family,
-natural-text and human-annotation confirmation are pre-specified in Methods and
-not claimed.
+I report the neural evidence as it stands. Across six models from four
+families (three Gemini models and a pre-registered replication with Meta,
+DeepSeek and Qwen models, n = 210 each), prompting for an explicit situation
+state does not beat a matched structured prompt under the pre-registered
+decision rule, whereas giving the same claims without timestamps collapses
+accuracy on time-dependent items in every family. A second pre-registered study
+shows that language-model sensors recover most situation cues that a
+rule-based sensor misses, but not information absent from the text. I present
+the null result plainly because it supports the paper's point: a prompt-level
+"situation" field is not situation awareness. Proprietary families beyond
+Gemini, natural-text evaluation and human annotation are stated as limitations
+and not claimed.
 
 Code, data, generator and item-level outputs are openly available at
 https://github.com/leemgs/sage under the MIT licence; an archival DOI will be
@@ -73,17 +77,17 @@ retrieval- and prompt-based evaluation does not isolate. I contribute a formal
 failure class ("situation blindness"), a released diagnostic suite
 (SituationCatch-Bench, 4,200 items over seven applicability axes), an executable
 reference system with matched ablations, and an **audited, deliberately bounded**
-neural pilot.
+neural studies.
 
 I want to be transparent about the evidence boundary up front. The controlled
-results are a conformance suite co-designed with the solver, and the neural pilot
-is single-family (Gemini, n = 210) and **null-to-negative**: prompting for an
-explicit situation state never beats a matched structured prompt. The
-scientifically useful signals are that accuracy falls once the state must be
-*sensed* from text (100% → 66.5%) and that evidence stripped of timestamps fails
-on time-dependent items, consistent
-with *sensing*, not a prompt slot, being the bottleneck. A multi-family,
-natural-benchmark, human-annotated confirmation is specified but not yet run.
+results are a conformance suite co-designed with the solver. The neural studies
+cover six models from four families, partly pre-registered, and are
+**null for the prompt intervention**: an explicit situation state never beats a
+matched structured prompt. The useful signals are that evidence stripped of
+timestamps fails on time-dependent items in every family, and that
+language-model sensors close most of a rule-based sensor's gap (65.7% to
+79–87%) but not for information the text does not contain. Natural-text and
+human-annotated confirmation are specified but not yet run.
 
 Given this, I would value your guidance on whether NMI would consider the work as
 a **Perspective/Analysis** on a missing evaluation axis, or whether you would
