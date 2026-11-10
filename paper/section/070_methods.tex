@@ -262,6 +262,34 @@ complete records admitted by \texttt{code/audit\_e5.py} enter the reported E5
 tables. The completed pilot is
 evidence from one provider family, not the multi-family confirmatory experiment.
 
+\subsection*{Pre-registered multi-family replication (E6) and LLM sensors (E7)}
+
+Both studies were pre-registered in the repository
+(\texttt{paper/PREREGISTRATION\_E6\_E7.md}) before any study call; the commit
+history timestamps the design and one amendment. E6 repeats E5 with identical
+code, prompts, sample, decoding and conditions in three further developer
+families, reached through OpenRouter with reasoning disabled:
+\texttt{llama-4-maverick} (Meta), \texttt{deepseek-v4.1-flash} (DeepSeek) and
+\texttt{qwen3.8-flash} (Qwen), all with open weights. The amendment, made
+before any outcome was inspected, replaced the originally planned Anthropic
+and OpenAI models after the API credit ran out; proprietary families other
+than Gemini are therefore not covered. The pre-specified decision rule is that
+explicit situation prompting is said to improve on structured prompting only if
+the paired 95\% cluster-bootstrap interval lies above zero in at least two of
+the three E6 families. A multi-family audit counts families by model developer
+and requires at least three.
+
+E7 asks whether the sensing gap of the rule-based sensor is specific to it. An
+LLM receives exactly the rule sensor's inputs for each of the 210 sample items
+-- the query time, the question and the claim texts, with no metadata -- and
+returns the engine's state slots (event, actor, status, source, scope,
+observers, stated times and the user's region) from fixed vocabularies. The
+predicted state is passed unchanged to the SCQA engine, and slots are scored
+with the rule sensor's scorer, made case-insensitive and with actors matched by
+whole word for both sensors alike. An invalid output is retried once and then
+scored as a sensing failure. Claim texts contain no timestamps, so the time
+slot is unrecoverable by design for every sensor.
+
 \subsection*{Prospective test designed to break benchmark--solver coupling}
 
 We pre-specify the next test rather than presenting simulated numbers as a
