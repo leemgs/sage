@@ -72,3 +72,24 @@ the control and is predicted to include zero.
 paraphrases equally across conditions; model knowledge has a cut-off, so recent
 dates may be unanswerable from parametric knowledge alone; 300 items and two models
 are a bounded natural-text test, not the 1,200-scenario set of Supplementary Note 14.
+
+## Amendment 1 (2026-11-11, before any E8 outcome was inspected)
+
+**What happened.** `xingchen-agi/xing4.0-29b-a4b:free` was withdrawn from OpenRouter
+during E8a (HTTP 404, "no provider serves this model anymore") after 221 of 630 main
+and 0 of 210 retrieval calls had succeeded. Only success and error counts and the
+error messages were examined; no accuracy, contrast or other outcome of any E8 record
+had been computed or viewed. As pre-registered, its records are excluded and moved to
+`paper/results/raw_e8/excluded_withdrawn/`.
+
+**Replacement.** `recursive/flint-v1.0:free` (Recursive), the only general-purpose
+zero-price model on OpenRouter from a developer not yet covered (the others are a
+coding model, 1.7–2.6B models, or an endpoint that refused access). Its endpoint
+refuses to disable reasoning, so it runs with the protocol's pre-registered fallback
+`{"effort": "minimal"}`; probe calls still used about 100–1,250 reasoning tokens. Unlike
+every other E6/E8 model it therefore does not run with zero reasoning tokens; this is
+reported with its results.
+
+**Unchanged.** Sample, conditions, decoding otherwise, contrasts, the decision rule
+(an interval above zero in at least two of the three E8a models: Nemotron, dots,
+Flint) and E8b.

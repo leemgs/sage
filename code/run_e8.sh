@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Run (or resume) the pre-registered E8 studies (paper/PREREGISTRATION_E8.md).
+# Run (or resume) the pre-registered E8 studies (paper/PREREGISTRATION_E8.md;
+# Amendment 1 replaces the withdrawn Xingchen model with Recursive Flint).
 # Free endpoints only. When the daily free quota is reached the runner exits
 # without writing a record; re-run this script later to continue.
 # E8b needs a local clone of SituatedQA; see code/prepare_situatedqa_eval.py.
@@ -19,7 +20,7 @@ run_e8b() {
   python3 code/run_multimodel_eval.py --provider openrouter --model "$M" --data paper/data/local/situatedqa_e8.jsonl \
     --out "$R/nl_local/nl_$S.jsonl" --conditions direct date_context structured situation --max-tokens 1024 --sleep 0.5
 }
-A="nvidia/nemotron-3-ultra-550b-a55b:free dots-studio/dots-3-note-preview:free xingchen-agi/xing4.0-29b-a4b:free"
+A="nvidia/nemotron-3-ultra-550b-a55b:free dots-studio/dots-3-note-preview:free recursive/flint-v1.0:free"
 B="nvidia/nemotron-3-ultra-550b-a55b:free dots-studio/dots-3-note-preview:free"
 case "${1:-a}" in
   a) for m in $A; do run_e8a "$m" & done; wait ;;
