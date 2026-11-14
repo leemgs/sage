@@ -1,0 +1,201 @@
+{
+  "data": "paper/data/situationcatch_llm_sample.jsonl",
+  "n_items": 210,
+  "conditions": [
+    "direct",
+    "structured",
+    "situation"
+  ],
+  "bootstrap": 3000,
+  "models": {
+    "dots-studio/dots-3-note-preview:free": {
+      "conditions": {
+        "direct": {
+          "n": 210,
+          "accuracy": 0.8714285714285714,
+          "ci95": [
+            0.6904761904761905,
+            1.0
+          ],
+          "median_latency_ms": 1297.35,
+          "mean_tokens": 117.14761904761905,
+          "coverage": 1.0,
+          "selective_risk": 0.12857142857142856,
+          "n_abstain_or_clarify": 0
+        },
+        "structured": {
+          "n": 210,
+          "accuracy": 0.9142857142857143,
+          "ci95": [
+            0.7380952380952381,
+            1.0
+          ],
+          "median_latency_ms": 3953.27,
+          "mean_tokens": 338.0857142857143,
+          "coverage": 1.0,
+          "selective_risk": 0.08571428571428574,
+          "n_abstain_or_clarify": 0
+        },
+        "situation": {
+          "n": 210,
+          "accuracy": 0.919047619047619,
+          "ci95": [
+            0.7428571428571429,
+            1.0
+          ],
+          "median_latency_ms": 2583.205,
+          "mean_tokens": 273.1190476190476,
+          "coverage": 1.0,
+          "selective_risk": 0.080952380952381,
+          "n_abstain_or_clarify": 0
+        }
+      },
+      "contrasts": {
+        "situation_minus_structured": {
+          "n_pairs": 210,
+          "delta": 0.004761904761904762,
+          "ci95": [
+            0.0,
+            0.01904761904761905
+          ],
+          "interval_excludes_zero": false
+        },
+        "situation_minus_direct": {
+          "n_pairs": 210,
+          "delta": 0.047619047619047616,
+          "ci95": [
+            0.0,
+            0.1380952380952381
+          ],
+          "interval_excludes_zero": false
+        }
+      }
+    },
+    "nvidia/nemotron-3-ultra-550b-a55b:free": {
+      "conditions": {
+        "direct": {
+          "n": 210,
+          "accuracy": 0.9095238095238095,
+          "ci95": [
+            0.7142857142857143,
+            1.0
+          ],
+          "median_latency_ms": 1151.42,
+          "mean_tokens": 124.36666666666666,
+          "coverage": 0.9904761904761905,
+          "selective_risk": 0.08173076923076927,
+          "n_abstain_or_clarify": 2
+        },
+        "structured": {
+          "n": 210,
+          "accuracy": 0.919047619047619,
+          "ci95": [
+            0.7428571428571429,
+            1.0
+          ],
+          "median_latency_ms": 3591.9399999999996,
+          "mean_tokens": 253.85714285714286,
+          "coverage": 1.0,
+          "selective_risk": 0.080952380952381,
+          "n_abstain_or_clarify": 0
+        },
+        "situation": {
+          "n": 210,
+          "accuracy": 0.8523809523809524,
+          "ci95": [
+            0.6333333333333333,
+            1.0
+          ],
+          "median_latency_ms": 3785.01,
+          "mean_tokens": 320.37142857142857,
+          "coverage": 0.9761904761904762,
+          "selective_risk": 0.12682926829268293,
+          "n_abstain_or_clarify": 5
+        }
+      },
+      "contrasts": {
+        "situation_minus_structured": {
+          "n_pairs": 210,
+          "delta": -0.06666666666666667,
+          "ci95": [
+            -0.17142857142857143,
+            0.0
+          ],
+          "interval_excludes_zero": false
+        },
+        "situation_minus_direct": {
+          "n_pairs": 210,
+          "delta": -0.05714285714285714,
+          "ci95": [
+            -0.1619047619047619,
+            0.0
+          ],
+          "interval_excludes_zero": false
+        }
+      }
+    },
+    "recursive/flint-v1.0:free": {
+      "conditions": {
+        "direct": {
+          "n": 210,
+          "accuracy": 0.8380952380952381,
+          "ci95": [
+            0.6523809523809524,
+            0.9761904761904762
+          ],
+          "median_latency_ms": 3033.215,
+          "mean_tokens": 438.5047619047619,
+          "coverage": 1.0,
+          "selective_risk": 0.16190476190476188,
+          "n_abstain_or_clarify": 0
+        },
+        "structured": {
+          "n": 210,
+          "accuracy": 0.7428571428571429,
+          "ci95": [
+            0.5666666666666667,
+            0.8952380952380953
+          ],
+          "median_latency_ms": 6615.615,
+          "mean_tokens": 916.4,
+          "coverage": 1.0,
+          "selective_risk": 0.2571428571428571,
+          "n_abstain_or_clarify": 0
+        },
+        "situation": {
+          "n": 210,
+          "accuracy": 0.5857142857142857,
+          "ci95": [
+            0.40476190476190477,
+            0.7761904761904762
+          ],
+          "median_latency_ms": 7626.4349999999995,
+          "mean_tokens": 1033.8809523809523,
+          "coverage": 1.0,
+          "selective_risk": 0.41428571428571426,
+          "n_abstain_or_clarify": 0
+        }
+      },
+      "contrasts": {
+        "situation_minus_structured": {
+          "n_pairs": 210,
+          "delta": -0.15714285714285714,
+          "ci95": [
+            -0.2857142857142857,
+            -0.04285714285714286
+          ],
+          "interval_excludes_zero": true
+        },
+        "situation_minus_direct": {
+          "n_pairs": 210,
+          "delta": -0.2523809523809524,
+          "ci95": [
+            -0.4,
+            -0.11428571428571428
+          ],
+          "interval_excludes_zero": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "synthetic": false,
+  "provider_families": [
+    "dots-studio",
+    "nvidia",
+    "recursive"
+  ],
+  "n_families": 3,
+  "n_models": 3,
+  "n_cells_per_model": 630
+}
