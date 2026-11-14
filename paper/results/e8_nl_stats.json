@@ -1,0 +1,127 @@
+{
+  "seed": 20260726,
+  "bootstrap": 3000,
+  "cluster": "upstream question id",
+  "models": {
+    "dots-studio/dots-3-note-preview:free": {
+      "n": 300,
+      "clusters": 255,
+      "accuracy_pct": {
+        "direct": 30.0,
+        "date_context": 45.666666666666664,
+        "structured": 45.0,
+        "situation": 49.666666666666664
+      },
+      "accuracy_by_date_type_pct": {
+        "orig": {
+          "direct": 58.666666666666664,
+          "date_context": 54.666666666666664,
+          "structured": 60.0,
+          "situation": 53.333333333333336
+        },
+        "sampled_date": {
+          "direct": 18.666666666666668,
+          "date_context": 42.66666666666667,
+          "structured": 36.0,
+          "situation": 44.0
+        },
+        "sampled_year": {
+          "direct": 21.333333333333336,
+          "date_context": 34.66666666666667,
+          "structured": 36.0,
+          "situation": 44.0
+        },
+        "start": {
+          "direct": 21.333333333333336,
+          "date_context": 50.66666666666667,
+          "structured": 48.0,
+          "situation": 57.333333333333336
+        }
+      },
+      "nl_h1_situation_minus_structured": {
+        "n": 300,
+        "estimate_pp": 4.666666666666667,
+        "ci_pp": [
+          0.0,
+          9.427609427609427
+        ]
+      },
+      "nl_h2_dated_minus_undated_time_dependent": {
+        "n": 225,
+        "estimate_pp": 22.22222222222222,
+        "ci_pp": [
+          15.517241379310345,
+          28.846153846153843
+        ]
+      },
+      "nl_h2_dated_minus_undated_static_control": {
+        "n": 75,
+        "estimate_pp": -4.0,
+        "ci_pp": [
+          -13.333333333333334,
+          5.333333333333334
+        ]
+      }
+    },
+    "nvidia/nemotron-3-ultra-550b-a55b:free": {
+      "n": 300,
+      "clusters": 255,
+      "accuracy_pct": {
+        "direct": 36.666666666666664,
+        "date_context": 55.666666666666664,
+        "structured": 61.66666666666667,
+        "situation": 59.0
+      },
+      "accuracy_by_date_type_pct": {
+        "orig": {
+          "direct": 69.33333333333334,
+          "date_context": 65.33333333333333,
+          "structured": 72.0,
+          "situation": 69.33333333333334
+        },
+        "sampled_date": {
+          "direct": 20.0,
+          "date_context": 46.666666666666664,
+          "structured": 54.666666666666664,
+          "situation": 53.333333333333336
+        },
+        "sampled_year": {
+          "direct": 29.333333333333332,
+          "date_context": 54.666666666666664,
+          "structured": 58.666666666666664,
+          "situation": 54.666666666666664
+        },
+        "start": {
+          "direct": 28.000000000000004,
+          "date_context": 56.00000000000001,
+          "structured": 61.33333333333333,
+          "situation": 58.666666666666664
+        }
+      },
+      "nl_h1_situation_minus_structured": {
+        "n": 300,
+        "estimate_pp": -2.666666666666667,
+        "ci_pp": [
+          -6.6006600660066,
+          1.0101010101010102
+        ]
+      },
+      "nl_h2_dated_minus_undated_time_dependent": {
+        "n": 225,
+        "estimate_pp": 26.666666666666668,
+        "ci_pp": [
+          18.777292576419214,
+          34.04255319148936
+        ]
+      },
+      "nl_h2_dated_minus_undated_static_control": {
+        "n": 75,
+        "estimate_pp": -4.0,
+        "ci_pp": [
+          -9.333333333333334,
+          0.0
+        ]
+      }
+    }
+  }
+}

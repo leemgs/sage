@@ -84,11 +84,17 @@ agreement 또한 세 명 이상의 독립 annotation 파일이 완성되기 전�
 - 제출본을 고정하는 Git commit 또는 release tag
 - 실제 archive deposit 후에만 기재할 DOI
 
-다중 독립 model family, 더 큰 독립 natural-text corpus, human
-inter-annotator agreement, agentic/tool-use baseline은 아직 완료되지 않은
-확증 과제입니다. 저장소는 이를 완료된 실험으로 주장하지 않습니다.
+Gemini 외 독점(proprietary) model family, temporal 외 범주의 독립 natural-text
+corpus, human inter-annotator agreement는 아직 완료되지 않은 확증 과제입니다
+(오픈웨이트·무료 모델 6개 개발사 복제와 SituatedQA temporal 300문항 연구 E8은 완료). 저장소는 이를 완료된 실험으로 주장하지 않습니다.
 상세한 제출 gate는 [`paper/REVIEWER_READINESS.md`](paper/REVIEWER_READINESS.md),
 재현 범위와 제한은 [`paper/README.md`](paper/README.md)에 있습니다.
+
+## 연구 목적과 펀딩
+
+이 연구는 어떠한 연구비나 수익도 받지 않은 **비영리·무펀딩 연구**입니다. 전 세계 연구자들의
+연구 활동을 돕기 위한 재능 기부로 수행되며, 코드·데이터·결과를 MIT 라이선스로 공개합니다.
+사전 등록된 E8 실험은 비용 없이 재현할 수 있도록 무료(`:free`) 모델 엔드포인트만 사용합니다.
 
 ## 라이선스
 

@@ -254,13 +254,17 @@ item inclusion and scoring rules. Synthetic diagnostic, natural benchmark and
 model intervention are reported as separate evidence levels.
 
 The bundled \texttt{code/run\_multimodel\_eval.py} provides provider adapters and
-refuses to create placeholder outputs when credentials are absent. The v0.1
+refuses to create placeholder outputs when credentials are absent. In v0.1,
+where the decisive claim was always the newest, the no-metadata retrieval
+condition was the strongest ($91.3\%$), an artefact that the balanced v0.2
+benchmark removes. The v0.1
 pilot, earlier quota-truncated free-tier attempts and aborted v0.2 attempts
 (substitute models and a free-tier native run stopped by its daily quota)
 remain archived but are excluded from every scientific aggregate. Only the
 complete records admitted by \texttt{code/audit\_e5.py} enter the reported E5
-tables. Together with E6 these runs cover four model families but not the
-natural-language confirmatory experiment specified below.
+tables. Together with E6 and E8 these runs cover seven model developers and
+one natural-text temporal study, but not the full natural-language
+confirmatory experiment specified below.
 
 \subsection*{Pre-registered multi-family replication (E6) and LLM sensors (E7)}
 
@@ -304,6 +308,44 @@ so we report all pre-registered measures and add the split of end-to-end
 accuracy into temporal and other items. The multi-family audit was corrected
 before the analysis to count families by model developer rather than by the
 gateway that served them.
+
+\subsection*{Pre-registered free-tier replication (E8a) and natural-text study (E8b)}
+
+This study had no funding, so E8 uses only zero-price OpenRouter endpoints;
+every successful call reports a cost of zero. The design
+(\texttt{paper/PREREGISTRATION\_E8.md}) was committed before any study call,
+with one amendment made before any outcome was computed. E8a repeats E6
+unchanged (direct, structured, situation and no-metadata retrieval; no agent)
+with \texttt{nemotron-3-ultra-550b-a55b} (NVIDIA),
+\texttt{dots-3-note-preview} (rednote hi lab) and \texttt{flint-v1.0}
+(Recursive), under E6's decision rule. The amendment replaced a planned model
+that was withdrawn mid-run; its partial records are archived and excluded.
+Flint's endpoint refuses to disable reasoning, so it ran with minimal reasoning
+effort, and its reasoning tokens share the 1,024-token output budget. Free
+endpoints impose a daily request quota; the runner stops without writing a
+record when it is reached and resumes on a later day, and transient errors are
+retried until each item and condition has one success. Items are never
+imputed, substituted or dropped.
+
+E8b samples 300 questions from the SituatedQA temporal test
+split~\cite{zhang2021situatedqa} (75 per date type, fixed seed; upstream commit
+and file hash in the pre-registration) and asks two E8a models each question
+undated with the direct prompt and dated with the direct, structured and
+situation prompts. The date types are the dataset's collection year (which we
+use as the control), the start of an answer's validity, and a sampled year or
+date. A response is correct if it contains any gold answer as a whole word, which misses correct paraphrases in every condition alike.
+Contrasts use a bootstrap clustered on the upstream question (255 clusters,
+3,000 resamples). The upstream repository states no licence, so question texts
+are not redistributed: archived records keep item identifiers and responses,
+and a script rebuilds the sample from a clone of the source.
+
+One analysis was added after the data were seen and is labelled post hoc: a
+response that reaches the output limit is cut off, and when it is not valid
+JSON the pre-registered extractor falls back to the raw text, so a gold name
+that appears in the restated evidence can be credited. We therefore report how
+many responses reach the limit and the contrast on items where neither
+response does (\texttt{code/e8\_truncation.py}); only Flint is affected
+(no more than one E8b response per model reaches the limit).
 
 \subsection*{Prospective test designed to break benchmark--solver coupling}
 

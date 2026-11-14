@@ -1,0 +1,89 @@
+{
+  "dots-studio/dots-3-note-preview:free": {
+    "rag_no_metadata": {
+      "counterfactual": 100.0,
+      "hidden_premise": 43.3,
+      "modality": 96.7,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 56.7
+    },
+    "situation": {
+      "counterfactual": 100.0,
+      "hidden_premise": 43.3,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "structured": {
+      "counterfactual": 100.0,
+      "hidden_premise": 43.3,
+      "modality": 96.7,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    }
+  },
+  "nvidia/nemotron-3-ultra-550b-a55b:free": {
+    "rag_no_metadata": {
+      "counterfactual": 100.0,
+      "hidden_premise": 30.0,
+      "modality": 43.3,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 66.7,
+      "temporal": 50.0
+    },
+    "situation": {
+      "counterfactual": 100.0,
+      "hidden_premise": 30.0,
+      "modality": 66.7,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "structured": {
+      "counterfactual": 100.0,
+      "hidden_premise": 43.3,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    }
+  },
+  "recursive/flint-v1.0:free": {
+    "rag_no_metadata": {
+      "counterfactual": 100.0,
+      "hidden_premise": 33.3,
+      "modality": 43.3,
+      "observer": 83.3,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 50.0
+    },
+    "situation": {
+      "counterfactual": 53.3,
+      "hidden_premise": 33.3,
+      "modality": 40.0,
+      "observer": 40.0,
+      "scope": 93.3,
+      "source_conflict": 86.7,
+      "temporal": 90.0
+    },
+    "structured": {
+      "counterfactual": 73.3,
+      "hidden_premise": 40.0,
+      "modality": 46.7,
+      "observer": 83.3,
+      "scope": 93.3,
+      "source_conflict": 86.7,
+      "temporal": 96.7
+    }
+  }
+}

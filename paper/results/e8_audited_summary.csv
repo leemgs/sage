@@ -1,0 +1,10 @@
+provider,model,condition,n_success,n_expected,accuracy,median_latency_ms,total_tokens,complete
+openrouter,dots-studio/dots-3-note-preview:free,direct,210,210,0.8714285714285714,1297.35,24601,1
+openrouter,dots-studio/dots-3-note-preview:free,structured,210,210,0.9142857142857143,3953.27,70998,1
+openrouter,dots-studio/dots-3-note-preview:free,situation,210,210,0.919047619047619,2583.205,57355,1
+openrouter,recursive/flint-v1.0:free,direct,210,210,0.8380952380952381,3033.215,92086,1
+openrouter,recursive/flint-v1.0:free,structured,210,210,0.7428571428571429,6615.615,192444,1
+openrouter,recursive/flint-v1.0:free,situation,210,210,0.6238095238095238,7626.4349999999995,217115,1
+openrouter,nvidia/nemotron-3-ultra-550b-a55b:free,direct,210,210,0.9095238095238095,1151.42,26117,1
+openrouter,nvidia/nemotron-3-ultra-550b-a55b:free,structured,210,210,0.919047619047619,3591.9399999999996,53310,1
+openrouter,nvidia/nemotron-3-ultra-550b-a55b:free,situation,210,210,0.8523809523809524,3785.01,67278,1

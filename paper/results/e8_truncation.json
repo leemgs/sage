@@ -1,0 +1,56 @@
+{
+  "post_hoc": true,
+  "limit_completion_tokens": 1020,
+  "seed": 20260726,
+  "bootstrap": 3000,
+  "models": {
+    "dots-studio/dots-3-note-preview:free": {
+      "truncated": {
+        "direct": 0,
+        "situation": 0,
+        "structured": 0
+      },
+      "n_items": 210,
+      "situation_minus_structured_untruncated": {
+        "n_pairs": 210,
+        "estimate_pp": 0.47619047619047616,
+        "ci_pp": [
+          0.0,
+          1.4285714285714286
+        ]
+      }
+    },
+    "nvidia/nemotron-3-ultra-550b-a55b:free": {
+      "truncated": {
+        "direct": 0,
+        "situation": 0,
+        "structured": 0
+      },
+      "n_items": 210,
+      "situation_minus_structured_untruncated": {
+        "n_pairs": 210,
+        "estimate_pp": -6.666666666666667,
+        "ci_pp": [
+          -16.19047619047619,
+          0.0
+        ]
+      }
+    },
+    "recursive/flint-v1.0:free": {
+      "truncated": {
+        "direct": 12,
+        "situation": 84,
+        "structured": 41
+      },
+      "n_items": 210,
+      "situation_minus_structured_untruncated": {
+        "n_pairs": 106,
+        "estimate_pp": 0.0,
+        "ci_pp": [
+          -3.125,
+          2.255639097744361
+        ]
+      }
+    }
+  }
+}

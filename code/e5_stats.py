@@ -29,6 +29,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BOOTSTRAP_SEED = 20260726
 
 
+# Short display names for long model IDs (exact IDs are given in Methods).
+DISPLAY = {"nemotron-3-ultra-550b-a55b": "Nemotron-3-Ultra", "dots-3-note-preview": "dots-3-note",
+           "flint-v1.0": "Flint-v1.0"}
+
 def read_jsonl(path):
     return [json.loads(l) for l in Path(path).read_text().splitlines() if l.strip()]
 
@@ -239,7 +243,8 @@ def main():
         else:
             dest, dci = r"\textemdash", ""
         tok = c.get("situation", {}).get("mean_tokens")
-        safe = model.split("/")[-1].removeprefix("gemini-").replace("-flash-lite", " Flash Lite")
+        safe = model.split("/")[-1].removesuffix(":free").removeprefix("gemini-").replace("-flash-lite", " Flash Lite")
+        safe = DISPLAY.get(safe, safe)
         safe = safe.replace("-flash", " Flash").replace("_", r"\_")
         lines.append(f"{safe} & {est('direct')} & {est('structured')} & "
                      f"{est('situation')} & {dest} & {tok:.0f} \\\\")

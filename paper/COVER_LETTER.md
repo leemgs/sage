@@ -34,25 +34,29 @@ showing that accuracy falls from 100.0% with oracle states to 66.5% when states
 must be sensed from text by a rule-based sensor and 45.1% under targeted
 corruption, consistent with a sensing bottleneck.
 
-I report the neural evidence as it stands. Across six models from four
-families (three Gemini models and a pre-registered replication with Meta,
-DeepSeek and Qwen models, n = 210 each), prompting for an explicit situation
-state does not beat a matched structured prompt under the pre-registered
-decision rule, whereas giving the same claims without timestamps collapses
-accuracy on time-dependent items in every family. A second pre-registered study
-shows that language-model sensors recover most situation cues that a
+I report the neural evidence as it stands. Across nine models from seven
+developers (three Gemini models and two pre-registered replications with Meta,
+DeepSeek, Qwen, NVIDIA, rednote and Recursive models, n = 210 each), prompting
+for an explicit situation state never detectably beats a matched structured
+prompt under the pre-registered decision rule, whereas giving the same claims
+without timestamps collapses accuracy on time-dependent items for every
+developer. On 300 independently written SituatedQA temporal questions, adding
+the date raises accuracy on time-dependent items by 22–27 points, while the
+situation prompt again adds no detectable benefit. A further pre-registered
+study shows that language-model sensors recover most situation cues that a
 rule-based sensor misses, but not information absent from the text. I present
 the null result plainly because it supports the paper's point: a prompt-level
 "situation" field is not situation awareness. Proprietary families beyond
-Gemini, natural-text evaluation and human annotation are stated as limitations
-and not claimed.
+Gemini, natural text beyond temporal questions and human annotation are stated
+as limitations and not claimed.
 
 Code, data, generator and item-level outputs are openly available at
 https://github.com/leemgs/sage under the MIT licence; an archival DOI will be
 minted on acceptance. Use of generative AI tools is documented in Methods. The
 work has not been published elsewhere and is not under consideration by another
-journal. [If a preprint has been posted, state where.] The author declares no
-competing interests. I suggest as potential reviewers: [names; areas: temporal
+journal. [If a preprint has been posted, state where.] The work received no
+funding and was carried out as an unpaid contribution to the research
+community; the author declares no competing interests. I suggest as potential reviewers: [names; areas: temporal
 QA, belief-state tracking, RAG evaluation]. I request that [any conflicted
 parties, or "no one"] be excluded.
 
@@ -81,13 +85,15 @@ neural studies.
 
 I want to be transparent about the evidence boundary up front. The controlled
 results are a conformance suite co-designed with the solver. The neural studies
-cover six models from four families, partly pre-registered, and are
+cover nine models from seven developers, partly pre-registered, and are
 **null for the prompt intervention**: an explicit situation state never beats a
 matched structured prompt. The useful signals are that evidence stripped of
-timestamps fails on time-dependent items in every family, and that
+timestamps fails on time-dependent items for every developer, that dating
+natural SituatedQA questions raises accuracy by 22–27 points, and that
 language-model sensors close most of a rule-based sensor's gap (65.7% to
-79–87%) but not for information the text does not contain. Natural-text and
-human-annotated confirmation are specified but not yet run.
+79–87%) but not for information the text does not contain. Natural-text
+confirmation beyond temporal questions and human annotation are specified but
+not yet run.
 
 Given this, I would value your guidance on whether NMI would consider the work as
 a **Perspective/Analysis** on a missing evaluation axis, or whether you would

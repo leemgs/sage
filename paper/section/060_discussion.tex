@@ -29,12 +29,11 @@ unresolved. Evaluation engineering becomes the sensor layer that checks each
 transition and not merely the final answer.
 
 The response policy is also part of correctness. Clarification and abstention
-are not failures when the situation is under-specified. Conversely, excessive
-clarification is costly and can make systems unusable. Future evaluations should
+are not failures when the situation is under-specified, although excessive
+clarification is costly. Future evaluations should
 therefore report answer accuracy, clarification utility, unnecessary-question
 rate, abstention precision, selective risk, coverage, latency, token use and
-monetary cost. These measures make explicit the trade-off between semantic
-verification and serving efficiency.
+monetary cost.
 
 \subsection*{What is established and what remains to be tested}
 
@@ -55,10 +54,10 @@ represents the same state, as the structured prompt does, but it means the
 present evidence does not show a benefit of situation prompting itself. The
 sensing prediction is also only partly borne out: language-model sensors
 remove most of the rule sensor's errors, so in this benchmark the residual
-sensing gap is mainly information the text does not contain. These
-generated-benchmark results are not sufficient to confirm the general LLM
-claim; that requires independently authored natural questions under matched
-model, evidence and budget (Methods). The SE0--SE4
+sensing gap is mainly information the text does not contain. On natural
+temporal questions the date itself, not the situation prompt, carries the gain
+(E8b); confirming the general claim requires natural evidence for every
+category under matched model, evidence and budget (Methods). The SE0--SE4
 maturity model and longer research programme are provided in Supplementary
 Information.
 
@@ -69,9 +68,9 @@ benchmark-solver circularity is intentional and limits external validity. The
 item count does not equal the number of statistically independent observations
 because examples share template
 families. The E1--E4 baselines are software controls. The model studies cover
-Gemini and three open-weight families but no other proprietary family, use a
-12-item natural-language smoke test only, and one result rests on a post-hoc
-scoring sensitivity analysis. Balancing
+no proprietary family other than Gemini, test natural text only on temporal
+questions with two models, and two results rest on post-hoc analyses (scoring
+sensitivity; output truncation). Balancing
 answers and claim recency removes the shortcuts found in v0.1, but each
 category still varies only one or two template factors, so other surface
 regularities may remain. Confidence
