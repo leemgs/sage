@@ -3,3 +3,4 @@ __pycache__/
 *.py[cod]
 paper/data/local/
 paper/results/raw_e8/nl_local/
+paper/results/raw_e9/geo_local/

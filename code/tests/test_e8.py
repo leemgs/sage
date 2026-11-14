@@ -78,3 +78,22 @@ def test_nl_stats_fail_closed_when_incomplete():
     recs[0]["error"] = "RuntimeError: HTTP 400"
     with pytest.raises(SystemExit):
         nl.analyse(recs, ids)
+
+
+geo = load("e9_geo_stats")
+
+
+def test_geo_contrasts_on_synthetic_records():
+    ids = [{"id": f"g{i}", "cluster": c, "location": loc}
+           for i, (c, loc) in enumerate([("a", "United States"), ("a", "India"), ("b", "Japan")])]
+    recs = [{"id": r["id"], "model": "m", "condition": c,
+             "correct": 0 if c == "direct" else 1, "error": None}
+            for r in ids for c in geo.CONDS]
+    s = geo.analyse(recs, ids)
+    assert s["geo_h2_located_minus_unlocated"]["estimate_pp"] == 100
+    assert s["geo_h1_situation_minus_structured"]["estimate_pp"] == 0
+    assert s["descriptive_h2_us_located"]["n"] == 1 and s["clusters"] == 2
+
+
+def test_location_context_uses_direct_prompt_and_raw_answer():
+    assert runner.extract_answer("Paris", "location_context") == "Paris"
