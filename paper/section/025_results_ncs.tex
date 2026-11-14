@@ -150,22 +150,16 @@ remove a substantial present-time performance gap~\cite{zhang2021situatedqa}.
 FreshQA, PAT-Questions, TimeQA, ChronoQA and TDBench test related problems in
 freshness, evolving facts and temporal validity
 ~\cite{vu2023freshqa,meem2024pat,chen2021timeqa,chen2025chronoqa,kim2025tdbench}.
-These studies motivate the problem definition, but they are not evaluations of
-SCQA and are not counted as evidence that the proposed intervention improves a
-frontier model.
+These studies motivate the problem; they are not evaluations of SCQA.
 
 \subsection*{An evidence ladder separates established findings from open claims}
 
-Table~\ref{tab:evidence-ladder} makes the claim boundary explicit. The current
-study shows within its co-designed conformance suite that seven applicability
+Table~\ref{tab:evidence-ladder} makes the claim boundary explicit. Within its
+co-designed conformance suite, the study shows that seven applicability
 invariants can be represented, executed and independently ablated under oracle
-structured states. The audited
-E5 and E6 studies test, but do not support, the hypothesis that explicit
-situation states reduce analogous errors in LLMs: the prompt intervention
-shows no detectable benefit in four model families, while removing timestamps
-from otherwise identical evidence collapses accuracy on temporal items. Broad
-end-to-end efficacy still requires independently authored natural text,
-proprietary families beyond Gemini and human annotation.
+states. The audited model studies test, but do not support, a benefit of
+explicit situation prompts; they locate the loss of applicability in missing
+timestamps and dates instead.
 
 \begin{table*}[t]
 \caption{Evidence ladder and permitted interpretation.}
@@ -180,8 +174,9 @@ E1: formal definition & Situation schema and applicability relation & The failur
 E2: oracle unit tests & 4,200 generated instances and matched ablations & Specified invariants are executable and causally separable \\
 E3: natural prevalence & Independent temporal/situated QA literature & Situation dependence occurs in natural questions \\
 E4: predicted-state control & Deterministic text sensor on 4,200 generated items & Sensing errors reduce controlled end-to-end accuracy; natural-text generalization remains open \\
-E5/E6: multi-model intervention & Six models, four families (Gemini; pre-registered Meta, DeepSeek, Qwen), $n=210$, situation/structured/RAG/agent conditions; E7: LLM sensors & Situation prompting never improves on structured prompting; evidence without timestamps fails on temporal items; category differences are exploratory; multi-family and natural-text confirmation remain open \\
-E6: deployment / human study & Not completed & Needed for operational safety and human comparison \\
+E5/E6/E8a: multi-model intervention & Nine models, seven developers (Gemini; pre-registered Meta, DeepSeek, Qwen, NVIDIA, rednote, Recursive), $n=210$, situation/structured/RAG/agent conditions; E7: LLM sensors & Situation prompting never detectably improves on structured prompting; evidence without timestamps fails on temporal items; category differences are exploratory \\
+E8b: natural-text temporal QA & 300 SituatedQA questions, two models, pre-registered & The query date raises accuracy on time-dependent natural questions; other categories remain untested on natural text \\
+Deployment / human study & Not completed & Needed for operational safety and human comparison \\
 \bottomrule
 \end{tabularx}
 \end{table*}

@@ -23,12 +23,14 @@ This paper contributes, in order of weight:
 3. **A bounded, audited empirical finding.** Under oracle states a reference
    implementation satisfies all invariants (100.0%); accuracy falls to 66.5%
    with text-inferred states and 45.1% under targeted corruption, consistent
-   with a *sensing* bottleneck for that rule-based sensor. Across six models
-   from four families (three Gemini models; a pre-registered replication with
-   Meta, DeepSeek and Qwen models; n = 210 each), prompting for an explicit
-   situation state does not beat matched structured prompting under the
-   pre-registered decision rule; evidence without timestamps fails on
-   time-dependent items in every family. Language-model sensors (E7) recover
+   with a *sensing* bottleneck for that rule-based sensor. Across nine models
+   from seven developers (three Gemini models; pre-registered replications with
+   Meta, DeepSeek and Qwen (E6) and NVIDIA, rednote and Recursive (E8a, free
+   endpoints); n = 210 each), prompting for an explicit situation state never
+   detectably beats matched structured prompting under the pre-registered
+   decision rule; evidence without timestamps fails on time-dependent items for
+   every developer. On 300 natural SituatedQA temporal questions (E8b), dating
+   the question raises accuracy on time-dependent items by 22–27 points. Language-model sensors (E7) recover
    most cues the rule-based sensor misses (65.7% → 79.0–87.1%), but not
    information absent from the text. We report these results plainly.
 
@@ -84,9 +86,15 @@ baseline, and (iii) a ReAct-style tool-using agent baseline. Because items have
 at most three claims, the retrieval condition receives every claim but without
 timestamps or metadata; it is 79.4% overall against 86.3% structured and 79.5%
 situation, and fails on temporal items (44.4%). We state that it is a metadata
-ablation rather than a test of retrieval over a large corpus. A larger
-natural-text corpus remains future work and is pre-registered in the external
--validity protocol.
+ablation rather than a test of retrieval over a large corpus. The 12-item probe
+is now superseded by a pre-registered natural-text study (E8b): 300 SituatedQA
+temporal test questions (75 per date type) and two models on free endpoints.
+Dating an otherwise identical question raises accuracy on time-dependent items
+by +22.2 [+15.5, +28.8] and +26.7 [+18.8, +34.0] points but not on control
+items (−4.0 in both, intervals including zero); the situation prompt shows no
+detectable benefit over the structured prompt (+4.7 [0.0, +9.4] and −2.7
+[−6.6, +1.0]). Natural text for the other six categories remains future work
+and is pre-registered in the external-validity protocol.
 
 **R5 — "Statistical framing; item independence."**
 Items within a category share a template family, so we treat categories as the
@@ -101,6 +109,12 @@ Qwen models (3,258 records, no failed calls, no reasoning tokens);
 Anthropic and OpenAI models were dropped before any outcome was inspected
 because API credit ran out (Amendment 1, `paper/PREREGISTRATION_E6_E7.md`), so
 no proprietary family beyond Gemini is covered; this is stated as a limitation.
+A second pre-registered replication on zero-cost endpoints (E8a;
+`paper/PREREGISTRATION_E8.md`) adds NVIDIA, rednote and Recursive models; the
+multi-family audit passes and the verdict is unchanged (+0.5, −6.7 and −11.9
+points; no interval above zero). Flint's negative contrast is attributable to
+responses truncated at the output limit (post hoc: 0.0 [−3.1, +2.3] on
+untruncated items), which we report.
 
 **M-B — "No human inter-annotator agreement."**
 Acknowledged. Blinded three-annotator packets over a 70-item stratified subset

@@ -1,16 +1,17 @@
-\subsection*{Situation prompting across four model families (E5, E6)}
+\subsection*{Situation prompting across seven model developers (E5, E6, E8a)}
 
 The controlled results establish that the seven applicability invariants are
 executable and causally separable (E1--E4); they do not show that
 \emph{prompting} a language model for an explicit situation state improves it.
 E5 tests this with three Gemini models, and a pre-registered replication (E6)
 repeats it unchanged with three open-weight models from Meta, DeepSeek and
-Qwen. Each model answers the same stratified sample (30 items per category,
+Qwen; a second pre-registered replication on free endpoints (E8a) adds models
+from NVIDIA, rednote hi lab and Recursive. Each model answers the same stratified sample (30 items per category,
 $n=210$) with evidence, decoding and budget fixed, under a plain \emph{direct}
 answer, a \emph{structured} JSON prompt or an explicit \emph{situation}-state
 prompt (Methods). The primary quantity is the within-model paired
 situation$-$structured contrast; every run passes the completion audit with no
-failed calls, and E6 passes a multi-family audit.
+unresolved calls, and E6 and E8a each pass a multi-family audit.
 
 \input{section/tables/e5_stats_table}
 
@@ -27,18 +28,20 @@ changes 47 Llama records and turns its contrast into $-1.9$ [$-7.1$, $+1.9$];
 under it, situation prompting is never above structured prompting in any model
 ($-1.9$ to $-14.8$ points). Intervals are wide because the benchmark has only
 seven template families (Methods). The situation prompt costs 2.7--6.2 times
-the tokens of the direct prompt. On 12 SituatedQA temporal items the two
-prompts differ by at most one item in every model, a smoke test only.
+the tokens of the direct prompt. E8a reaches the same verdict ($+0.5$, $-6.7$
+and $-11.9$ points; Extended Data Table~\ref{tab:e8-stats}), also under the
+sensitivity rescoring. Flint's negative contrast reflects responses cut off at
+the output limit, which its mandatory reasoning shares; without them it is
+$0.0$ [$-3.1$, $+2.3$] (post hoc; Methods).
 
 Removing metadata shows which variables matter (Extended Data
-Tables~\ref{tab:e5-rag} and~\ref{tab:e6-rag}). Because each item has at most
+Tables~\ref{tab:e5-rag}, \ref{tab:e6-rag} and~\ref{tab:e8-rag}). Because each item has at most
 three claims, the retrieval condition receives every claim, but as plain text
 without timestamps, status, source, scope or observers. Temporal accuracy then
-falls to $44.4\%$ in Gemini and to 23--50\% per E6 model, against 95.6--100\%
+falls to $44.4\%$ in Gemini, to 23--50\% per E6 model and to 50.0--56.7\% per
+E8a model, against 95.6--100\%
 with metadata, as the pre-registered secondary hypothesis predicted in every
-family, while relevant text alone suffices for most other categories. In v0.1,
-where the decisive claim was always the newest, the same condition was the
-strongest ($91.3\%$), an artefact that the balanced benchmark removes. A
+family, while relevant text alone suffices for most other categories. A
 tool-using agent, whose searches also omit timestamps, is weakest on temporal
 items ($33.3\%$ in Gemini, $14.4\%$ in E6).
 
@@ -54,13 +57,26 @@ sensor to 79.0--87.1\%, and on non-temporal items from $71.1\%$ to
 stay at 33--40\% for every sensor, because the claim texts state no times.
 Most of the rule sensor's gap is therefore specific to it; what remains is
 information absent from the text, plus residual errors on observer knowledge
-and missing premises. Claim-level slot scores track decisions poorly, as
-vocabulary differences that leave the answer unchanged still count as errors.
+and missing premises. Claim-level slot scores track decisions poorly, because
+harmless vocabulary differences count as errors.
 
-Together, these studies separate two things that the oracle results cannot:
-an explicit situation field adds nothing beyond structured prompting in any of
-four model families, whereas stripping applicability metadata from otherwise
-identical evidence is decisive for time-dependent items. Availability of the
-right claims is not enough when their applicability cannot be read. These are
-synthetic, single-benchmark results; independent natural-language evidence and
-human agreement are still required (Methods).
+\subsection*{Natural-text temporal questions (E8b)}
+
+E8b, pre-registered with E8a, tests natural text: two E8a models answer 300 independently written temporal questions from
+SituatedQA~\cite{zhang2021situatedqa}, 75 per date type, without evidence; the
+applicability variable is the query date (Extended Data Table~\ref{tab:e8-nl}).
+Dating an otherwise identical question raises accuracy on time-dependent items
+by $+22.2$ [$+15.5$, $+28.8$] and $+26.7$ [$+18.8$, $+34.0$] points, but not on
+control items dated at the collection year ($-4.0$ in both, intervals including
+zero), as pre-registered. Given the date, the situation prompt again shows no
+detectable benefit over the structured prompt ($+4.7$ [$0.0$, $+9.4$] and
+$-2.7$ [$-6.6$, $+1.0$]).
+
+Together, these studies separate what the oracle results cannot: an explicit
+situation field shows no detectable benefit over structured prompting in nine
+models from seven developers, whereas the applicability variable itself --
+timestamps on synthetic evidence, the date on natural questions -- is decisive
+for time-dependent items. Availability without readable applicability is not
+enough. The natural-text evidence covers only temporal questions and two
+models; other categories and human agreement still require independent
+evidence (Methods).

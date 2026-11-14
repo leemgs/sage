@@ -126,8 +126,12 @@ SituationCatch-Bench v0.2 is included in the public source repository at
 \url{https://github.com/leemgs/sage} and in the submission package as
 \texttt{paper/data/situationcatch\_bench.jsonl}, together with its deterministic
 generator, datasheet and item-level outputs. This package is sufficient to
-reproduce the controlled results. The E5 and SituatedQA item-level raw responses
-are under \texttt{paper/results/raw*}. The exact reviewed version is identified
+reproduce the controlled results. The item-level raw responses of all
+language-model studies are under \texttt{paper/results/raw*}. SituatedQA
+question texts are not redistributed because the source states no licence; the
+archived E8b records keep item identifiers and responses, and
+\texttt{code/prepare\_situatedqa\_eval.py} rebuilds the sample from the public
+source. The exact reviewed version is identified
 by the Git commit or release tag supplied with the submission. Repository-owned
 materials are distributed under the MIT licence; third-party data retain their
 source licences. No unminted DOI is represented as an existing deposit.
@@ -176,9 +180,12 @@ The author declares no competing interests.
 \renewcommand{\theHtable}{ED.\arabic{table}}
 \input{section/tables/ed_slot_sensing_table}
 \input{section/tables/e6_stats_table}
+\input{section/tables/e8_stats_table}
 \input{section/tables/e5_rag_table}
 \input{section/tables/e6_rag_table}
+\input{section/tables/e8_rag_table}
 \input{section/tables/e7_sensor_table}
+\input{section/tables/e8_nl_table}
 
 %% ---- Supplementary Information --------------------------------
 %% NMI: submitted as a SEPARATE file — see supplementary.tex
