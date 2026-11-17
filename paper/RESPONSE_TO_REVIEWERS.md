@@ -93,8 +93,12 @@ Dating an otherwise identical question raises accuracy on time-dependent items
 by +22.2 [+15.5, +28.8] and +26.7 [+18.8, +34.0] points but not on control
 items (−4.0 in both, intervals including zero); the situation prompt shows no
 detectable benefit over the structured prompt (+4.7 [0.0, +9.4] and −2.7
-[−6.6, +1.0]). Natural text for the other six categories remains future work
-and is pre-registered in the external-validity protocol.
+[−6.6, +1.0]). A second pre-registered natural-text study (E9) uses 297 SituatedQA geographic
+questions: naming the location raises accuracy by +29.6 [+22.9, +36.2] and
++40.7 [+33.2, +48.3] points, and the situation prompt again shows no benefit
+(−2.7 [−6.7, +1.3] and −6.1 [−9.6, −2.9]). Natural text for the other five
+categories remains future work and is pre-registered in the external-validity
+protocol.
 
 **R5 — "Statistical framing; item independence."**
 Items within a category share a template family, so we treat categories as the

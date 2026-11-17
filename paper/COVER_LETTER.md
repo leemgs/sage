@@ -40,9 +40,10 @@ DeepSeek, Qwen, NVIDIA, rednote and Recursive models, n = 210 each), prompting
 for an explicit situation state never detectably beats a matched structured
 prompt under the pre-registered decision rule, whereas giving the same claims
 without timestamps collapses accuracy on time-dependent items for every
-developer. On 300 independently written SituatedQA temporal questions, adding
-the date raises accuracy on time-dependent items by 22–27 points, while the
-situation prompt again adds no detectable benefit. A further pre-registered
+developer. On independently written SituatedQA questions, adding the date
+(300 temporal questions) or the location (297 geographic questions) raises
+accuracy by 22–41 points, while the situation prompt again adds no detectable
+benefit. A further pre-registered
 study shows that language-model sensors recover most situation cues that a
 rule-based sensor misses, but not information absent from the text. I present
 the null result plainly because it supports the paper's point: a prompt-level
