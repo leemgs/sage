@@ -78,7 +78,12 @@ applicability, not availability, limits …"는 E7이 LLM 센서에서 sensing g
   새 사전 등록 Amendment로 고정한 뒤 실행할 것. 예상 비용: 원래 실행이 약 $5에서 소진된 점으로 볼 때
   **$15–30 이상**(실행 전 OpenRouter 가격표로 확인). 담당: 크레딧 충전 후 Claude 실행 가능.
 
-**P0-2. 독립 저자의 자연어 평가** — *R1, R7* — **부분 완료(E8b: temporal 범주만, 2개 모델)**
+**P0-2. 독립 저자의 자연어 평가** — *R1, R7* — **부분 완료(E8b temporal + E9 geographic/scope, 2개 모델)**
+- E9 (사전 등록 + Amendment 1): SituatedQA geographic 297문항. 지역 명시 효과 +29.6 [+22.9, +36.2],
+  +40.7 [+33.2, +48.3]; situation − structured −2.7 [−6.7, +1.3], −6.1 [−9.6, −2.9]. dots 제공자가 총기 허가
+  질문 3개를 매번 거부(HTTP 400)해 두 모델 모두에서 제외(Nemotron 300개 전체 민감도 분석은 결론 동일).
+- 남은 범주(observer, counterfactual, source conflict, modality, hidden premise)는 접근 가능한 무료 자연
+  데이터가 없음. P0-1b(독점 패밀리)는 무료 엔드포인트가 모두 오픈웨이트라 무료로 불가.
 - 내용: 생성기를 모르는 사람이 쓴 자연 질문·증거(목표 1,200 시나리오, 3개 도메인; 보충 Note 14의
   사전 명세). 최소한 SituatedQA 전체 temporal split 등 공개 자연 벤치마크로 12개 스모크 테스트를 대체.
 - 담당: 데이터 라이선스·저자 섭외는 사용자, 실행·분석은 Claude 가능.

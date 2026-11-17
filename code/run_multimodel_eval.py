@@ -216,7 +216,7 @@ def matches(gold, answer):
 
 
 def extract_answer(raw, condition):
-    if condition in ("direct", "date_context"):
+    if condition in ("direct", "date_context", "location_context"):
         return raw
     if condition == "chain_of_thought":
         match = re.search(r"FINAL:\s*(.+)$", raw, re.I | re.M)
@@ -247,7 +247,8 @@ def main():
     p.add_argument("--out", required=True)
     p.add_argument("--conditions", nargs="+",
                    choices=["direct", "chain_of_thought", "structured",
-                            "date_context", "self_reflection", "situation"],
+                            "date_context", "location_context",
+                            "self_reflection", "situation"],
                    default=["direct", "chain_of_thought", "structured",
                             "date_context", "self_reflection", "situation"])
     p.add_argument("--sleep", type=float, default=.2)
@@ -280,6 +281,7 @@ def main():
                 systems = {
                     "direct": DIRECT, "chain_of_thought": CHAIN_OF_THOUGHT,
                     "structured": STRUCTURED, "date_context": DIRECT,
+                    "location_context": DIRECT,
                     "self_reflection": SELF_REFLECTION, "situation": SITUATION,
                 }
                 system = systems[condition]

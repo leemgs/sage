@@ -347,6 +347,18 @@ many responses reach the limit and the contrast on items where neither
 response does (\texttt{code/e8\_truncation.py}); only Flint is affected
 (no more than one E8b response per model reaches the limit).
 
+E9 (\texttt{paper/PREREGISTRATION\_E9.md}, committed before any call) repeats the
+E8b design on the SituatedQA geographic test split~\cite{zhang2021situatedqa}: 300
+items drawn uniformly (fixed seed) from 125 source questions, each asked unlocated
+with the direct prompt and located with the direct, structured and situation
+prompts, with the two E8b models. There is no control stratum, because every
+unlocated question is ambiguous across locations; a split into US-located and other
+items is reported descriptively. One amendment, made before any outcome was
+computed, excludes the three items of one source question (firearm permits) that
+the dots endpoint rejected on every attempt, so both models are compared on the
+same 297 items; Nemotron on all 300 items gives the same result. Many gold answers
+are long or numeric, so absolute accuracy is low in every condition.
+
 \subsection*{Prospective test designed to break benchmark--solver coupling}
 
 We pre-specify the next test rather than presenting simulated numbers as a

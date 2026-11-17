@@ -26,8 +26,7 @@ with a boolean, which the pre-registered extractor misses. A post-hoc
 sensitivity analysis that applies one more robust extractor to all six models
 changes 47 Llama records and turns its contrast into $-1.9$ [$-7.1$, $+1.9$];
 under it, situation prompting is never above structured prompting in any model
-($-1.9$ to $-14.8$ points). Intervals are wide because the benchmark has only
-seven template families (Methods). The situation prompt costs 2.7--6.2 times
+($-1.9$ to $-14.8$ points). The situation prompt costs 2.7--6.2 times
 the tokens of the direct prompt. E8a reaches the same verdict ($+0.5$, $-6.7$
 and $-11.9$ points; Extended Data Table~\ref{tab:e8-stats}), also under the
 sensitivity rescoring. Flint's negative contrast reflects responses cut off at
@@ -60,23 +59,25 @@ information absent from the text, plus residual errors on observer knowledge
 and missing premises. Claim-level slot scores track decisions poorly, because
 harmless vocabulary differences count as errors.
 
-\subsection*{Natural-text temporal questions (E8b)}
+\subsection*{Natural-text temporal and geographic questions (E8b, E9)}
 
-E8b, pre-registered with E8a, tests natural text: two E8a models answer 300 independently written temporal questions from
-SituatedQA~\cite{zhang2021situatedqa}, 75 per date type, without evidence; the
-applicability variable is the query date (Extended Data Table~\ref{tab:e8-nl}).
-Dating an otherwise identical question raises accuracy on time-dependent items
-by $+22.2$ [$+15.5$, $+28.8$] and $+26.7$ [$+18.8$, $+34.0$] points, but not on
-control items dated at the collection year ($-4.0$ in both, intervals including
-zero), as pre-registered. Given the date, the situation prompt again shows no
-detectable benefit over the structured prompt ($+4.7$ [$0.0$, $+9.4$] and
-$-2.7$ [$-6.6$, $+1.0$]).
+Two further pre-registered studies ask two E8a models independently written
+SituatedQA~\cite{zhang2021situatedqa} questions without evidence;
+the applicability variable is the query date (E8b, 300 temporal questions) or
+location (E9, 297 geographic questions; Extended Data
+Tables~\ref{tab:e8-nl} and~\ref{tab:e9-geo}). Dating an otherwise identical
+question raises accuracy on time-dependent items by $+22.2$ [$+15.5$, $+28.8$]
+and $+26.7$ [$+18.8$, $+34.0$] points, but not on control items dated at the
+collection year ($-4.0$ in both, intervals including zero); naming the
+location raises it by $+29.6$ [$+22.9$, $+36.2$] and $+40.7$ [$+33.2$,
+$+48.3$] points. The situation prompt still never detectably beats
+structured prompting ($-6.1$ to $+4.7$ points).
 
 Together, these studies separate what the oracle results cannot: an explicit
 situation field shows no detectable benefit over structured prompting in nine
 models from seven developers, whereas the applicability variable itself --
-timestamps on synthetic evidence, the date on natural questions -- is decisive
-for time-dependent items. Availability without readable applicability is not
-enough. The natural-text evidence covers only temporal questions and two
-models; other categories and human agreement still require independent
-evidence (Methods).
+timestamps on synthetic evidence, the date or place on natural questions -- is
+decisive. Availability without readable applicability is not enough. Natural
+text covers only the temporal and scope categories with two models; the other
+five categories and human agreement still require independent evidence
+(Methods).
