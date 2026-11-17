@@ -1,0 +1,9 @@
+{
+  "reason": "dots provider returns HTTP 400 on every attempt (Amendment 1)",
+  "model": "dots-studio/dots-3-note-preview:free",
+  "excluded_ids": [
+    "sqageo--474902130794200712-california",
+    "sqageo--474902130794200712-florida",
+    "sqageo--474902130794200712-connecticut"
+  ]
+}

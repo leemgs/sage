@@ -63,13 +63,16 @@ def main():
     p.add_argument("raw", nargs="+")
     p.add_argument("--ids", default="paper/data/situatedqa_geo_e9_ids.jsonl")
     p.add_argument("--json-out", default="paper/results/e9_geo_stats.json")
+    p.add_argument("--exclude", help="JSON file with excluded_ids (Amendment 1)")
     a = p.parse_args()
     ids = read(a.ids)
+    excluded = set(json.loads(Path(a.exclude).read_text())["excluded_ids"]) if a.exclude else set()
+    ids = [r for r in ids if r["id"] not in excluded]
     by_model = defaultdict(list)
     for path in a.raw:
         for r in read(path):
             by_model[r["model"]].append(r)
-    out = {"seed": SEED, "bootstrap": BOOT, "cluster": "upstream question id",
+    out = {"excluded_ids": sorted(excluded), "seed": SEED, "bootstrap": BOOT, "cluster": "upstream question id",
            "models": {m: analyse(rs, ids) for m, rs in sorted(by_model.items())}}
     Path(a.json_out).write_text(json.dumps(out, indent=2) + "\n")
     for m, s in out["models"].items():

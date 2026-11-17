@@ -50,3 +50,19 @@ limit are counted and reported per condition (`code/e8_truncation.py` logic).
 (e.g. exchange rates), so containment scoring undercounts correct answers in every
 condition alike and absolute accuracy will be low; paired contrasts are the quantities
 of interest. Two models and 300 items are a bounded test of one further category.
+
+## Amendment 1 (2026-11-17, before any E9 outcome was computed or viewed)
+
+**What happened.** The dots endpoint (sole provider AtlasCloud) returns HTTP 400
+("Provider returned error … bad request") for every call on the three items of one
+upstream question (id −474902130794200712, a question about firearm permits, located in
+California, Connecticut and Florida): 10 item/condition pairs failed on every attempt
+over three days and more than 40 retries. The Nemotron endpoint answered them. Only
+error messages, success counts and the question text of the failing items were
+examined; no accuracy or contrast of any E9 record had been computed.
+
+**Rule.** A pair that the provider rejects deterministically is not a transient error.
+These three items are excluded from every primary contrast in **both** models, so that
+both models are compared on the same 297 items (124 source questions); the list is in
+`paper/results/raw_e9/provider_rejected_items.json`. As a sensitivity analysis, Nemotron
+is also reported on all 300 items. Nothing else changes.
