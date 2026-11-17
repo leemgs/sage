@@ -1,0 +1,45 @@
+{
+  "post_amendment_sensitivity": "Nemotron on all 300 items",
+  "stats": {
+    "n": 300,
+    "clusters": 125,
+    "accuracy_pct": {
+      "direct": 8.333333333333332,
+      "location_context": 49.0,
+      "structured": 54.666666666666664,
+      "situation": 48.66666666666667
+    },
+    "geo_h1_situation_minus_structured": {
+      "n": 300,
+      "estimate_pp": -6.0,
+      "ci_pp": [
+        -9.395973154362416,
+        -2.9315960912052117
+      ]
+    },
+    "geo_h2_located_minus_unlocated": {
+      "n": 300,
+      "estimate_pp": 40.666666666666664,
+      "ci_pp": [
+        33.23076923076923,
+        47.85478547854785
+      ]
+    },
+    "descriptive_h2_us_located": {
+      "n": 34,
+      "estimate_pp": 26.47058823529412,
+      "ci_pp": [
+        11.76470588235294,
+        41.17647058823529
+      ]
+    },
+    "descriptive_h2_elsewhere": {
+      "n": 266,
+      "estimate_pp": 42.4812030075188,
+      "ci_pp": [
+        34.73282442748092,
+        50.583657587548636
+      ]
+    }
+  }
+}

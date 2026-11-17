@@ -1,0 +1,96 @@
+{
+  "excluded_ids": [
+    "sqageo--474902130794200712-california",
+    "sqageo--474902130794200712-connecticut",
+    "sqageo--474902130794200712-florida"
+  ],
+  "seed": 20260726,
+  "bootstrap": 3000,
+  "cluster": "upstream question id",
+  "models": {
+    "dots-studio/dots-3-note-preview:free": {
+      "n": 297,
+      "clusters": 124,
+      "accuracy_pct": {
+        "direct": 10.774410774410773,
+        "location_context": 40.4040404040404,
+        "structured": 43.77104377104377,
+        "situation": 41.07744107744108
+      },
+      "geo_h1_situation_minus_structured": {
+        "n": 297,
+        "estimate_pp": -2.6936026936026933,
+        "ci_pp": [
+          -6.68693009118541,
+          1.3289036544850499
+        ]
+      },
+      "geo_h2_located_minus_unlocated": {
+        "n": 297,
+        "estimate_pp": 29.629629629629626,
+        "ci_pp": [
+          22.945205479452056,
+          36.177474402730375
+        ]
+      },
+      "descriptive_h2_us_located": {
+        "n": 34,
+        "estimate_pp": 14.705882352941178,
+        "ci_pp": [
+          2.941176470588235,
+          26.47058823529412
+        ]
+      },
+      "descriptive_h2_elsewhere": {
+        "n": 263,
+        "estimate_pp": 31.55893536121673,
+        "ci_pp": [
+          24.418604651162788,
+          38.61003861003861
+        ]
+      }
+    },
+    "nvidia/nemotron-3-ultra-550b-a55b:free": {
+      "n": 297,
+      "clusters": 124,
+      "accuracy_pct": {
+        "direct": 8.080808080808081,
+        "location_context": 48.821548821548824,
+        "structured": 54.54545454545454,
+        "situation": 48.484848484848484
+      },
+      "geo_h1_situation_minus_structured": {
+        "n": 297,
+        "estimate_pp": -6.0606060606060606,
+        "ci_pp": [
+          -9.58904109589041,
+          -2.941176470588235
+        ]
+      },
+      "geo_h2_located_minus_unlocated": {
+        "n": 297,
+        "estimate_pp": 40.74074074074074,
+        "ci_pp": [
+          33.22475570032573,
+          48.26388888888889
+        ]
+      },
+      "descriptive_h2_us_located": {
+        "n": 34,
+        "estimate_pp": 26.47058823529412,
+        "ci_pp": [
+          11.76470588235294,
+          41.17647058823529
+        ]
+      },
+      "descriptive_h2_elsewhere": {
+        "n": 263,
+        "estimate_pp": 42.585551330798474,
+        "ci_pp": [
+          34.90196078431372,
+          50.62240663900415
+        ]
+      }
+    }
+  }
+}
