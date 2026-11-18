@@ -300,7 +300,8 @@ response is JSON and does not map a boolean answer to yes or no; Llama often
 wrote prose before its JSON or answered \texttt{"answer": false}. A
 sensitivity analysis (\texttt{code/sensitivity\_rescore.py}) applies one more
 robust extractor -- the last JSON object in the response, booleans mapped to
-yes/no -- to every record of all six models alike, without altering the
+yes/no -- to every record of all six E5/E6 models alike, and later to the three
+E8a models, without altering the
 archived files; the pre-registered results remain primary. Second, E7's
 interpretation rule did not fit the data cleanly (the shortfall lay mainly in
 the unrecoverable time slot, yet claim-level cue-slot accuracy was 69--76\%),

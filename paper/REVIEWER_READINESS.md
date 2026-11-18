@@ -5,8 +5,8 @@
 - [x] Situation engineering is distinguished from prompt, context and harness engineering.
 - [x] A formal evidence-applicability object, maturity model and community research agenda are provided.
 - [x] The paper contributes a framework, benchmark taxonomy, executable artifact and falsifiable ablations.
-- [x] A bounded neural-model check is reported on synthetic items and a 12-item natural-text smoke test.
-- [ ] Multiple independent model families and a larger naturally occurring corpus remain required for a strong general NMI claim.
+- [x] A bounded neural-model check is reported on synthetic items (nine models, seven developers, partly pre-registered) and on 597 natural SituatedQA questions (temporal and geographic; E8b, E9).
+- [ ] Proprietary families beyond Gemini and natural text for the five remaining categories are still required for a strong general NMI claim.
 - [x] A prospective, author-disjoint external-validity protocol now freezes the multi-family comparisons, split unit, human evaluation and decision rules; Supplementary Note 14 states the design only and reports no outcome values; the dry-run values used to test the decision rules stay in a machine-marked synthetic file.
 
 ## Scientific validity

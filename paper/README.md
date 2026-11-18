@@ -50,6 +50,13 @@ Prompt engineering designs instructions, context engineering designs the informa
   LLM-sensor study (`results/raw_sensor/`, `results/llm_sensor_summary.json`).
 - No-metadata retrieval condition, tool-using agent and a 12-item SituatedQA
   temporal smoke test (a smoke test only).
+- Pre-registered zero-cost studies on free endpoints: E8a replication with
+  NVIDIA, rednote hi lab and Recursive models; E8b (300 SituatedQA temporal
+  questions) and E9 (297 SituatedQA geographic questions) on natural text; and
+  E10 chain-of-thought and self-reflection baselines (`PREREGISTRATION_E8.md`,
+  `PREREGISTRATION_E9.md`, `PREREGISTRATION_E10.md`, `results/raw_e8/`,
+  `results/raw_e9/`, `results/raw_e10/`, `results/e8_*`, `results/e9_*`,
+  `results/e10_*`). SituatedQA question texts are not redistributed.
 
 ## Main measured result
 SCQA achieved 100.0% exact action-and-answer accuracy in the structured diagnostic setting. The strongest situation-blind control achieved 54.3%, close to the chance level that the balanced design implies. This is explicitly reported as a constructive upper bound, not as evidence that a neural model can extract situation states from arbitrary natural language.
