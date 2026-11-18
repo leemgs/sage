@@ -109,7 +109,11 @@ applicability, not availability, limits …"는 E7이 LLM 센서에서 sensing g
 
 ### P2 — 권장
 
-- 강한 프롬프트 baseline(few-shot, CoT, self-consistency) 추가.
+- 강한 프롬프트 baseline — **부분 완료(E10, 사전 등록)**: CoT·self-reflection을 E8a 3개 모델에 추가(1,260건, 비용 0).
+  situation − CoT: dots +0.5 [−1.9, +3.8], Nemotron −6.2 [−16.7, 0.0], Flint −12.9 [−22.4, −4.8];
+  situation − self-reflection: +0.5 [0.0, +2.4], −6.7 [−17.1, 0.0], +1.4 [−10.5, +12.9] → 판정 규칙상 차이 없음.
+  Flint는 출력 한도 절단이 많음(self-reflection 94/210). Extended Data Table 10(한도 10개 도달), 본문 3,500/3,500.
+  few-shot(결과를 본 뒤 프롬프트 작성 필요)과 self-consistency(무료 한도 초과)는 미실행.
 - R8 대응용 비교표(situation calculus·DST·belief revision 대비 무엇이 새로운가)를 Extended Data로.
 - 다국어·다중모달 확장은 범위 밖으로 명시 유지.
 

@@ -119,6 +119,8 @@ def main():
     p.add_argument("--title", default="Gemini-family E5 accuracy",
                    help="Caption lead, e.g. the study and model family.")
     p.add_argument("--label", default="tab:e5-stats")
+    p.add_argument("--bases", nargs="+", default=["structured", "direct"],
+                   help="conditions to contrast situation against")
     args = p.parse_args()
 
     items = read_jsonl(args.data)
@@ -165,7 +167,7 @@ def main():
                 "n_abstain_or_clarify": abstained,
             }
         # paired contrasts vs structured and direct
-        for base in ("structured", "direct"):
+        for base in args.bases:
             if base not in args.conditions or "situation" not in args.conditions:
                 continue
             # paired per category: align items present in both conditions

@@ -21,17 +21,18 @@ paired differences are $-2.9$, $-14.8$ and $-2.9$ percentage points in Gemini
 and $-4.3$, $+19.5$ and $-0.5$ in E6, so the pre-registered criterion for an
 improvement -- an interval above zero in at least two of the three E6 families
 -- is not met. The one positive contrast (Llama, $+19.5$ [$+5.2$, $+36.2$]) is a
-scoring artefact: Llama often wraps its structured JSON in prose or answers
-with a boolean, which the pre-registered extractor misses. A post-hoc
-sensitivity analysis that applies one more robust extractor to all six models
+scoring artefact: the pre-registered extractor misses Llama's prose-wrapped and
+boolean answers. A post-hoc sensitivity analysis with a more robust extractor
 changes 47 Llama records and turns its contrast into $-1.9$ [$-7.1$, $+1.9$];
-under it, situation prompting is never above structured prompting in any model
+under it, situation prompting is never above structured prompting in these six models
 ($-1.9$ to $-14.8$ points). The situation prompt costs 2.7--6.2 times
 the tokens of the direct prompt. E8a reaches the same verdict ($+0.5$, $-6.7$
 and $-11.9$ points; Extended Data Table~\ref{tab:e8-stats}), also under the
 sensitivity rescoring. Flint's negative contrast reflects responses cut off at
 the output limit, which its mandatory reasoning shares; without them it is
-$0.0$ [$-3.1$, $+2.3$] (post hoc; Methods).
+$0.0$ [$-3.1$, $+2.3$] (post hoc; Methods). Nor does situation prompting detectably beat
+chain-of-thought or self-reflection prompts (E10; Extended Data
+Table~\ref{tab:e10-baselines}).
 
 Removing metadata shows which variables matter (Extended Data
 Tables~\ref{tab:e5-rag}, \ref{tab:e6-rag} and~\ref{tab:e8-rag}). Because each item has at most
