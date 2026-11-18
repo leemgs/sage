@@ -76,34 +76,61 @@ I am writing to ask whether the enclosed work would be of interest to *Nature
 Machine Intelligence*, and if so under which article type.
 
 The manuscript introduces **situation engineering**: the claim that evidence
-*applicability* — whether a supported fact holds for the query's time, scope,
-observer and world *now* — is a distinct, measurable target that current
-retrieval- and prompt-based evaluation does not isolate. I contribute a formal
+*applicability* (whether a well-supported fact holds for the query's time,
+scope, observer and possible world) is a distinct, measurable target that
+retrieval- and prompt-based evaluation does not isolate. It contributes a formal
 failure class ("situation blindness"), a released diagnostic suite
 (SituationCatch-Bench, 4,200 items over seven applicability axes), an executable
-reference system with matched ablations, and an **audited, deliberately bounded**
-neural studies.
+reference system with matched ablations, and a set of audited, deliberately
+bounded language-model studies.
 
-I want to be transparent about the evidence boundary up front. The controlled
-results are a conformance suite co-designed with the solver. The neural studies
-cover nine models from seven developers, partly pre-registered, and are
-**null for the prompt intervention**: an explicit situation state never beats a
-matched structured prompt. The useful signals are that evidence stripped of
-timestamps fails on time-dependent items for every developer, that dating
-natural SituatedQA questions raises accuracy by 22–27 points, and that
-language-model sensors close most of a rule-based sensor's gap (65.7% to
-79–87%) but not for information the text does not contain. Natural-text
-confirmation beyond temporal questions and human annotation are specified but
-not yet run.
+I want to be transparent about the evidence boundary. The controlled results
+are a conformance suite co-designed with the solver. The language-model studies
+cover nine models from seven developers, largely pre-registered, and they
+are **null for the prompt intervention**: an explicit situation-state
+prompt never detectably beats a matched structured prompt, nor chain-of-thought
+or self-reflection prompts. The positive signal is consistent across settings:
+the applicability variable itself is decisive. Removing timestamps from
+otherwise identical evidence collapses accuracy on time-dependent items for
+every developer, and on 597 independently written SituatedQA questions, adding
+the date or the location raises accuracy by 22–41 points, whereas the date has
+no detectable effect on control items whose undated reading already has the
+same answer.
+Language-model sensors close most of a rule-based sensor's gap (65.7% to
+79–87%) but not for information the text does not contain. Human annotation,
+proprietary families beyond Gemini and natural text for the five remaining
+categories are not yet completed and are stated as limitations.
 
-Given this, I would value your guidance on whether NMI would consider the work as
-a **Perspective/Analysis** on a missing evaluation axis, or whether you would
-prefer the confirmatory experiments completed first for an Article. I would
-rather calibrate the framing to your editorial expectations than over-claim.
+The work received no funding; every new study used zero-cost model endpoints,
+and all code, data, pre-registrations and item-level outputs are openly
+released and reproducible with single commands.
 
-All materials are openly released and reproducible with a single command.
+Given this, I would value your guidance on whether NMI would consider the work
+as an **Analysis** on a missing evaluation axis, or would prefer the human
+annotation completed first for an Article. I would rather calibrate the framing
+to your editorial expectations than over-claim.
 
 Thank you for your time.
 
 Sincerely,
 Geunsik Lim, Sungkyunkwan University — leemgs@g.skku.edu
+
+### Summary for the enquiry form (≤200 words)
+
+AI systems can retrieve a well-supported fact yet apply it to the wrong time,
+place, observer or possible world. We call this failure situation blindness and
+propose situation engineering: constructing the query-relative state that
+decides whether evidence applies. We release SituationCatch-Bench (4,200 items,
+seven applicability categories) and a reference system that satisfies every
+invariant under oracle states (100%), falls to 66.5% with text-inferred states
+and 45.1% under corruption, and whose seven ablations each fail only their own
+category. Across nine language models from seven developers, including
+pre-registered replications, prompting for an explicit situation state never
+detectably beats structured, chain-of-thought or self-reflection prompting.
+Instead, the applicability variable itself decides: identical evidence without
+timestamps fails on time-dependent items, and on 597 natural SituatedQA
+questions, adding the date or location raises accuracy by 22–41 points.
+Language-model sensors recover most cues a rule-based sensor misses, but not
+information absent from the text. The contribution is an executable evaluation
+axis and a bounded, partly null empirical record, not a superior method; human
+annotation and natural text for five further categories remain open.
