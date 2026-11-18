@@ -118,7 +118,10 @@ A second pre-registered replication on zero-cost endpoints (E8a;
 multi-family audit passes and the verdict is unchanged (+0.5, −6.7 and −11.9
 points; no interval above zero). Flint's negative contrast is attributable to
 responses truncated at the output limit (post hoc: 0.0 [−3.1, +2.3] on
-untruncated items), which we report.
+untruncated items), which we report. A third pre-registered study (E10) adds
+chain-of-thought and self-reflection prompts for the E8a models; situation
+prompting does not detectably beat either (situation − chain-of-thought +0.5,
+−6.2 and −12.9 points; situation − self-reflection +0.5, −6.7 and +1.4).
 
 **M-B — "No human inter-annotator agreement."**
 Acknowledged. Blinded three-annotator packets over a 70-item stratified subset
