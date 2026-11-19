@@ -26,15 +26,19 @@ This page can be sent as is to prospective annotators; the English part is self-
 - 소속 기관에 따라 이런 주석 작업도 연구윤리(IRB) 확인이 필요할 수 있으니, 시작 전에 확인하세요.
 
 ### 진행 순서
-1. 각자에게 파일 1개씩 보냅니다: `annotator_1.csv`, `annotator_2.csv`, `annotator_3.csv`
-   (세 사람이 같은 70문항을 받지만 순서가 섞여 있습니다).
+1. 각자에게 자기 번호의 패키지를 보냅니다(`annotator_N_package.zip`: 엑셀 파일, 같은 내용의
+   CSV, 주석자 지침 `ANNOTATOR_INSTRUCTIONS.md`, 예시). 패키지는
+   `python code/annotation_workbooks.py make`로 만든 엑셀에 지침과 예시를 더한 것입니다.
+   세 사람이 같은 70문항을 받지만 순서가 섞여 있습니다.
 2. 함께 보낼 안내서: `HOW_TO_ANNOTATE.md`(코드북), `EXAMPLE_WALKTHROUGH.md`와
    `EXAMPLE_annotator_filled.csv`(예시 7개 — 주석할 70문항에는 들어 있지 않음).
    영어 사용자에게는 이 문서의 영어 본문을 함께 보냅니다.
 3. 주석자는 Excel이나 Google Sheets에서 9개 칸만 채우고 **CSV로 저장**해 돌려줍니다
    (Excel의 "CSV UTF-8"도 괜찮습니다). 대소문자나 앞뒤 공백은 자동으로 맞춰지지만,
    코드북에 없는 값이 있으면 채점이 멈추고 어느 칸인지 알려 줍니다.
-4. 채운 파일 3개를 Claude에게 주면 Fleiss κ와 불일치표를 계산해 논문에 반영합니다.
+4. 엑셀로 돌려받으면 `python code/annotation_workbooks.py to-csv --xlsx annotator_N.xlsx
+   --out filled/annotator_N.csv`로 CSV로 바꿉니다(고정 열은 원본 패킷에서 복원).
+   채운 파일 3개를 Claude에게 주면 Fleiss κ와 불일치표를 계산해 논문에 반영합니다.
    직접 계산하려면 `KAGGLE_STEP_BY_STEP.md`를 따르세요.
 
 ---
@@ -57,7 +61,9 @@ This page can be sent as is to prospective annotators; the English part is self-
 
 ### Steps
 1. Open your file (`annotator_1.csv`, `annotator_2.csv` or `annotator_3.csv`) in Excel or
-   Google Sheets. **Do not change** the columns `blind_id`, `item_id`, `question`, `evidence`.
+   Google Sheets. **Do not change** the columns `blind_id`, `item_id`, `question`, `query_time`, `evidence`.
+   `query_time` is when the question is asked, on the same scale as the evidence times;
+   "now" and "current" refer to it.
 2. For every row, fill the columns below. `notes` is optional.
 3. Save as CSV with the same file name (Excel's "CSV UTF-8" is fine) and send it back.
 

@@ -63,6 +63,9 @@ def init(args):
             token = hashlib.sha256(f"{args.seed}:{n}:{item['id']}".encode()).hexdigest()[:16]
             row = {"blind_id": token, "item_id": item["id"],
                    "question": item["question"],
+                   # The query time is part of the question's situation: models
+                   # receive it, so annotators must too (e.g. "open until day 17").
+                   "query_time": item.get("query_time", ""),
                    "evidence": json.dumps(item.get("claims", item.get("evidence", [])))}
             row.update({s: "" for s in SLOTS})
             rows.append(row)

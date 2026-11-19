@@ -62,3 +62,34 @@ def test_simulated_disagreements_stay_inside_codebook(tmp_path):
     cli.simulate_personas(SimpleNamespace(input=str(src), out=str(out), seed=1,
                                           disagreement_rate=1.0))
     cli.load_completed_annotations(out)  # raises if any value is outside the codebook
+
+
+def test_workbook_round_trip(tmp_path):
+    from types import SimpleNamespace
+    from openpyxl import load_workbook
+    spec2 = importlib.util.spec_from_file_location("annotation_workbooks",
+                                                   CODE / "annotation_workbooks.py")
+    wbmod = importlib.util.module_from_spec(spec2)
+    spec2.loader.exec_module(wbmod)
+    packets = CODE.parent / "paper" / "annotation_packets"
+    wbmod.make(SimpleNamespace(packets=str(packets), out=str(tmp_path)))
+    path = tmp_path / "annotator_2.xlsx"
+    wb = load_workbook(path)
+    ws = wb["Items"]
+    header = [c.value for c in ws[1]]
+    assert header[:5] == ["blind_id", "item_id", "question", "query_time", "evidence"]
+    for row in ws.iter_rows(min_row=3):
+        for c in row:
+            h = header[c.column - 1]
+            if h in cli.ALLOWED:
+                c.value = cli.ALLOWED[h][0]
+            elif h == "answer":
+                c.value = " Yes "
+    wb.save(path)
+    out = tmp_path / "filled"
+    out.mkdir()
+    wbmod.to_csv(SimpleNamespace(packets=str(packets), xlsx=str(path), out=str(out / "annotator_2.csv")))
+    rows = list(csv.DictReader((out / "annotator_2.csv").open(encoding="utf-8")))
+    original = list(csv.DictReader((packets / "annotator_2.csv").open(encoding="utf-8")))
+    assert [r["evidence"] for r in rows] == [r["evidence"] for r in original]
+    assert {r["action"] for r in rows} == {"ANSWER"} and {r["answer"] for r in rows} == {"Yes"}

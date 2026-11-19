@@ -27,7 +27,8 @@
 ---
 
 ## 1) 절대 규칙
-- **`blind_id, item_id, question, evidence` 4개 열은 그대로 둡니다** (내용/순서 변경 금지).
+- **`blind_id, item_id, question, query_time, evidence` 5개 열은 그대로 둡니다** (내용/순서 변경 금지).
+- `query_time`은 질문을 받은 시점입니다(근거의 `time`과 같은 눈금). "지금", "현재"는 이 시점을 뜻합니다.
 - 주석자끼리 **답을 상의하지 않습니다** (독립성이 핵심).
 - 모든 문항의 9개 열을 **빠짐없이** 채웁니다 (빈 칸이 있으면 채점이 거부됩니다).
 - 아래 코드북의 **정해진 값만** 사용합니다 (오타·대소문자 주의).
@@ -74,6 +75,7 @@
 
 ## 4) 다 채운 뒤
 - 채운 `annotator_1.csv`, `annotator_2.csv`, `annotator_3.csv` **3개 파일을 저에게 전달**하세요.
+  엑셀(`annotator_N.xlsx`)로 받았다면 그대로 주셔도 됩니다. `code/annotation_workbooks.py to-csv`로 변환합니다.
 - 제가 자동으로:
   1. `annotation_cli.py score --provenance human_annotations` → 슬롯별 **Fleiss κ, 만장일치율**
   2. `annotation_cli.py adjudicate` → **불일치 문항표**
