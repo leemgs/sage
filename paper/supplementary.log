@@ -1,12 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.10.29)  18 NOV 2026 10:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.10.29)  15 NOV 2026 00:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**supplementary.tex
-(./supplementary.tex
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-01-22>
-(./sn-jnl.cls
+**\pdftrailerid{}\input{supplementary.tex}
+(./supplementary.tex (./sn-jnl.cls
 Document Class: sn-jnl 2019/11/18 v0.1: An authoring template for Springer Jour
 nal articles
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -765,13 +762,13 @@ Package rerunfilecheck Info: File `supplementary.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12034 strings out of 476106
- 184817 string characters out of 5793932
+ 12037 strings out of 476106
+ 184893 string characters out of 5793932
  1940975 words of memory out of 5000000
- 33816 multiletter control sequences out of 15000+600000
+ 33819 multiletter control sequences out of 15000+600000
  569171 words of font info for 79 fonts, out of 8000000 for 9000
  69 hyphenation exceptions out of 8191
- 90i,12n,93p,550b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,12n,96p,573b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texli
@@ -782,7 +779,7 @@ ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt9.pfb>
-Output written on supplementary.pdf (7 pages, 158357 bytes).
+Output written on supplementary.pdf (7 pages, 158282 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  85 compressed objects within 1 object stream
