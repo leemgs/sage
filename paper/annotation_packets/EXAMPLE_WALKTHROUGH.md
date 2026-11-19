@@ -1,7 +1,7 @@
 # 작성 사례집 (해설 포함) — 주석 중 옆에 두고 참고하세요
 
 각 사례는 **질문 → 근거(claim) → 채운 값 → 왜 그렇게 채웠는지**를 보여줍니다.
-7개 사례는 실제 패킷 문항이며 `EXAMPLE_annotator_filled.csv`에 같은 값으로 들어 있습니다.
+7개 사례는 벤치마크에서 가져왔지만 **여러분이 주석할 70문항에는 들어 있지 않습니다**(예시를 베끼는 일이 없도록 일부러 뺐습니다). `EXAMPLE_annotator_filled.csv`에 같은 값으로 들어 있습니다.
 7개 카테고리 각각에서 **핵심이 되는 열(굵게)** 이 무엇인지에 주목하세요. 나머지 열은
 대개 기본값(temporal_state=stable, modality=confirmed, scope=global, source_status=reliable,
 observer_state=shared, world=actual)이고, **그 문항의 성격을 결정하는 한 열만 달라집니다.**
@@ -14,46 +14,46 @@ observer_state=shared, world=actual)이고, **그 문항의 성격을 결정하�
 
 ---
 
-## 사례 1 — temporal (질의 시점이 결정함) · `temporal-0079`
-**질문(t=5):** Who is the current manager at time 5?
-**근거:** (t3) Hana 임명 · (t8) Hana 사임 · (t9) Bora 임명 — 모두 official·confirmed
-**채운 값:** action=`ANSWER`, answer=`Hana`, **temporal_state=`relevant`**, modality=confirmed, scope=global, source_status=reliable, observer_state=shared, world=actual
-**해설:** 질의 시점 t=5는 사임(t8)과 Bora 임명(t9)보다 **이전**입니다. 그 시점의 담당자는 Hana.
-가장 최근 주장(Bora)을 고르면 틀립니다. 답이 질의 시점에 좌우되므로 temporal_state=`relevant`.
+## 사례 1 — temporal (질의 시점이 결정함) · `temporal-0031`
+**질문(t=3):** Who is the current chair at time 3?
+**근거:** (t2) Juno 임명 · (t6) Juno 사임 · (t7) Faye 임명 — 모두 official·confirmed
+**채운 값:** action=`ANSWER`, answer=`Juno`, **temporal_state=`relevant`**, modality=confirmed, scope=global, source_status=reliable, observer_state=shared, world=actual
+**해설:** 질의 시점 t=3은 사임(t6)과 Faye 임명(t7)보다 **이전**입니다. 그 시점의 의장은 Juno.
+가장 최근 주장(Faye)을 고르면 틀립니다. 답이 질의 시점에 좌우되므로 temporal_state=`relevant`.
 
-## 사례 2 — counterfactual (현실 vs 가정) · `counterfactual-0233`
-**질문(t=18):** In the hypothetical scenario, can users access service Alpha?
-**근거:** (t16) 현실: Alpha online (scope=reality) · (t17) 가정 시나리오: Alpha **offline** (scope=counterfactual, status=assumed)
+## 사례 2 — counterfactual (현실 vs 가정) · `counterfactual-0005`
+**질문(t=7):** In the hypothetical scenario, can users access service Beta?
+**근거:** (t5) 현실: Beta online (scope=reality) · (t6) 가정 시나리오: Beta **offline** (scope=counterfactual, status=assumed)
 **채운 값:** action=`ANSWER`, answer=`no`, temporal_state=stable, modality=confirmed, scope=global, source_status=reliable, observer_state=shared, **world=`counterfactual`**
 **해설:** 질문은 가정 세계를 묻습니다. 가정에서는 offline → no. 현실(online)과 섞지 마세요.
 
-## 사례 3 — hidden_premise (답에 필요한 정보가 빠짐) · `hidden_premise-0008`
-**질문(t=13):** Can I register now?
-**근거:** (t10) Registration is open **for Beta residents** until day 15 (scope=Beta)
+## 사례 3 — hidden_premise (답에 필요한 정보가 빠짐) · `hidden_premise-0012`
+**질문(t=12):** Can I register now?
+**근거:** (t9) Registration is open **for Beta residents** until day 14 (scope=Beta)
 **채운 값:** **action=`CLARIFY`**, answer=`CLARIFY`, temporal_state=stable, modality=confirmed, **scope=`limited`**, source_status=reliable, observer_state=shared, world=actual
 **해설:** 등록은 Beta 주민에게만 열림(scope=`limited`). 질문자가 Beta 주민인지 **정보가 없어** 답할 수 없음 → `CLARIFY`.
 
-## 사례 4 — source_conflict (출처가 서로 충돌) · `source_conflict-0371`
-**질문(t=12):** Who is the lead?
-**근거:** (t10) 공식 공지: Bora (status=confirmed) · (t11) 익명 글: Luca (status=rumor)
-**채운 값:** action=`ANSWER`, answer=`Bora`, temporal_state=stable, modality=confirmed, scope=global, **source_status=`conflict`**, observer_state=shared, world=actual
-**해설:** 두 출처가 다른 사람을 지목 → `conflict`. **더 최근인 것은 익명 소문**이지만, 신뢰할 수 있는 공식 공지를 채택 → Bora.
+## 사례 4 — source_conflict (출처가 서로 충돌) · `source_conflict-0005`
+**질문(t=19):** Who is the coordinator?
+**근거:** (t17) 공식 공지: Hana (status=confirmed) · (t18) 익명 글: Cato (status=rumor)
+**채운 값:** action=`ANSWER`, answer=`Hana`, temporal_state=stable, modality=confirmed, scope=global, **source_status=`conflict`**, observer_state=shared, world=actual
+**해설:** 두 출처가 다른 사람을 지목 → `conflict`. **더 최근인 것은 익명 소문**이지만, 신뢰할 수 있는 공식 공지를 채택 → Hana.
 
-## 사례 5 — modality (확정 vs 제안·미결정) · `modality-0478`
-**질문(t=5):** Has Alpha been closed?
-**근거:** (t3) 아직 결정 없음 (confirmed) · (t4) 이사회가 폐쇄 **검토 중** (status=proposed)
+## 사례 5 — modality (확정 vs 제안·미결정) · `modality-0050`
+**질문(t=6):** Has Alpha been closed?
+**근거:** (t4) 아직 결정 없음 (confirmed) · (t5) 이사회가 폐쇄 **검토 중** (status=proposed)
 **채운 값:** action=`ANSWER`, answer=`no`, temporal_state=stable, **modality=`proposed`**, scope=global, source_status=reliable, observer_state=shared, world=actual
 **해설:** 가장 최근 주장이 "폐쇄 검토 중"이지만 **제안일 뿐 결정이 아님** → modality=`proposed`, 폐쇄되지 않음(no).
 
-## 사례 6 — observer (관찰자가 아는 것 vs 실제) · `observer-0420`
-**질문(t=19):** Does Dina believe the meeting will occur?
-**근거:** (t16) Dina는 회의 초대를 받음 · (t18) 회의 취소됨 — **단 Dina는 취소 통보를 못 받음** (observed_by=Hana, Cato)
+## 사례 6 — observer (관찰자가 아는 것 vs 실제) · `observer-0082`
+**질문(t=18):** Does Dina believe the meeting will occur?
+**근거:** (t15) Dina는 회의 초대를 받음 · (t17) 회의 취소됨 — **단 Dina는 취소 통보를 못 받음**
 **채운 값:** action=`ANSWER`, answer=`yes`, temporal_state=stable, modality=confirmed, scope=global, source_status=reliable, **observer_state=`partial`**, world=actual
 **해설:** 실제로는 취소됐지만 Dina의 지식에는 취소가 없음 → Dina는 회의가 열린다고 믿음(yes).
 
-## 사례 7 — scope (전체 vs 일부·조건부) · `scope-0121`
-**질문(t=20):** Does the restructuring apply to every unit?
-**근거:** (t19) A restructuring applies **to every unit** (scope=global)
+## 사례 7 — scope (전체 vs 일부·조건부) · `scope-0001`
+**질문(t=18):** Does the restructuring apply to every unit?
+**근거:** (t17) A restructuring applies **to every unit** (scope=global)
 **채운 값:** action=`ANSWER`, answer=`yes`, temporal_state=stable, modality=confirmed, **scope=`global`**, source_status=reliable, observer_state=shared, world=actual
 **해설:** 모든 유닛에 적용 → yes, scope=`global`. ("**only** the Alpha unit"이면 no, scope=`limited`.)
 

@@ -31,6 +31,8 @@ def write_mock_packets(directory):
             writer.writeheader()
             for item in range(2):
                 row = {field: f"MOCK_{field}" for field in fields}
+                # Rating slots take the first codebook value (validated by the CLI).
+                row.update({slot: values[0] for slot, values in annotation.ALLOWED.items()})
                 row.update(blind_id=f"mock-{annotator}-{item}", item_id=f"mock-{item}",
                            question=f"MOCK question {item}", evidence="[]",
                            notes="SYNTHETIC TEST VALUE - NOT HUMAN DATA")
@@ -53,7 +55,7 @@ def test_human_packets_reject_blank_field(tmp_path):
     packets = tmp_path / "packets"
     write_mock_packets(packets)
     path = packets / "annotator_1.csv"
-    text = path.read_text().replace("MOCK_action", "", 1)
+    text = path.read_text().replace(",ANSWER,", ",,", 1)
     path.write_text(text)
     with pytest.raises(SystemExit, match="Missing action"):
         annotation.load_completed_annotations(packets)

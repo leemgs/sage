@@ -9,6 +9,7 @@
 ## 0) 당신(연구자)이 직접 해야 할 일 — 5단계
 
 1. **주석자 3명 섭외** (동료/학생 등, 서로 상의하지 않고 독립 작업).
+   모집 안내문(한국어·영어, 영어 코드북 포함): `RECRUITMENT_GUIDE.md`
 2. 각자에게 파일 1개씩 배부:
    - 주석자 1 → `annotator_1.csv`
    - 주석자 2 → `annotator_2.csv`
@@ -20,6 +21,7 @@
    **Fleiss κ + 불일치표(adjudication)** 를 계산하고 논문 Methods/Results에 반영합니다.
 
 > 📎 **정답 예시 파일**: `EXAMPLE_annotator_filled.csv` — 7개 문항을 올바르게 채운 예시입니다.
+> 예시 문항은 70문항 패킷에 **들어 있지 않습니다**(일치도가 부풀려지지 않도록).
 > 각 주석자에게 "이렇게 채우면 된다"고 보여주세요. (이건 예시일 뿐, 실제 채점엔 안 들어갑니다.)
 
 ---
@@ -59,11 +61,11 @@
 
 | item_id | action | answer | temporal_state | modality | scope | source_status | observer_state | world |
 |---------|--------|--------|----------------|----------|-------|----------------|----------------|-------|
-| temporal-0079 (t=5의 매니저?) | ANSWER | Hana | **relevant** | confirmed | global | reliable | shared | actual |
-| counterfactual-0233 (가정 시나리오) | ANSWER | no | stable | confirmed | global | reliable | shared | **counterfactual** |
-| hidden_premise-0008 (지금 등록 가능?) | **CLARIFY** | CLARIFY | stable | confirmed | **limited** | reliable | shared | actual |
-| source_conflict-0371 (리드는 누구?) | ANSWER | Bora | stable | confirmed | global | **conflict** | shared | actual |
-| observer-0420 (Dina가 믿는가?) | ANSWER | yes | stable | confirmed | global | reliable | **partial** | actual |
+| temporal-0031 (t=3의 의장?) | ANSWER | Juno | **relevant** | confirmed | global | reliable | shared | actual |
+| counterfactual-0005 (가정 시나리오) | ANSWER | no | stable | confirmed | global | reliable | shared | **counterfactual** |
+| hidden_premise-0012 (지금 등록 가능?) | **CLARIFY** | CLARIFY | stable | confirmed | **limited** | reliable | shared | actual |
+| source_conflict-0005 (코디네이터는 누구?) | ANSWER | Hana | stable | confirmed | global | **conflict** | shared | actual |
+| observer-0082 (Dina가 믿는가?) | ANSWER | yes | stable | confirmed | global | reliable | **partial** | actual |
 
 > 같은 카테고리라도 정답은 문항마다 다릅니다(예: 전제가 주어진 hidden_premise는 `ANSWER`).
 > 반대 경우의 채우는 법은 `EXAMPLE_WALKTHROUGH.md` 끝의 표를 보세요.

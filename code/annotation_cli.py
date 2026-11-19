@@ -13,6 +13,30 @@ from pathlib import Path
 SLOTS = ["action", "answer", "temporal_state", "modality", "scope",
          "source_status", "observer_state", "world", "notes"]
 RATING_SLOTS = SLOTS[:-1]
+# Codebook values (paper/annotation_packets/HOW_TO_ANNOTATE.md). Values are
+# compared after trimming whitespace and ignoring case, so "Answer " and
+# "ANSWER" agree; any other value fails closed instead of silently counting
+# as a disagreement. The free-text answer slot is only trimmed and casefolded.
+ALLOWED = {
+    "action": ("ANSWER", "CLARIFY", "ABSTAIN"),
+    "temporal_state": ("relevant", "stable"),
+    "modality": ("confirmed", "proposed"),
+    "scope": ("global", "limited"),
+    "source_status": ("reliable", "conflict"),
+    "observer_state": ("shared", "partial"),
+    "world": ("actual", "counterfactual"),
+}
+
+
+def normalize_label(slot, value):
+    """Return the canonical codebook value, or None if it is not allowed."""
+    v = " ".join(str(value).split())
+    if slot not in ALLOWED:
+        return v.casefold()
+    for allowed in ALLOWED[slot]:
+        if v.casefold() == allowed.casefold():
+            return allowed
+    return None
 PERSONAS = [
     {"id": "context_specialist", "focus": "time, scope, and world state"},
     {"id": "evidence_auditor", "focus": "source status and modality"},
@@ -66,7 +90,7 @@ def load_completed_annotations(directory):
         raise SystemExit("Need at least three completed annotator files.")
     packets, expected_ids, questions = [], None, {}
     for path in files:
-        rows = list(csv.DictReader(path.open(encoding="utf-8")))
+        rows = list(csv.DictReader(path.open(encoding="utf-8-sig")))
         ids = [row.get("item_id", "") for row in rows]
         if len(ids) != len(set(ids)):
             raise SystemExit(f"Duplicate item_id in {path}")
@@ -82,6 +106,12 @@ def load_completed_annotations(directory):
             for slot in RATING_SLOTS:
                 if not row.get(slot, "").strip():
                     raise SystemExit(f"Missing {slot} in {path}: {item_id}")
+                value = normalize_label(slot, row[slot])
+                if value is None:
+                    raise SystemExit(
+                        f"Invalid {slot} value {row[slot]!r} in {path}: {item_id} "
+                        f"(allowed: {', '.join(ALLOWED[slot])})")
+                row[slot] = value
         packets.append((path, rows))
     if not expected_ids:
         raise SystemExit("Annotation packets contain no items.")
@@ -132,7 +162,7 @@ def simulate_personas(args):
             # prevents the validation set from manufacturing perfect agreement.
             if rng.random() < args.disagreement_rate:
                 slot = rng.choice(RATING_SLOTS[2:])
-                labels[slot] = f"alternate_{slot}"
+                labels[slot] = next(v for v in ALLOWED[slot] if v != labels[slot])
             rows.append({
                 "blind_id": hashlib.sha256(
                     f"{args.seed}:{persona['id']}:{item['id']}".encode()).hexdigest()[:16],
