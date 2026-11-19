@@ -33,8 +33,8 @@ Kaggle에서 노트북을 돌려 **Fleiss κ + 불일치표**를 뽑아 저에�
 
 ## STEP 2 — 주석자 3명이 각자 CSV 채우기 (서로 상의 금지)
 
-각 CSV의 **9개 열**만 채웁니다 (`notes`는 선택). 나머지 4개 열
-(`blind_id, item_id, question, evidence`)은 **절대 수정 금지**.
+각 CSV의 **9개 열**만 채웁니다 (`notes`는 선택). 나머지 5개 열
+(`blind_id, item_id, question, query_time, evidence`)은 **절대 수정 금지**.
 
 | 열 | 허용값 |
 |----|--------|
@@ -111,7 +111,7 @@ Kaggle에서 노트북을 돌려 **Fleiss κ + 불일치표**를 뽑아 저에�
 |--------|-------------|
 | `Need at least three completed annotator files.` | CSV가 3개 미만. 3개 모두 업로드. |
 | `Missing <slot> in ...: <item_id>` | 그 파일의 해당 문항 열이 비어 있음. 채우기. |
-| `Mismatched item set in ...` | 4개 고정 열을 건드려 item_id가 달라짐. 원본 packet에서 다시 시작. |
+| `Mismatched item set in ...` | 5개 고정 열을 건드려 item_id가 달라짐. 원본 packet에서 다시 시작. |
 | `Duplicate item_id in ...` | 행을 복사하다 중복. 중복 행 제거. |
 | `Refusing to infer human provenance...` | (수동 실행 시) `--provenance human_annotations` 누락. 노트북은 자동 처리하므로 Run All만. |
 
