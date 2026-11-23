@@ -1118,32 +1118,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./figures/ablations.pdf>]
-Underfull \hbox (badness 4144) in paragraph at lines 181--181
+Underfull \hbox (badness 4144) in paragraph at lines 182--182
 []|\OT1/cmr/m/n/9 4,200 gen-er-ated instances and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--181
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\OT1/cmr/m/n/9 Independent tem-po-ral/si-t-u-ated
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 181--181
+Underfull \hbox (badness 3179) in paragraph at lines 182--182
 []|\OT1/cmr/m/n/9 Nine mod-els, seven devel-op-ers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--181
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 \OT1/cmr/m/n/9 (Gem-ini; pre-registered Meta,
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 181--181
+Underfull \hbox (badness 5578) in paragraph at lines 182--182
 \OT1/cmr/m/n/9 note, Recur-sive), $\OML/cmm/m/it/9 n \OT1/cmr/m/n/9 = 210$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--181
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 \OT1/cmr/m/n/9 sit-u-a-tion/struc-tured/RAG/a-gent
  []
 
@@ -1167,9 +1167,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
@@ -1240,14 +1237,23 @@ de/prepare[]situatedqa[]eval.py \OT1/cmr/m/n/10 and
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [21]
 (./section/090_ack.tex) (./section/095_reference_nature.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22])
+ [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
 (./section/tables/ed_slot_sensing_table.tex)
 (./section/tables/e6_stats_table.tex) (./section/tables/e8_stats_table.tex)
 (./section/tables/e10_baselines_table.tex) (./section/tables/e5_rag_table.tex)
@@ -1256,12 +1262,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (./section/tables/e9_geo_table.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24
+ [25
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [26]
@@ -1271,6 +1274,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [28]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29]
 (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1280,8 +1286,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 009DF312A32218351FD2B8817E98F264;731.
  ) 
 Here is how much of TeX's memory you used:
- 26022 strings out of 476106
- 477656 string characters out of 5793932
+ 26023 strings out of 476106
+ 477663 string characters out of 5793932
  1960975 words of memory out of 5000000
  47338 multiletter control sequences out of 15000+600000
  588747 words of font info for 153 fonts, out of 8000000 for 9000
@@ -1311,10 +1317,10 @@ sy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (28 pages, 482075 bytes).
+Output written on main.pdf (29 pages, 484258 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 389 compressed objects within 4 object streams
- 128 named destinations out of 1000 (max. 500000)
+ 496 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 129 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

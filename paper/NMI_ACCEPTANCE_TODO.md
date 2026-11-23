@@ -88,7 +88,10 @@ applicability, not availability, limits …"는 E7이 LLM 센서에서 sensing g
   사전 명세). 최소한 SituatedQA 전체 temporal split 등 공개 자연 벤치마크로 12개 스모크 테스트를 대체.
 - 담당: 데이터 라이선스·저자 섭외는 사용자, 실행·분석은 Claude 가능.
 
-**P0-3. 인간 주석 일치도(IAA) 실측** — *R6*
+**P0-3. 인간 주석 일치도(IAA) 실측** — *R6* — **완료(2026-11-22)**
+- 결과: Fleiss κ world 0.92, answer 0.72, source 0.49, observer 0.43, scope 0.36, action 0.25,
+  modality 0.20, temporal −0.07(코드북 문항 모호). 다수결–정답 일치 97–100%(temporal 63%).
+  주석자 1의 빈 answer 1칸은 그 칸만 제외(선언된 편차). Methods·보충 Note 10·Discussion 반영.
 - 내용: v0.2 패킷 3개를 독립 주석자 3명이 작성 → Kaggle 노트북으로 Fleiss κ 산출.
 - 담당: **사용자**(주석자 섭외). 절차: `paper/annotation_packets/KAGGLE_STEP_BY_STEP.md`.
 

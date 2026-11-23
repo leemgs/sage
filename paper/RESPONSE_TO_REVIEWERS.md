@@ -124,12 +124,17 @@ prompting does not detectably beat either (situation − chain-of-thought +0.5,
 −6.2 and −12.9 points; situation − self-reflection +0.5, −6.7 and +1.4).
 
 **M-B — "No human inter-annotator agreement."**
-Acknowledged. Blinded three-annotator packets over a 70-item stratified subset
-are prepared; the scoring/adjudication pipeline is validated end-to-end with
-*simulated personas that are explicitly not people and not human evidence*. The
-human study is stated as required and not yet completed. [If completed before
-submission, replace this paragraph with the measured Fleiss-κ and adjudication
-summary.]
+Addressed. Three volunteer annotators (not authors; no compensation; ethics review
+not required) independently labelled the blinded 70-item stratified subset. Fleiss'
+κ: possible world 0.92, answer 0.72, source status 0.49, observer state 0.43,
+scope 0.36, action 0.25, modality 0.20, temporal relevance −0.07. The last reflects
+an ambiguous codebook item (one annotator marked almost every time-stamped item as
+time-dependent), which we report rather than recode. Descriptively, majority labels
+match the benchmark's reference labels on 97–100% of items for every slot except
+temporal relevance (63%); because the worked examples name the deciding slot per
+category, this partly reflects the instructions. One blank answer cell was excluded
+from the answer slot as a declared deviation (Methods; Supplementary Note 10;
+`paper/results/human_iaa/`).
 
 **M-C — "Ceiling effects / item difficulty."**
 Several synthetic categories reach 100% under full evidence, reflecting that the

@@ -15,7 +15,8 @@
 - [x] Paired comparison, confidence/calibration reporting and component ablations included.
 - [x] Claims restricted to the controlled diagnostic setting.
 - [x] Symbolic control and neural sensing are explicitly separated.
-- [ ] Independent annotation and external-domain validation are not yet performed.
+- [x] Independent annotation: three volunteer annotators, 70 items, Fleiss' κ per slot reported (temporal relevance ambiguous as coded).
+- [ ] External-domain validation beyond SituatedQA temporal and geographic questions is not yet performed.
 - [x] Human-label fields, blinding, adjudication, reporting and ethics metadata are pre-specified; this improves readiness but does not count as completion.
 
 ## Research usefulness

@@ -44,10 +44,11 @@ samples from the public source.
 
 ## Research involving human participants
 
-Not applicable to the reported results: no human participants took part. If the planned
-three-annotator agreement study (`paper/annotation_packets/`) is completed before
-submission, update this section (annotators label synthetic items; no personal data are
-collected; institutional ethics requirements to be confirmed by the author).
+Three volunteer annotators labelled 70 synthetic benchmark items (no personal data
+collected; names not stored). Recruitment: by the author; not involved in the study;
+no compensation. Ethics: the author reports that institutional review was not required
+(exempt / not applicable); confirm wording with the institution before submission.
+Data and handling: `paper/results/human_iaa/README.md`.
 
 ## Study design (field-specific section)
 
