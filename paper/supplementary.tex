@@ -130,8 +130,7 @@ Fleiss' $\kappa$ and unanimous agreement. Recruitment, ethics status,
 compensation, qualifications, exclusions and adjudication changes must
 accompany any reported human result. Three volunteer annotators completed the 70-item
 packets (Methods); Supplementary Table~\ref{stab:human-iaa} reports the result, and
-\texttt{paper/results/human\_iaa/README.md} documents recruitment, data handling and the
-one declared missing cell. A separate
+\texttt{paper/results/human\_iaa/README.md} documents recruitment and data handling. A separate
 three-persona run validates the workflow with injected disagreements; its files
 are machine-marked synthetic and are not human-subject evidence.
 
@@ -140,14 +139,14 @@ are machine-marked synthetic and are not human-subject evidence.
 \caption{Human agreement on the 70-item subset (three volunteer annotators). Fleiss'
 $\kappa$ and unanimous agreement per slot; the last column (descriptive, not
 pre-specified) is the share of items whose majority label equals the reference label
-implied by the generated state. One blank answer is excluded from the answer slot.}
+implied by the generated state.}
 \label{stab:human-iaa}
 \begin{tabular}{lrrrr}
 \toprule
 Slot & Items & Fleiss' $\kappa$ & Unanimous (\%) & Majority = reference (\%) \\
 \midrule
 action & 70 & 0.25 & 75.7 & 97.1 \\
-answer & 69 & 0.72 & 68.1 & 97.1 \\
+answer & 70 & 0.72 & 68.6 & 97.1 \\
 temporal state & 70 & $-$0.07 & 20.0 & 62.9 \\
 modality & 70 & 0.20 & 75.7 & 97.1 \\
 scope & 70 & 0.36 & 71.4 & 100.0 \\
