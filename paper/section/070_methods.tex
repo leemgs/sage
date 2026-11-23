@@ -422,8 +422,28 @@ for three or more annotators. It requires complete independent labels before
 computing Fleiss' $\kappa$ and unanimous agreement for action, answer and state
 slots; incomplete packets terminate with an error. Disagreements are adjudicated
 only after independent files are frozen. Blank blinded packets for a 70-item
-stratified subset are released under \texttt{paper/annotation\_packets/}. No human agreement value is reported
-because independent human annotations were not collected.
+stratified subset are released under \texttt{paper/annotation\_packets/}.
+
+Three volunteer annotators, recruited by the author and not involved in the
+study, each completed one packet independently (no compensation; the author
+reports that institutional ethics review was not required; no personal data
+were collected). Packets showed the query time and the evidence as readable
+lines, offered only codebook values, and were accompanied by seven worked
+examples that are not among the 70 items. Before scoring, two blank answers
+whose action was ABSTAIN were filled with ABSTAIN as the codebook prescribes,
+and one blank answer with action ANSWER was dropped from the answer slot only
+(69 items), a declared deviation from the complete-packet rule. Fleiss'
+$\kappa$ is 0.92 for possible world, 0.72 for answer, 0.49 for source status,
+0.43 for observer state, 0.36 for scope, 0.25 for action, 0.20 for modality
+and $-0.07$ for temporal relevance (Supplementary Note 10). One annotator
+marked almost every item as time-dependent, apparently reading any time-stamped
+evidence that way, whereas the codebook intends whether the answer would change
+with the query time; this item is ambiguous as worded. Descriptively, the majority label
+matches the reference label implied by the generated state on 97--100\% of
+items for every slot except temporal relevance (63\%). Because the worked
+examples state which slot usually decides each category, agreement with the
+reference partly reflects the instructions. Labels, agreement and the
+unadjudicated disagreement list are in \texttt{paper/results/human\_iaa/}.
 For software testing, a separate command generates three deterministic persona
 packets with injected disagreements. Its manifest and score output are marked
 \texttt{synthetic: true} and ``NOT HUMAN-SUBJECT EVIDENCE''; those values are

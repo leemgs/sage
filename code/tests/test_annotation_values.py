@@ -93,3 +93,18 @@ def test_workbook_round_trip(tmp_path):
     original = list(csv.DictReader((packets / "annotator_2.csv").open(encoding="utf-8")))
     assert [r["evidence"] for r in rows] == [r["evidence"] for r in original]
     assert {r["action"] for r in rows} == {"ANSWER"} and {r["answer"] for r in rows} == {"Yes"}
+
+
+def test_declared_missing_cell_drops_item_from_that_slot_only(tmp_path):
+    import json
+    from types import SimpleNamespace
+    write(tmp_path, [{}, {"answer": ""}, {}])
+    with pytest.raises(SystemExit, match="Missing answer"):
+        cli.load_completed_annotations(tmp_path)
+    out = tmp_path / "agreement.json"
+    cli.score(SimpleNamespace(annotations=str(tmp_path), out=str(out),
+                              provenance="human_annotations", missing=["answer:x-1"]))
+    report = json.loads(out.read_text())
+    assert report["slots"]["answer"] == {"n_items": 0, "fleiss_kappa": None, "unanimous_rate": None}
+    assert report["slots"]["world"]["n_items"] == 1
+    assert report["declared_missing_cells_dropped"] == [{"slot": "answer", "item_id": "x-1"}]

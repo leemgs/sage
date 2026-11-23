@@ -66,7 +66,7 @@ state achieved 45.1%; these are controlled sensing diagnostics.
 ## Submission-critical limitation
 A competitive Nature Machine Intelligence submission would be substantially
 stronger with multiple independent model families, a larger independently
-authored natural-text evaluation, human annotation agreement, and multilingual
+authored natural-text evaluation, larger human annotation, and multilingual
 and multimodal stress tests. These experiments require external resources and
 are not fabricated in this package. The public GitHub repository and MIT
 licence are present; a DOI must be cited only after an archive deposit is minted.

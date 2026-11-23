@@ -48,8 +48,11 @@ study shows that language-model sensors recover most situation cues that a
 rule-based sensor misses, but not information absent from the text. I present
 the null result plainly because it supports the paper's point: a prompt-level
 "situation" field is not situation awareness. Proprietary families beyond
-Gemini, natural text beyond temporal questions and human annotation are stated
-as limitations and not claimed.
+Gemini and natural text beyond temporal and geographic questions are stated as
+limitations and not claimed. Three volunteer annotators labelled a 70-item
+subset: answers and possible worlds agree well (Fleiss' κ 0.72 and 0.92), most
+state slots only slightly to moderately, and temporal relevance not at all,
+which I report as an ambiguity of the codebook.
 
 Code, data, generator and item-level outputs are openly available at
 https://github.com/leemgs/sage under the MIT licence; an archival DOI will be
@@ -97,17 +100,19 @@ the date or the location raises accuracy by 22–41 points, whereas the date has
 no detectable effect on control items whose undated reading already has the
 same answer.
 Language-model sensors close most of a rule-based sensor's gap (65.7% to
-79–87%) but not for information the text does not contain. Human annotation,
-proprietary families beyond Gemini and natural text for the five remaining
-categories are not yet completed and are stated as limitations.
+79–87%) but not for information the text does not contain. Three volunteer
+annotators reach good agreement on answers (Fleiss' κ 0.72) but only slight to
+moderate agreement on most state slots. Proprietary families beyond Gemini and
+natural text for the five remaining categories are not yet completed and are
+stated as limitations.
 
 The work received no funding; every new study used zero-cost model endpoints,
 and all code, data, pre-registrations and item-level outputs are openly
 released and reproducible with single commands.
 
 Given this, I would value your guidance on whether NMI would consider the work
-as an **Analysis** on a missing evaluation axis, or would prefer the human
-annotation completed first for an Article. I would rather calibrate the framing
+as an **Analysis** on a missing evaluation axis, or as an Article. I would
+rather calibrate the framing
 to your editorial expectations than over-claim.
 
 Thank you for your time.
@@ -132,5 +137,5 @@ timestamps fails on time-dependent items, and on 597 natural SituatedQA
 questions, adding the date or location raises accuracy by 22–41 points.
 Language-model sensors recover most cues a rule-based sensor misses, but not
 information absent from the text. The contribution is an executable evaluation
-axis and a bounded, partly null empirical record, not a superior method; human
-annotation and natural text for five further categories remain open.
+axis and a bounded, partly null empirical record, not a superior method; natural
+text for five further categories and proprietary families beyond Gemini remain open.

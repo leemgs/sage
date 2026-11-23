@@ -1,0 +1,120 @@
+{
+  "descriptive": true,
+  "note": "not pre-specified; reference = labels implied by the generated state (annotation_cli.reference_labels)",
+  "per_annotator_pct": {
+    "annotator_1": {
+      "action": 75.7,
+      "answer": 68.1,
+      "temporal_state": 21.4,
+      "modality": 75.7,
+      "scope": 71.4,
+      "source_status": 85.7,
+      "observer_state": 90.0,
+      "world": 97.1
+    },
+    "annotator_2": {
+      "action": 100.0,
+      "answer": 100.0,
+      "temporal_state": 100.0,
+      "modality": 100.0,
+      "scope": 100.0,
+      "source_status": 100.0,
+      "observer_state": 100.0,
+      "world": 100.0
+    },
+    "annotator_3": {
+      "action": 97.1,
+      "answer": 97.1,
+      "temporal_state": 61.4,
+      "modality": 97.1,
+      "scope": 100.0,
+      "source_status": 100.0,
+      "observer_state": 100.0,
+      "world": 100.0
+    }
+  },
+  "majority_pct": {
+    "action": 97.1,
+    "answer": 97.1,
+    "temporal_state": 62.9,
+    "modality": 97.1,
+    "scope": 100.0,
+    "source_status": 100.0,
+    "observer_state": 100.0,
+    "world": 100.0
+  },
+  "majority_by_category_pct": {
+    "action": {
+      "counterfactual": 100.0,
+      "hidden_premise": 80.0,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "answer": {
+      "counterfactual": 100.0,
+      "hidden_premise": 80.0,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "temporal_state": {
+      "counterfactual": 40.0,
+      "hidden_premise": 90.0,
+      "modality": 50.0,
+      "observer": 50.0,
+      "scope": 100.0,
+      "source_conflict": 10.0,
+      "temporal": 100.0
+    },
+    "modality": {
+      "counterfactual": 100.0,
+      "hidden_premise": 100.0,
+      "modality": 80.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "scope": {
+      "counterfactual": 100.0,
+      "hidden_premise": 100.0,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "source_status": {
+      "counterfactual": 100.0,
+      "hidden_premise": 100.0,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "observer_state": {
+      "counterfactual": 100.0,
+      "hidden_premise": 100.0,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    },
+    "world": {
+      "counterfactual": 100.0,
+      "hidden_premise": 100.0,
+      "modality": 100.0,
+      "observer": 100.0,
+      "scope": 100.0,
+      "source_conflict": 100.0,
+      "temporal": 100.0
+    }
+  }
+}

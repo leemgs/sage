@@ -86,8 +86,12 @@ def fleiss_kappa(labels_by_item):
     return (pbar-pe)/(1-pe) if pe < 1 else 1.0
 
 
-def load_completed_annotations(directory):
-    """Load aligned packets and fail closed on invalid comparisons."""
+def load_completed_annotations(directory, missing_ok=frozenset()):
+    """Load aligned packets and fail closed on invalid comparisons.
+
+    missing_ok: explicit (slot, item_id) pairs that may be blank; such a cell is
+    kept empty and the item is dropped from that slot only (declared deviation).
+    """
     files = sorted(Path(directory).glob("annotator_*.csv"))
     if len(files) < 3:
         raise SystemExit("Need at least three completed annotator files.")
@@ -108,6 +112,9 @@ def load_completed_annotations(directory):
             questions[item_id] = question
             for slot in RATING_SLOTS:
                 if not row.get(slot, "").strip():
+                    if (slot, item_id) in missing_ok:
+                        row[slot] = ""
+                        continue
                     raise SystemExit(f"Missing {slot} in {path}: {item_id}")
                 value = normalize_label(slot, row[slot])
                 if value is None:
@@ -180,8 +187,19 @@ def simulate_personas(args):
     print(f"Created {len(PERSONAS)} simulated-persona packets in {out}")
 
 
+def parse_missing(specs):
+    pairs = set()
+    for spec in specs or []:
+        slot, _, item = spec.partition(":")
+        if slot not in RATING_SLOTS or not item:
+            raise SystemExit(f"--missing expects SLOT:ITEM_ID, got {spec!r}")
+        pairs.add((slot, item))
+    return frozenset(pairs)
+
+
 def score(args):
-    packets, _ = load_completed_annotations(args.annotations)
+    missing_ok = parse_missing(getattr(args, "missing", None))
+    packets, _ = load_completed_annotations(args.annotations, missing_ok)
     manifest_path = Path(args.annotations) / "SIMULATION_MANIFEST.json"
     simulation = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
     requested_provenance = getattr(args, "provenance", None)
@@ -197,16 +215,23 @@ def score(args):
             for slot in by_slot:
                 value = row[slot].strip()
                 by_slot[slot][row["item_id"]].append(value.casefold())
-    report = {}
+    report, dropped = {}, []
     for slot, items in by_slot.items():
+        for item_id in [i for i, v in items.items() if "" in v]:
+            del items[item_id]
+            dropped.append({"slot": slot, "item_id": item_id})
         if any(len(v) != len(packets) for v in items.values()):
             raise SystemExit(f"Incomplete independent ratings for {slot}")
-        report[slot] = {"fleiss_kappa": fleiss_kappa(items),
+        if not items:
+            report[slot] = {"n_items": 0, "fleiss_kappa": None, "unanimous_rate": None}
+            continue
+        report[slot] = {"n_items": len(items), "fleiss_kappa": fleiss_kappa(items),
                         "unanimous_rate": sum(len(set(v)) == 1 for v in items.values())/len(items)}
     output = {"schema_version": 1,
               "provenance": "simulated_personas" if simulation else "human_annotations",
               "synthetic": bool(simulation), "n_annotators": len(packets),
-              "n_items": len(next(iter(by_slot.values()))), "slots": report}
+              "n_items": max(v["n_items"] for v in report.values()), "slots": report,
+              "declared_missing_cells_dropped": dropped}
     if simulation:
         output["warning"] = "NOT HUMAN-SUBJECT EVIDENCE"
         output["personas"] = simulation["personas"]
@@ -215,7 +240,8 @@ def score(args):
 
 
 def adjudicate(args):
-    packets, questions = load_completed_annotations(args.annotations)
+    packets, questions = load_completed_annotations(
+        args.annotations, parse_missing(getattr(args, "missing", None)))
     ratings = defaultdict(lambda: defaultdict(list))
     for _, rows in packets:
         for row in rows:
@@ -250,6 +276,8 @@ def main():
     q.add_argument("--annotations", required=True)
     q.add_argument("--out", default="paper/results/annotation_agreement.json")
     q.add_argument("--provenance", choices=["human_annotations", "simulated_personas"])
+    q.add_argument("--missing", action="append",
+                   help="SLOT:ITEM_ID allowed to be blank (repeatable; a declared deviation)")
     q.set_defaults(fn=score)
     q = sub.add_parser("simulate-personas")
     q.add_argument("--input", required=True); q.add_argument("--out", required=True)
@@ -259,6 +287,7 @@ def main():
     q = sub.add_parser("adjudicate")
     q.add_argument("--annotations", required=True)
     q.add_argument("--out", default="annotation_adjudication.csv")
+    q.add_argument("--missing", action="append")
     q.set_defaults(fn=adjudicate)
     args = p.parse_args(); args.fn(args)
 

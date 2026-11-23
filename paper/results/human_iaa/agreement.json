@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "provenance": "human_annotations",
+  "synthetic": false,
+  "n_annotators": 3,
+  "n_items": 70,
+  "slots": {
+    "action": {
+      "n_items": 70,
+      "fleiss_kappa": 0.2516333399326869,
+      "unanimous_rate": 0.7571428571428571
+    },
+    "answer": {
+      "n_items": 69,
+      "fleiss_kappa": 0.7152341647227707,
+      "unanimous_rate": 0.6811594202898551
+    },
+    "temporal_state": {
+      "n_items": 70,
+      "fleiss_kappa": -0.07142857142857212,
+      "unanimous_rate": 0.2
+    },
+    "modality": {
+      "n_items": 70,
+      "fleiss_kappa": 0.2002688172043022,
+      "unanimous_rate": 0.7571428571428571
+    },
+    "scope": {
+      "n_items": 70,
+      "fleiss_kappa": 0.3574051407588745,
+      "unanimous_rate": 0.7142857142857143
+    },
+    "source_status": {
+      "n_items": 70,
+      "fleiss_kappa": 0.49226305609284315,
+      "unanimous_rate": 0.8571428571428571
+    },
+    "observer_state": {
+      "n_items": 70,
+      "fleiss_kappa": 0.4260054666146046,
+      "unanimous_rate": 0.9
+    },
+    "world": {
+      "n_items": 70,
+      "fleiss_kappa": 0.9175824175824179,
+      "unanimous_rate": 0.9714285714285714
+    }
+  },
+  "declared_missing_cells_dropped": [
+    {
+      "slot": "answer",
+      "item_id": "source_conflict-0262"
+    }
+  ]
+}
