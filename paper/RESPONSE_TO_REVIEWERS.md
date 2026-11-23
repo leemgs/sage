@@ -132,9 +132,9 @@ an ambiguous codebook item (one annotator marked almost every time-stamped item 
 time-dependent), which we report rather than recode. Descriptively, majority labels
 match the benchmark's reference labels on 97–100% of items for every slot except
 temporal relevance (63%); because the worked examples name the deciding slot per
-category, this partly reflects the instructions. One blank answer cell was excluded
-from the answer slot as a declared deviation (Methods; Supplementary Note 10;
-`paper/results/human_iaa/`).
+category, this partly reflects the instructions. One answer cell that was empty in a
+returned file was obtained afterwards from the same annotator (Methods; Supplementary
+Note 10; `paper/results/human_iaa/`).
 
 **M-C — "Ceiling effects / item difficulty."**
 Several synthetic categories reach 100% under full evidence, reflecting that the

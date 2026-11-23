@@ -18,18 +18,19 @@ required (exempt / not applicable). Names are not stored: files are `annotator_1
 2. Codebook rule applied mechanically: annotator 1 chose `action = ABSTAIN` but left
    `answer` blank on `modality-0422` and `temporal-0113`; the codebook says the answer
    repeats the action token, so `answer = ABSTAIN` was filled in.
-3. Declared deviation from the pre-specified rule (complete packets only): annotator 1
-   left `answer` blank on `source_conflict-0262` with `action = ANSWER`. That item is
-   dropped from the `answer` slot only (69 items); every other slot uses all 70 items.
+3. Annotator 1's `answer` cell for `source_conflict-0262` (`action = ANSWER`) was empty
+   in the returned workbook (the same file was uploaded twice; the annotator reports
+   having typed an answer, most likely an unsaved edit). The author obtained that one
+   value from annotator 1 afterwards without showing other annotators' labels:
+   `answer = Cato`, entered on 2026-11-23. All slots therefore use all 70 items.
 
 **Reproduce.**
 ```bash
 python code/annotation_cli.py score --annotations paper/results/human_iaa \
-  --out paper/results/human_iaa/agreement.json --provenance human_annotations \
-  --missing answer:source_conflict-0262
+  --out paper/results/human_iaa/agreement.json --provenance human_annotations
 python code/annotation_cli.py adjudicate --annotations paper/results/human_iaa \
-  --out paper/results/human_iaa/disagreements.csv --missing answer:source_conflict-0262
-python code/human_vs_reference.py --missing answer:source_conflict-0262   # descriptive
+  --out paper/results/human_iaa/disagreements.csv
+python code/human_vs_reference.py   # descriptive
 ```
 
 `disagreements.csv` lists every item and slot without unanimous agreement; it has not

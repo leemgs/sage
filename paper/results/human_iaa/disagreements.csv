@@ -76,7 +76,6 @@ observer-0542,Does Ivan believe the meeting will occur?,temporal_state,"[""relev
 observer-0542,Does Ivan believe the meeting will occur?,observer_state,"[""shared"", ""partial"", ""partial""]",,
 temporal-0113,Who is the current director at time 5?,action,"[""ABSTAIN"", ""ANSWER"", ""ANSWER""]",,
 temporal-0113,Who is the current director at time 5?,answer,"[""abstain"", ""bora"", ""bora""]",,
-source_conflict-0262,Who is the manager?,answer,"["""", ""cato"", ""cato""]",,
 source_conflict-0262,Who is the manager?,temporal_state,"[""relevant"", ""stable"", ""relevant""]",,
 source_conflict-0262,Who is the manager?,source_status,"[""reliable"", ""conflict"", ""conflict""]",,
 hidden_premise-0171,I live in Beta. Can I register now?,action,"[""CLARIFY"", ""ANSWER"", ""ABSTAIN""]",,
