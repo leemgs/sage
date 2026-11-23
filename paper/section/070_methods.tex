@@ -95,12 +95,6 @@ benchmark is a conformance suite for explicit semantics, analogous to unit tests
 for a software protocol, rather than an independent estimate of natural-language
 performance.
 
-Future benchmark versions should use separate authors for data construction and
-system development, clustered scenario families, hidden generators, natural and
-semi-synthetic sources, adjudicated annotations, compositional splits and
-adversarial state manipulations. Recommended natural-data fields and annotation
-instructions are supplied in the Supplementary Information.
-
 \subsection*{Reference implementation}
 
 SCQA is a deterministic Python reference implementation with no trained
@@ -132,12 +126,7 @@ expression, validity interval, scope, modality, joint source/status,
 observer-knowledge and world slots. Because claim order is preserved, this
 comparison does not require learned alignment. The resulting files are
 \texttt{results/predicted\_state\_slots.csv} and its aggregate summary.
-We distinguish an \emph{evidence-complete} condition, in which every required
-slot is supplied, from a \emph{partially observable} condition, in which absent
-slots must remain unresolved. A text-observable condition must instead render
-every answer-critical variable in independently authored prose and must not use
-hidden metadata during sensing. Results should be stratified by these regimes
-rather than averaging unextractable and extractable slots.
+
 
 \subsection*{Metrics and analysis}
 
@@ -146,15 +135,9 @@ requiring clarification, correctness requires selecting clarification rather
 than providing the latent answer. Category-level accuracy and matched component
 ablations localize failure mechanisms. Because instances share template
 families, item-level confidence intervals and $P$ values are not used as primary
-scientific evidence in the revised manuscript. The released scripts retain
-item-level summaries for regression testing, but future natural-language studies
-should use scenario- or template-clustered bootstrap intervals, paired tests,
-multiple-comparison control and pre-specified primary outcomes.
+scientific evidence in the revised manuscript.
 
-Rule-derived confidence values from the original implementation are not treated
-as neural calibration. End-to-end work should report Brier score, expected
-calibration error, selective risk, risk--coverage area, clarification utility
-and abstention precision/recall using model- or state-derived probabilities.
+Rule-derived confidence values are not treated as neural calibration.
 
 \subsection*{Ablation design}
 
@@ -195,8 +178,8 @@ their plain text, in time order but without timestamps or other metadata, to
 the direct-answer prompt; because no item has more than three claims, this
 condition differs from the direct prompt only in omitting that metadata. A tool-using agent condition
 follows a ReAct-style loop: the model may issue \texttt{search} queries over the
-item's claims, receives the matching claims, and then answers. Every request, raw response,
-normalized answer, token count, latency, failure and retry is retained. The
+item's claims, receives the matching claims, and then answers. All requests, responses,
+tokens, latencies and failures are archived. The
 completion gate joins records to the frozen sample, rejects missing or
 unexpected identifiers and requires 30 successful responses in every category
 for every requested model and condition. The reported run contains no failed
@@ -212,65 +195,21 @@ population uncertainty over unrestricted questions. With only seven clusters the
 percentile intervals are approximate and can lie on a boundary (for example an
 upper bound of exactly zero), so they are reported descriptively rather than as
 significance tests. Cost summaries report
-provider token counts and measured request latency by condition. The bundled
-12-item SituatedQA temporal sample is reported only as a smoke test; its size
-does not support a standalone inferential claim. Only the two date-anchored
-conditions (structured and situation) are compared there, because the direct
-prompt omits the query date and is therefore not a matched control. The frozen
+provider token counts and measured request latency by condition. An archived
+12-item SituatedQA smoke test is superseded by E8b and not analysed. The frozen
 manifest, model snapshots and cost accounting are in
 \texttt{code/experiment\_manifest.e5.json}, and the audited run is reproduced
 with \texttt{python code/run\_e5.py}.
 
-The following larger confirmatory study is specified but has not been executed.
-It would compare these matched conditions:
-direct prompting; chain-of-thought or structured prompting; date-aware context;
-standard RAG; temporal or event-aware RAG; reflection or verification agent; and
-Situation Engineering. The generation model, evidence set, retrieval corpus,
-maximum context, output budget and sampling parameters should be held constant
-where the design permits. The minimum study uses two proprietary and two strong
-open-weight model families with immutable model identifiers; additional model
-families test robustness rather than substitute for balanced completion.
-
-The primary intervention contrast must be
-\emph{same model + same evidence + same computation budget} with versus without
-the explicit situation layer. A factorial analysis should independently vary
-prompt, context/retrieval, harness and situation state. Competitive conditions
-should include long-context prompting, few-shot structured reasoning,
-self-consistency, self-refinement, Self-RAG, graph or temporal retrieval,
-dialogue/belief-state tracking, clarification and calibrated abstention.
-
-For each call, researchers should archive the prompt, evidence, raw response,
-normalized answer, action decision, model identifier, provider, execution date,
-latency, token use, monetary cost, errors and retries. Evaluation must report
-gold-state, predicted-state and deliberately corrupted-state conditions. The
-predicted-state condition should score entity/event extraction, temporal
-relations, validity intervals, scope, modality, source status, observer
-knowledge, possible-world identity and final answer. This enables error
-attribution to sensing, updating, policy or generation.
-
-The natural bridge must include at least one independently constructed temporal
-or situated benchmark (for example SituatedQA, FreshQA or ChronoQA), with frozen
-item inclusion and scoring rules. Synthetic diagnostic, natural benchmark and
-model intervention are reported as separate evidence levels.
-
-The bundled \texttt{code/run\_multimodel\_eval.py} provides provider adapters and
-refuses to create placeholder outputs when credentials are absent. In v0.1,
-where the decisive claim was always the newest, the no-metadata retrieval
-condition was the strongest ($91.3\%$), an artefact that the balanced v0.2
-benchmark removes. The v0.1
-pilot, earlier quota-truncated free-tier attempts and aborted v0.2 attempts
-(substitute models and a free-tier native run stopped by its daily quota)
-remain archived but are excluded from every scientific aggregate. Only the
-complete records admitted by \texttt{code/audit\_e5.py} enter the reported E5
-tables. Together with E6 and E8 these runs cover seven model developers and
-one natural-text temporal study, but not the full natural-language
-confirmatory experiment specified below.
+Protocols for a larger confirmatory study, external generalization, deployment
+evaluation and reporting, which have not been executed, are specified in
+Supplementary Notes 14 and 15.
 
 \subsection*{Pre-registered multi-family replication (E6) and LLM sensors (E7)}
 
 Both studies were pre-registered in the repository
-(\texttt{paper/PREREGISTRATION\_E6\_E7.md}) before any study call; the commit
-history timestamps the design and one amendment. E6 repeats E5 with identical
+(\texttt{paper/PREREGISTRATION\_E6\_E7.md}) before any study call; commits
+timestamp the design and one amendment. E6 repeats E5 with identical
 code, prompts, sample, decoding and conditions in three further developer
 families, reached through OpenRouter with reasoning disabled:
 \texttt{llama-4-maverick} (Meta), \texttt{deepseek-v4.1-flash} (DeepSeek) and
@@ -306,9 +245,7 @@ archived files; the pre-registered results remain primary. Second, E7's
 interpretation rule did not fit the data cleanly (the shortfall lay mainly in
 the unrecoverable time slot, yet claim-level cue-slot accuracy was 69--76\%),
 so we report all pre-registered measures and add the split of end-to-end
-accuracy into temporal and other items. The multi-family audit was corrected
-before the analysis to count families by model developer rather than by the
-gateway that served them.
+accuracy into temporal and other items. The audit was corrected before analysis to count developers, not gateways.
 
 \subsection*{Pre-registered free-tier replication (E8a) and natural-text study (E8b)}
 
@@ -322,11 +259,10 @@ with \texttt{nemotron-3-ultra-550b-a55b} (NVIDIA),
 (Recursive), under E6's decision rule. The amendment replaced a planned model
 that was withdrawn mid-run; its partial records are archived and excluded.
 Flint's endpoint refuses to disable reasoning, so it ran with minimal reasoning
-effort, and its reasoning tokens share the 1,024-token output budget. Free
-endpoints impose a daily request quota; the runner stops without writing a
-record when it is reached and resumes on a later day, and transient errors are
-retried until each item and condition has one success. Items are never
-imputed, substituted or dropped.
+effort, and its reasoning tokens share the 1,024-token output budget. Daily
+free quotas were handled by stopping and resuming; transient errors were retried
+until each item and condition had one success, and no item was imputed,
+substituted or dropped.
 
 E8b samples 300 questions from the SituatedQA temporal test
 split~\cite{zhang2021situatedqa} (75 per date type, fixed seed; upstream commit
@@ -369,60 +305,12 @@ the dots endpoint rejected on every attempt, so both models are compared on the
 same 297 items; Nemotron on all 300 items gives the same result. Many gold answers
 are long or numeric, so absolute accuracy is low in every condition.
 
-\subsection*{Prospective test designed to break benchmark--solver coupling}
+\subsection*{Human annotation}
 
-We pre-specify the next test rather than presenting simulated numbers as a
-completed experiment. An independent data team should sample naturally
-occurring questions from at least three domains, write evidence packs without
-access to the SCQA schema or solver, and freeze them before the systems team
-maps evidence into states. The crossed evaluation uses at least three genuinely
-independent model families (including an open-weight family), with identical
-evidence and matched token and tool budgets across direct, structured,
-temporal-retrieval, verification-agent and situation conditions. Items are
-split by scenario---not paraphrase---and held-out domains and generator authors
-are reported separately. Three blinded human annotators label answerability,
-answer, applicable evidence and required state slots; disagreements are
-adjudicated only after independent labels are frozen.
-
-Supplementary Note~14 records the pre-specified strata, collection targets and
-split rules; it reports no outcome values, because none have been measured. The
-confirmatory claim would require a positive
-situation-versus-structured paired contrast whose scenario-clustered 95\%
-interval excludes zero in at least two independent families, no material loss
-against temporal retrieval, and replication on the author-disjoint natural
-set. Human agreement, selective risk, latency, tokens and cost must be reported
-regardless of outcome. Until those gates are passed, generator--solver
-co-design, the absence of proprietary families beyond Gemini, of natural text
-and of human evaluation remain core limitations rather than prose-resolved
-concerns.
-
-\subsection*{Generalization and efficiency protocol}
-
-External evaluation should pre-register held-out scenario families and test
-unseen templates, longer event chains, nested scopes, conflicting authoritative
-sources, multiple observers, multilingual questions and adversarial stale
-evidence. Splits must occur at scenario or generator-grammar level rather than
-over lexical variants. Uncertainty intervals should use scenario-clustered
-resampling. Each condition must report latency, input and output tokens,
-retrieval and tool calls, retries, monetary cost and clarification overhead.
-Accuracy gains without matched resource reporting cannot identify the effect of
-the situation layer.
-
-\subsection*{Human and deployment evaluation}
-
-Human evaluation should use at least three independent annotators per natural
-item, blinded to method, with a documented adjudication procedure. Recommended
-outcomes include state-slot agreement, answer correctness, appropriateness of
-clarification or abstention, unnecessary clarification and perceived
-justification quality. Studies involving participants should report ethics
-approval or exemption, consent, compensation and privacy handling.
-
-The released annotation program generates separately shuffled, blinded packets
-for three or more annotators. It requires complete independent labels before
-computing Fleiss' $\kappa$ and unanimous agreement for action, answer and state
-slots; incomplete packets terminate with an error. Disagreements are adjudicated
-only after independent files are frozen. Blank blinded packets for a 70-item
-stratified subset are released under \texttt{paper/annotation\_packets/}.
+The annotation program gives each annotator a separately shuffled, blinded
+packet of a 70-item stratified subset and computes Fleiss' $\kappa$ and
+unanimous agreement per slot only from complete, frozen files
+(\texttt{paper/annotation\_packets/}).
 
 Three volunteer annotators, recruited by the author and not involved in the
 study, each completed one packet independently (no compensation; the author
@@ -445,32 +333,16 @@ items for every slot except temporal relevance (63\%). Because the worked
 examples state which slot usually decides each category, agreement with the
 reference partly reflects the instructions. Labels, agreement and the
 unadjudicated disagreement list are in \texttt{paper/results/human\_iaa/}.
-For software testing, a separate command generates three deterministic persona
-packets with injected disagreements. Its manifest and score output are marked
-\texttt{synthetic: true} and ``NOT HUMAN-SUBJECT EVIDENCE''; those values are
-excluded from the manuscript's empirical claims.
-
-Deployment studies should additionally measure state drift, invalidation
-latency, recovery after contradictory observations, action-precondition
-violations, security attacks on state metadata, throughput, tail latency,
-energy, token use and cost. The state and provenance required to audit a
-consequential decision should be retained subject to privacy and access-control
-requirements.
-
-\subsection*{Reproducibility and reporting protocol}
-
-The package contains the generator, generated benchmark, reference
-implementation, predictions, figures, datasheet and exact commands. To make
-future systems comparable, authors should report: (1) the situation schema;
-(2) which variables are supplied, retrieved or inferred; (3) update and conflict
-semantics; (4) response and action policies; (5) provenance and observability;
-(6) stage-specific errors; (7) prompt, context, retrieval, memory, tool and
-harness configurations; and (8) resource costs. A machine-readable experiment
-manifest is recommended.
+A synthetic persona run, machine-marked as not human evidence, only tests the
+software.
 
 \subsection*{Ethics and use of generative AI}
 
-The controlled benchmark contains no personal records or human participants.
+The controlled benchmark contains no personal records. The only human
+participants were the three adult volunteer annotators, who labelled synthetic
+benchmark items, agreed to take part, were not compensated and provided no
+personal data; the author reports that institutional ethics review was not
+required for this activity. Their labels are released without names.
 Generative AI assisted drafting and software development. The author inspected
 the code, generated outputs, calculations and references and remains responsible
 for the manuscript. No empirical values were fabricated to represent unexecuted

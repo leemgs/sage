@@ -114,10 +114,10 @@ replicates E6 with NVIDIA, rednote hi lab and Recursive models (E8a) and tests 3
 natural SituatedQA temporal questions (E8b); E9 (\texttt{paper/PREREGISTRATION\_E9.md})
 tests 297 natural SituatedQA geographic questions; and E10
 (\texttt{paper/PREREGISTRATION\_E10.md}) adds chain-of-thought and self-reflection
-baselines. A confirmatory revision still requires natural language for the five
-categories other than time and place, proprietary families beyond Gemini, human
-annotation and stronger temporal-retrieval and verification-agent baselines under
-matched budgets.
+baselines. Three volunteer annotators have since labelled a 70-item subset (Supplementary
+Note 10). A confirmatory revision still requires natural language for the five
+categories other than time and place, proprietary families beyond Gemini and
+stronger temporal-retrieval and verification-agent baselines under matched budgets.
 
 
 \section*{Supplementary Note 10: Independent annotation protocol}
@@ -248,5 +248,143 @@ compensation and adjudication are documented. The decision rules were dry-run on
 \texttt{results/prospective\_expected\_results.json}, which carries a
 \texttt{synthetic: true} flag so submission audits prevent their promotion to
 evidence; those values are deliberately not reported here.
+
+\section*{Supplementary Note 15: Prospective evaluation and reporting protocols}
+These protocols were moved from Methods because they specify studies that have not
+been executed; no outcome values are reported for them.
+
+\subsection*{Confirmatory multi-model study}
+The following larger confirmatory study is specified but has not been executed.
+It would compare these matched conditions:
+direct prompting; chain-of-thought or structured prompting; date-aware context;
+standard RAG; temporal or event-aware RAG; reflection or verification agent; and
+Situation Engineering. The generation model, evidence set, retrieval corpus,
+maximum context, output budget and sampling parameters should be held constant
+where the design permits. The minimum study uses two proprietary and two strong
+open-weight model families with immutable model identifiers; additional model
+families test robustness rather than substitute for balanced completion.
+
+The primary intervention contrast must be
+\emph{same model + same evidence + same computation budget} with versus without
+the explicit situation layer. A factorial analysis should independently vary
+prompt, context/retrieval, harness and situation state. Competitive conditions
+should include long-context prompting, few-shot structured reasoning,
+self-consistency, self-refinement, Self-RAG, graph or temporal retrieval,
+dialogue/belief-state tracking, clarification and calibrated abstention.
+
+For each call, researchers should archive the prompt, evidence, raw response,
+normalized answer, action decision, model identifier, provider, execution date,
+latency, token use, monetary cost, errors and retries. Evaluation must report
+gold-state, predicted-state and deliberately corrupted-state conditions. The
+predicted-state condition should score entity/event extraction, temporal
+relations, validity intervals, scope, modality, source status, observer
+knowledge, possible-world identity and final answer. This enables error
+attribution to sensing, updating, policy or generation.
+
+The natural bridge must include at least one independently constructed temporal
+or situated benchmark (for example SituatedQA, FreshQA or ChronoQA), with frozen
+item inclusion and scoring rules. Synthetic diagnostic, natural benchmark and
+model intervention are reported as separate evidence levels.
+
+The bundled \texttt{code/run\_multimodel\_eval.py} provides provider adapters and
+refuses to create placeholder outputs when credentials are absent. In v0.1,
+where the decisive claim was always the newest, the no-metadata retrieval
+condition was the strongest ($91.3\%$), an artefact that the balanced v0.2
+benchmark removes. The v0.1
+pilot, earlier quota-truncated free-tier attempts and aborted v0.2 attempts
+(substitute models and a free-tier native run stopped by its daily quota)
+remain archived but are excluded from every scientific aggregate. Only the
+complete records admitted by \texttt{code/audit\_e5.py} enter the reported E5
+tables. Together with E6 and E8 these runs cover seven model developers and
+one natural-text temporal study, but not the full natural-language
+confirmatory experiment specified below.
+
+\subsection*{Prospective test designed to break benchmark--solver coupling}
+
+We pre-specify the next test rather than presenting simulated numbers as a
+completed experiment. An independent data team should sample naturally
+occurring questions from at least three domains, write evidence packs without
+access to the SCQA schema or solver, and freeze them before the systems team
+maps evidence into states. The crossed evaluation uses at least three genuinely
+independent model families (including an open-weight family), with identical
+evidence and matched token and tool budgets across direct, structured,
+temporal-retrieval, verification-agent and situation conditions. Items are
+split by scenario---not paraphrase---and held-out domains and generator authors
+are reported separately. Three blinded human annotators label answerability,
+answer, applicable evidence and required state slots; disagreements are
+adjudicated only after independent labels are frozen.
+
+Supplementary Note~14 records the pre-specified strata, collection targets and
+split rules; it reports no outcome values, because none have been measured. The
+confirmatory claim would require a positive
+situation-versus-structured paired contrast whose scenario-clustered 95\%
+interval excludes zero in at least two independent families, no material loss
+against temporal retrieval, and replication on the author-disjoint natural
+set. Human agreement, selective risk, latency, tokens and cost must be reported
+regardless of outcome. Until those gates are passed, generator--solver
+co-design, the absence of proprietary families beyond Gemini and of natural
+text for five of the seven categories remain core limitations.
+
+\subsection*{Generalization and efficiency protocol}
+
+External evaluation should pre-register held-out scenario families and test
+unseen templates, longer event chains, nested scopes, conflicting authoritative
+sources, multiple observers, multilingual questions and adversarial stale
+evidence. Splits must occur at scenario or generator-grammar level rather than
+over lexical variants. Uncertainty intervals should use scenario-clustered
+resampling. Each condition must report latency, input and output tokens,
+retrieval and tool calls, retries, monetary cost and clarification overhead.
+Accuracy gains without matched resource reporting cannot identify the effect of
+the situation layer.
+
+\subsection*{Benchmark, sensing and metric recommendations}
+Future benchmark versions should use separate authors for data construction and
+system development, clustered scenario families, hidden generators, natural and
+semi-synthetic sources, adjudicated annotations, compositional splits and
+adversarial state manipulations. Recommended natural-data fields and annotation
+instructions are supplied in the Supplementary Information.
+
+We distinguish an \emph{evidence-complete} condition, in which every required
+slot is supplied, from a \emph{partially observable} condition, in which absent
+slots must remain unresolved. A text-observable condition must instead render
+every answer-critical variable in independently authored prose and must not use
+hidden metadata during sensing. Results should be stratified by these regimes
+rather than averaging unextractable and extractable slots.
+
+The released scripts retain
+item-level summaries for regression testing, but future natural-language studies
+should use scenario- or template-clustered bootstrap intervals, paired tests,
+multiple-comparison control and pre-specified primary outcomes.
+
+Rule-derived confidence values from the original implementation are not treated
+as neural calibration. End-to-end work should report Brier score, expected
+calibration error, selective risk, risk--coverage area, clarification utility
+and abstention precision/recall using model- or state-derived probabilities.
+
+\subsection*{Human and deployment evaluation}
+Human evaluation should use at least three independent annotators per natural
+item, blinded to method, with a documented adjudication procedure. Recommended
+outcomes include state-slot agreement, answer correctness, appropriateness of
+clarification or abstention, unnecessary clarification and perceived
+justification quality. Studies involving participants should report ethics
+approval or exemption, consent, compensation and privacy handling.
+
+Deployment studies should additionally measure state drift, invalidation
+latency, recovery after contradictory observations, action-precondition
+violations, security attacks on state metadata, throughput, tail latency,
+energy, token use and cost. The state and provenance required to audit a
+consequential decision should be retained subject to privacy and access-control
+requirements.
+
+\subsection*{Reproducibility and reporting protocol}
+
+The package contains the generator, generated benchmark, reference
+implementation, predictions, figures, datasheet and exact commands. To make
+future systems comparable, authors should report: (1) the situation schema;
+(2) which variables are supplied, retrieved or inferred; (3) update and conflict
+semantics; (4) response and action policies; (5) provenance and observability;
+(6) stage-specific errors; (7) prompt, context, retrieval, memory, tool and
+harness configurations; and (8) resource costs. A machine-readable experiment
+manifest is recommended.
 
 \end{document}
