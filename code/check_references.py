@@ -66,7 +66,7 @@ def latex_title(body):
 
 
 def first_author(body):
-    return re.split(r"[,.\s]", body.strip())[0].replace("\\", "")
+    return re.split(r"[,\s]", body.strip())[0]  # keep LaTeX accents; norm() resolves them
 
 
 def year(body):
@@ -155,6 +155,9 @@ def main():
             author_ok = not rec.get("authors") or any(norm(author) == norm(x) or norm(author) in norm(x)
                                                      for x in rec["authors"][:1] + rec["authors"])
             year_ok = not rec.get("year") or rec["year"] == yr or rec["year"] in body
+            if not year_ok and rec["source"].startswith("arXiv") and yr.isdigit():
+                # A conference paper is cited by its venue year, which follows the preprint.
+                year_ok = 0 <= int(yr) - int(rec["year"]) <= 2
             ok = (sim >= 0.85 or in_title) and author_ok and year_ok
         report.append({"key": key, "ok": ok, "title_similarity": round(sim, 2),
                        "cited_first_author": author, "cited_year": yr, "record": rec, "error": err})
