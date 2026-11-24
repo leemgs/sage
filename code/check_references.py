@@ -30,7 +30,7 @@ MANUAL = {
 }
 
 
-def get(url, tries=5):
+def get(url, tries=8):
     """GET with retries: arXiv answers bursts with HTTP 429 or slow responses."""
     for attempt in range(tries):
         try:
@@ -40,20 +40,29 @@ def get(url, tries=5):
             code = getattr(exc, "code", None)
             if attempt == tries - 1 or (code is not None and code not in (429, 500, 502, 503, 504)):
                 raise
-            time.sleep(10 * (attempt + 1))
+            time.sleep(20 * (attempt + 1))
 
 
 def norm(t):
+    """Lower-case ASCII words: LaTeX accents and Unicode diacritics are dropped."""
+    import unicodedata
+    t = re.sub(r"\\[`'^\"~=.uvHtcdbk]\{?([A-Za-z])\}?", r"\1", t)  # \'{o} -> o
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
     t = re.sub(r"\\[a-zA-Z]+|[{}$]", " ", t)
     return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
 
 
+AUTHORS = re.compile(r"""^\s*(?:(?:van\s|de\s)?[A-Z][^\s,]*(?:\s[A-Z][^\s,]*)?,\s(?:[A-Z]\.\s?)+
+                     (?:,\s|\s?\\&\s|\s*et\ al\.\s*)?)+""", re.X)
+
+
 def latex_title(body):
-    """Title = text after the author list (ends at '. ') up to the next '. ' or 'In '."""
+    """Title = text after the author list, up to the next sentence end or '('."""
     body = re.sub(r"\\refurl\{[^}]*\}", "", body)
     body = re.sub(r"\\emph\{([^}]*)\}", r"\1", body)
-    m = re.match(r"\s*(.*?(?:et al\.|[A-Z]\.))\s+(.+?)(?:\.\s+In\s|\.\s+[A-Z][a-z]*\.?\s|\s\(|\.\s*$)", body, re.S)
-    return (m.group(2) if m else body).strip()
+    rest = AUTHORS.sub("", body, count=1).strip()
+    m = re.match(r"(.+?)(?:\.\s|\s\(|\.$)", rest, re.S)
+    return " ".join((m.group(1) if m else rest).split())
 
 
 def first_author(body):
@@ -69,7 +78,7 @@ def arxiv_entry(query=None, ident=None):
     u = ("https://export.arxiv.org/api/query?" +
          (f"id_list={ident}" if ident else "search_query=" + urllib.parse.quote(query) + "&max_results=3"))
     x = get(u)
-    time.sleep(5)  # arXiv API etiquette
+    time.sleep(8)  # arXiv API etiquette
     out = []
     for e in re.findall(r"<entry>(.*?)</entry>", x, re.S):
         t = " ".join(re.search(r"<title>(.*?)</title>", e, re.S).group(1).split())
