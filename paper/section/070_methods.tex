@@ -169,9 +169,8 @@ not allow disabling reasoning there and was run at the minimum reasoning effort.
 Every recorded call used zero reasoning tokens, matching the thinking-off
 setting of the v0.1 pilot. The v0.2 run kept the v0.1 conditions, primary
 contrast, scoring rule and statistical analysis unchanged; only the benchmark
-and the access route differ. Hosted models can change behind a fixed name and
-temperature-zero decoding is not guaranteed to be deterministic, so exact
-reproduction rests on the archived raw responses rather than on re-querying. Each model receives identical evidence under direct,
+and the access route differ. Because hosted models can change behind a fixed name,
+exact reproduction rests on the archived responses. Each model receives identical evidence under direct,
 structured and explicit-situation prompts. A separate retrieval condition
 selects the top three claims by token overlap with the question and supplies
 their plain text, in time order but without timestamps or other metadata, to
@@ -288,9 +287,8 @@ E10 (\texttt{paper/PREREGISTRATION\_E10.md}, committed before any call) adds the
 chain-of-thought and self-reflection prompts, unchanged since E5, for the three
 E8a models on the 210 items, and compares them with the archived E8a situation
 records under E6's decision rule; the new conditions were collected 3--8 days
-after the E8a records. Few-shot prompting and self-consistency were not run, the
-first because it would need prompts written after seeing earlier outputs, the
-second because of the free quota. Flint again reaches the output limit often
+after the E8a records. Few-shot prompting (prompts would be written after seeing
+outputs) and self-consistency (free quota) were not run. Flint again reaches the output limit often
 (94 of 210 self-reflection and 38 of 210 chain-of-thought responses).
 
 E9 (\texttt{paper/PREREGISTRATION\_E9.md}, committed before any call) repeats the

@@ -5,13 +5,12 @@ failure \emph{situation blindness} and define \emph{situation engineering} as
 constructing the query-relative state that governs evidence applicability. We
 introduce a state interface, Situation-Catching Question Answering, and
 SituationCatch-Bench, a 4,200-item diagnostic spanning seven applicability
-categories from temporal change to counterfactual worlds. A deterministic implementation satisfies every invariant under
+categories from time to counterfactual worlds. A deterministic implementation satisfies every invariant under
 oracle states; accuracy falls to 66.5\% under text-inferred states and 45.1\%
-after corruption, and each matched ablation produces a failure confined to its
-category.
+after corruption, and each matched ablation fails only its own category.
 These results establish an executable diagnostic, not language-model
-superiority. Across nine models from seven developers, including two
-pre-registered replications, explicit situation prompting never detectably beats matched
+superiority. Across nine models from seven developers, partly
+pre-registered, explicit situation prompting never detectably beats matched
 structured prompting, whereas identical claims without timestamps fail on
 time-dependent items and dating or locating natural questions adds 22--41 points.
 Language-model sensors recover most cues a rule-based sensor misses, but not

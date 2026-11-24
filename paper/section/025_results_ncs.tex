@@ -22,10 +22,9 @@ SCQA was compared with lexical retrieval, recency-ranked retrieval and a
 latest-mention rule. All methods received the same generated claims; SCQA alone
 used the complete oracle situation state and transition semantics. SCQA obtained
 100.0\% action-and-answer accuracy. Lexical retrieval obtained 54.3\%, recency
-ranking 50.0\% and latest mention 47.4\% (Fig.~\ref{fig:accuracy}). These
-numbers are deterministic consequences of the benchmark and implementation and
-should be interpreted as regression-test coverage, not as estimates of model
-performance in a population of natural questions.
+ranking 50.0\% and latest mention 47.4\% (Fig.~\ref{fig:accuracy}). These are
+regression-test values, not estimates of model performance on natural
+questions.
 
 The control values are structurally induced. Each control reads one selected
 claim at face value, and because every category is balanced, such a reading is
@@ -107,13 +106,11 @@ copied from gold metadata. Across
 all 4,200 diagnostic instances, action-and-answer accuracy fell from 100.0\%
 with gold states to 66.5\% with predicted states. Deliberately overwriting
 source status, modality and scope (which also carries world identity) in the
-predicted state reduced accuracy further to 45.1\%. These are complete executions, not projected values. They
-show that the oracle result is not preserved when situation sensing is
-imperfect. Because the texts are generated from the same seven scenario
-families and the sensor is a transparent rule baseline, these results remain
-controlled diagnostics rather than evidence of natural-language or LLM
-generalization, and a partial-observability stress test rather than an estimate
-of extraction from evidence-complete prose (Methods).
+predicted state reduced accuracy further to 45.1\%. The oracle
+result is therefore not preserved under imperfect sensing. Because the texts
+come from the same seven scenario families and the sensor is a transparent rule
+baseline, these are controlled diagnostics, not evidence of natural-language
+generalization (Methods).
 
 Claim-level scoring localizes the sensor's limitations
 (Extended Data Table~\ref{tab:slot-sensing}). Event type reached 92.3\%, modality 100.0\%,

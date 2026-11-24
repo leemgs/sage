@@ -1095,7 +1095,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/accuracy.pdf, id=96, 426.08875pt x 188.25317pt>
 File: figures/accuracy.pdf Graphic file (type pdf)
 <use figures/accuracy.pdf>
-Package pdftex.def Info: figures/accuracy.pdf  used on input line 39.
+Package pdftex.def Info: figures/accuracy.pdf  used on input line 38.
 (pdftex.def)             Requested size: 282.71796pt x 124.91676pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1104,12 +1104,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/by_category.pdf, id=114, 452.14609pt x 278.50574pt>
 File: figures/by_category.pdf Graphic file (type pdf)
 <use figures/by_category.pdf>
-Package pdftex.def Info: figures/by_category.pdf  used on input line 64.
+Package pdftex.def Info: figures/by_category.pdf  used on input line 63.
 (pdftex.def)             Requested size: 349.68091pt x 215.39774pt.
 <figures/ablations.pdf, id=116, 397.38777pt x 204.94165pt>
 File: figures/ablations.pdf Graphic file (type pdf)
 <use figures/ablations.pdf>
-Package pdftex.def Info: figures/ablations.pdf  used on input line 91.
+Package pdftex.def Info: figures/ablations.pdf  used on input line 90.
 (pdftex.def)             Requested size: 282.71796pt x 145.80666pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1118,41 +1118,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./figures/ablations.pdf>]
-Underfull \hbox (badness 4144) in paragraph at lines 182--182
+Underfull \hbox (badness 4144) in paragraph at lines 179--179
 []|\OT1/cmr/m/n/9 4,200 gen-er-ated instances and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
 []|\OT1/cmr/m/n/9 Independent tem-po-ral/si-t-u-ated
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 182--182
+Underfull \hbox (badness 3179) in paragraph at lines 179--179
 []|\OT1/cmr/m/n/9 Nine mod-els, seven devel-op-ers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
 \OT1/cmr/m/n/9 (Gem-ini; pre-registered Meta,
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 182--182
+Underfull \hbox (badness 5578) in paragraph at lines 179--179
 \OT1/cmr/m/n/9 note, Recur-sive), $\OML/cmm/m/it/9 n \OT1/cmr/m/n/9 = 210$,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
+Underfull \hbox (badness 10000) in paragraph at lines 179--179
 \OT1/cmr/m/n/9 sit-u-a-tion/struc-tured/RAG/a-gent
  []
 
-) (./section/026_results_e5.tex (./section/tables/e5_stats_table.tex
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 19.
-)
+) (./section/026_results_e5.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
+(./section/tables/e5_stats_table.tex
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 19.
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9])
@@ -1176,7 +1177,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
-Underfull \hbox (badness 10000) in paragraph at lines 210--224
+Underfull \hbox (badness 10000) in paragraph at lines 209--223
 \OT1/cmr/m/n/10 Both stud-ies were pre-registered in the repos-i-tory
  []
 
@@ -1186,10 +1187,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+ [17])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18])
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
 Underfull \hbox (badness 10000) in paragraph at lines 125--139
 \OT1/cmr/m/n/10 SituationCatch-Bench v0.2 is included in the pub-lic source rep
 os-i-tory
@@ -1213,11 +1217,11 @@ Underfull \hbox (badness 5231) in paragraph at lines 125--139
 de/prepare[]situatedqa[]eval.py \OT1/cmr/m/n/10 and
  []
 
-
+(./section/090_ack.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19]
-(./section/090_ack.tex) (./section/095_reference_nature.tex
+ [19])
+(./section/095_reference_nature.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20])
@@ -1287,7 +1291,7 @@ sy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main.pdf (26 pages, 476197 bytes).
+Output written on main.pdf (26 pages, 475340 bytes).
 PDF statistics:
  480 PDF objects out of 1000 (max. 8388607)
  379 compressed objects within 4 object streams

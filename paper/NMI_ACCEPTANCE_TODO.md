@@ -169,3 +169,11 @@ R2는 다중 패밀리 null로 "결과가 일반적"임을 보였다. 남은 핵
 | 필수 문단 | Data/Code availability, Author contributions, Competing interests, 윤리 | 모두 있음. 윤리 문단의 "인간 참여자 없음"을 주석자 3명 기술로 수정 |
 | 폭 | 본문 영역 초과 없음 | 본문·보충 PDF 전 페이지 측정, 초과 0, Overfull 0 |
 | 참고문헌 실재·정확성 | Crossref, arXiv, ACL Anthology, NeurIPS, Open Library 대조 | 25/25 확인, SituatedQA 저자 표기 1건 수정 |
+
+### 8.1 재점검 (2026-11-24): 단어 수 계산 오류 수정
+
+이전 점검의 단어 수 계산은 `%`를 LaTeX 주석으로 보고 줄 끝까지 지웠는데, `66.5\%`처럼 이스케이프된
+퍼센트 기호 뒤의 문장까지 지워 실제보다 적게 셌다. 올바르게 세면 초록 154, 본문 3,622, Methods 3,013단어로
+세 가지 모두 한도를 넘었다. 의미를 바꾸지 않는 압축으로 **초록 149, 본문 3,497, Methods 2,989**로 맞췄다.
+점검은 이제 `code/check_desk_reject.py`(한도·표시 항목·참고문헌 순서·필수 문단·자리표시·폭·Overfull·
+Extended Data/보충 Note 참조)와 `code/check_references.py`(25개 참고문헌을 원 기록과 대조)로 재현된다.

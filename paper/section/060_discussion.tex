@@ -19,39 +19,30 @@ validation, policy or generation.
 
 \subsection*{Implications for hallucination and agent evaluation}
 
-A generated claim can be textually entailed by a document yet wrong for the
-query. Evaluation should therefore record both support and applicability. In
-free-form generation, claims should be linked to the situation state and
-provenance on which they depend. In agents, tools should expose preconditions,
-state transitions and failure semantics rather than only free-text outputs;
-harnesses should block consequential actions while answer-critical state is
-unresolved. Evaluation engineering becomes the sensor layer that checks each
-transition and not merely the final answer.
-
-The response policy is also part of correctness. Clarification and abstention
-are not failures when the situation is under-specified, although excessive
-clarification is costly. Future evaluations should
-therefore report answer accuracy, clarification utility, unnecessary-question
-rate, abstention precision, selective risk, coverage, latency, token use and
-monetary cost.
+A generated claim can be entailed by a document yet wrong for the query, so
+evaluation should record both support and applicability. Generated claims
+should be linked to the state and provenance on which they depend; agent tools
+should expose preconditions and state transitions, and harnesses should block
+consequential actions while answer-critical state is unresolved. Clarification
+and abstention are correct when the situation is under-specified, so
+evaluations should report clarification utility, unnecessary questions,
+selective risk and cost alongside accuracy.
 
 \subsection*{What is established and what remains to be tested}
 
-This study defines a formal error class and implements an interoperable state
-schema with category-specific effects of matched state ablations. It also shows that
-performance degrades sharply when state must be recovered from partially
-observable text. Together, these results identify situation sensing as a
-separate engineering and evaluation target rather than treating every failure
-as retrieval or generation error.
+This study defines a formal error class and an interoperable state schema
+whose matched ablations have category-specific effects, and shows that
+performance degrades sharply when state must be recovered from text, making
+situation sensing a separate engineering and evaluation target.
 
 Of the framework's predictions, the controlled ones hold: corrupting or removing
 one state variable damages only its matching category, and predicted-state
 errors decompose into sensing rather than update or policy failures. The first
 neural prediction does not hold at the prompt level: an explicit situation state
 did not improve the categories whose decisive variables it names. This is
-consistent with the prediction that gains should vanish when a baseline already
-represents the same state, as the structured prompt does, but it means the
-present evidence does not show a benefit of situation prompting itself. The
+consistent with gains vanishing when a baseline such as the structured prompt
+already represents the same state, but it shows no benefit of situation
+prompting itself. The
 sensing prediction is also only partly borne out: language-model sensors
 remove most of the rule sensor's errors, so in this benchmark the residual
 sensing gap is mainly information the text does not contain. On natural
