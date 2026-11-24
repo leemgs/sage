@@ -1,0 +1,539 @@
+[
+ {
+  "key": "zhang2021situatedqa",
+  "ok": true,
+  "title_similarity": 0.98,
+  "cited_first_author": "Zhang",
+  "cited_year": "2021",
+  "record": {
+   "source": "ACL Anthology 2021.emnlp-main.586",
+   "title": "{S}ituated{QA}: Incorporating Extra-Linguistic Contexts into {QA}",
+   "authors": [
+    "Zhang",
+    "Choi"
+   ],
+   "year": "2021",
+   "venue": "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+   "pages": ""
+  },
+  "error": null
+ },
+ {
+  "key": "vu2023freshqa",
+  "ok": true,
+  "title_similarity": 0.98,
+  "cited_first_author": "Vu",
+  "cited_year": "2024",
+  "record": {
+   "source": "ACL Anthology 2024.findings-acl.813",
+   "title": "{F}resh{LLM}s: Refreshing Large Language Models with Search Engine Augmentation",
+   "authors": [
+    "Vu",
+    "Iyyer",
+    "Wang",
+    "Constant",
+    "Wei",
+    "Wei",
+    "Tar",
+    "Sung",
+    "Zhou",
+    "Le",
+    "Luong"
+   ],
+   "year": "2024",
+   "venue": "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2024",
+   "pages": ""
+  },
+  "error": null
+ },
+ {
+  "key": "meem2024pat",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Meem",
+  "cited_year": "2024",
+  "record": {
+   "source": "ACL Anthology 2024.findings-acl.777",
+   "title": "{PAT}-Questions: A Self-Updating Benchmark for Present-Anchored Temporal Question-Answering",
+   "authors": [
+    "Meem",
+    "Rashid",
+    "Dong",
+    "Hristidis"
+   ],
+   "year": "2024",
+   "venue": "Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2024",
+   "pages": ""
+  },
+  "error": null
+ },
+ {
+  "key": "chen2021timeqa",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Chen",
+  "cited_year": "2021",
+  "record": {
+   "source": "arXiv title search (OpenReview item)",
+   "title": "A Dataset for Answering Time-Sensitive Questions",
+   "authors": [
+    "Wenhu Chen",
+    "Xinyi Wang",
+    "William Yang Wang"
+   ],
+   "year": "2021",
+   "comment": "Accepted to NeurIPS21 (dataset track), it contains 10 pages of main text and appendix"
+  },
+  "error": null
+ },
+ {
+  "key": "chen2025chronoqa",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Chen",
+  "cited_year": "2025",
+  "record": {
+   "source": "Crossref DOI 10.1038/s41597-025-06098-y",
+   "title": "A Question Answering Dataset for Temporal-Sensitive Retrieval-Augmented Generation",
+   "authors": [
+    "Chen",
+    "Min",
+    "Zhao",
+    "Li",
+    "Jia",
+    "Liao",
+    "Li",
+    "Wang",
+    "Hu",
+    "Yin"
+   ],
+   "year": "2025",
+   "venue": "Scientific Data",
+   "volume": "12",
+   "pages": "1855"
+  },
+  "error": null
+ },
+ {
+  "key": "lewis2020rag",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Lewis",
+  "cited_year": "2020",
+  "record": {
+   "source": "arXiv 2005.11401",
+   "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+   "authors": [
+    "Patrick Lewis",
+    "Ethan Perez",
+    "Aleksandra Piktus",
+    "Fabio Petroni",
+    "Vladimir Karpukhin",
+    "Naman Goyal",
+    "Heinrich Küttler",
+    "Mike Lewis",
+    "Wen-tau Yih",
+    "Tim Rocktäschel",
+    "Sebastian Riedel",
+    "Douwe Kiela"
+   ],
+   "year": "2020",
+   "comment": "Accepted at NeurIPS 2020"
+  },
+  "error": null
+ },
+ {
+  "key": "asai2024selfrag",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Asai",
+  "cited_year": "2024",
+  "record": {
+   "source": "arXiv title search (OpenReview item)",
+   "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+   "authors": [
+    "Akari Asai",
+    "Zeqiu Wu",
+    "Yizhong Wang",
+    "Avirup Sil",
+    "Hannaneh Hajishirzi"
+   ],
+   "year": "2023",
+   "comment": "30 pages, 2 figures, 12 tables"
+  },
+  "error": null
+ },
+ {
+  "key": "yao2023react",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Yao",
+  "cited_year": "2023",
+  "record": {
+   "source": "arXiv title search (OpenReview item)",
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "authors": [
+    "Shunyu Yao",
+    "Jeffrey Zhao",
+    "Dian Yu",
+    "Nan Du",
+    "Izhak Shafran",
+    "Karthik Narasimhan",
+    "Yuan Cao"
+   ],
+   "year": "2022",
+   "comment": "v3 is the ICLR camera ready version with some typos fixed. Project site with code: https://react-lm.github.io"
+  },
+  "error": null
+ },
+ {
+  "key": "schick2023toolformer",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Schick",
+  "cited_year": "2023",
+  "record": {
+   "source": "NeurIPS proceedings",
+   "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+   "authors": [
+    "Schick",
+    "Dwivedi-Yu",
+    "Dessi",
+    "Raileanu",
+    "Lomeli",
+    "Hambro",
+    "Zettlemoyer",
+    "Cancedda",
+    "Scialom"
+   ],
+   "year": "2023",
+   "volume": "36",
+   "pages": "68539-68551"
+  },
+  "error": null
+ },
+ {
+  "key": "mei2025context",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Mei",
+  "cited_year": "2025",
+  "record": {
+   "source": "arXiv 2507.13334",
+   "title": "A Survey of Context Engineering for Large Language Models",
+   "authors": [
+    "Lingrui Mei",
+    "Jiayu Yao",
+    "Yuyao Ge",
+    "Yiwei Wang",
+    "Baolong Bi",
+    "Yujun Cai",
+    "Jiazhi Liu",
+    "Mingyu Li",
+    "Zhong-Zhi Li",
+    "Duzhen Zhang",
+    "Chenlin Zhou",
+    "Jiayi Mao",
+    "Tianze Xia",
+    "Jiafeng Guo",
+    "Shenghua Liu"
+   ],
+   "year": "2025",
+   "comment": "ongoing work; 166 pages, 1411 citations"
+  },
+  "error": null
+ },
+ {
+  "key": "zhong2026harness",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Zhong",
+  "cited_year": "2026",
+  "record": {
+   "source": "arXiv 2605.13357",
+   "title": "AI Harness Engineering: A Runtime Substrate for Foundation-Model Software Agents",
+   "authors": [
+    "Hailin Zhong",
+    "Shengxin Zhu"
+   ],
+   "year": "2026",
+   "comment": "16 pages"
+  },
+  "error": null
+ },
+ {
+  "key": "lin2026ahe",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Lin",
+  "cited_year": "2026",
+  "record": {
+   "source": "arXiv 2604.25850",
+   "title": "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses",
+   "authors": [
+    "Jiahang Lin",
+    "Shichun Liu",
+    "Chengjun Pan",
+    "Lizhi Lin",
+    "Shihan Dou",
+    "Zhiheng Xi",
+    "Xuanjing Huang",
+    "Hang Yan",
+    "Zhenhua Han",
+    "Tao Gui",
+    "Yu-Gang Jiang"
+   ],
+   "year": "2026",
+   "comment": ""
+  },
+  "error": null
+ },
+ {
+  "key": "kim2025tdbench",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Kim",
+  "cited_year": "2026",
+  "record": {
+   "source": "arXiv title search (OpenReview item)",
+   "title": "Harnessing Temporal Databases for Systematic Evaluation of Factual Time-Sensitive Question-Answering in Large Language Models",
+   "authors": [
+    "Soyeon Kim",
+    "Jindong Wang",
+    "Xing Xie",
+    "Steven Euijong Whang"
+   ],
+   "year": "2025",
+   "comment": "Published in Proceedings of the 14th International Conference on Learning Representations (ICLR), 2026. Code and data are publicly available at: https://github.com/ssoy0701/tdbench.git"
+  },
+  "error": null
+ },
+ {
+  "key": "barwise1983situations",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Barwise",
+  "cited_year": "1983",
+  "record": {
+   "source": "Open Library ISBN 0262021897",
+   "title": "Situations and attitudes",
+   "authors": [],
+   "year": "1983",
+   "venue": "MIT Press"
+  },
+  "error": null
+ },
+ {
+  "key": "mccarthy1969problems",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "McCarthy",
+  "cited_year": "1969",
+  "record": {
+   "source": "fixed record",
+   "title": "Some philosophical problems from the standpoint of artificial intelligence",
+   "authors": [
+    "McCarthy"
+   ],
+   "year": "1969",
+   "note": "Machine Intelligence 4 (Edinburgh Univ. Press, 1969), pp. 463-502; author's copy at www-formal.stanford.edu/jmc/mcchay69.pdf"
+  },
+  "error": null
+ },
+ {
+  "key": "kowalski1986event",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Kowalski",
+  "cited_year": "1986",
+  "record": {
+   "source": "Crossref DOI 10.1007/BF03037383",
+   "title": "A logic-based calculus of events",
+   "authors": [
+    "Kowalski",
+    "Sergot"
+   ],
+   "year": "1986",
+   "venue": "New Generation Computing",
+   "volume": "4",
+   "pages": "67-95"
+  },
+  "error": null
+ },
+ {
+  "key": "reiter2001knowledge",
+  "ok": true,
+  "title_similarity": 0.35,
+  "cited_first_author": "Reiter",
+  "cited_year": "2001",
+  "record": {
+   "source": "Crossref DOI 10.7551/mitpress/4074.001.0001",
+   "title": "Knowledge in Action",
+   "authors": [
+    "Reiter"
+   ],
+   "year": "2001",
+   "venue": "",
+   "volume": null,
+   "pages": null
+  },
+  "error": null
+ },
+ {
+  "key": "allen1983interval",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Allen",
+  "cited_year": "1983",
+  "record": {
+   "source": "Crossref DOI 10.1145/182.358434",
+   "title": "Maintaining knowledge about temporal intervals",
+   "authors": [
+    "Allen"
+   ],
+   "year": "1983",
+   "venue": "Communications of the ACM",
+   "volume": "26",
+   "pages": "832-843"
+  },
+  "error": null
+ },
+ {
+  "key": "alchourron1985logic",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Alchourr\\'{o}n",
+  "cited_year": "1985",
+  "record": {
+   "source": "Crossref DOI 10.2307/2274239",
+   "title": "On the logic of theory change: Partial meet contraction and revision functions",
+   "authors": [
+    "Alchourrón",
+    "Gärdenfors",
+    "Makinson"
+   ],
+   "year": "1985",
+   "venue": "Journal of Symbolic Logic",
+   "volume": "50",
+   "pages": "510-530"
+  },
+  "error": null
+ },
+ {
+  "key": "doyle1979truth",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Doyle",
+  "cited_year": "1979",
+  "record": {
+   "source": "Crossref DOI 10.1016/0004-3702(79)90008-0",
+   "title": "A truth maintenance system",
+   "authors": [
+    "Doyle"
+   ],
+   "year": "1979",
+   "venue": "Artificial Intelligence",
+   "volume": "12",
+   "pages": "231-272"
+  },
+  "error": null
+ },
+ {
+  "key": "kaelbling1998pomdp",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Kaelbling",
+  "cited_year": "1998",
+  "record": {
+   "source": "Crossref DOI 10.1016/S0004-3702(98)00023-X",
+   "title": "Planning and acting in partially observable stochastic domains",
+   "authors": [
+    "Kaelbling",
+    "Littman",
+    "Cassandra"
+   ],
+   "year": "1998",
+   "venue": "Artificial Intelligence",
+   "volume": "101",
+   "pages": "99-134"
+  },
+  "error": null
+ },
+ {
+  "key": "henderson2014second",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Henderson",
+  "cited_year": "2014",
+  "record": {
+   "source": "ACL Anthology W14-4337",
+   "title": "The Second Dialog State Tracking Challenge",
+   "authors": [
+    "Henderson",
+    "Thomson",
+    "Williams"
+   ],
+   "year": "2014",
+   "venue": "Proceedings of the 15th Annual Meeting of the Special Interest Group on Discourse and Dialogue ({SIGDIAL})",
+   "pages": ""
+  },
+  "error": null
+ },
+ {
+  "key": "snodgrass1992temporal",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Snodgrass",
+  "cited_year": "1992",
+  "record": {
+   "source": "Crossref DOI 10.1007/3-540-55966-3_2",
+   "title": "Temporal databases",
+   "authors": [
+    "Snodgrass"
+   ],
+   "year": "1992",
+   "venue": "Lecture Notes in Computer Science",
+   "volume": null,
+   "pages": "22-64"
+  },
+  "error": null
+ },
+ {
+  "key": "vanbenthem1996dynamic",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "van",
+  "cited_year": "2007",
+  "record": {
+   "source": "Crossref DOI 10.3166/jancl.17.129-155",
+   "title": "Dynamic logic for belief revision",
+   "authors": [
+    "van Benthem"
+   ],
+   "year": "2007",
+   "venue": "Journal of Applied Non-Classical Logics",
+   "volume": "17",
+   "pages": "129-155"
+  },
+  "error": null
+ },
+ {
+  "key": "stalnaker2002common",
+  "ok": true,
+  "title_similarity": 1.0,
+  "cited_first_author": "Stalnaker",
+  "cited_year": "2002",
+  "record": {
+   "source": "Crossref DOI 10.1023/A:1020867916902",
+   "title": "Common Ground",
+   "authors": [
+    "Stalnaker"
+   ],
+   "year": "2002",
+   "venue": "Linguistics and Philosophy",
+   "volume": "25",
+   "pages": "701-721"
+  },
+  "error": null
+ }
+]

@@ -177,3 +177,4 @@ R2는 다중 패밀리 null로 "결과가 일반적"임을 보였다. 남은 핵
 세 가지 모두 한도를 넘었다. 의미를 바꾸지 않는 압축으로 **초록 149, 본문 3,497, Methods 2,989**로 맞췄다.
 점검은 이제 `code/check_desk_reject.py`(한도·표시 항목·참고문헌 순서·필수 문단·자리표시·폭·Overfull·
 Extended Data/보충 Note 참조)와 `code/check_references.py`(25개 참고문헌을 원 기록과 대조)로 재현된다.
+참고문헌 재검증(`code/check_references.py`, 결과 `paper/results/reference_check.json`): **25/25 일치**.
