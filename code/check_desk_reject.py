@@ -71,6 +71,17 @@ def main():
     methods = words((PAPER / "section/070_methods.tex").read_text())
     check("methods_words", methods, methods <= 3000)
 
+    # Cross-check with texcount (text + headers), which tokenises differently.
+    if subprocess.run(["which", "texcount"], capture_output=True).returncode == 0:
+        def tc(files):
+            out = subprocess.run(["texcount", "-nosub", "-total", *files], capture_output=True,
+                                 text=True, cwd=PAPER).stdout
+            return sum(int(n) for n in re.findall(r"Words in (?:text|headers): (\d+)", out))
+        tc_main = tc([f"section/{s}.tex" for s in MAIN_SECTIONS])
+        tc_methods = tc(["section/070_methods.tex"])
+        check("texcount_main_text_words", tc_main, tc_main <= 3500)
+        check("texcount_methods_words", tc_methods, tc_methods <= 3000)
+
     full = expand("main.tex")
     cut = full.index("\\section*{Extended Data}")
     body, ed = full[:cut], full[cut:]
