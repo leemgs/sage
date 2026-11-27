@@ -129,8 +129,39 @@ def main():
         if pdf == "main.pdf":
             main_text = text
 
+    # Text inside figures must stay legible after scaling (Nature: 5-7 pt).
+    widths = {}
+    for m in re.finditer(r"\\includegraphics\[width=([\d.]*)\\linewidth\]\{([^}]+)\}", full):
+        widths[m.group(2)] = float(m.group(1) or 1)
+    smallest = {}
+    for rel, frac in widths.items():
+        pdf = PAPER / rel
+        page_w = float(re.search(r"Page size:\s+([\d.]+) x", subprocess.run(
+            ["pdfinfo", str(pdf)], capture_output=True, text=True, check=True).stdout).group(1))
+        scale = frac * TEXT_WIDTH / page_w
+        boxes = subprocess.run(["pdftotext", "-bbox", str(pdf), "-"], capture_output=True,
+                               text=True, check=True).stdout
+        heights = [float(b) - float(a) for a, b in
+                   re.findall(r'yMin="([\d.]+)" xMax="[\d.]+" yMax="([\d.]+)"', boxes)]
+        if heights:
+            smallest[rel] = round(min(heights) / 1.2 * scale, 1)  # glyph box ~ 1.2 x font size
+    # TikZ figures have no source image: measure the printed page that carries Fig. 1
+    # (conservative: footnote-sized text on that page counts too).
+    pages = subprocess.run(["pdftotext", "-layout", str(PAPER / "main.pdf"), "-"],
+                           capture_output=True, text=True, check=True).stdout.split("\f")
+    for number, page_text in enumerate(pages, 1):
+        if re.search(r"\bFig\. 1\b", page_text) and "Failure" in page_text:
+            box = subprocess.run(["pdftotext", "-bbox", "-f", str(number), "-l", str(number),
+                                  str(PAPER / "main.pdf"), "-"], capture_output=True,
+                                 text=True, check=True).stdout
+            heights = [float(b) - float(a) for a, b in
+                       re.findall(r'yMin="([\d.]+)" xMax="[\d.]+" yMax="([\d.]+)"', box)]
+            smallest["Fig. 1 (TikZ, printed page)"] = round(min(heights) / 1.2, 1)
+            break
+    check("figure_text_min_printed_pt", smallest, len(smallest) == 4 and all(v >= 5.0 for v in smallest.values()))
+
     flat = " ".join(main_text.split())
-    mentioned = {int(x) for m in re.finditer(r"Extended Data Tables? ((?:\d+(?:, | and |–))*\d+)", flat)
+    mentioned ={int(x) for m in re.finditer(r"Extended Data Tables? ((?:\d+(?:, | and |–))*\d+)", flat)
                  for x in re.findall(r"\d+", m.group(1))}
     check("extended_data_mentioned_but_absent", sorted(x for x in mentioned if x > n_ed),
           all(x <= n_ed for x in mentioned))
